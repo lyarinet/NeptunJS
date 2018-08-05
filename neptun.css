@@ -1,0 +1,233 @@
+@font-face {
+  font-family: 'nepicon';
+  src:  url('fonts/nepicon.eot?775tmp');
+  src:  url('fonts/nepicon.eot?775tmp#iefix') format('embedded-opentype'),
+    url('fonts/nepicon.ttf?775tmp') format('truetype'),
+    url('fonts/nepicon.woff?775tmp') format('woff'),
+    url('fonts/nepicon.svg?775tmp#nepicon') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+[class^='nep-icon-'], [class*='nep-icon-'] {
+  font-family: 'nepicon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.infoError {
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    color: #e2e2e2;
+    padding: 8px;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 800;
+    background: #000000ab;
+}
+#NeptunCSSinfoCC{
+position: relative;
+    width: 100%;
+	float: left;
+}
+
+#NeptunCSSinfoCC .NeptunCSSgamepadStateInfo{
+	
+	top:0px !important;
+	
+}
+
+/*____________________________________________________________*/
+
+.nep-icon-gamepad:before {
+  content: "\e900";
+}
+.nep-icon-file-picture:before {
+  content: "\e927";
+}
+.nep-icon-folder:before {
+  content: "\e92f";
+}
+.nep-icon-folder-download:before {
+  content: "\e933";
+}
+.nep-icon-folder-upload:before {
+  content: "\e934";
+}
+.nep-icon-cart:before {
+  content: "\e93a";
+}
+.nep-icon-coin-dollar:before {
+  content: "\e93b";
+}
+.nep-icon-credit-card:before {
+  content: "\e93f";
+}
+.nep-icon-display:before {
+  content: "\e956";
+}
+.nep-icon-tv:before {
+  content: "\e95b";
+}
+.nep-icon-floppy-disk:before {
+  content: "\e962";
+}
+.nep-icon-database:before {
+  content: "\e964";
+}
+.nep-icon-bubbles4:before {
+  content: "\e970";
+}
+.nep-icon-user:before {
+  content: "\e971";
+}
+.nep-icon-users:before {
+  content: "\e972";
+}
+.nep-icon-user-check:before {
+  content: "\e975";
+}
+.nep-icon-spinner11:before {
+  content: "\e984";
+}
+.nep-icon-enlarge:before {
+  content: "\e989";
+}
+.nep-icon-shrink:before {
+  content: "\e98a";
+}
+.nep-icon-enlarge2:before {
+  content: "\e98b";
+}
+.nep-icon-shrink2:before {
+  content: "\e98c";
+}
+.nep-icon-cog:before {
+  content: "\e994";
+}
+.nep-icon-bin2:before {
+  content: "\e9ad";
+}
+.nep-icon-menu:before {
+  content: "\e9bd";
+}
+.nep-icon-cloud:before {
+  content: "\e9c1";
+}
+.nep-icon-cloud-download:before {
+  content: "\e9c2";
+}
+.nep-icon-cloud-upload:before {
+  content: "\e9c3";
+}
+.nep-icon-cloud-check:before {
+  content: "\e9c4";
+}
+.nep-icon-download3:before {
+  content: "\e9c7";
+}
+.nep-icon-upload3:before {
+  content: "\e9c8";
+}
+.nep-icon-tongue:before {
+  content: "\e9e3";
+}
+.nep-icon-notification:before {
+  content: "\ea08";
+}
+.nep-icon-question:before {
+  content: "\ea09";
+}
+.nep-icon-info:before {
+  content: "\ea0c";
+}
+.nep-icon-cancel-circle:before {
+  content: "\ea0d";
+}
+.nep-icon-blocked:before {
+  content: "\ea0e";
+}
+.nep-icon-cross:before {
+  content: "\ea0f";
+}
+.nep-icon-checkmark:before {
+  content: "\ea10";
+}
+.nep-icon-checkmark2:before {
+  content: "\ea11";
+}
+.nep-icon-pause2:before {
+  content: "\ea1d";
+}
+.nep-icon-eject:before {
+  content: "\ea25";
+}
+.nep-icon-volume-high:before {
+  content: "\ea26";
+}
+.nep-icon-volume-medium:before {
+  content: "\ea27";
+}
+.nep-icon-volume-low:before {
+  content: "\ea28";
+}
+.nep-icon-volume-mute2:before {
+  content: "\ea2a";
+}
+.nep-icon-arrow-right2:before {
+  content: "\ea3c";
+}
+.nep-icon-arrow-left2:before {
+  content: "\ea40";
+}
+.nep-icon-checkbox-checked:before {
+  content: "\ea52";
+}
+.nep-icon-checkbox-unchecked:before {
+  content: "\ea53";
+}
+.nep-icon-superscript:before {
+  content: "\ea69";
+}
+.nep-icon-terminal:before {
+  content: "\ea81";
+}
+.nep-icon-chrome:before {
+  content: "\ead9";
+}
+.nep-icon-firefox:before {
+  content: "\eada";
+}
+.nep-icon-IE:before {
+  content: "\eadb";
+}
+.nep-icon-image:before {
+  content: "\e90d";
+}
+.nep-icon-headphones:before {
+  content: "\e910";
+}
+.nep-icon-stack:before {
+  content: "\e92e";
+}
+.nep-icon-folder-open:before {
+  content: "\e930";
+}
+.nep-icon-equalizer:before {
+  content: "\e992";
+}
+.nep-icon-swap:before {
+  content: "\ea55";
+}
+.nep-icon-crop:before {
+  content: "\eea57";
+}
