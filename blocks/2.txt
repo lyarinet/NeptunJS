@@ -3843,7 +3843,7 @@ function _NCSSStuff() {
     return _0x13E1B() + _0x13E1B() + "-" + _0x13E1B() + "-" + _0x13E1B() + "-" + _0x13E1B() + "-" + _0x13E1B() + _0x13E1B() + _0x13E1B()
 }
 
-function _contextMenuStuff($, window, document, undefined) {
+function _contextMenuStuff(window, document, undefined) {
     "use strict";
     var _0x13ECB = "nuContextMenu";
     var _0x13E47 = {
@@ -3852,16 +3852,16 @@ function _contextMenuStuff($, window, document, undefined) {
         activeClass: "" + NCSS + "active"
     };
     var _0x13E9F = function(_0x13E73, _0x13E9F) {
-        this.container = $(_0x13E73);
-        this.options = $.extend({}, _0x13E47, _0x13E9F);
+        this.container = Neptq(_0x13E73);
+        this.options = Neptq.extend({}, _0x13E47, _0x13E9F);
         this._defaults = _0x13E47;
         this._name = _0x13ECB;
         this.init()
     };
-    $.extend(_0x13E9F.prototype, {
+    Neptq.extend(_0x13E9F.prototype, {
         init: function() {
             if (this.options.items) {
-                this.items = $(this.options.items)
+                this.items = Neptq(this.options.items)
             };
             if (this._buildContextMenu()) {
                 this._bindEvents();
@@ -3872,27 +3872,27 @@ function _contextMenuStuff($, window, document, undefined) {
             return ((this.options.callback && typeof this.options.callback === "function") ? this.options.callback : function() {})
         },
         _buildContextMenu: function() {
-            this._menu = $("<div>").addClass(this.options.contextMenuClass).append("<ul>");
+            this._menu = Neptq("<div>").addClass(this.options.contextMenuClass).append("<ul>");
             var _0x13E47 = this.options.menu,
                 _0x13E73 = this._menu.children("ul");
-            $.each(_0x13E47, function(_0x13ECB, _0x13E47) {
+            Neptq.each(_0x13E47, function(_0x13ECB, _0x13E47) {
                 var _0x13EF7;
                 if (_0x13E47 !== null && typeof _0x13E47 !== "object") {
                     return
                 };
                 if (_0x13E47.name === "void") {
-                    _0x13EF7 = $("<hr>");
+                    _0x13EF7 = Neptq("<hr>");
                     _0x13E73.append(_0x13EF7);
                     return
                 };
-                _0x13EF7 = $("<li>").attr("data-key", _0x13E47.name).text(" " + _0x13E47.title);
+                _0x13EF7 = Neptq("<li>").attr("data-key", _0x13E47.name).text(" " + _0x13E47.title);
                 if (_0x13E47.icon) {
-                    var _0x13E9F = $("<i>").addClass("nep-" + _0x13E47.icon.toString());
+                    var _0x13E9F = Neptq("<i>").addClass("nep-" + _0x13E47.icon.toString());
                     _0x13EF7.prepend(_0x13E9F)
                 };
                 _0x13E73.append(_0x13EF7)
             });
-            $("#" + NCSS + "Neptun").append(this._menu);
+            Neptq("#" + NCSS + "Neptun").append(this._menu);
             return true
         },
         _pDefault: function(_0x13E1B) {
@@ -3910,7 +3910,7 @@ function _contextMenuStuff($, window, document, undefined) {
             var _0x13E73 = this._getCallback();
             var _0x13F23 = this._menu.children("ul").children("li");
             _0x13F23.off().on("click", function() {
-                var _0x13E9F = $(this).attr("data-key");
+                var _0x13E9F = Neptq(this).attr("data-key");
                 _0x13E73(_0x13E9F, _0x13ECB);
                 if (_0x13E47.options.hideAfterClick) {
                     _0x13E47.closeMenu()
@@ -3918,7 +3918,7 @@ function _contextMenuStuff($, window, document, undefined) {
             });
             var _0x13F4F = _0x13EF7.pageX;
             var _0x13F7B = _0x13EF7.pageY;
-            var _0x13E9F = $("#" + NCSS + "Neptun").offset();
+            var _0x13E9F = Neptq("#" + NCSS + "Neptun").offset();
             this.openMenu();
             this._menu.css({
                 "top": _0x13F7B - _0x13E9F.top + "px",
@@ -3927,17 +3927,17 @@ function _contextMenuStuff($, window, document, undefined) {
             return true
         },
         _onMouseDown: function(_0x13E47) {
-            if (!$(_0x13E47.target).parents("." + this.options.contextMenuClass).length) {
+            if (!Neptq(_0x13E47.target).parents("." + this.options.contextMenuClass).length) {
                 this.closeMenu()
             }
         },
         _bindEvents: function() {
             if (this.items) {
-                this.container.on("contextmenu", this.options.items, $.proxy(this._contextMenu, this))
+                this.container.on("contextmenu", this.options.items, Neptq.proxy(this._contextMenu, this))
             } else {
-                this.container.on("contextmenu", $.proxy(this._contextMenu, this))
+                this.container.on("contextmenu", Neptq.proxy(this._contextMenu, this))
             };
-            $(document).on("mousedown", $.proxy(this._onMouseDown, this))
+            Neptq(document).on("mousedown", Neptq.proxy(this._onMouseDown, this))
         },
         disable: function() {
             this.options.disable = true;
@@ -3963,10 +3963,10 @@ function _contextMenuStuff($, window, document, undefined) {
             return true
         }
     });
-    $.fn[_0x13ECB] = function(_0x13E73) {
+    Neptq.fn[_0x13ECB] = function(_0x13E73) {
         var _0x13E47 = Array.prototype.slice.call(arguments, 1);
         return this.each(function() {
-            var _0x13F23 = $(this),
+            var _0x13F23 = Neptq(this),
                 _0x13EF7 = _0x13F23.data(_0x13ECB);
             if (!_0x13EF7) {
                 _0x13F23.data(_0x13ECB, new _0x13E9F(this, _0x13E73))
@@ -9432,10 +9432,9 @@ NCSS = "N" + _NCSSStuff();
 NCSS2 = "N" + _NCSSStuff();
 NCSS3 = "N" + _NCSSStuff();
 NCSS8 = "N" + _NCSSStuff() + "2";
-(_contextMenuStuff)(Neptq, window, document);
+(_contextMenuStuff)(window, document);
 (_someWeirdThing)(((typeof(module) !== "undefined") && module.exports) || window);
 (_probsUiStuff)(window);
-console.dir(_themeStuff);
 (_themeStuff)(window, NJSfpsMtt);
 !_0x13FD3(_0x13FFF);
 !_0x1402B(_0x14057)
