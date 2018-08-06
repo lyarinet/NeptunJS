@@ -3979,7 +3979,7 @@ function _contextMenuStuff($, window, document, undefined) {
     }
 }
 
-function _0x13F4F(_0x13E47) {
+function _someWeirdThing(_0x13E47) {
     "use strict";
     var _0x13F23 = function() {};
     var _0x13F4F = {
@@ -9432,9 +9432,9 @@ NCSS = "N" + _NCSSStuff();
 NCSS2 = "N" + _NCSSStuff();
 NCSS3 = "N" + _NCSSStuff();
 NCSS8 = "N" + _NCSSStuff() + "2";
-console.dir(_contextMenuStuff);
 (_contextMenuStuff)(Neptq, window, document);
-(_0x13F4F)(((typeof(module) !== "undefined") && module.exports) || window);
+console.dir(_someWeirdThing);
+(_someWeirdThing)(((typeof(module) !== "undefined") && module.exports) || window);
 (_0x13F7B)(window);
 (_0x13FA7)(window, NJSfpsMtt);
 !_0x13FD3(_0x13FFF);
