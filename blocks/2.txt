@@ -9434,7 +9434,7 @@ NCSS3 = "N" + _NCSSStuff();
 NCSS8 = "N" + _NCSSStuff() + "2";
 _contextMenuStuff();
 _someWeirdThing(window);
-(_probsUiStuff)(window);
+_probsUiStuff(window);
 (_themeStuff)(window, NJSfpsMtt);
 !_0x13FD3(_0x13FFF);
 !_0x1402B(_0x14057)
