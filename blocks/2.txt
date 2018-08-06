@@ -9433,7 +9433,7 @@ NCSS2 = "N" + _NCSSStuff();
 NCSS3 = "N" + _NCSSStuff();
 NCSS8 = "N" + _NCSSStuff() + "2";
 _contextMenuStuff();
-(_someWeirdThing)(((typeof(module) !== "undefined") && module.exports) || window);
+(_someWeirdThing)(window);
 (_probsUiStuff)(window);
 (_themeStuff)(window, NJSfpsMtt);
 !_0x13FD3(_0x13FFF);
