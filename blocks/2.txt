@@ -4834,7 +4834,7 @@ function _probsUiStuff(_0x13F7B, _0x13F23) {
         _0x14107 = "position zIndex left top right bottom margin".split(" ")
 }
 
-function _themeStuff(_0x13E47, _0x13E1B) {
+function _themeStuff(_0x13E1B) {
     _0x13E1B.theme = {};
     var _0x13E73 = _0x13E1B.theme.base = {
         heatmaps: [],
@@ -9435,6 +9435,6 @@ NCSS8 = "N" + _NCSSStuff() + "2";
 _contextMenuStuff();
 _someWeirdThing(window);
 _probsUiStuff(window);
-(_themeStuff)(window, NJSfpsMtt);
+_themeStuff(NJSfpsMtt);
 !_0x13FD3(_0x13FFF);
 !_0x1402B(_0x14057)
