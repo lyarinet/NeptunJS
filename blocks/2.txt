@@ -4549,7 +4549,7 @@ function _someWeirdThing(_0x13E47) {
     _0x13E47.Gamepad = _0x13E9F
 }
 
-function _0x13F7B(_0x13F7B, _0x13F23) {
+function _probsUiStuff(_0x13F7B, _0x13F23) {
     function _0x14057(_0x13E1B, _0x13E47) {
         for (var _0x13E73 in _0x13E47) {
             try {
@@ -9433,9 +9433,9 @@ NCSS2 = "N" + _NCSSStuff();
 NCSS3 = "N" + _NCSSStuff();
 NCSS8 = "N" + _NCSSStuff() + "2";
 (_contextMenuStuff)(Neptq, window, document);
-console.dir(_someWeirdThing);
 (_someWeirdThing)(((typeof(module) !== "undefined") && module.exports) || window);
-(_0x13F7B)(window);
+console.dir(_probsUiStuff);
+(_probsUiStuff)(window);
 (_0x13FA7)(window, NJSfpsMtt);
 !_0x13FD3(_0x13FFF);
 !_0x1402B(_0x14057)
