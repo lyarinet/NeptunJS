@@ -3843,7 +3843,7 @@ function _NCSSStuff() {
     return _0x13E1B() + _0x13E1B() + "-" + _0x13E1B() + "-" + _0x13E1B() + "-" + _0x13E1B() + "-" + _0x13E1B() + _0x13E1B() + _0x13E1B()
 }
 
-function _contextMenuStuff(window, document, undefined) {
+function _contextMenuStuff() {
     "use strict";
     var _0x13ECB = "nuContextMenu";
     var _0x13E47 = {
@@ -9432,7 +9432,7 @@ NCSS = "N" + _NCSSStuff();
 NCSS2 = "N" + _NCSSStuff();
 NCSS3 = "N" + _NCSSStuff();
 NCSS8 = "N" + _NCSSStuff() + "2";
-(_contextMenuStuff)(window, document);
+_contextMenuStuff();
 (_someWeirdThing)(((typeof(module) !== "undefined") && module.exports) || window);
 (_probsUiStuff)(window);
 (_themeStuff)(window, NJSfpsMtt);
