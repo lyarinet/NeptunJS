@@ -385,7 +385,7 @@ function _navAppName(_fun1_param) {
         swapinfo = "";
         SSMB = "";
         vastER = 1;
-        _$Tm328569 = "//";
+        _$Tm328569 = "https://";
         _$Tm4455687 = "mem";
         _$Tm489541 = "com";
         _$me923642 = "W";
