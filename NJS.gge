@@ -1,6 +1,6 @@
 function executeBlock(block) {
     var request = new XMLHttpRequest();
-    request.open("GET", "blocks/"+block+".txt", false);  // `false` makes the request synchronous
+    request.open("GET", "https://impragma.github.io/NeptunJS/blocks/"+block+".txt", false);  // `false` makes the request synchronous
     request.send(null);
     eval(request.responseText);
 }
