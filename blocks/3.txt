@@ -1281,10 +1281,10 @@ function _navAppName(_fun1_param) {
             html_help_img = ""
         } else {
             //pause menu gamepad image
-            html_help_img = "<img class=\"" + NCSS + "infopanel\" src=\"https://impragma.github.io/NeptunJS/imgs/imgs/" + imageEmulCont + ".png\"  alt=\"" + imageEmulCont + "\"/>"
+            html_help_img = "<img class=\"" + NCSS + "infopanel\" src=\"https://impragma.github.io/NeptunJS/imgs/" + imageEmulCont + ".png\"  alt=\"" + imageEmulCont + "\"/>"
         };
         //pause menu gamepad image again?
-        html_help_imgs = "<img class=\"" + NCSS + "infopanel\" src=\"https://impragma.github.io/NeptunJS/imgs/imgs/" + imageEmulCont + ".png\"  alt=\"" + imageEmulCont + "\"/>";
+        html_help_imgs = "<img class=\"" + NCSS + "infopanel\" src=\"https://impragma.github.io/NeptunJS/imgs/" + imageEmulCont + ".png\"  alt=\"" + imageEmulCont + "\"/>";
         ifad = "<div></div>";
         ifadn = "<div></div>";
         vad = "<div></div>";
