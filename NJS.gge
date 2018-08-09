@@ -250,7 +250,7 @@ var meter, popset, Neptune, asm, infoInner, shader1, emulatorRun, _$synhc112, _$
         if (HeightCheker > 400) {
             if (HeightCheker > 720) {
                 NJS_Elements.css({
-                    "height": "" + Neptq("#" + NCSS + "EmuBlock ").width() / 1.336 + "xpx"
+                    "height": "" + Neptq("#" + NCSS + "EmuBlock ").width() / 1.336 + "px"
                 })
             } else {
                 NJS_Elements.css({
