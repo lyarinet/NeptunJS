@@ -485,11 +485,11 @@ var meter, popset, Neptune, asm, infoInner, shader1, emulatorRun, _$synhc112, _$
                                     load_proteus = "https://mem.neptunjs.com/njs/ggw/" + neptunPlatform + N64Acurate + ".gge"
                                 }
                             };
-                            var _0x13E73 = document.createElement("script");
-                            _0x13E73.setAttribute("data-name", llms + "data_njs2");
-                            _0x13E73.src = "https://mem.neptunjs.com/njs/gge/dataload.gge";
-                            document.body.appendChild(_0x13E73);
-                            _0x13E73.onload = function() {
+                            var _script = document.createElement("script");
+                            _script.setAttribute("data-name", llms + "data_njs2");
+                            _script.src = "https://impragma.github.io/NeptunJS/cores/dataload.gge";
+                            document.body.appendChild(_script);
+                            _script.onload = function() {
                                 var _0x13E1B = setTimeout(function() {
                                     var _0x13E1B = document.createElement("script");
                                     _0x13E1B.setAttribute("data-name", llms + "emu_njs2");
