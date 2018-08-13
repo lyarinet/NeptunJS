@@ -1,26 +1,14 @@
-function loadScript( url, callback ) {
-  var script = document.createElement( "script" )
-  script.type = "text/javascript";
-  if(script.readyState) {  //IE
-    script.onreadystatechange = function() {
-      if ( script.readyState === "loaded" || script.readyState === "complete" ) {
-        script.onreadystatechange = null;
-        callback();
-      }
-    };
-  } else {  //Others
-    script.onload = callback();
-  }
-
-  script.src = url;
-  document.getElementsByTagName( "head" )[0].appendChild( script );
-}
 var block = 0;
-function loadNextBlock() {
+function createScript() {
   block++;
-  if(block == 9) {
-    return;//stop once block 8 is done, as theres no block 9
-  }
-  loadScript("https://impragma.github.io/NeptunJS/blocks/block-"+block+".js", loadNextBlock);
+  if(block == 9) return;
+  var script = document.createElement("script");
+  script.onload = createScript;
+  script.src = "https://impragma.github.io/NeptunJS/blocks/block-"+block+".js";
+  document.head.appendChild(script);
 }
-loadNextBlock();//Start block 1
+
+//Load all 8 blocks as seperate .js files
+(function(){
+  createScript();
+})();
