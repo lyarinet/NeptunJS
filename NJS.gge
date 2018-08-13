@@ -21,6 +21,6 @@ function loadNextBlock() {
   if(block == 9) {
     return;//stop once block 8 is done, as theres no block 9
   }
-  loadScript("https://impragma.github.io/NeptunJS/blocks/block-"+block+".js", loadNextBlock());
+  loadScript("https://impragma.github.io/NeptunJS/blocks/block-"+block+".js", loadNextBlock);
 }
 loadNextBlock();//Start block 1
