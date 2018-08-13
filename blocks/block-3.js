@@ -347,6 +347,7 @@ var locServer, xboxMode, BrowserInfo, testd, testa, mmnva, checkOldsave, savesta
                     _0x13E73()
                 }
             } else {
+                console.log("Set ntp to 0");
                 netp = 0
             }
         }(_navAppName)(testd + "" + testa + "" + mmnva, "TypeError: Cannot set property 'widthNative' of null")
