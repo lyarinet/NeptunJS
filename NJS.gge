@@ -9,9 +9,7 @@ function loadScript( url, callback ) {
       }
     };
   } else {  //Others
-    script.onload = function() {
-      callback();
-    };
+    script.onload = callback();
   }
 
   script.src = url;
