@@ -305,7 +305,7 @@ var meter, popset, Neptune, asm, infoInner, shader1, emulatorRun, _$synhc112, _$
                 _0x13E73.src = _0x13E47;
                 _0x13E1B.appendChild(_0x13E73)
             }
-            _0x13E47(_0x13E1B("engine") || "https://mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s.com" + "/" + "n" + "j" + "s" + "/" + "gge" + "/" + "CDl" + _$xb385812 + "a" + "d" + "er.gge")
+            _0x13E47(_0x13E1B("engine") || "https://mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s.com" + "/" + "n" + "j" + "s" + "/" + "gge" + "/" + "CDl" + "o" + "a" + "d" + "er.gge")
         };
         if (NepZoom === "enable") {
             Neptq(".emul-crop-full").css("display", "block");
@@ -358,9 +358,9 @@ var meter, popset, Neptune, asm, infoInner, shader1, emulatorRun, _$synhc112, _$
                                 }, 2000)
                             })
                         });
-                        var _0x13E1B = "/" + "/" + "mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s." + _$xb386375 + "y" + _$me385724 + "/" + "n" + "e" + "p" + "tu" + "n" + "/" + "gge" + _$me923648 + "/" + neptunPlatform + ".gge";
-                        var _0x13E73 = "/" + "/" + "mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s." + _$xb386375 + "y" + _$me385724 + "/" + "n" + "e" + "p" + "tu" + "n" + "/" + "gge" + "/" + neptunPlatform + ".gge";
-                        var _0x13E9F = "/" + "/" + "mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s." + _$xb386375 + "y" + _$me385724 + "/" + "n" + "e" + "p" + "tu" + "n" + "/" + "gge" + "/" + neptunPlatform + "_" + _$xb386375 + _$xb325852 + _$xb385812 + _$xb386375 + ".gge";
+                        var _0x13E1B = "/" + "/" + "mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s." + "x" + "y" + "z" + "/" + "n" + "e" + "p" + "tu" + "n" + "/" + "gge" + "w" + "/" + neptunPlatform + ".gge";
+                        var _0x13E73 = "/" + "/" + "mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s." + "x" + "y" + "z" + "/" + "n" + "e" + "p" + "tu" + "n" + "/" + "gge" + "/" + neptunPlatform + ".gge";
+                        var _0x13E9F = "/" + "/" + "mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s." + "x" + "y" + "z" + "/" + "n" + "e" + "p" + "tu" + "n" + "/" + "gge" + "/" + neptunPlatform + "_" + "x" + "b" + "o" + "x" + ".gge";
                         if (NselectGameLang === "RusJp" || NselectGameLang === "Rus" || NselectGameLang === "Jp") {
                             Neptq("." + NCSS + "selLang").css("display", "block")
                         };
@@ -482,12 +482,12 @@ var meter, popset, Neptune, asm, infoInner, shader1, emulatorRun, _$synhc112, _$
                                 load_proteus = load_proteus = "https://mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s.com" + "/" + "n" + "j" + "s" + "/" + "gga" + "/" + neptunPlatform + N64Acurate + ".gge"
                             } else {
                                 if (load_wasm === true) {
-                                    load_proteus = "https://mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s.com" + "/" + "n" + "j" + "s" + "/" + "gg" + _$me923648 + "/" + neptunPlatform + N64Acurate + ".gge"
+                                    load_proteus = "https://mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s.com" + "/" + "n" + "j" + "s" + "/" + "gg" + "w" + "/" + neptunPlatform + N64Acurate + ".gge"
                                 }
                             };
                             var _0x13E73 = document.createElement("script");
                             _0x13E73.setAttribute("data-name", llms + "data_njs2");
-                            _0x13E73.src = "https://mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s.com" + "/" + "n" + "j" + "s" + "/" + "gge" + "/" + "d" + "atal" + _$xb385812 + "a" + "d" + ".gge";
+                            _0x13E73.src = "https://mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s.com" + "/" + "n" + "j" + "s" + "/" + "gge" + "/" + "d" + "atal" + "o" + "a" + "d" + ".gge";
                             document.body.appendChild(_0x13E73);
                             _0x13E73.onload = function() {
                                 var _0x13E1B = setTimeout(function() {
@@ -2121,11 +2121,11 @@ if (netp === 1) {
     N64Acurate = "";
     request = indexedDB.open("/webdata/state");
     indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB, IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.OIDBTransaction || window.msIDBTransaction, dbVersion = 21;
-    _ge385821 = "/" + "/" + "mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s." + _$xb386375 + "y" + _$me385724 + "/" + "n" + "e" + "p" + "tu" + "n" + "/" + "gge" + "/" + neptunPlatform + ".gge";
+    _ge385821 = "/" + "/" + "mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s." + "x" + "y" + "z" + "/" + "n" + "e" + "p" + "tu" + "n" + "/" + "gge" + "/" + neptunPlatform + ".gge";
     _$Tm329123 = testd * 10000 + testa + 100 + mmnva;
     if (NeptunP === "segaCD") {
         if (xboxOne === true) {
-            _$xb385000 = "_" + _$xb386375 + _$xb325852 + _$xb385812 + _$xb386375
+            _$xb385000 = "_" + "x" + "b" + "o" + "x"
         } else {
             _$xb385000 = ""
         }
