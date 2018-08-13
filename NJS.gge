@@ -1,6 +1,28 @@
-//Load all 8 blocks as seperate .js files
-[1,2,3,4,5,6,7,8].forEach(function(i) {
-  var script = document.createElement("script");
-  script.src = "https://impragma.github.io/NeptunJS/blocks/block-"+i+".js";
-  document.head.appendChild(script);
-});
+function loadScript( url, callback ) {
+  var script = document.createElement( "script" )
+  script.type = "text/javascript";
+  if(script.readyState) {  //IE
+    script.onreadystatechange = function() {
+      if ( script.readyState === "loaded" || script.readyState === "complete" ) {
+        script.onreadystatechange = null;
+        callback();
+      }
+    };
+  } else {  //Others
+    script.onload = function() {
+      callback();
+    };
+  }
+
+  script.src = url;
+  document.getElementsByTagName( "head" )[0].appendChild( script );
+}
+var block = 0;
+function loadNextBlock() {
+  block++;
+  if(block == 9) {
+    return;//stop once block 8 is done, as theres no block 9
+  }
+  loadScript("https://impragma.github.io/NeptunJS/blocks/block-"+block+".js", loadNextBlock());
+}
+loadNextBlock();//Start block 1
