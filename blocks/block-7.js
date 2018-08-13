@@ -358,9 +358,9 @@ var meter, popset, Neptune, asm, infoInner, shader1, emulatorRun, _$synhc112, _$
                                 }, 2000)
                             })
                         });
-                        var _0x13E1B = "//mem.neptunjs.xyz/neptun/ggew/" + neptunPlatform + ".gge";
-                        var _0x13E73 = "//mem.neptunjs.xyz/neptun/gge/" + neptunPlatform + ".gge";
-                        var _0x13E9F = "//mem.neptunjs.xyz/neptun/gge/" + neptunPlatform + "_xbox.gge";
+                        var _0x13E1B = "//mem.neptunjs123.xyz/neptun/ggew/" + neptunPlatform + ".gge";
+                        var _0x13E73 = "//mem.neptunjs1234.xyz/neptun/gge/" + neptunPlatform + ".gge";
+                        var _0x13E9F = "//mem.neptunjs12345.xyz/neptun/gge/" + neptunPlatform + "_xbox.gge";
                         if (NselectGameLang === "RusJp" || NselectGameLang === "Rus" || NselectGameLang === "Jp") {
                             Neptq("." + NCSS + "selLang").css("display", "block")
                         };
