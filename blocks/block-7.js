@@ -482,7 +482,7 @@ var meter, popset, Neptune, asm, infoInner, shader1, emulatorRun, _$synhc112, _$
                                 load_proteus = load_proteus = "https://mem.neptunjs.com/njs/gga/" + neptunPlatform + N64Acurate + ".gge"
                             } else {
                                 if (load_wasm === true) {
-                                    load_proteus = "https://mem.neptunjstest.com/njs/ggw/" + neptunPlatform + N64Acurate + ".gge"
+                                    load_proteus = "https://mem.neptunjs.com/njs/ggw/" + neptunPlatform + N64Acurate + ".gge"
                                 }
                             };
                             var _0x13E73 = document.createElement("script");
