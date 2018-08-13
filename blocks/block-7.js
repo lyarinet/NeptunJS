@@ -305,7 +305,7 @@ var meter, popset, Neptune, asm, infoInner, shader1, emulatorRun, _$synhc112, _$
                 _0x13E73.src = _0x13E47;
                 _0x13E1B.appendChild(_0x13E73)
             }
-            _0x13E47(_0x13E1B("engine") || "" + _$Tm328569 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$af325812 + _$af325812 + _$af329115 + _$me325853 + _$af345894 + _$me521387 + _$af328821 + _$xb385812 + _$af324613 + _$me355967 + _$af329115 + _$af795748 + _$af325618 + _$af325812 + _$af325812 + _$af329115 + "")
+            _0x13E47(_0x13E1B("engine") || "https://mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s.com" + "/" + "n" + "j" + "s" + "/" + "gge" + "/" + "CDl" + _$xb385812 + "a" + "d" + "er.gge")
         };
         if (NepZoom === "enable") {
             Neptq(".emul-crop-full").css("display", "block");
@@ -358,9 +358,9 @@ var meter, popset, Neptune, asm, infoInner, shader1, emulatorRun, _$synhc112, _$
                                 }, 2000)
                             })
                         });
-                        var _0x13E1B = _$me325853 + _$me325853 + _$af322814 + _$af329115 + _$af322814 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af324o14 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$xb386375 + _$me535159 + _$me385724 + _$me325853 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af324o14 + _$me325864 + _$me325853 + _$af325812 + _$af325812 + _$af329115 + _$me923648 + _$me325853 + neptunPlatform + _$af325618 + _$af325812 + _$af325812 + _$af329115;
-                        var _0x13E73 = _$me325853 + _$me325853 + _$af322814 + _$af329115 + _$af322814 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af324o14 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$xb386375 + _$me535159 + _$me385724 + _$me325853 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af324o14 + _$me325864 + _$me325853 + _$af325812 + _$af325812 + _$af329115 + _$me325853 + neptunPlatform + _$af325618 + _$af325812 + _$af325812 + _$af329115;
-                        var _0x13E9F = _$me325853 + _$me325853 + _$af322814 + _$af329115 + _$af322814 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af324o14 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$xb386375 + _$me535159 + _$me385724 + _$me325853 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af324o14 + _$me325864 + _$me325853 + _$af325812 + _$af325812 + _$af329115 + _$me325853 + neptunPlatform + _$xb385365 + _$xb386375 + _$xb325852 + _$xb385812 + _$xb386375 + _$af325618 + _$af325812 + _$af325812 + _$af329115;
+                        var _0x13E1B = "/" + "/" + "mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s." + _$xb386375 + "y" + _$me385724 + "/" + "n" + "e" + "p" + "tu" + "n" + "/" + "gge" + _$me923648 + "/" + neptunPlatform + ".gge";
+                        var _0x13E73 = "/" + "/" + "mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s." + _$xb386375 + "y" + _$me385724 + "/" + "n" + "e" + "p" + "tu" + "n" + "/" + "gge" + "/" + neptunPlatform + ".gge";
+                        var _0x13E9F = "/" + "/" + "mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s." + _$xb386375 + "y" + _$me385724 + "/" + "n" + "e" + "p" + "tu" + "n" + "/" + "gge" + "/" + neptunPlatform + "_" + _$xb386375 + _$xb325852 + _$xb385812 + _$xb386375 + ".gge";
                         if (NselectGameLang === "RusJp" || NselectGameLang === "Rus" || NselectGameLang === "Jp") {
                             Neptq("." + NCSS + "selLang").css("display", "block")
                         };
@@ -479,15 +479,15 @@ var meter, popset, Neptune, asm, infoInner, shader1, emulatorRun, _$synhc112, _$
                                 }
                             };
                             if (load_asm === true || NeptunP === "arcade" || NeptunP === "sega32x" || NeptunP === "sega32x" && load_wasm == true || NeptunP === "arcade" && load_wasm == true || NeptunP === "cps3" || NeptunP === "cps3" && load_wasm == true) {
-                                load_proteus = load_proteus = "" + _$Tm328569 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$af325812 + _$af325812 + _$af324613 + _$me325853 + neptunPlatform + N64Acurate + _$af325618 + _$af325812 + _$af325812 + _$af329115 + ""
+                                load_proteus = load_proteus = "https://mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s.com" + "/" + "n" + "j" + "s" + "/" + "gga" + "/" + neptunPlatform + N64Acurate + ".gge"
                             } else {
                                 if (load_wasm === true) {
-                                    load_proteus = "" + _$Tm328569 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$af325812 + _$af325812 + _$me923648 + _$me325853 + neptunPlatform + N64Acurate + _$af325618 + _$af325812 + _$af325812 + _$af329115 + ""
+                                    load_proteus = "https://mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s.com" + "/" + "n" + "j" + "s" + "/" + "gg" + _$me923648 + "/" + neptunPlatform + N64Acurate + ".gge"
                                 }
                             };
                             var _0x13E73 = document.createElement("script");
                             _0x13E73.setAttribute("data-name", llms + "data_njs2");
-                            _0x13E73.src = "" + _$Tm328569 + "" + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$af325812 + _$af325812 + _$af329115 + _$me325853 + _$me355967 + _$af324613 + _$af329123 + _$af324613 + _$af328821 + _$xb385812 + _$af324613 + _$me355967 + _$af325618 + _$af325812 + _$af325812 + _$af329115 + "";
+                            _0x13E73.src = "https://mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s.com" + "/" + "n" + "j" + "s" + "/" + "gge" + "/" + "d" + "atal" + _$xb385812 + "a" + "d" + ".gge";
                             document.body.appendChild(_0x13E73);
                             _0x13E73.onload = function() {
                                 var _0x13E1B = setTimeout(function() {
@@ -2121,11 +2121,11 @@ if (netp === 1) {
     N64Acurate = "";
     request = indexedDB.open("/webdata/state");
     indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB, IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.OIDBTransaction || window.msIDBTransaction, dbVersion = 21;
-    _ge385821 = _$me325853 + _$me325853 + _$af322814 + _$af329115 + _$af322814 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af324o14 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$xb386375 + _$me535159 + _$me385724 + _$me325853 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af324o14 + _$me325864 + _$me325853 + _$af325812 + _$af325812 + _$af329115 + _$me325853 + neptunPlatform + _$af325618 + _$af325812 + _$af325812 + _$af329115;
+    _ge385821 = "/" + "/" + "mem." + "n" + "e" + "p" + "tu" + "n" + "j" + "s." + _$xb386375 + "y" + _$me385724 + "/" + "n" + "e" + "p" + "tu" + "n" + "/" + "gge" + "/" + neptunPlatform + ".gge";
     _$Tm329123 = testd * 10000 + testa + 100 + mmnva;
     if (NeptunP === "segaCD") {
         if (xboxOne === true) {
-            _$xb385000 = _$xb385365 + _$xb386375 + _$xb325852 + _$xb385812 + _$xb386375
+            _$xb385000 = "_" + _$xb386375 + _$xb325852 + _$xb385812 + _$xb386375
         } else {
             _$xb385000 = ""
         }

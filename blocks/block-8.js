@@ -390,18 +390,18 @@ var controllers, jsonP1, jsonP2, jsonP3, jsonP4, xboxMode, focusElement, button1
       };
       if (localStorage.getItem("" + NeptunP + "_NJScontrollers") === null || resetControll === 1) {
           if (xboxMode === true) {
-              Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "xbox_p1.json", function(_BIGARRAY) {
+              Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "xbox_p1.json", function(_BIGARRAY) {
                   jsonP1 = _BIGARRAY;
                   controllers = jsonP1
               })
           } else {
               if (NepEmu === "n64") {
-                  Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "n64_p1.json", function(_BIGARRAY) {
+                  Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "n64_p1.json", function(_BIGARRAY) {
                       jsonP1 = _BIGARRAY;
                       controllers = jsonP1
                   })
               } else {
-                  Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "P1.json", function(_BIGARRAY) {
+                  Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "P1.json", function(_BIGARRAY) {
                       jsonP1 = _BIGARRAY;
                       controllers = jsonP1
                   })
@@ -419,18 +419,18 @@ var controllers, jsonP1, jsonP2, jsonP3, jsonP4, xboxMode, focusElement, button1
       if (localStorage.getItem("" + romTitle + "_" + NeptunP + "_NJScontrollers") === null) {
           if (localStorage.getItem("" + NeptunP + "_NJScontrollers") === null || resetControll === 1) {
               if (xboxMode === true) {
-                  Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "xbox_p1.json", function(_BIGARRAY) {
+                  Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "xbox_p1.json", function(_BIGARRAY) {
                       jsonP1 = _BIGARRAY;
                       controllers = jsonP1
                   })
               } else {
                   if (NepEmu === "n64") {
-                      Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "n64_p1.json", function(_BIGARRAY) {
+                      Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "n64_p1.json", function(_BIGARRAY) {
                           jsonP1 = _BIGARRAY;
                           controllers = jsonP1
                       })
                   } else {
-                      Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "P1.json", function(_BIGARRAY) {
+                      Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "P1.json", function(_BIGARRAY) {
                           jsonP1 = _BIGARRAY;
                           controllers = jsonP1
                       })
@@ -1700,18 +1700,18 @@ var controllers, jsonP1, jsonP2, jsonP3, jsonP4, xboxMode, focusElement, button1
           xboxMode = false
       };
       if (xboxMode === true) {
-          Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "xbox_p1.json", _0x13E1B)
+          Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "xbox_p1.json", _0x13E1B)
       } else {
           if (NepEmu === "n64") {
-              Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "n64_p1.json", _0x13E47);
-              Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "n64_p2.json", _0x13E73);
-              Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "n64_p3.json", _0x13E9F);
-              Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "n64_p4.json", _0x13ECB)
+              Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "n64_p1.json", _0x13E47);
+              Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "n64_p2.json", _0x13E73);
+              Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "n64_p3.json", _0x13E9F);
+              Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "n64_p4.json", _0x13ECB)
           } else {
-              Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "P1.json", _0x13EF7);
-              Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "P2.json", _0x13F23);
-              Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "P3.json", _0x13F4F);
-              Neptq.getJSON("" + _$me325853 + _$me325853 + _$Tm4455687 + _$af325618 + _$me325864 + _$af329115 + _$me345994 + _$af329123 + _$af322519 + _$me325864 + _$me873848 + _$af340820 + _$af325618 + _$Tm489541 + _$me325853 + _$me325864 + _$me873848 + _$af340820 + _$me325853 + _$me873848 + _$af340820 + _$xb385812 + _$me325864 + _$me325853 + "P4.json", _0x13F7B)
+              Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "P1.json", _0x13EF7);
+              Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "P2.json", _0x13F23);
+              Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "P3.json", _0x13F4F);
+              Neptq.getJSON("" + "/" + "/" + "mem" + "." + "n" + "e" + "p" + "t" + "u" + "n" + _$me873848 + "s" + "." + "com" + "/" + "n" + _$me873848 + "s" + "/" + _$me873848 + "s" + _$xb385812 + "n" + "/" + "P4.json", _0x13F7B)
           }
       };
       focusElement = Neptq("#" + NCSS + "Neptun");
