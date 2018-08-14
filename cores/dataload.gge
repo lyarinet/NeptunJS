@@ -2618,6 +2618,7 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
     console.log("sdwwq is null");
   }
   if (sdwwq === null || vcvbb === null) {
+      console.log("Got into the null check that overwrites script");
       load_wasm = false;
       if (remlink === null) {} else {
           remlink.parentNode.removeChild(remlink)
