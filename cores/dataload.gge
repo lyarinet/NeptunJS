@@ -2614,6 +2614,9 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
       sdwwq = 1
   };
   console.log("sdwwq == " + sdwwq);
+  if (sdwwq === null) {
+    console.log("sdwwq is null");
+  }
   if (sdwwq === null || vcvbb === null) {
       load_wasm = false;
       if (remlink === null) {} else {
