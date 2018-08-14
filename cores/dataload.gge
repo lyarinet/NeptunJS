@@ -339,10 +339,10 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
           };
           if (NeptunP === "tg16CD" || NeptunP === "segaCD" || NeptunP === "lynx" || NeptunP === "psx" || NeptunP === "msx" || NeptunP === "sega_saturn" || NeptunP === "3do" || NeptunP === "nes" || NeptunP === "gba") {
               var _0x10545 = "Build/" + neptunPlatform + ".ggd";
-              var _0x10620 = "" + _$Tm328569 + "" + _$Tm4455687 + ".neptunjs." + _$Tm489541 + "/njs/ggd/" + neptunPlatform + ".ggd"
+              var _0x10620 = "" + _$Tm328569 + "mem.neptunjs." + _$Tm489541 + "/njs/ggd/" + neptunPlatform + ".ggd"
           } else {
               var _0x10545 = "Build/data.data";
-              var _0x10620 = "" + _$Tm328569 + "" + _$Tm4455687 + ".neptunjs." + _$Tm489541 + "/njs/ggd/data.ggd"
+              var _0x10620 = "" + _$Tm328569 + "mem.neptunjs." + _$Tm489541 + "/njs/ggd/data.ggd"
           };
           if (typeof Neptune.locateFilePackage === "function" && !Neptune.locateFile) {
               Neptune.locateFile = Neptune.locateFilePackage;
@@ -2586,7 +2586,7 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
   as3 = fomain[fomain.length - 4] + "";
   as4 = gfomain[gfomain.length - 3] + "";
   as5 = gfomain[gfomain.length - 4] + "";
-  if (as2 === "" + _$Tm4455687 + ".neptunjs.com" || as2 === "" + _$Tm4455687 + ".neptunjs.xyz" || as3 === "" + _$Tm4455687 + ".neptunjs.xyz" || as4 === "" + _$Tm4455687 + ".neptunjs.com" || as4 === "" + _$Tm4455687 + ".neptunjs.xyz" || as5 === "" + _$Tm4455687 + ".neptunjs.xyz") {
+  if (as2 === "mem.neptunjs.com" || as2 === "mem.neptunjs.xyz" || as3 === "mem.neptunjs.xyz" || as4 === "mem.neptunjs.com" || as4 === "mem.neptunjs.xyz" || as5 === "mem.neptunjs.xyz") {
       vcvbb = 1
   } else {};
   sdwwq = "";
@@ -2634,11 +2634,11 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
       if (load_asm == true || NeptunP === "arcade" && load_asm == true || NeptunP === "arcade" && load_wasm == true || NeptunP === "cps3" || NeptunP === "cps3" && load_wasm == true) {
           Neptune.readAsync = _0x104B3;
           memoryInitializer = null;
-          memoryInitializer = "" + _$Tm328569 + "" + _$Tm4455687 + ".neptunjs." + _$Tm489541 + "/njs/ggm/" + neptunPlatform + N64Acurate + ".ggm";
+          memoryInitializer = "" + _$Tm328569 + "mem.neptunjs." + _$Tm489541 + "/njs/ggm/" + neptunPlatform + N64Acurate + ".ggm";
       } else {
           if (load_wasm == true) {
               wasmTextFile = Neptune.wasmTextFile || "" + neptunPlatform + ".wast";
-              wasmBinaryFile = Neptune.wasmBinaryFile || "" + _$Tm328569 + "" + _$Tm4455687 + ".neptunjs." + _$Tm489541 + "/njs/ggwas/" + neptunPlatform + N64Acurate + ".ggm";
+              wasmBinaryFile = Neptune.wasmBinaryFile || "" + _$Tm328569 + "mem.neptunjs." + _$Tm489541 + "/njs/ggwas/" + neptunPlatform + N64Acurate + ".ggm";
           } else {
               if (NeptunP === "sega32x") {}
           }
