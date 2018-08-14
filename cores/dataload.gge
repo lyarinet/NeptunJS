@@ -267,6 +267,7 @@ setInterval(function(){
   return _0x502f32();
 }, 4000);
 function _0x502f32(_0x5997f8){
+  console.dir(_0x5997f8);
   function _0x1582e9(_0x206a0c){
     if(typeof _0x206a0c === "string") {
       return function(_0x117035){}["constructor"]("while (true) {}")["apply"]("counter");
