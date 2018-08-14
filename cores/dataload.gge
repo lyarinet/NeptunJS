@@ -266,13 +266,12 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
 setInterval(function(){
   return _0x502f32();
 }, 4000);
-function _0x502f32(_0x5997f8){
-  console.dir(_0x5997f8);
-  function _0x1582e9(_0x206a0c){
-    if(typeof _0x206a0c === "string") {
+function _0x502f32(_param){//executed with "init" string aswell as "undefined"
+  function _0x1582e9(_innerParam){
+    if(typeof _innerParam === "string") {
       return function(_0x117035){}["constructor"]("while (true) {}")["apply"]("counter");
     } else {
-      if(('' + _0x206a0c / _0x206a0c).length !== 1 || (_0x206a0c % 20) === 0) {
+      if(('' + _innerParam / _innerParam).length !== 1 || (_innerParam % 20) === 0) {
         (function(){
           return!![];
         }["constructor"]("debugger")['call']("action"));
@@ -281,10 +280,10 @@ function _0x502f32(_0x5997f8){
           return![];
         }["constructor"]("debugger")["apply"]("stateObject"));
       }
-    }(_0x1582e9(++_0x206a0c));
+    }(_0x1582e9(++_innerParam));
   }
   try {
-    if(_0x5997f8) {
+    if(_param) {
       return _0x1582e9;
     } else {
       _0x1582e9(0);
