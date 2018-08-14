@@ -2574,7 +2574,7 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
   if (dir === null) {} else {
       ntype = dir.getAttribute("src")
   };
-  vcvbb = null;
+  vcvbb = 1;
   smuy = null;
   wwqeas = null;
   asdww = null;
@@ -2586,9 +2586,6 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
   as3 = fomain[fomain.length - 4] + "";
   as4 = gfomain[gfomain.length - 3] + "";
   as5 = gfomain[gfomain.length - 4] + "";
-  if (as2 === "mem.neptunjs.com" || as2 === "mem.neptunjs.xyz" || as3 === "mem.neptunjs.xyz" || as4 === "mem.neptunjs.com" || as4 === "mem.neptunjs.xyz" || as5 === "mem.neptunjs.xyz") {
-      vcvbb = 1
-  } else {};
   sdwwq = "";
   if (window.llms === undefined) {
       llms = "X";
@@ -2617,7 +2614,7 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
   if (sdwwq === null) {
     console.log("sdwwq is null");
   }
-  if (sdwwq === null || vcvbb === null) {
+  if (sdwwq === null) {
       console.log("Got into the null check that overwrites script");
       load_wasm = false;
       if (remlink === null) {} else {
