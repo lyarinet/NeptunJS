@@ -2586,7 +2586,7 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
   as3 = fomain[fomain.length - 4] + "";
   as4 = gfomain[gfomain.length - 3] + "";
   as5 = gfomain[gfomain.length - 4] + "";
-  sdwwq = "";
+  sdwwq = 1;
   if (window.llms === undefined) {
       llms = "X";
       sdwwq = null
@@ -2607,56 +2607,36 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
       smls = lls[lls.length - 1] + "";
       linkLCC = assdq5564ds8s + "." + assdqssa54ds8s + "." + smls
   };
-  if (linkLCC === "neptunjs.neptunjsv2/nv2/dataload.js" || linkLCC === "neptunjs.com/njs/gge/dataload.gge" || linkLCC === "neptunjs.xyz/njs/gge/dataload.gge" || linkLCC === "neptunjs.neptunjsv2/nv2/dataload.js") {
-      sdwwq = 1
-  };
-  console.log("sdwwq == " + sdwwq);
-  if (sdwwq === null) {
-    console.log("sdwwq is null");
-  }
-  if (sdwwq === null) {
-      console.log("Got into the null check that overwrites script");
-      load_wasm = false;
-      if (remlink === null) {} else {
-          remlink.parentNode.removeChild(remlink)
-      };
-      if (scriptNJS === null) {} else {
-          scriptNJS.parentNode.removeChild(scriptNJS)
-      };
-      script = document.createElement("script");
-      script.src = "//mem.neptunjs.com/njs/njsLoader.js";
-      document.body.appendChild(script)
+  if (Neptq("#checkbox_showFPS").is(":checked")) {
+      meter.show()
   } else {
-      if (Neptq("#checkbox_showFPS").is(":checked")) {
-          meter.show()
+      meter.hide()
+  };
+  Neptq("." + NCSS + "checkbox").on("click", _0x10421);
+  if (load_asm == true || NeptunP === "arcade" && load_asm == true || NeptunP === "arcade" && load_wasm == true || NeptunP === "cps3" || NeptunP === "cps3" && load_wasm == true) {
+      Neptune.readAsync = _0x104B3;
+      memoryInitializer = null;
+      memoryInitializer = "" + _$Tm328569 + "mem.neptunjs." + _$Tm489541 + "/njs/ggm/" + neptunPlatform + N64Acurate + ".ggm";
+  } else {
+      if (load_wasm == true) {
+          wasmTextFile = Neptune.wasmTextFile || "" + neptunPlatform + ".wast";
+          wasmBinaryFile = Neptune.wasmBinaryFile || "" + _$Tm328569 + "mem.neptunjs." + _$Tm489541 + "/njs/ggwas/" + neptunPlatform + N64Acurate + ".ggm";
       } else {
-          meter.hide()
-      };
-      Neptq("." + NCSS + "checkbox").on("click", _0x10421);
-      if (load_asm == true || NeptunP === "arcade" && load_asm == true || NeptunP === "arcade" && load_wasm == true || NeptunP === "cps3" || NeptunP === "cps3" && load_wasm == true) {
-          Neptune.readAsync = _0x104B3;
-          memoryInitializer = null;
-          memoryInitializer = "" + _$Tm328569 + "mem.neptunjs." + _$Tm489541 + "/njs/ggm/" + neptunPlatform + N64Acurate + ".ggm";
-      } else {
-          if (load_wasm == true) {
-              wasmTextFile = Neptune.wasmTextFile || "" + neptunPlatform + ".wast";
-              wasmBinaryFile = Neptune.wasmBinaryFile || "" + _$Tm328569 + "mem.neptunjs." + _$Tm489541 + "/njs/ggwas/" + neptunPlatform + N64Acurate + ".ggm";
-          } else {
-              if (NeptunP === "sega32x") {}
-          }
-      };
-      if (NeptunP === "n64" || NeptunP === "sega32x") {} else {
-          if (typeof Neptune === "undefined") {
-              Neptune = {}
-          };
-          if (!Neptune.expectedDataFileDownloads) {
-              Neptune.expectedDataFileDownloads = 0;
-              Neptune.finishedDataFileDownloads = 0
-          };
-          Neptune.expectedDataFileDownloads++;
-          ((_0x105D7))()
+          if (NeptunP === "sega32x") {}
       }
-  }//END FROM INNER
+  };
+  if (NeptunP === "n64" || NeptunP === "sega32x") {} else {
+      if (typeof Neptune === "undefined") {
+          Neptune = {}
+      };
+      if (!Neptune.expectedDataFileDownloads) {
+          Neptune.expectedDataFileDownloads = 0;
+          Neptune.finishedDataFileDownloads = 0
+      };
+      Neptune.expectedDataFileDownloads++;
+      ((_0x105D7))()
+  }
+  //END FROM INNER
   return 0x15cc;
 }();
 
