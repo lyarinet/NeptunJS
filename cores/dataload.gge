@@ -2613,6 +2613,7 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
   if (linkLCC === "neptunjs.neptunjsv2/nv2/dataload.js" || linkLCC === "neptunjs.com/njs/gge/dataload.gge" || linkLCC === "neptunjs.xyz/njs/gge/dataload.gge" || linkLCC === "neptunjs.neptunjsv2/nv2/dataload.js") {
       sdwwq = 1
   };
+  console.log("sdwwq == " + sdwwq);
   if (sdwwq === null || vcvbb === null) {
       load_wasm = false;
       if (remlink === null) {} else {
