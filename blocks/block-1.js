@@ -6451,7 +6451,7 @@ var e; + function() {
         var _0x20763 = _0x20700("./utils");
         var _0x20721 = _0x20763.unique("vpaidIframe");
         var _0x20784 = _0x20700("./VPAIDAdUnit");
-        var _0x20619 = "<!DOCTYPE html>" + "<html lang=\"en\">" + "<head><meta charset=\"UTF-8\"></head>" + "<body style=\"margin:0;padding:0\"><div class=\"ad-element\"></div>" + "<script type=\"text/javascript\" src=\"{{iframeURL_JS}}\"></script>" + "<script type=\"text/javascript\">" + "window.parent.postMessage('{\"event\": \"ready\", \"id\": \"{{iframeID}}\"}', '{{origin}}');" + "</script>" + "</body>" + "</html>";
+        var _0x20619 = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"></head><body style=\"margin:0;padding:0\"><div class=\"ad-element\"></div><script type=\"text/javascript\" src=\"{{iframeURL_JS}}\"></script><script type=\"text/javascript\">window.parent.postMessage('{\"event\": \"ready\", \"id\": \"{{iframeID}}\"}', '{{origin}}');</script></body></html>";
         var _0x205F8 = "AdStopped";
     
         function _0x207A5(_0x20511, _0x20553, _0x20532, _0x20574) {
