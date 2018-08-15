@@ -1,5 +1,5 @@
 var llms, Neptune, linklock, remlink, scripts, nbmiuy, lls, ssd2123, unbvx546, script; + function() {
-  console.log("deob-rev-3");
+  console.log("deob-rev-4");
   if (window.llms === undefined) {
       llms = "X";
       Neptune = null
@@ -2204,43 +2204,43 @@ function __inet_pton6_raw(c) {
   var f, a, h;
   var d = /^((?=.*::)(?!.*::.+::)(::)?([\dA-F]{1,4}:(:|\b)|){5}|([\dA-F]{1,4}:){6})((([\dA-F]{1,4}((?!\3)::|:\b|$))|(?!\2\3)){2}|(((2[0-4]|1\d|[1-9])?\d|25[0-5])\.?\b){4})$/i;
   var b = [];
-  if (!d["\x74\x65\x73\x74"](c)) {
-      return null
-  };
-  if (c === "\x3A\x3A") {
-      return [0, 0, 0, 0, 0, 0, 0, 0]
-  };
-  if (c["\x69\x6E\x64\x65\x78\x4F\x66"]("\x3A\x3A") === 0) {
-      c = c["\x72\x65\x70\x6C\x61\x63\x65"]("\x3A\x3A", "\x5A\x3A")
-  } else {
-      c = c["\x72\x65\x70\x6C\x61\x63\x65"]("\x3A\x3A", "\x3A\x5A\x3A")
-  };
-  if (c["\x69\x6E\x64\x65\x78\x4F\x66"]("\x2E") > 0) {
-      c = c["\x72\x65\x70\x6C\x61\x63\x65"](new RegExp("\x5B\x2E\x5D", "\x67"), "\x3A");
-      g = c["split"]("\x3A");
-      g[g["\x6C\x65\x6E\x67\x74\x68"] - 4] = parseInt(g[g["\x6C\x65\x6E\x67\x74\x68"] - 4]) + parseInt(g[g["\x6C\x65\x6E\x67\x74\x68"] - 3]) * 256;
-      g[g["\x6C\x65\x6E\x67\x74\x68"] - 3] = parseInt(g[g["\x6C\x65\x6E\x67\x74\x68"] - 2]) + parseInt(g[g["\x6C\x65\x6E\x67\x74\x68"] - 1]) * 256;
-      g = g["\x73\x6C\x69\x63\x65"](0, g["\x6C\x65\x6E\x67\x74\x68"] - 2)
-  } else {
-      g = c["split"]("\x3A")
-  };
-  a = 0;
-  h = 0;
-  for (f = 0; f < g["\x6C\x65\x6E\x67\x74\x68"]; f++) {
-      if (typeof g[f] === "\x73\x74\x72\x69\x6E\x67") {
-          if (g[f] === "\x5A") {
-              for (h = 0; h < 8 - g["\x6C\x65\x6E\x67\x74\x68"] + 1; h++) {
-                  b[f + h] = 0
-              };
-              a = h - 1
-          } else {
-              b[f + a] = _htons(parseInt(g[f], 16))
-          }
-      } else {
-          b[f + a] = g[f]
-      }
-  };
-  return [b[1] << 16 | b[0], b[3] << 16 | b[2], b[5] << 16 | b[4], b[7] << 16 | b[6]]
+  if (!d["test"](c)) {
+    return null
+};
+if (c === "::") {
+    return [0, 0, 0, 0, 0, 0, 0, 0]
+};
+if (c["indexOf"]("::") === 0) {
+    c = c["replace"]("::", "Z:")
+} else {
+    c = c["replace"]("::", ":Z:")
+};
+if (c["indexOf"](".") > 0) {
+    c = c["replace"](new RegExp("[.]", "g"), ":");
+    g = c["split"](":");
+    g[g["length"] - 4] = parseInt(g[g["length"] - 4]) + parseInt(g[g["length"] - 3]) * 256;
+    g[g["length"] - 3] = parseInt(g[g["length"] - 2]) + parseInt(g[g["length"] - 1]) * 256;
+    g = g["slice"](0, g["length"] - 2)
+} else {
+    g = c["split"](":")
+};
+a = 0;
+h = 0;
+for (f = 0; f < g["length"]; f++) {
+    if (typeof g[f] === "string") {
+        if (g[f] === "Z") {
+            for (h = 0; h < 8 - g["length"] + 1; h++) {
+                b[f + h] = 0
+            };
+            a = h - 1
+        } else {
+            b[f + a] = _htons(parseInt(g[f], 16))
+        }
+    } else {
+        b[f + a] = g[f]
+    }
+};
+return [b[1] << 16 | b[0], b[3] << 16 | b[2], b[5] << 16 | b[4], b[7] << 16 | b[6]]
 }
 var DNS = {
   address_map: {
@@ -2258,27 +2258,27 @@ var DNS = {
           return c
       };
       var a;
-      if (DNS["\x61\x64\x64\x72\x65\x73\x73\x5F\x6D\x61\x70"]["\x61\x64\x64\x72\x73"][c]) {
-          a = DNS["\x61\x64\x64\x72\x65\x73\x73\x5F\x6D\x61\x70"]["\x61\x64\x64\x72\x73"][c]
-      } else {
-          var b = DNS["\x61\x64\x64\x72\x65\x73\x73\x5F\x6D\x61\x70"]["\x69\x64"]++;
-          assert(b < 65535, "\x65\x78\x63\x65\x65\x64\x65\x64\x20\x6D\x61\x78\x20\x61\x64\x64\x72\x65\x73\x73\x20\x6D\x61\x70\x70\x69\x6E\x67\x73\x20\x6F\x66\x20\x36\x35\x35\x33\x35");
-          a = "\x31\x37\x32\x2E\x32\x39\x2E" + (b & 255) + "\x2E" + (b & 65280);
-          DNS["\x61\x64\x64\x72\x65\x73\x73\x5F\x6D\x61\x70"]["\x6E\x61\x6D\x65\x73"][a] = c;
-          DNS["\x61\x64\x64\x72\x65\x73\x73\x5F\x6D\x61\x70"]["\x61\x64\x64\x72\x73"][c] = a
-      };
-      return a
-  }),
-  lookup_addr: (function(a) {
-      if (DNS["\x61\x64\x64\x72\x65\x73\x73\x5F\x6D\x61\x70"]["\x6E\x61\x6D\x65\x73"][a]) {
-          return DNS["\x61\x64\x64\x72\x65\x73\x73\x5F\x6D\x61\x70"]["\x6E\x61\x6D\x65\x73"][a]
-      };
-      return null
+      if (DNS["address_map"]["addrs"][c]) {
+        a = DNS["address_map"]["addrs"][c]
+    } else {
+        var b = DNS["address_map"]["id"]++;
+        assert(b < 65535, "exceeded max address mappings of 65535");
+        a = "172.29." + (b & 255) + "." + (b & 65280);
+        DNS["address_map"]["names"][a] = c;
+        DNS["address_map"]["addrs"][c] = a
+    };
+    return a
+}),
+lookup_addr: (function(a) {
+    if (DNS["address_map"]["names"][a]) {
+        return DNS["address_map"]["names"][a]
+    };
+    return null
   })
 };
 
 function __inet_ntop4_raw(a) {
-  return (a & 255) + "\x2E" + (a >> 8 & 255) + "\x2E" + (a >> 16 & 255) + "\x2E" + (a >> 24 & 255)
+  return (a & 255) + "." + (a >> 8 & 255) + "." + (a >> 16 & 255) + "." + (a >> 24 & 255)
 }
 
 function __inet_ntop6_raw(c) {
@@ -2297,26 +2297,26 @@ function __inet_ntop6_raw(c) {
           a = false;
           break
       }
-  };
-  if (a) {
-      j = __inet_ntop4_raw(h[6] | h[7] << 16);
-      if (h[5] === -1) {
-          i = "\x3A\x3A\x66\x66\x66\x66\x3A";
-          i += j;
-          return i
-      };
-      if (h[5] === 0) {
-          i = "\x3A\x3A";
-          if (j === "\x30\x2E\x30\x2E\x30\x2E\x30") {
-              j = ""
-          };
-          if (j === "\x30\x2E\x30\x2E\x30\x2E\x31") {
-              j = "\x31"
-          };
-          i += j;
-          return i
-      }
-  };
+    };
+    if (a) {
+        j = __inet_ntop4_raw(h[6] | h[7] << 16);
+        if (h[5] === -1) {
+            i = "::ffff:";
+            i += j;
+            return i
+        };
+        if (h[5] === 0) {
+            i = "::";
+            if (j === "0.0.0.0") {
+                j = ""
+            };
+            if (j === "0.0.0.1") {
+                j = "1"
+            };
+            i += j;
+            return i
+        }
+    };
   for (k = 0; k < 8; k++) {
       if (h[k] === 0) {
           if (k - d > 1) {
@@ -2334,16 +2334,16 @@ function __inet_ntop6_raw(c) {
       if (g > 1) {
           if (h[k] === 0 && k >= l && k < l + g) {
               if (k === l) {
-                  i += "\x3A";
+                  i += ":";
                   if (l === 0) {
-                      i += "\x3A"
+                      i += ":"
                   }
               };
               continue
           }
       };
-      i += Number(_ntohs(h[k] & 65535))["\x74\x6F\x53\x74\x72\x69\x6E\x67"](16);
-      i += k < 7 ? "\x3A" : ""
+      i += Number(_ntohs(h[k] & 65535))["toString"](16);
+      i += k < 7 ? ":" : ""
   };
   return i
 }
@@ -2368,9 +2368,9 @@ function __write_sockaddr(d, b, a, c) {
           HEAP32[d + 24 >> 2] = 0;
           break;
       default:
-          return {
-              errno: ERRNO_CODES["\x45\x41\x46\x4E\x4F\x53\x55\x50\x50\x4F\x52\x54"]
-          }
+      return {
+          errno: ERRNO_CODES["EAFNOSUPPORT"]
+      }
   };
   return {}
 }
@@ -2392,7 +2392,7 @@ function _getaddrinfo(i, m, h, j) {
       a = d === 10 ? __inet_ntop6_raw(a) : __inet_ntop4_raw(a);
       i = _malloc(j);
       h = __write_sockaddr(i, d, a, f);
-      assert(!h["\x65\x72\x72\x6E\x6F"]);
+      assert(!h["errno"]);
       b = _malloc(32);
       HEAP32[b + 4 >> 2] = d;
       HEAP32[b + 8 >> 2] = k;
@@ -2499,7 +2499,7 @@ function _getaddrinfo(i, m, h, j) {
   if (g & 4) {
       return -2
   };
-  i = DNS["\x6C\x6F\x6F\x6B\x75\x70\x5F\x6E\x61\x6D\x65"](i);
+  i = DNS["lookup_name"](i);
   a = __inet_pton4_raw(i);
   if (f === 0) {
       f = 2
@@ -2514,59 +2514,59 @@ function _getaddrinfo(i, m, h, j) {
 }
 
 function _emscripten_glStencilMaskSeparate(a, b) {
-  GLctx["\x73\x74\x65\x6E\x63\x69\x6C\x4D\x61\x73\x6B\x53\x65\x70\x61\x72\x61\x74\x65"](a, b)
+  GLctx["stencilMaskSeparate"](a, b)
 }
 
 function _emscripten_set_main_loop_timing(h, j) {
-  Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x74\x69\x6D\x69\x6E\x67\x4D\x6F\x64\x65"] = h;
-  Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x74\x69\x6D\x69\x6E\x67\x56\x61\x6C\x75\x65"] = j;
-  if (!Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x66\x75\x6E\x63"]) {
+  Browser["mainLoop"]["timingMode"] = h;
+  Browser["mainLoop"]["timingValue"] = j;
+  if (!Browser["mainLoop"]["func"]) {
       return 1
   };
   if (h == 0) {
-      Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x73\x63\x68\x65\x64\x75\x6C\x65\x72"] = function d() {
-          var a = Math["\x6D\x61\x78"](0, Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x74\x69\x63\x6B\x53\x74\x61\x72\x74\x54\x69\x6D\x65"] + j - _emscripten_get_now()) | 0;
-          setTimeout(Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x72\x75\x6E\x6E\x65\x72"], a)
+      Browser["mainLoop"]["scheduler"] = function d() {
+          var a = Math["max"](0, Browser["mainLoop"]["tickStartTime"] + j - _emscripten_get_now()) | 0;
+          setTimeout(Browser["mainLoop"]["runner"], a)
       };
-      Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x6D\x65\x74\x68\x6F\x64"] = "\x74\x69\x6D\x65\x6F\x75\x74"
+      Browser["mainLoop"]["method"] = "timeout"
   } else {
       if (h == 1) {
-          Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x73\x63\x68\x65\x64\x75\x6C\x65\x72"] = function b() {
-              Browser["\x72\x65\x71\x75\x65\x73\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x46\x72\x61\x6D\x65"](Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x72\x75\x6E\x6E\x65\x72"])
+          Browser["mainLoop"]["scheduler"] = function b() {
+              Browser["requestAnimationFrame"](Browser["mainLoop"]["runner"])
           };
-          Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x6D\x65\x74\x68\x6F\x64"] = "\x72\x41\x46"
+          Browser["mainLoop"]["method"] = "rAF"
       } else {
           if (h == 2) {
-              if (!window["\x73\x65\x74\x49\x6D\x6D\x65\x64\x69\x61\x74\x65"]) {
+              if (!window["setImmediate"]) {
                   var i = [];
-                  var g = "\x73\x65\x74\x69\x6D\x6D\x65\x64\x69\x61\x74\x65";
+                  var g = "setimmediate";
 
                   function f(a) {
-                      if (a["\x73\x6F\x75\x72\x63\x65"] === window && a["\x64\x61\x74\x61"] === g) {
-                          a["\x73\x74\x6F\x70\x50\x72\x6F\x70\x61\x67\x61\x74\x69\x6F\x6E"]();
-                          i["\x73\x68\x69\x66\x74"]()()
+                      if (a["source"] === window && a["data"] === g) {
+                          a["stopPropagation"]();
+                          i["shift"]()()
                       }
                   }
-                  window["\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72"]("\x6D\x65\x73\x73\x61\x67\x65", f, true);
-                  window["\x73\x65\x74\x49\x6D\x6D\x65\x64\x69\x61\x74\x65"] = function a(a) {
-                      i["\x70\x75\x73\x68"](a);
+                  window["addEventListener"]("message", f, true);
+                  window["setImmediate"] = function a(a) {
+                      i["push"](a);
                       if (ENVIRONMENT_IS_WORKER) {
-                          if (Neptune["\x73\x65\x74\x49\x6D\x6D\x65\x64\x69\x61\x74\x65\x73"] === undefined) {
-                              Neptune["\x73\x65\x74\x49\x6D\x6D\x65\x64\x69\x61\x74\x65\x73"] = []
+                          if (Neptune["setImmediates"] === undefined) {
+                              Neptune["setImmediates"] = []
                           };
-                          Neptune["\x73\x65\x74\x49\x6D\x6D\x65\x64\x69\x61\x74\x65\x73"]["\x70\x75\x73\x68"](a);
-                          window["\x70\x6F\x73\x74\x4D\x65\x73\x73\x61\x67\x65"]({
+                          Neptune["setImmediates"]["push"](a);
+                          window["postMessage"]({
                               target: g
                           })
                       } else {
-                          window["\x70\x6F\x73\x74\x4D\x65\x73\x73\x61\x67\x65"](g, "\x2A")
+                          window["postMessage"](g, "*")
                       }
                   }
               };
-              Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x73\x63\x68\x65\x64\x75\x6C\x65\x72"] = function c() {
-                  window["\x73\x65\x74\x49\x6D\x6D\x65\x64\x69\x61\x74\x65"](Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x72\x75\x6E\x6E\x65\x72"])
+              Browser["mainLoop"]["scheduler"] = function c() {
+                  window["setImmediate"](Browser["mainLoop"]["runner"])
               };
-              Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x6D\x65\x74\x68\x6F\x64"] = "\x69\x6D\x6D\x65\x64\x69\x61\x74\x65"
+              Browser["mainLoop"]["method"] = "immediate"
           }
       }
   };
@@ -2578,72 +2578,72 @@ function _emscripten_get_now() {
 }
 
 function _emscripten_set_main_loop(f, d, h, a, g) {
-  Neptune["\x6E\x6F\x45\x78\x69\x74\x52\x75\x6E\x74\x69\x6D\x65"] = true;
-  assert(!Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x66\x75\x6E\x63"], "\x65\x6D\x73\x63\x72\x69\x70\x74\x65\x6E\x5F\x73\x65\x74\x5F\x6D\x61\x69\x6E\x5F\x6C\x6F\x6F\x70\x3A\x20\x74\x68\x65\x72\x65\x20\x63\x61\x6E\x20\x6F\x6E\x6C\x79\x20\x62\x65\x20\x6F\x6E\x65\x20\x6D\x61\x69\x6E\x20\x6C\x6F\x6F\x70\x20\x66\x75\x6E\x63\x74\x69\x6F\x6E\x20\x61\x74\x20\x6F\x6E\x63\x65\x3A\x20\x63\x61\x6C\x6C\x20\x65\x6D\x73\x63\x72\x69\x70\x74\x65\x6E\x5F\x63\x61\x6E\x63\x65\x6C\x5F\x6D\x61\x69\x6E\x5F\x6C\x6F\x6F\x70\x20\x74\x6F\x20\x63\x61\x6E\x63\x65\x6C\x20\x74\x68\x65\x20\x70\x72\x65\x76\x69\x6F\x75\x73\x20\x6F\x6E\x65\x20\x62\x65\x66\x6F\x72\x65\x20\x73\x65\x74\x74\x69\x6E\x67\x20\x61\x20\x6E\x65\x77\x20\x6F\x6E\x65\x20\x77\x69\x74\x68\x20\x64\x69\x66\x66\x65\x72\x65\x6E\x74\x20\x70\x61\x72\x61\x6D\x65\x74\x65\x72\x73\x2E");
-  Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x66\x75\x6E\x63"] = f;
-  Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x61\x72\x67"] = a;
+  Neptune["noExitRuntime"] = true;
+  assert(!Browser["mainLoop"]["func"], "emscripten_set_main_loop: there can only be one main loop function at once: call emscripten_cancel_main_loop to cancel the previous one before setting a new one with different parameters.");
+  Browser["mainLoop"]["func"] = f;
+  Browser["mainLoop"]["arg"] = a;
   var c;
-  if (typeof a !== "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
+  if (typeof a !== "undefined") {
       c = (function() {
-          Neptune["\x64\x79\x6E\x43\x61\x6C\x6C\x5F\x76\x69"](f, a)
+          Neptune["dynCall_vi"](f, a)
       })
   } else {
       c = (function() {
-          Neptune["\x64\x79\x6E\x43\x61\x6C\x6C\x5F\x76"](f)
+          Neptune["dynCall_v"](f)
       })
   };
-  var i = Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x63\x75\x72\x72\x65\x6E\x74\x6C\x79\x52\x75\x6E\x6E\x69\x6E\x67\x4D\x61\x69\x6E\x6C\x6F\x6F\x70"];
-  Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x72\x75\x6E\x6E\x65\x72"] = function b() {
+  var i = Browser["mainLoop"]["currentlyRunningMainloop"];
+  Browser["mainLoop"]["runner"] = function b() {
       if (ABORT) {
           return
       };
-      if (Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x71\x75\x65\x75\x65"]["\x6C\x65\x6E\x67\x74\x68"] > 0) {
-          var f = Date["\x6E\x6F\x77"]();
-          var a = Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x71\x75\x65\x75\x65"]["\x73\x68\x69\x66\x74"]();
-          a["\x66\x75\x6E\x63"](a["\x61\x72\x67"]);
-          if (Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x72\x65\x6D\x61\x69\x6E\x69\x6E\x67\x42\x6C\x6F\x63\x6B\x65\x72\x73"]) {
-              var d = Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x72\x65\x6D\x61\x69\x6E\x69\x6E\x67\x42\x6C\x6F\x63\x6B\x65\x72\x73"];
-              var b = d % 1 == 0 ? d - 1 : Math["\x66\x6C\x6F\x6F\x72"](d);
-              if (a["\x63\x6F\x75\x6E\x74\x65\x64"]) {
-                  Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x72\x65\x6D\x61\x69\x6E\x69\x6E\x67\x42\x6C\x6F\x63\x6B\x65\x72\x73"] = b
+      if (Browser["mainLoop"]["queue"]["length"] > 0) {
+          var f = Date["now"]();
+          var a = Browser["mainLoop"]["queue"]["shift"]();
+          a["func"](a["arg"]);
+          if (Browser["mainLoop"]["remainingBlockers"]) {
+              var d = Browser["mainLoop"]["remainingBlockers"];
+              var b = d % 1 == 0 ? d - 1 : Math["floor"](d);
+              if (a["counted"]) {
+                  Browser["mainLoop"]["remainingBlockers"] = b
               } else {
                   b = b + 0.5;
-                  Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x72\x65\x6D\x61\x69\x6E\x69\x6E\x67\x42\x6C\x6F\x63\x6B\x65\x72\x73"] = (8 * d + b) / 9
+                  Browser["mainLoop"]["remainingBlockers"] = (8 * d + b) / 9
               }
           };
-          console["\x6C\x6F\x67"]("\x6D\x61\x69\x6E\x20\x6C\x6F\x6F\x70\x20\x62\x6C\x6F\x63\x6B\x65\x72\x20\x22" + a["\x6E\x61\x6D\x65"] + "\x22\x20\x74\x6F\x6F\x6B\x20" + (Date["\x6E\x6F\x77"]() - f) + "\x20\x6D\x73");
-          Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x75\x70\x64\x61\x74\x65\x53\x74\x61\x74\x75\x73"]();
-          if (i < Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x63\x75\x72\x72\x65\x6E\x74\x6C\x79\x52\x75\x6E\x6E\x69\x6E\x67\x4D\x61\x69\x6E\x6C\x6F\x6F\x70"]) {
+          console["log"]("main loop blocker \"" + a["name"] + "\" took " + (Date["now"]() - f) + " ms");
+          Browser["mainLoop"]["updateStatus"]();
+          if (i < Browser["mainLoop"]["currentlyRunningMainloop"]) {
               return
           };
-          setTimeout(Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x72\x75\x6E\x6E\x65\x72"], 0);
+          setTimeout(Browser["mainLoop"]["runner"], 0);
           return
       };
-      if (i < Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x63\x75\x72\x72\x65\x6E\x74\x6C\x79\x52\x75\x6E\x6E\x69\x6E\x67\x4D\x61\x69\x6E\x6C\x6F\x6F\x70"]) {
+      if (i < Browser["mainLoop"]["currentlyRunningMainloop"]) {
           return
       };
-      Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x63\x75\x72\x72\x65\x6E\x74\x46\x72\x61\x6D\x65\x4E\x75\x6D\x62\x65\x72"] = Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x63\x75\x72\x72\x65\x6E\x74\x46\x72\x61\x6D\x65\x4E\x75\x6D\x62\x65\x72"] + 1 | 0;
-      if (Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x74\x69\x6D\x69\x6E\x67\x4D\x6F\x64\x65"] == 1 && Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x74\x69\x6D\x69\x6E\x67\x56\x61\x6C\x75\x65"] > 1 && Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x63\x75\x72\x72\x65\x6E\x74\x46\x72\x61\x6D\x65\x4E\x75\x6D\x62\x65\x72"] % Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x74\x69\x6D\x69\x6E\x67\x56\x61\x6C\x75\x65"] != 0) {
-          Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x73\x63\x68\x65\x64\x75\x6C\x65\x72"]();
+      Browser["mainLoop"]["currentFrameNumber"] = Browser["mainLoop"]["currentFrameNumber"] + 1 | 0;
+      if (Browser["mainLoop"]["timingMode"] == 1 && Browser["mainLoop"]["timingValue"] > 1 && Browser["mainLoop"]["currentFrameNumber"] % Browser["mainLoop"]["timingValue"] != 0) {
+          Browser["mainLoop"]["scheduler"]();
           return
       } else {
-          if (Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x74\x69\x6D\x69\x6E\x67\x4D\x6F\x64\x65"] == 0) {
-              Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x74\x69\x63\x6B\x53\x74\x61\x72\x74\x54\x69\x6D\x65"] = _emscripten_get_now()
+          if (Browser["mainLoop"]["timingMode"] == 0) {
+              Browser["mainLoop"]["tickStartTime"] = _emscripten_get_now()
           }
       };
-      GL["\x6E\x65\x77\x52\x65\x6E\x64\x65\x72\x69\x6E\x67\x46\x72\x61\x6D\x65\x53\x74\x61\x72\x74\x65\x64"]();
-      if (Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x6D\x65\x74\x68\x6F\x64"] === "\x74\x69\x6D\x65\x6F\x75\x74" && Neptune["\x63\x74\x78"]) {
-          Neptune["\x70\x72\x69\x6E\x74\x45\x72\x72"]("\x4C\x6F\x6F\x6B\x73\x20\x6C\x69\x6B\x65\x20\x79\x6F\x75\x20\x61\x72\x65\x20\x72\x65\x6E\x64\x65\x72\x69\x6E\x67\x20\x77\x69\x74\x68\x6F\x75\x74\x20\x75\x73\x69\x6E\x67\x20\x72\x65\x71\x75\x65\x73\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x46\x72\x61\x6D\x65\x20\x66\x6F\x72\x20\x74\x68\x65\x20\x6D\x61\x69\x6E\x20\x6C\x6F\x6F\x70\x2E\x20\x59\x6F\x75\x20\x73\x68\x6F\x75\x6C\x64\x20\x75\x73\x65\x20\x30\x20\x66\x6F\x72\x20\x74\x68\x65\x20\x66\x72\x61\x6D\x65\x20\x72\x61\x74\x65\x20\x69\x6E\x20\x65\x6D\x73\x63\x72\x69\x70\x74\x65\x6E\x5F\x73\x65\x74\x5F\x6D\x61\x69\x6E\x5F\x6C\x6F\x6F\x70\x20\x69\x6E\x20\x6F\x72\x64\x65\x72\x20\x74\x6F\x20\x75\x73\x65\x20\x72\x65\x71\x75\x65\x73\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x46\x72\x61\x6D\x65\x2C\x20\x61\x73\x20\x74\x68\x61\x74\x20\x63\x61\x6E\x20\x67\x72\x65\x61\x74\x6C\x79\x20\x69\x6D\x70\x72\x6F\x76\x65\x20\x79\x6F\x75\x72\x20\x66\x72\x61\x6D\x65\x20\x72\x61\x74\x65\x73\x21");
-          Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x6D\x65\x74\x68\x6F\x64"] = ""
+      GL["newRenderingFrameStarted"]();
+      if (Browser["mainLoop"]["method"] === "timeout" && Neptune["ctx"]) {
+          Neptune["printErr"]("Looks like you are rendering without using requestAnimationFrame for the main loop. You should use 0 for the frame rate in emscripten_set_main_loop in order to use requestAnimationFrame, as that can greatly improve your frame rates!");
+          Browser["mainLoop"]["method"] = ""
       };
-      Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x72\x75\x6E\x49\x74\x65\x72"](c);
-      if (i < Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x63\x75\x72\x72\x65\x6E\x74\x6C\x79\x52\x75\x6E\x6E\x69\x6E\x67\x4D\x61\x69\x6E\x6C\x6F\x6F\x70"]) {
+      Browser["mainLoop"]["runIter"](c);
+      if (i < Browser["mainLoop"]["currentlyRunningMainloop"]) {
           return
       };
-      if (typeof SDL === "\x6F\x62\x6A\x65\x63\x74" && SDL["\x61\x75\x64\x69\x6F"] && SDL["\x61\x75\x64\x69\x6F"]["\x71\x75\x65\x75\x65\x4E\x65\x77\x41\x75\x64\x69\x6F\x44\x61\x74\x61"]) {
-          SDL["\x61\x75\x64\x69\x6F"]["\x71\x75\x65\x75\x65\x4E\x65\x77\x41\x75\x64\x69\x6F\x44\x61\x74\x61"]()
+      if (typeof SDL === "object" && SDL["audio"] && SDL["audio"]["queueNewAudioData"]) {
+          SDL["audio"]["queueNewAudioData"]()
       };
-      Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x73\x63\x68\x65\x64\x75\x6C\x65\x72"]()
+      Browser["mainLoop"]["scheduler"]()
   };
   if (!g) {
       if (RAF_FPS == true) {
@@ -2654,10 +2654,10 @@ function _emscripten_set_main_loop(f, d, h, a, g) {
       } else {
           _emscripten_set_main_loop_timing(1, 1)
       };
-      Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x73\x63\x68\x65\x64\x75\x6C\x65\x72"]()
+      Browser["mainLoop"]["scheduler"]()
   };
   if (h) {
-      throw "\x53\x69\x6D\x75\x6C\x61\x74\x65\x49\x6E\x66\x69\x6E\x69\x74\x65\x4C\x6F\x6F\x70"
+      throw "SimulateInfiniteLoop"
   }
 }
 var Browser = {
@@ -2672,32 +2672,32 @@ var Browser = {
       currentFrameNumber: 0,
       queue: [],
       pause: (function() {
-          Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x73\x63\x68\x65\x64\x75\x6C\x65\x72"] = null;
-          Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x63\x75\x72\x72\x65\x6E\x74\x6C\x79\x52\x75\x6E\x6E\x69\x6E\x67\x4D\x61\x69\x6E\x6C\x6F\x6F\x70"]++
+          Browser["mainLoop"]["scheduler"] = null;
+          Browser["mainLoop"]["currentlyRunningMainloop"]++
       }),
       resume: (function() {
-          Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x63\x75\x72\x72\x65\x6E\x74\x6C\x79\x52\x75\x6E\x6E\x69\x6E\x67\x4D\x61\x69\x6E\x6C\x6F\x6F\x70"]++;
-          var b = Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x74\x69\x6D\x69\x6E\x67\x4D\x6F\x64\x65"];
-          var c = Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x74\x69\x6D\x69\x6E\x67\x56\x61\x6C\x75\x65"];
-          var a = Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x66\x75\x6E\x63"];
-          Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x66\x75\x6E\x63"] = null;
-          _emscripten_set_main_loop(a, 0, false, Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x61\x72\x67"], true);
+          Browser["mainLoop"]["currentlyRunningMainloop"]++;
+          var b = Browser["mainLoop"]["timingMode"];
+          var c = Browser["mainLoop"]["timingValue"];
+          var a = Browser["mainLoop"]["func"];
+          Browser["mainLoop"]["func"] = null;
+          _emscripten_set_main_loop(a, 0, false, Browser["mainLoop"]["arg"], true);
           _emscripten_set_main_loop_timing(b, c);
-          Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x73\x63\x68\x65\x64\x75\x6C\x65\x72"]()
+          Browser["mainLoop"]["scheduler"]()
       }),
       updateStatus: (function() {
-          if (Neptune["\x73\x65\x74\x53\x74\x61\x74\x75\x73"]) {
-              var b = Neptune["\x73\x74\x61\x74\x75\x73\x4D\x65\x73\x73\x61\x67\x65"] || "\x50\x6C\x65\x61\x73\x65\x20\x77\x61\x69\x74\x2E\x2E\x2E";
-              var c = Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x72\x65\x6D\x61\x69\x6E\x69\x6E\x67\x42\x6C\x6F\x63\x6B\x65\x72\x73"];
-              var a = Browser["\x6D\x61\x69\x6E\x4C\x6F\x6F\x70"]["\x65\x78\x70\x65\x63\x74\x65\x64\x42\x6C\x6F\x63\x6B\x65\x72\x73"];
+          if (Neptune["setStatus"]) {
+              var b = Neptune["statusMessage"] || "Please wait...";
+              var c = Browser["mainLoop"]["remainingBlockers"];
+              var a = Browser["mainLoop"]["expectedBlockers"];
               if (c) {
                   if (c < a) {
-                      Neptune["\x73\x65\x74\x53\x74\x61\x74\x75\x73"](b + "\x20\x28" + (a - c) + "\x2F" + a + "\x29")
+                      Neptune["setStatus"](b + " (" + (a - c) + "/" + a + ")")
                   } else {
-                      Neptune["\x73\x65\x74\x53\x74\x61\x74\x75\x73"](b)
+                      Neptune["setStatus"](b)
                   }
               } else {
-                  Neptune["\x73\x65\x74\x53\x74\x61\x74\x75\x73"]("")
+                  Neptune["setStatus"]("")
               }
           }
       }),
@@ -2705,8 +2705,8 @@ var Browser = {
           if (ABORT) {
               return
           };
-          if (Neptune["\x70\x72\x65\x4D\x61\x69\x6E\x4C\x6F\x6F\x70"]) {
-              var b = Neptune["\x70\x72\x65\x4D\x61\x69\x6E\x4C\x6F\x6F\x70"]();
+          if (Neptune["preMainLoop"]) {
+              var b = Neptune["preMainLoop"]();
               if (b === false) {
                   return
               }
@@ -2717,14 +2717,14 @@ var Browser = {
               if (e instanceof ExitStatus) {
                   return
               } else {
-                  if (e && typeof e === "\x6F\x62\x6A\x65\x63\x74" && e["\x73\x74\x61\x63\x6B"]) {
-                      Neptune["\x70\x72\x69\x6E\x74\x45\x72\x72"]("\x65\x78\x63\x65\x70\x74\x69\x6F\x6E\x20\x74\x68\x72\x6F\x77\x6E\x3A\x20" + [e, e["\x73\x74\x61\x63\x6B"]])
+                  if (e && typeof e === "object" && e["stack"]) {
+                      Neptune["printErr"]("exception thrown: " + [e, e["stack"]])
                   };
                   throw e
               }
           };
-          if (Neptune["\x70\x6F\x73\x74\x4D\x61\x69\x6E\x4C\x6F\x6F\x70"]) {
-              Neptune["\x70\x6F\x73\x74\x4D\x61\x69\x6E\x4C\x6F\x6F\x70"]()
+          if (Neptune["postMainLoop"]) {
+              Neptune["postMainLoop"]()
           }
       })
   },
@@ -2733,84 +2733,84 @@ var Browser = {
   NeptuneContextCreatedCallbacks: [],
   workers: [],
   init: (function() {
-      if (!Neptune["\x70\x72\x65\x6C\x6F\x61\x64\x50\x6C\x75\x67\x69\x6E\x73"]) {
-          Neptune["\x70\x72\x65\x6C\x6F\x61\x64\x50\x6C\x75\x67\x69\x6E\x73"] = []
+      if (!Neptune["preloadPlugins"]) {
+          Neptune["preloadPlugins"] = []
       };
-      if (Browser["\x69\x6E\x69\x74\x74\x65\x64"]) {
+      if (Browser["initted"]) {
           return
       };
-      Browser["\x69\x6E\x69\x74\x74\x65\x64"] = true;
+      Browser["initted"] = true;
       try {
           new Blob;
-          Browser["\x68\x61\x73\x42\x6C\x6F\x62\x43\x6F\x6E\x73\x74\x72\x75\x63\x74\x6F\x72"] = true
+          Browser["hasBlobConstructor"] = true
       } catch (e) {
-          Browser["\x68\x61\x73\x42\x6C\x6F\x62\x43\x6F\x6E\x73\x74\x72\x75\x63\x74\x6F\x72"] = false;
-          console["\x6C\x6F\x67"]("\x77\x61\x72\x6E\x69\x6E\x67\x3A\x20\x6E\x6F\x20\x62\x6C\x6F\x62\x20\x63\x6F\x6E\x73\x74\x72\x75\x63\x74\x6F\x72\x2C\x20\x63\x61\x6E\x6E\x6F\x74\x20\x63\x72\x65\x61\x74\x65\x20\x62\x6C\x6F\x62\x73\x20\x77\x69\x74\x68\x20\x6D\x69\x6D\x65\x74\x79\x70\x65\x73")
+          Browser["hasBlobConstructor"] = false;
+          console["log"]("warning: no blob constructor, cannot create blobs with mimetypes")
       };
-      Browser["\x42\x6C\x6F\x62\x42\x75\x69\x6C\x64\x65\x72"] = typeof MozBlobBuilder != "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64" ? MozBlobBuilder : typeof WebKitBlobBuilder != "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64" ? WebKitBlobBuilder : !Browser["\x68\x61\x73\x42\x6C\x6F\x62\x43\x6F\x6E\x73\x74\x72\x75\x63\x74\x6F\x72"] ? console["\x6C\x6F\x67"]("\x77\x61\x72\x6E\x69\x6E\x67\x3A\x20\x6E\x6F\x20\x42\x6C\x6F\x62\x42\x75\x69\x6C\x64\x65\x72") : null;
-      Browser["\x55\x52\x4C\x4F\x62\x6A\x65\x63\x74"] = typeof window != "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64" ? window["\x55\x52\x4C"] ? window["\x55\x52\x4C"] : window["\x77\x65\x62\x6B\x69\x74\x55\x52\x4C"] : undefined;
-      if (!Neptune["\x6E\x6F\x49\x6D\x61\x67\x65\x44\x65\x63\x6F\x64\x69\x6E\x67"] && typeof Browser["\x55\x52\x4C\x4F\x62\x6A\x65\x63\x74"] === "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
-          console["\x6C\x6F\x67"]("\x77\x61\x72\x6E\x69\x6E\x67\x3A\x20\x42\x72\x6F\x77\x73\x65\x72\x20\x64\x6F\x65\x73\x20\x6E\x6F\x74\x20\x73\x75\x70\x70\x6F\x72\x74\x20\x63\x72\x65\x61\x74\x69\x6E\x67\x20\x6F\x62\x6A\x65\x63\x74\x20\x55\x52\x4C\x73\x2E\x20\x42\x75\x69\x6C\x74\x2D\x69\x6E\x20\x62\x72\x6F\x77\x73\x65\x72\x20\x69\x6D\x61\x67\x65\x20\x64\x65\x63\x6F\x64\x69\x6E\x67\x20\x77\x69\x6C\x6C\x20\x6E\x6F\x74\x20\x62\x65\x20\x61\x76\x61\x69\x6C\x61\x62\x6C\x65\x2E");
-          Neptune["\x6E\x6F\x49\x6D\x61\x67\x65\x44\x65\x63\x6F\x64\x69\x6E\x67"] = true
+      Browser["BlobBuilder"] = typeof MozBlobBuilder != "undefined" ? MozBlobBuilder : typeof WebKitBlobBuilder != "undefined" ? WebKitBlobBuilder : !Browser["hasBlobConstructor"] ? console["log"]("warning: no BlobBuilder") : null;
+      Browser["URLObject"] = typeof window != "undefined" ? window["URL"] ? window["URL"] : window["webkitURL"] : undefined;
+      if (!Neptune["noImageDecoding"] && typeof Browser["URLObject"] === "undefined") {
+          console["log"]("warning: Browser does not support creating object URLs. Built-in browser image decoding will not be available.");
+          Neptune["noImageDecoding"] = true
       };
       var f = {};
-      f["\x63\x61\x6E\x48\x61\x6E\x64\x6C\x65"] = function g(a) {
-          return !Neptune["\x6E\x6F\x49\x6D\x61\x67\x65\x44\x65\x63\x6F\x64\x69\x6E\x67"] && /\.(jpg|jpeg|png|bmp)$/i ["\x74\x65\x73\x74"](a)
+      f["canHandle"] = function g(a) {
+          return !Neptune["noImageDecoding"] && /\.(jpg|jpeg|png|bmp)$/i ["test"](a)
       };
-      f["\x68\x61\x6E\x64\x6C\x65"] = function h(c, h, j, i) {
+      f["handle"] = function h(c, h, j, i) {
           var a = null;
-          if (Browser["\x68\x61\x73\x42\x6C\x6F\x62\x43\x6F\x6E\x73\x74\x72\x75\x63\x74\x6F\x72"]) {
+          if (Browser["hasBlobConstructor"]) {
               try {
                   a = new Blob([c], {
-                      type: Browser["\x67\x65\x74\x4D\x69\x6D\x65\x74\x79\x70\x65"](h)
+                      type: Browser["getMimetype"](h)
                   });
-                  if (a["\x73\x69\x7A\x65"] !== c["\x6C\x65\x6E\x67\x74\x68"]) {
-                      a = new Blob([(new Uint8Array(c))["\x62\x75\x66\x66\x65\x72"]], {
-                          type: Browser["\x67\x65\x74\x4D\x69\x6D\x65\x74\x79\x70\x65"](h)
+                  if (a["size"] !== c["length"]) {
+                      a = new Blob([(new Uint8Array(c))["buffer"]], {
+                          type: Browser["getMimetype"](h)
                       })
                   }
               } catch (e) {
-                  Runtime["\x77\x61\x72\x6E\x4F\x6E\x63\x65"]("\x42\x6C\x6F\x62\x20\x63\x6F\x6E\x73\x74\x72\x75\x63\x74\x6F\x72\x20\x70\x72\x65\x73\x65\x6E\x74\x20\x62\x75\x74\x20\x66\x61\x69\x6C\x73\x3A\x20" + e + "\x3B\x20\x66\x61\x6C\x6C\x69\x6E\x67\x20\x62\x61\x63\x6B\x20\x74\x6F\x20\x62\x6C\x6F\x62\x20\x62\x75\x69\x6C\x64\x65\x72")
+                  Runtime["warnOnce"]("Blob constructor present but fails: " + e + "; falling back to blob builder")
               }
           };
           if (!a) {
-              var b = new Browser["\x42\x6C\x6F\x62\x42\x75\x69\x6C\x64\x65\x72"];
-              b["\x61\x70\x70\x65\x6E\x64"]((new Uint8Array(c))["\x62\x75\x66\x66\x65\x72"]);
-              a = b["\x67\x65\x74\x42\x6C\x6F\x62"]()
+              var b = new Browser["BlobBuilder"];
+              b["append"]((new Uint8Array(c))["buffer"]);
+              a = b["getBlob"]()
           };
-          var k = Browser["\x55\x52\x4C\x4F\x62\x6A\x65\x63\x74"]["\x63\x72\x65\x61\x74\x65\x4F\x62\x6A\x65\x63\x74\x55\x52\x4C"](a);
+          var k = Browser["URLObject"]["createObjectURL"](a);
           var d = new Image;
-          d["\x6F\x6E\x6C\x6F\x61\x64"] = function g() {
-              assert(d["\x63\x6F\x6D\x70\x6C\x65\x74\x65"], "\x49\x6D\x61\x67\x65\x20" + h + "\x20\x63\x6F\x75\x6C\x64\x20\x6E\x6F\x74\x20\x62\x65\x20\x64\x65\x63\x6F\x64\x65\x64");
-              var a = document["\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74"]("\x63\x61\x6E\x76\x61\x73");
-              a["\x77\x69\x64\x74\x68"] = d["\x77\x69\x64\x74\x68"];
-              a["\x68\x65\x69\x67\x68\x74"] = d["\x68\x65\x69\x67\x68\x74"];
-              var b = a["\x67\x65\x74\x43\x6F\x6E\x74\x65\x78\x74"]("\x32\x64");
-              b["\x64\x72\x61\x77\x49\x6D\x61\x67\x65"](d, 0, 0);
-              Neptune["\x70\x72\x65\x6C\x6F\x61\x64\x65\x64\x49\x6D\x61\x67\x65\x73"][h] = a;
-              Browser["\x55\x52\x4C\x4F\x62\x6A\x65\x63\x74"]["\x72\x65\x76\x6F\x6B\x65\x4F\x62\x6A\x65\x63\x74\x55\x52\x4C"](k);
+          d["onload"] = function g() {
+              assert(d["complete"], "Image " + h + " could not be decoded");
+              var a = document["createElement"]("canvas");
+              a["width"] = d["width"];
+              a["height"] = d["height"];
+              var b = a["getContext"]("2d");
+              b["drawImage"](d, 0, 0);
+              Neptune["preloadedImages"][h] = a;
+              Browser["URLObject"]["revokeObjectURL"](k);
               if (j) {
                   j(c)
               }
           };
-          d["\x6F\x6E\x65\x72\x72\x6F\x72"] = function f(a) {
-              console["\x6C\x6F\x67"]("\x49\x6D\x61\x67\x65\x20" + k + "\x20\x63\x6F\x75\x6C\x64\x20\x6E\x6F\x74\x20\x62\x65\x20\x64\x65\x63\x6F\x64\x65\x64");
+          d["onerror"] = function f(a) {
+              console["log"]("Image " + k + " could not be decoded");
               if (i) {
                   i()
               }
           };
-          d["\x73\x72\x63"] = k
+          d["src"] = k
       };
-      Neptune["\x70\x72\x65\x6C\x6F\x61\x64\x50\x6C\x75\x67\x69\x6E\x73"]["\x70\x75\x73\x68"](f);
+      Neptune["preloadPlugins"]["push"](f);
       var a = {};
-      a["\x63\x61\x6E\x48\x61\x6E\x64\x6C\x65"] = function b(a) {
-          return !Neptune["\x6E\x6F\x41\x75\x64\x69\x6F\x44\x65\x63\x6F\x64\x69\x6E\x67"] && a["\x73\x75\x62\x73\x74\x72"](-4) in {
-              "\x2E\x6F\x67\x67": 1,
-              "\x2E\x77\x61\x76": 1,
-              "\x2E\x6D\x70\x33": 1
+      a["canHandle"] = function b(a) {
+          return !Neptune["noAudioDecoding"] && a["substr"](-4) in {
+              ".ogg": 1,
+              ".wav": 1,
+              ".mp3": 1
           }
       };
-      a["\x68\x61\x6E\x64\x6C\x65"] = function c(d, i, k, j) {
+      a["handle"] = function c(d, i, k, j) {
           var f = false;
 
           function h(a) {
@@ -2818,7 +2818,7 @@ var Browser = {
                   return
               };
               f = true;
-              Neptune["\x70\x72\x65\x6C\x6F\x61\x64\x65\x64\x41\x75\x64\x69\x6F\x73"][i] = a;
+              Neptune["preloadedAudios"][i] = a;
               if (k) {
                   k(d)
               }
@@ -2829,37 +2829,37 @@ var Browser = {
                   return
               };
               f = true;
-              Neptune["\x70\x72\x65\x6C\x6F\x61\x64\x65\x64\x41\x75\x64\x69\x6F\x73"][i] = new Audio;
+              Neptune["preloadedAudios"][i] = new Audio;
               if (j) {
                   j()
               }
           }
-          if (Browser["\x68\x61\x73\x42\x6C\x6F\x62\x43\x6F\x6E\x73\x74\x72\x75\x63\x74\x6F\x72"]) {
+          if (Browser["hasBlobConstructor"]) {
               try {
                   var c = new Blob([d], {
-                      type: Browser["\x67\x65\x74\x4D\x69\x6D\x65\x74\x79\x70\x65"](i)
+                      type: Browser["getMimetype"](i)
                   })
               } catch (e) {
                   return g()
               };
-              var l = Browser["\x55\x52\x4C\x4F\x62\x6A\x65\x63\x74"]["\x63\x72\x65\x61\x74\x65\x4F\x62\x6A\x65\x63\x74\x55\x52\x4C"](c);
+              var l = Browser["URLObject"]["createObjectURL"](c);
               var a = new Audio;
-              a["\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72"]("\x63\x61\x6E\x70\x6C\x61\x79\x74\x68\x72\x6F\x75\x67\x68", (function() {
+              a["addEventListener"]("canplaythrough", (function() {
                   h(a)
               }), false);
-              a["\x6F\x6E\x65\x72\x72\x6F\x72"] = function b(c) {
+              a["onerror"] = function b(c) {
                   if (f) {
                       return
                   };
-                  console["\x6C\x6F\x67"]("\x77\x61\x72\x6E\x69\x6E\x67\x3A\x20\x62\x72\x6F\x77\x73\x65\x72\x20\x63\x6F\x75\x6C\x64\x20\x6E\x6F\x74\x20\x66\x75\x6C\x6C\x79\x20\x64\x65\x63\x6F\x64\x65\x20\x61\x75\x64\x69\x6F\x20" + i + "\x2C\x20\x74\x72\x79\x69\x6E\x67\x20\x73\x6C\x6F\x77\x65\x72\x20\x62\x61\x73\x65\x36\x34\x20\x61\x70\x70\x72\x6F\x61\x63\x68");
+                  console["log"]("warning: browser could not fully decode audio " + i + ", trying slower base64 approach");
 
                   function b(c) {
-                      var a = "\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4A\x4B\x4C\x4D\x4E\x4F\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5A\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6A\x6B\x6C\x6D\x6E\x6F\x70\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7A\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x2B\x2F";
-                      var h = "\x3D";
+                      var a = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+                      var h = "=";
                       var i = "";
                       var g = 0;
                       var f = 0;
-                      for (var d = 0; d < c["\x6C\x65\x6E\x67\x74\x68"]; d++) {
+                      for (var d = 0; d < c["length"]; d++) {
                           g = g << 8 | c[d];
                           f += 8;
                           while (f >= 6) {
@@ -2879,44 +2879,44 @@ var Browser = {
                       };
                       return i
                   }
-                  a["\x73\x72\x63"] = "\x64\x61\x74\x61\x3A\x61\x75\x64\x69\x6F\x2F\x78\x2D" + i["\x73\x75\x62\x73\x74\x72"](-3) + "\x3B\x62\x61\x73\x65\x36\x34\x2C" + b(d);
+                  a["src"] = "data:audio/x-" + i["substr"](-3) + ";base64," + b(d);
                   h(a)
               };
-              a["\x73\x72\x63"] = l;
-              Browser["\x73\x61\x66\x65\x53\x65\x74\x54\x69\x6D\x65\x6F\x75\x74"]((function() {
+              a["src"] = l;
+              Browser["safeSetTimeout"]((function() {
                   h(a)
               }), 1e4)
           } else {
               return g()
           }
       };
-      Neptune["\x70\x72\x65\x6C\x6F\x61\x64\x50\x6C\x75\x67\x69\x6E\x73"]["\x70\x75\x73\x68"](a);
+      Neptune["preloadPlugins"]["push"](a);
 
       function i() {
-          Browser["\x70\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"] = document["\x70\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B\x45\x6C\x65\x6D\x65\x6E\x74"] === Neptune["\x63\x61\x6E\x76\x61\x73"] || document["\x6D\x6F\x7A\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B\x45\x6C\x65\x6D\x65\x6E\x74"] === Neptune["\x63\x61\x6E\x76\x61\x73"] || document["\x77\x65\x62\x6B\x69\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B\x45\x6C\x65\x6D\x65\x6E\x74"] === Neptune["\x63\x61\x6E\x76\x61\x73"] || document["\x6D\x73\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B\x45\x6C\x65\x6D\x65\x6E\x74"] === Neptune["\x63\x61\x6E\x76\x61\x73"]
+          Browser["pointerLock"] = document["pointerLockElement"] === Neptune["canvas"] || document["mozPointerLockElement"] === Neptune["canvas"] || document["webkitPointerLockElement"] === Neptune["canvas"] || document["msPointerLockElement"] === Neptune["canvas"]
       }
-      var d = Neptune["\x63\x61\x6E\x76\x61\x73"];
+      var d = Neptune["canvas"];
       if (d) {
-          d["\x72\x65\x71\x75\x65\x73\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"] = d["\x72\x65\x71\x75\x65\x73\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"] || d["\x6D\x6F\x7A\x52\x65\x71\x75\x65\x73\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"] || d["\x77\x65\x62\x6B\x69\x74\x52\x65\x71\x75\x65\x73\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"] || d["\x6D\x73\x52\x65\x71\x75\x65\x73\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"] || (function() {});
-          d["\x65\x78\x69\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"] = document["\x65\x78\x69\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"] || document["\x6D\x6F\x7A\x45\x78\x69\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"] || document["\x77\x65\x62\x6B\x69\x74\x45\x78\x69\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"] || document["\x6D\x73\x45\x78\x69\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"] || (function() {});
-          d["\x65\x78\x69\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"] = d["\x65\x78\x69\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"]["\x62\x69\x6E\x64"](document);
-          document["\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72"]("\x70\x6F\x69\x6E\x74\x65\x72\x6C\x6F\x63\x6B\x63\x68\x61\x6E\x67\x65", i, false);
-          document["\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72"]("\x6D\x6F\x7A\x70\x6F\x69\x6E\x74\x65\x72\x6C\x6F\x63\x6B\x63\x68\x61\x6E\x67\x65", i, false);
-          document["\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72"]("\x77\x65\x62\x6B\x69\x74\x70\x6F\x69\x6E\x74\x65\x72\x6C\x6F\x63\x6B\x63\x68\x61\x6E\x67\x65", i, false);
-          document["\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72"]("\x6D\x73\x70\x6F\x69\x6E\x74\x65\x72\x6C\x6F\x63\x6B\x63\x68\x61\x6E\x67\x65", i, false);
-          if (Neptune["\x65\x6C\x65\x6D\x65\x6E\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"]) {
-              d["\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72"]("\x63\x6C\x69\x63\x6B", (function(a) {
-                  if (!Browser["\x70\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"] && Neptune["\x63\x61\x6E\x76\x61\x73"]["\x72\x65\x71\x75\x65\x73\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"]) {
-                      Neptune["\x63\x61\x6E\x76\x61\x73"]["\x72\x65\x71\x75\x65\x73\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"]();
-                      a["\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74"]()
+          d["requestPointerLock"] = d["requestPointerLock"] || d["mozRequestPointerLock"] || d["webkitRequestPointerLock"] || d["msRequestPointerLock"] || (function() {});
+          d["exitPointerLock"] = document["exitPointerLock"] || document["mozExitPointerLock"] || document["webkitExitPointerLock"] || document["msExitPointerLock"] || (function() {});
+          d["exitPointerLock"] = d["exitPointerLock"]["bind"](document);
+          document["addEventListener"]("pointerlockchange", i, false);
+          document["addEventListener"]("mozpointerlockchange", i, false);
+          document["addEventListener"]("webkitpointerlockchange", i, false);
+          document["addEventListener"]("mspointerlockchange", i, false);
+          if (Neptune["elementPointerLock"]) {
+              d["addEventListener"]("click", (function(a) {
+                  if (!Browser["pointerLock"] && Neptune["canvas"]["requestPointerLock"]) {
+                      Neptune["canvas"]["requestPointerLock"]();
+                      a["preventDefault"]()
                   }
               }), false)
           }
       }
   }),
   createContext: (function(b, h, g, i) {
-      if (h && Neptune["\x63\x74\x78"] && b == Neptune["\x63\x61\x6E\x76\x61\x73"]) {
-          return Neptune["\x63\x74\x78"]
+      if (h && Neptune["ctx"] && b == Neptune["canvas"]) {
+          return Neptune["ctx"]
       };
       var f;
       var d;
@@ -2930,29 +2930,29 @@ var Browser = {
                   c[a] = i[a]
               }
           };
-          d = GL["\x63\x72\x65\x61\x74\x65\x43\x6F\x6E\x74\x65\x78\x74"](b, c);
+          d = GL["createContext"](b, c);
           if (d) {
-              f = GL["\x67\x65\x74\x43\x6F\x6E\x74\x65\x78\x74"](d)["\x47\x4C\x63\x74\x78"]
+              f = GL["getContext"](d)["GLctx"]
           }
       } else {
-          f = b["\x67\x65\x74\x43\x6F\x6E\x74\x65\x78\x74"]("\x32\x64")
+          f = b["getContext"]("2d")
       };
       if (!f) {
           return null
       };
       if (g) {
           if (!h) {
-              assert(typeof GLctx === "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64", "\x63\x61\x6E\x6E\x6F\x74\x20\x73\x65\x74\x20\x69\x6E\x20\x4E\x65\x70\x74\x75\x6E\x65\x20\x69\x66\x20\x47\x4C\x63\x74\x78\x20\x69\x73\x20\x75\x73\x65\x64\x2C\x20\x62\x75\x74\x20\x77\x65\x20\x61\x72\x65\x20\x61\x20\x6E\x6F\x6E\x2D\x47\x4C\x20\x63\x6F\x6E\x74\x65\x78\x74\x20\x74\x68\x61\x74\x20\x77\x6F\x75\x6C\x64\x20\x72\x65\x70\x6C\x61\x63\x65\x20\x69\x74")
+              assert(typeof GLctx === "undefined", "cannot set in Neptune if GLctx is used, but we are a non-GL context that would replace it")
           };
-          Neptune["\x63\x74\x78"] = f;
+          Neptune["ctx"] = f;
           if (h) {
-              GL["\x6D\x61\x6B\x65\x43\x6F\x6E\x74\x65\x78\x74\x43\x75\x72\x72\x65\x6E\x74"](d)
+              GL["makeContextCurrent"](d)
           };
-          Neptune["\x75\x73\x65\x57\x65\x62\x47\x4C"] = h;
-          Browser["\x4E\x65\x70\x74\x75\x6E\x65\x43\x6F\x6E\x74\x65\x78\x74\x43\x72\x65\x61\x74\x65\x64\x43\x61\x6C\x6C\x62\x61\x63\x6B\x73"]["\x66\x6F\x72\x45\x61\x63\x68"]((function(a) {
+          Neptune["useWebGL"] = h;
+          Browser["NeptuneContextCreatedCallbacks"]["forEach"]((function(a) {
               a()
           }));
-          Browser["\x69\x6E\x69\x74"]()
+          Browser["init"]()
       };
       return f
   }),
@@ -2961,196 +2961,196 @@ var Browser = {
   lockPointer: undefined,
   resizeCanvas: undefined,
   requestFullscreen: (function(d, f, g) {
-      Browser["\x6C\x6F\x63\x6B\x50\x6F\x69\x6E\x74\x65\x72"] = d;
-      Browser["\x72\x65\x73\x69\x7A\x65\x43\x61\x6E\x76\x61\x73"] = f;
-      Browser["\x76\x72\x44\x65\x76\x69\x63\x65"] = g;
-      if (typeof Browser["\x6C\x6F\x63\x6B\x50\x6F\x69\x6E\x74\x65\x72"] === "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
-          Browser["\x6C\x6F\x63\x6B\x50\x6F\x69\x6E\x74\x65\x72"] = true
+      Browser["lockPointer"] = d;
+      Browser["resizeCanvas"] = f;
+      Browser["vrDevice"] = g;
+      if (typeof Browser["lockPointer"] === "undefined") {
+          Browser["lockPointer"] = true
       };
-      if (typeof Browser["\x72\x65\x73\x69\x7A\x65\x43\x61\x6E\x76\x61\x73"] === "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
-          Browser["\x72\x65\x73\x69\x7A\x65\x43\x61\x6E\x76\x61\x73"] = false
+      if (typeof Browser["resizeCanvas"] === "undefined") {
+          Browser["resizeCanvas"] = false
       };
-      if (typeof Browser["\x76\x72\x44\x65\x76\x69\x63\x65"] === "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
-          Browser["\x76\x72\x44\x65\x76\x69\x63\x65"] = null
+      if (typeof Browser["vrDevice"] === "undefined") {
+          Browser["vrDevice"] = null
       };
-      var a = Neptune["\x63\x61\x6E\x76\x61\x73"];
+      var a = Neptune["canvas"];
 
       function c() {
-          Browser["\x69\x73\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"] = false;
-          var b = a["\x70\x61\x72\x65\x6E\x74\x4E\x6F\x64\x65"];
-          if ((document["\x66\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x45\x6C\x65\x6D\x65\x6E\x74"] || document["\x6D\x6F\x7A\x46\x75\x6C\x6C\x53\x63\x72\x65\x65\x6E\x45\x6C\x65\x6D\x65\x6E\x74"] || document["\x6D\x73\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x45\x6C\x65\x6D\x65\x6E\x74"] || document["\x77\x65\x62\x6B\x69\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x45\x6C\x65\x6D\x65\x6E\x74"] || document["\x77\x65\x62\x6B\x69\x74\x43\x75\x72\x72\x65\x6E\x74\x46\x75\x6C\x6C\x53\x63\x72\x65\x65\x6E\x45\x6C\x65\x6D\x65\x6E\x74"]) === b) {
-              a["\x65\x78\x69\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"] = document["\x65\x78\x69\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"] || document["\x63\x61\x6E\x63\x65\x6C\x46\x75\x6C\x6C\x53\x63\x72\x65\x65\x6E"] || document["\x6D\x6F\x7A\x43\x61\x6E\x63\x65\x6C\x46\x75\x6C\x6C\x53\x63\x72\x65\x65\x6E"] || document["\x6D\x73\x45\x78\x69\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"] || document["\x77\x65\x62\x6B\x69\x74\x43\x61\x6E\x63\x65\x6C\x46\x75\x6C\x6C\x53\x63\x72\x65\x65\x6E"] || (function() {});
-              a["\x65\x78\x69\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"] = a["\x65\x78\x69\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"]["\x62\x69\x6E\x64"](document);
-              if (Browser["\x6C\x6F\x63\x6B\x50\x6F\x69\x6E\x74\x65\x72"]) {
-                  a["\x72\x65\x71\x75\x65\x73\x74\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"]()
+          Browser["isFullscreen"] = false;
+          var b = a["parentNode"];
+          if ((document["fullscreenElement"] || document["mozFullScreenElement"] || document["msFullscreenElement"] || document["webkitFullscreenElement"] || document["webkitCurrentFullScreenElement"]) === b) {
+              a["exitFullscreen"] = document["exitFullscreen"] || document["cancelFullScreen"] || document["mozCancelFullScreen"] || document["msExitFullscreen"] || document["webkitCancelFullScreen"] || (function() {});
+              a["exitFullscreen"] = a["exitFullscreen"]["bind"](document);
+              if (Browser["lockPointer"]) {
+                  a["requestPointerLock"]()
               };
-              Browser["\x69\x73\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"] = true;
-              if (Browser["\x72\x65\x73\x69\x7A\x65\x43\x61\x6E\x76\x61\x73"]) {
-                  Browser["\x73\x65\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x43\x61\x6E\x76\x61\x73\x53\x69\x7A\x65"]()
+              Browser["isFullscreen"] = true;
+              if (Browser["resizeCanvas"]) {
+                  Browser["setFullscreenCanvasSize"]()
               }
           } else {
-              b["\x70\x61\x72\x65\x6E\x74\x4E\x6F\x64\x65"]["\x69\x6E\x73\x65\x72\x74\x42\x65\x66\x6F\x72\x65"](a, b);
-              b["\x70\x61\x72\x65\x6E\x74\x4E\x6F\x64\x65"]["\x72\x65\x6D\x6F\x76\x65\x43\x68\x69\x6C\x64"](b);
-              if (Browser["\x72\x65\x73\x69\x7A\x65\x43\x61\x6E\x76\x61\x73"]) {
-                  Browser["\x73\x65\x74\x57\x69\x6E\x64\x6F\x77\x65\x64\x43\x61\x6E\x76\x61\x73\x53\x69\x7A\x65"]()
+              b["parentNode"]["insertBefore"](a, b);
+              b["parentNode"]["removeChild"](b);
+              if (Browser["resizeCanvas"]) {
+                  Browser["setWindowedCanvasSize"]()
               }
           };
-          if (Neptune["\x6F\x6E\x46\x75\x6C\x6C\x53\x63\x72\x65\x65\x6E"]) {
-              Neptune["\x6F\x6E\x46\x75\x6C\x6C\x53\x63\x72\x65\x65\x6E"](Browser["\x69\x73\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"])
+          if (Neptune["onFullScreen"]) {
+              Neptune["onFullScreen"](Browser["isFullscreen"])
           };
-          if (Neptune["\x6F\x6E\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"]) {
-              Neptune["\x6F\x6E\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"](Browser["\x69\x73\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"])
+          if (Neptune["onFullscreen"]) {
+              Neptune["onFullscreen"](Browser["isFullscreen"])
           };
-          Browser["\x75\x70\x64\x61\x74\x65\x43\x61\x6E\x76\x61\x73\x44\x69\x6D\x65\x6E\x73\x69\x6F\x6E\x73"](a)
+          Browser["updateCanvasDimensions"](a)
       }
-      if (!Browser["\x66\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x48\x61\x6E\x64\x6C\x65\x72\x73\x49\x6E\x73\x74\x61\x6C\x6C\x65\x64"]) {
-          Browser["\x66\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x48\x61\x6E\x64\x6C\x65\x72\x73\x49\x6E\x73\x74\x61\x6C\x6C\x65\x64"] = true;
-          document["\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72"]("\x66\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x63\x68\x61\x6E\x67\x65", c, false);
-          document["\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72"]("\x6D\x6F\x7A\x66\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x63\x68\x61\x6E\x67\x65", c, false);
-          document["\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72"]("\x77\x65\x62\x6B\x69\x74\x66\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x63\x68\x61\x6E\x67\x65", c, false);
-          document["\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72"]("\x4D\x53\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x43\x68\x61\x6E\x67\x65", c, false)
+      if (!Browser["fullscreenHandlersInstalled"]) {
+          Browser["fullscreenHandlersInstalled"] = true;
+          document["addEventListener"]("fullscreenchange", c, false);
+          document["addEventListener"]("mozfullscreenchange", c, false);
+          document["addEventListener"]("webkitfullscreenchange", c, false);
+          document["addEventListener"]("MSFullscreenChange", c, false)
       };
-      var b = document["\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74"]("\x64\x69\x76");
-      a["\x70\x61\x72\x65\x6E\x74\x4E\x6F\x64\x65"]["\x69\x6E\x73\x65\x72\x74\x42\x65\x66\x6F\x72\x65"](b, a);
-      b["\x61\x70\x70\x65\x6E\x64\x43\x68\x69\x6C\x64"](a);
-      b["\x72\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"] = b["\x72\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"] || b["\x6D\x6F\x7A\x52\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x53\x63\x72\x65\x65\x6E"] || b["\x6D\x73\x52\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"] || (b["\x77\x65\x62\x6B\x69\x74\x52\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"] ? (function() {
-          b["\x77\x65\x62\x6B\x69\x74\x52\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"](Element["\x41\x4C\x4C\x4F\x57\x5F\x4B\x45\x59\x42\x4F\x41\x52\x44\x5F\x49\x4E\x50\x55\x54"])
-      }) : null) || (b["\x77\x65\x62\x6B\x69\x74\x52\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x53\x63\x72\x65\x65\x6E"] ? (function() {
-          b["\x77\x65\x62\x6B\x69\x74\x52\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x53\x63\x72\x65\x65\x6E"](Element["\x41\x4C\x4C\x4F\x57\x5F\x4B\x45\x59\x42\x4F\x41\x52\x44\x5F\x49\x4E\x50\x55\x54"])
+      var b = document["createElement"]("div");
+      a["parentNode"]["insertBefore"](b, a);
+      b["appendChild"](a);
+      b["requestFullscreen"] = b["requestFullscreen"] || b["mozRequestFullScreen"] || b["msRequestFullscreen"] || (b["webkitRequestFullscreen"] ? (function() {
+          b["webkitRequestFullscreen"](Element["ALLOW_KEYBOARD_INPUT"])
+      }) : null) || (b["webkitRequestFullScreen"] ? (function() {
+          b["webkitRequestFullScreen"](Element["ALLOW_KEYBOARD_INPUT"])
       }) : null);
       if (g) {
-          b["\x72\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"]({
+          b["requestFullscreen"]({
               vrDisplay: g
           })
       } else {
-          b["\x72\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"]()
+          b["requestFullscreen"]()
       }
   }),
   requestFullScreen: (function(a, b, c) {
-      Neptune["\x70\x72\x69\x6E\x74\x45\x72\x72"]("\x42\x72\x6F\x77\x73\x65\x72\x2E\x72\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x53\x63\x72\x65\x65\x6E\x28\x29\x20\x69\x73\x20\x64\x65\x70\x72\x65\x63\x61\x74\x65\x64\x2E\x20\x50\x6C\x65\x61\x73\x65\x20\x63\x61\x6C\x6C\x20\x42\x72\x6F\x77\x73\x65\x72\x2E\x72\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x20\x69\x6E\x73\x74\x65\x61\x64\x2E");
-      Browser["\x72\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x53\x63\x72\x65\x65\x6E"] = (function(a, b, c) {
-          return Browser["\x72\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"](a, b, c)
+      Neptune["printErr"]("Browser.requestFullScreen() is deprecated. Please call Browser.requestFullscreen instead.");
+      Browser["requestFullScreen"] = (function(a, b, c) {
+          return Browser["requestFullscreen"](a, b, c)
       });
-      return Browser["\x72\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E"](a, b, c)
+      return Browser["requestFullscreen"](a, b, c)
   }),
   nextRAF: 0,
   fakeRequestAnimationFrame: (function(b) {
-      var c = Date["\x6E\x6F\x77"]();
-      if (Browser["\x6E\x65\x78\x74\x52\x41\x46"] === 0) {
-          Browser["\x6E\x65\x78\x74\x52\x41\x46"] = c + 1e3 / 60
+      var c = Date["now"]();
+      if (Browser["nextRAF"] === 0) {
+          Browser["nextRAF"] = c + 1e3 / 60
       } else {
-          while (c + 2 >= Browser["\x6E\x65\x78\x74\x52\x41\x46"]) {
-              Browser["\x6E\x65\x78\x74\x52\x41\x46"] += 1e3 / 60
+          while (c + 2 >= Browser["nextRAF"]) {
+              Browser["nextRAF"] += 1e3 / 60
           }
       };
-      var a = Math["\x6D\x61\x78"](Browser["\x6E\x65\x78\x74\x52\x41\x46"] - c, 0);
+      var a = Math["max"](Browser["nextRAF"] - c, 0);
       setTimeout(b, a)
   }),
   requestAnimationFrame: function requestAnimationFrame(a) {
-      if (typeof window === "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
-          Browser["\x66\x61\x6B\x65\x52\x65\x71\x75\x65\x73\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x46\x72\x61\x6D\x65"](a)
+      if (typeof window === "undefined") {
+          Browser["fakeRequestAnimationFrame"](a)
       } else {
-          if (!window["\x72\x65\x71\x75\x65\x73\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x46\x72\x61\x6D\x65"]) {
-              window["\x72\x65\x71\x75\x65\x73\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x46\x72\x61\x6D\x65"] = window["\x72\x65\x71\x75\x65\x73\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x46\x72\x61\x6D\x65"] || window["\x6D\x6F\x7A\x52\x65\x71\x75\x65\x73\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x46\x72\x61\x6D\x65"] || window["\x77\x65\x62\x6B\x69\x74\x52\x65\x71\x75\x65\x73\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x46\x72\x61\x6D\x65"] || window["\x6D\x73\x52\x65\x71\x75\x65\x73\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x46\x72\x61\x6D\x65"] || window["\x6F\x52\x65\x71\x75\x65\x73\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x46\x72\x61\x6D\x65"] || Browser["\x66\x61\x6B\x65\x52\x65\x71\x75\x65\x73\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x46\x72\x61\x6D\x65"]
+          if (!window["requestAnimationFrame"]) {
+              window["requestAnimationFrame"] = window["requestAnimationFrame"] || window["mozRequestAnimationFrame"] || window["webkitRequestAnimationFrame"] || window["msRequestAnimationFrame"] || window["oRequestAnimationFrame"] || Browser["fakeRequestAnimationFrame"]
           };
-          window["\x72\x65\x71\x75\x65\x73\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x46\x72\x61\x6D\x65"](a)
+          window["requestAnimationFrame"](a)
       }
   },
   safeCallback: (function(a) {
       return (function() {
           if (!ABORT) {
-              return a["\x61\x70\x70\x6C\x79"](null, arguments)
+              return a["apply"](null, arguments)
           }
       })
   }),
   allowAsyncCallbacks: true,
   queuedAsyncCallbacks: [],
   pauseAsyncCallbacks: (function() {
-      Browser["\x61\x6C\x6C\x6F\x77\x41\x73\x79\x6E\x63\x43\x61\x6C\x6C\x62\x61\x63\x6B\x73"] = false
+      Browser["allowAsyncCallbacks"] = false
   }),
   resumeAsyncCallbacks: (function() {
-      Browser["\x61\x6C\x6C\x6F\x77\x41\x73\x79\x6E\x63\x43\x61\x6C\x6C\x62\x61\x63\x6B\x73"] = true;
-      if (Browser["\x71\x75\x65\x75\x65\x64\x41\x73\x79\x6E\x63\x43\x61\x6C\x6C\x62\x61\x63\x6B\x73"]["\x6C\x65\x6E\x67\x74\x68"] > 0) {
-          var a = Browser["\x71\x75\x65\x75\x65\x64\x41\x73\x79\x6E\x63\x43\x61\x6C\x6C\x62\x61\x63\x6B\x73"];
-          Browser["\x71\x75\x65\x75\x65\x64\x41\x73\x79\x6E\x63\x43\x61\x6C\x6C\x62\x61\x63\x6B\x73"] = [];
-          a["\x66\x6F\x72\x45\x61\x63\x68"]((function(a) {
+      Browser["allowAsyncCallbacks"] = true;
+      if (Browser["queuedAsyncCallbacks"]["length"] > 0) {
+          var a = Browser["queuedAsyncCallbacks"];
+          Browser["queuedAsyncCallbacks"] = [];
+          a["forEach"]((function(a) {
               a()
           }))
       }
   }),
   safeRequestAnimationFrame: (function(a) {
-      return Browser["\x72\x65\x71\x75\x65\x73\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x46\x72\x61\x6D\x65"]((function() {
+      return Browser["requestAnimationFrame"]((function() {
           if (ABORT) {
               return
           };
-          if (Browser["\x61\x6C\x6C\x6F\x77\x41\x73\x79\x6E\x63\x43\x61\x6C\x6C\x62\x61\x63\x6B\x73"]) {
+          if (Browser["allowAsyncCallbacks"]) {
               a()
           } else {
-              Browser["\x71\x75\x65\x75\x65\x64\x41\x73\x79\x6E\x63\x43\x61\x6C\x6C\x62\x61\x63\x6B\x73"]["\x70\x75\x73\x68"](a)
+              Browser["queuedAsyncCallbacks"]["push"](a)
           }
       }))
   }),
   safeSetTimeout: (function(a, b) {
-      Neptune["\x6E\x6F\x45\x78\x69\x74\x52\x75\x6E\x74\x69\x6D\x65"] = true;
+      Neptune["noExitRuntime"] = true;
       return setTimeout((function() {
           if (ABORT) {
               return
           };
-          if (Browser["\x61\x6C\x6C\x6F\x77\x41\x73\x79\x6E\x63\x43\x61\x6C\x6C\x62\x61\x63\x6B\x73"]) {
+          if (Browser["allowAsyncCallbacks"]) {
               a()
           } else {
-              Browser["\x71\x75\x65\x75\x65\x64\x41\x73\x79\x6E\x63\x43\x61\x6C\x6C\x62\x61\x63\x6B\x73"]["\x70\x75\x73\x68"](a)
+              Browser["queuedAsyncCallbacks"]["push"](a)
           }
       }), b)
   }),
   safeSetInterval: (function(a, b) {
-      Neptune["\x6E\x6F\x45\x78\x69\x74\x52\x75\x6E\x74\x69\x6D\x65"] = true;
+      Neptune["noExitRuntime"] = true;
       return setInterval((function() {
           if (ABORT) {
               return
           };
-          if (Browser["\x61\x6C\x6C\x6F\x77\x41\x73\x79\x6E\x63\x43\x61\x6C\x6C\x62\x61\x63\x6B\x73"]) {
+          if (Browser["allowAsyncCallbacks"]) {
               a()
           }
       }), b)
   }),
   getMimetype: (function(a) {
       return {
-          "\x6A\x70\x67": "\x69\x6D\x61\x67\x65\x2F\x6A\x70\x65\x67",
-          "\x6A\x70\x65\x67": "\x69\x6D\x61\x67\x65\x2F\x6A\x70\x65\x67",
-          "\x70\x6E\x67": "\x69\x6D\x61\x67\x65\x2F\x70\x6E\x67",
-          "\x62\x6D\x70": "\x69\x6D\x61\x67\x65\x2F\x62\x6D\x70",
-          "\x6F\x67\x67": "\x61\x75\x64\x69\x6F\x2F\x6F\x67\x67",
-          "\x77\x61\x76": "\x61\x75\x64\x69\x6F\x2F\x77\x61\x76",
-          "\x6D\x70\x33": "\x61\x75\x64\x69\x6F\x2F\x6D\x70\x65\x67"
-      } [a["\x73\x75\x62\x73\x74\x72"](a["\x6C\x61\x73\x74\x49\x6E\x64\x65\x78\x4F\x66"]("\x2E") + 1)]
+          "jpg": "image/jpeg",
+          "jpeg": "image/jpeg",
+          "png": "image/png",
+          "bmp": "image/bmp",
+          "ogg": "audio/ogg",
+          "wav": "audio/wav",
+          "mp3": "audio/mpeg"
+      } [a["substr"](a["lastIndexOf"](".") + 1)]
   }),
   getUserMedia: (function(a) {
-      if (!window["\x67\x65\x74\x55\x73\x65\x72\x4D\x65\x64\x69\x61"]) {
-          window["\x67\x65\x74\x55\x73\x65\x72\x4D\x65\x64\x69\x61"] = navigator["\x67\x65\x74\x55\x73\x65\x72\x4D\x65\x64\x69\x61"] || navigator["\x6D\x6F\x7A\x47\x65\x74\x55\x73\x65\x72\x4D\x65\x64\x69\x61"]
+      if (!window["getUserMedia"]) {
+          window["getUserMedia"] = navigator["getUserMedia"] || navigator["mozGetUserMedia"]
       };
-      window["\x67\x65\x74\x55\x73\x65\x72\x4D\x65\x64\x69\x61"](a)
+      window["getUserMedia"](a)
   }),
   getMovementX: (function(a) {
-      return a["\x6D\x6F\x76\x65\x6D\x65\x6E\x74\x58"] || a["\x6D\x6F\x7A\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x58"] || a["\x77\x65\x62\x6B\x69\x74\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x58"] || 0
+      return a["movementX"] || a["mozMovementX"] || a["webkitMovementX"] || 0
   }),
   getMovementY: (function(a) {
-      return a["\x6D\x6F\x76\x65\x6D\x65\x6E\x74\x59"] || a["\x6D\x6F\x7A\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x59"] || a["\x77\x65\x62\x6B\x69\x74\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x59"] || 0
+      return a["movementY"] || a["mozMovementY"] || a["webkitMovementY"] || 0
   }),
   getMouseWheelDelta: (function(b) {
       var a = 0;
-      switch (b["\x74\x79\x70\x65"]) {
-          case "\x44\x4F\x4D\x4D\x6F\x75\x73\x65\x53\x63\x72\x6F\x6C\x6C":
-              a = b["\x64\x65\x74\x61\x69\x6C"];
+      switch (b["type"]) {
+          case "DOMMouseScroll":
+              a = b["detail"];
               break;
-          case "\x6D\x6F\x75\x73\x65\x77\x68\x65\x65\x6C":
-              a = b["\x77\x68\x65\x65\x6C\x44\x65\x6C\x74\x61"];
+          case "mousewheel":
+              a = b["wheelDelta"];
               break;
-          case "\x77\x68\x65\x65\x6C":
-              a = b["\x64\x65\x6C\x74\x61\x59"];
+          case "wheel":
+              a = b["deltaY"];
               break;
           default:
-              throw "\x75\x6E\x72\x65\x63\x6F\x67\x6E\x69\x7A\x65\x64\x20\x6D\x6F\x75\x73\x65\x20\x77\x68\x65\x65\x6C\x20\x65\x76\x65\x6E\x74\x3A\x20" + b["\x74\x79\x70\x65"]
+              throw "unrecognized mouse wheel event: " + b["type"]
       };
       return a
   }),
@@ -3161,68 +3161,68 @@ var Browser = {
   touches: {},
   lastTouches: {},
   calculateMouseEvent: (function(g) {
-      if (Browser["\x70\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B"]) {
-          if (g["\x74\x79\x70\x65"] != "\x6D\x6F\x75\x73\x65\x6D\x6F\x76\x65" && "\x6D\x6F\x7A\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x58" in g) {
-              Browser["\x6D\x6F\x75\x73\x65\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x58"] = Browser["\x6D\x6F\x75\x73\x65\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x59"] = 0
+      if (Browser["pointerLock"]) {
+          if (g["type"] != "mousemove" && "mozMovementX" in g) {
+              Browser["mouseMovementX"] = Browser["mouseMovementY"] = 0
           } else {
-              Browser["\x6D\x6F\x75\x73\x65\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x58"] = Browser["\x67\x65\x74\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x58"](g);
-              Browser["\x6D\x6F\x75\x73\x65\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x59"] = Browser["\x67\x65\x74\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x59"](g)
+              Browser["mouseMovementX"] = Browser["getMovementX"](g);
+              Browser["mouseMovementY"] = Browser["getMovementY"](g)
           };
-          if (typeof SDL != "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
-              Browser["\x6D\x6F\x75\x73\x65\x58"] = SDL["\x6D\x6F\x75\x73\x65\x58"] + Browser["\x6D\x6F\x75\x73\x65\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x58"];
-              Browser["\x6D\x6F\x75\x73\x65\x59"] = SDL["\x6D\x6F\x75\x73\x65\x59"] + Browser["\x6D\x6F\x75\x73\x65\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x59"]
+          if (typeof SDL != "undefined") {
+              Browser["mouseX"] = SDL["mouseX"] + Browser["mouseMovementX"];
+              Browser["mouseY"] = SDL["mouseY"] + Browser["mouseMovementY"]
           } else {
-              Browser["\x6D\x6F\x75\x73\x65\x58"] += Browser["\x6D\x6F\x75\x73\x65\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x58"];
-              Browser["\x6D\x6F\x75\x73\x65\x59"] += Browser["\x6D\x6F\x75\x73\x65\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x59"]
+              Browser["mouseX"] += Browser["mouseMovementX"];
+              Browser["mouseY"] += Browser["mouseMovementY"]
           }
       } else {
-          var i = Neptune["\x63\x61\x6E\x76\x61\x73"]["\x67\x65\x74\x42\x6F\x75\x6E\x64\x69\x6E\x67\x43\x6C\x69\x65\x6E\x74\x52\x65\x63\x74"]();
-          var f = Neptune["\x63\x61\x6E\x76\x61\x73"]["\x77\x69\x64\x74\x68"];
-          var c = Neptune["\x63\x61\x6E\x76\x61\x73"]["\x68\x65\x69\x67\x68\x74"];
-          var j = typeof window["\x73\x63\x72\x6F\x6C\x6C\x58"] !== "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64" ? window["\x73\x63\x72\x6F\x6C\x6C\x58"] : window["\x70\x61\x67\x65\x58\x4F\x66\x66\x73\x65\x74"];
-          var k = typeof window["\x73\x63\x72\x6F\x6C\x6C\x59"] !== "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64" ? window["\x73\x63\x72\x6F\x6C\x6C\x59"] : window["\x70\x61\x67\x65\x59\x4F\x66\x66\x73\x65\x74"];
-          if (g["\x74\x79\x70\x65"] === "\x74\x6F\x75\x63\x68\x73\x74\x61\x72\x74" || g["\x74\x79\x70\x65"] === "\x74\x6F\x75\x63\x68\x65\x6E\x64" || g["\x74\x79\x70\x65"] === "\x74\x6F\x75\x63\x68\x6D\x6F\x76\x65") {
-              var l = g["\x74\x6F\x75\x63\x68"];
+          var i = Neptune["canvas"]["getBoundingClientRect"]();
+          var f = Neptune["canvas"]["width"];
+          var c = Neptune["canvas"]["height"];
+          var j = typeof window["scrollX"] !== "undefined" ? window["scrollX"] : window["pageXOffset"];
+          var k = typeof window["scrollY"] !== "undefined" ? window["scrollY"] : window["pageYOffset"];
+          if (g["type"] === "touchstart" || g["type"] === "touchend" || g["type"] === "touchmove") {
+              var l = g["touch"];
               if (l === undefined) {
                   return
               };
-              var a = l["\x70\x61\x67\x65\x58"] - (j + i["\x6C\x65\x66\x74"]);
-              var b = l["\x70\x61\x67\x65\x59"] - (k + i["\x74\x6F\x70"]);
-              a = a * (f / i["\x77\x69\x64\x74\x68"]);
-              b = b * (c / i["\x68\x65\x69\x67\x68\x74"]);
+              var a = l["pageX"] - (j + i["left"]);
+              var b = l["pageY"] - (k + i["top"]);
+              a = a * (f / i["width"]);
+              b = b * (c / i["height"]);
               var d = {
                   x: a,
                   y: b
               };
-              if (g["\x74\x79\x70\x65"] === "\x74\x6F\x75\x63\x68\x73\x74\x61\x72\x74") {
-                  Browser["\x6C\x61\x73\x74\x54\x6F\x75\x63\x68\x65\x73"][l["\x69\x64\x65\x6E\x74\x69\x66\x69\x65\x72"]] = d;
-                  Browser["\x74\x6F\x75\x63\x68\x65\x73"][l["\x69\x64\x65\x6E\x74\x69\x66\x69\x65\x72"]] = d
+              if (g["type"] === "touchstart") {
+                  Browser["lastTouches"][l["identifier"]] = d;
+                  Browser["touches"][l["identifier"]] = d
               } else {
-                  if (g["\x74\x79\x70\x65"] === "\x74\x6F\x75\x63\x68\x65\x6E\x64" || g["\x74\x79\x70\x65"] === "\x74\x6F\x75\x63\x68\x6D\x6F\x76\x65") {
-                      var h = Browser["\x74\x6F\x75\x63\x68\x65\x73"][l["\x69\x64\x65\x6E\x74\x69\x66\x69\x65\x72"]];
+                  if (g["type"] === "touchend" || g["type"] === "touchmove") {
+                      var h = Browser["touches"][l["identifier"]];
                       if (!h) {
                           h = d
                       };
-                      Browser["\x6C\x61\x73\x74\x54\x6F\x75\x63\x68\x65\x73"][l["\x69\x64\x65\x6E\x74\x69\x66\x69\x65\x72"]] = h;
-                      Browser["\x74\x6F\x75\x63\x68\x65\x73"][l["\x69\x64\x65\x6E\x74\x69\x66\x69\x65\x72"]] = d
+                      Browser["lastTouches"][l["identifier"]] = h;
+                      Browser["touches"][l["identifier"]] = d
                   }
               };
               return
           };
-          var m = g["\x70\x61\x67\x65\x58"] - (j + i["\x6C\x65\x66\x74"]);
-          var n = g["\x70\x61\x67\x65\x59"] - (k + i["\x74\x6F\x70"]);
-          m = m * (f / i["\x77\x69\x64\x74\x68"]);
-          n = n * (c / i["\x68\x65\x69\x67\x68\x74"]);
-          Browser["\x6D\x6F\x75\x73\x65\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x58"] = m - Browser["\x6D\x6F\x75\x73\x65\x58"];
-          Browser["\x6D\x6F\x75\x73\x65\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x59"] = n - Browser["\x6D\x6F\x75\x73\x65\x59"];
-          Browser["\x6D\x6F\x75\x73\x65\x58"] = m;
-          Browser["\x6D\x6F\x75\x73\x65\x59"] = n
+          var m = g["pageX"] - (j + i["left"]);
+          var n = g["pageY"] - (k + i["top"]);
+          m = m * (f / i["width"]);
+          n = n * (c / i["height"]);
+          Browser["mouseMovementX"] = m - Browser["mouseX"];
+          Browser["mouseMovementY"] = n - Browser["mouseY"];
+          Browser["mouseX"] = m;
+          Browser["mouseY"] = n
       }
   }),
   asyncLoad: (function(f, d, c, b) {
-      var a = !b ? getUniqueRunDependency("\x61\x6C\x20" + f) : "";
-      Neptune["\x72\x65\x61\x64\x41\x73\x79\x6E\x63"](f, (function(b) {
-          assert(b, "\x4C\x6F\x61\x64\x69\x6E\x67\x20\x64\x61\x74\x61\x20\x66\x69\x6C\x65\x20\x22" + f + "\x22\x20\x66\x61\x69\x6C\x65\x64\x20\x28\x6E\x6F\x20\x61\x72\x72\x61\x79\x42\x75\x66\x66\x65\x72\x29\x2E");
+      var a = !b ? getUniqueRunDependency("al " + f) : "";
+      Neptune["readAsync"](f, (function(b) {
+          assert(b, "Loading data file \"" + f + "\" failed (no arrayBuffer).");
           d(new Uint8Array(b));
           if (a) {
               removeRunDependency(a)
@@ -3231,7 +3231,7 @@ var Browser = {
           if (c) {
               c()
           } else {
-              throw "\x4C\x6F\x61\x64\x69\x6E\x67\x20\x64\x61\x74\x61\x20\x66\x69\x6C\x65\x20\x22" + f + "\x22\x20\x66\x61\x69\x6C\x65\x64\x2E"
+              throw "Loading data file \"" + f + "\" failed."
           }
       }));
       if (a) {
@@ -3240,83 +3240,83 @@ var Browser = {
   }),
   resizeListeners: [],
   updateResizeListeners: (function() {
-      var a = Neptune["\x63\x61\x6E\x76\x61\x73"];
-      Browser["\x72\x65\x73\x69\x7A\x65\x4C\x69\x73\x74\x65\x6E\x65\x72\x73"]["\x66\x6F\x72\x45\x61\x63\x68"]((function(b) {
-          b(a["\x77\x69\x64\x74\x68"], a["\x68\x65\x69\x67\x68\x74"])
+      var a = Neptune["canvas"];
+      Browser["resizeListeners"]["forEach"]((function(b) {
+          b(a["width"], a["height"])
       }))
   }),
   setCanvasSize: (function(d, b, c) {
-      var a = Neptune["\x63\x61\x6E\x76\x61\x73"];
-      Browser["\x75\x70\x64\x61\x74\x65\x43\x61\x6E\x76\x61\x73\x44\x69\x6D\x65\x6E\x73\x69\x6F\x6E\x73"](a, d, b);
+      var a = Neptune["canvas"];
+      Browser["updateCanvasDimensions"](a, d, b);
       if (!c) {
-          Browser["\x75\x70\x64\x61\x74\x65\x52\x65\x73\x69\x7A\x65\x4C\x69\x73\x74\x65\x6E\x65\x72\x73"]()
+          Browser["updateResizeListeners"]()
       }
   }),
   windowedWidth: 0,
   windowedHeight: 0,
   setFullscreenCanvasSize: (function() {
-      if (typeof SDL != "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
-          var a = HEAPU32[SDL["\x73\x63\x72\x65\x65\x6E"] + Runtime["\x51\x55\x41\x4E\x54\x55\x4D\x5F\x53\x49\x5A\x45"] * 0 >> 2];
+      if (typeof SDL != "undefined") {
+          var a = HEAPU32[SDL["screen"] + Runtime["QUANTUM_SIZE"] * 0 >> 2];
           a = a | 8388608;
-          HEAP32[SDL["\x73\x63\x72\x65\x65\x6E"] + Runtime["\x51\x55\x41\x4E\x54\x55\x4D\x5F\x53\x49\x5A\x45"] * 0 >> 2] = a
+          HEAP32[SDL["screen"] + Runtime["QUANTUM_SIZE"] * 0 >> 2] = a
       };
-      Browser["\x75\x70\x64\x61\x74\x65\x52\x65\x73\x69\x7A\x65\x4C\x69\x73\x74\x65\x6E\x65\x72\x73"]()
+      Browser["updateResizeListeners"]()
   }),
   setWindowedCanvasSize: (function() {
-      if (typeof SDL != "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
-          var a = HEAPU32[SDL["\x73\x63\x72\x65\x65\x6E"] + Runtime["\x51\x55\x41\x4E\x54\x55\x4D\x5F\x53\x49\x5A\x45"] * 0 >> 2];
+      if (typeof SDL != "undefined") {
+          var a = HEAPU32[SDL["screen"] + Runtime["QUANTUM_SIZE"] * 0 >> 2];
           a = a & ~8388608;
-          HEAP32[SDL["\x73\x63\x72\x65\x65\x6E"] + Runtime["\x51\x55\x41\x4E\x54\x55\x4D\x5F\x53\x49\x5A\x45"] * 0 >> 2] = a
+          HEAP32[SDL["screen"] + Runtime["QUANTUM_SIZE"] * 0 >> 2] = a
       };
-      Browser["\x75\x70\x64\x61\x74\x65\x52\x65\x73\x69\x7A\x65\x4C\x69\x73\x74\x65\x6E\x65\x72\x73"]()
+      Browser["updateResizeListeners"]()
   }),
   updateCanvasDimensions: (function(a, g, d) {
       if (g && d) {
-          a["\x77\x69\x64\x74\x68\x4E\x61\x74\x69\x76\x65"] = g;
-          a["\x68\x65\x69\x67\x68\x74\x4E\x61\x74\x69\x76\x65"] = d
+          a["widthNative"] = g;
+          a["heightNative"] = d
       } else {
-          g = a["\x77\x69\x64\x74\x68\x4E\x61\x74\x69\x76\x65"];
-          d = a["\x68\x65\x69\x67\x68\x74\x4E\x61\x74\x69\x76\x65"]
+          g = a["widthNative"];
+          d = a["heightNative"]
       };
       var f = g;
       var c = d;
-      if (Neptune["\x66\x6F\x72\x63\x65\x64\x41\x73\x70\x65\x63\x74\x52\x61\x74\x69\x6F"] && Neptune["\x66\x6F\x72\x63\x65\x64\x41\x73\x70\x65\x63\x74\x52\x61\x74\x69\x6F"] > 0) {
-          if (f / c < Neptune["\x66\x6F\x72\x63\x65\x64\x41\x73\x70\x65\x63\x74\x52\x61\x74\x69\x6F"]) {
-              f = Math["\x72\x6F\x75\x6E\x64"](c * Neptune["\x66\x6F\x72\x63\x65\x64\x41\x73\x70\x65\x63\x74\x52\x61\x74\x69\x6F"])
+      if (Neptune["forcedAspectRatio"] && Neptune["forcedAspectRatio"] > 0) {
+          if (f / c < Neptune["forcedAspectRatio"]) {
+              f = Math["round"](c * Neptune["forcedAspectRatio"])
           } else {
-              c = Math["\x72\x6F\x75\x6E\x64"](f / Neptune["\x66\x6F\x72\x63\x65\x64\x41\x73\x70\x65\x63\x74\x52\x61\x74\x69\x6F"])
+              c = Math["round"](f / Neptune["forcedAspectRatio"])
           }
       };
-      if ((document["\x66\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x45\x6C\x65\x6D\x65\x6E\x74"] || document["\x6D\x6F\x7A\x46\x75\x6C\x6C\x53\x63\x72\x65\x65\x6E\x45\x6C\x65\x6D\x65\x6E\x74"] || document["\x6D\x73\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x45\x6C\x65\x6D\x65\x6E\x74"] || document["\x77\x65\x62\x6B\x69\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x45\x6C\x65\x6D\x65\x6E\x74"] || document["\x77\x65\x62\x6B\x69\x74\x43\x75\x72\x72\x65\x6E\x74\x46\x75\x6C\x6C\x53\x63\x72\x65\x65\x6E\x45\x6C\x65\x6D\x65\x6E\x74"]) === a["\x70\x61\x72\x65\x6E\x74\x4E\x6F\x64\x65"] && typeof screen != "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
-          var b = Math["\x6D\x69\x6E"](screen["\x77\x69\x64\x74\x68"] / f, screen["\x68\x65\x69\x67\x68\x74"] / c);
-          f = Math["\x72\x6F\x75\x6E\x64"](f * b);
-          c = Math["\x72\x6F\x75\x6E\x64"](c * b)
+      if ((document["fullscreenElement"] || document["mozFullScreenElement"] || document["msFullscreenElement"] || document["webkitFullscreenElement"] || document["webkitCurrentFullScreenElement"]) === a["parentNode"] && typeof screen != "undefined") {
+          var b = Math["min"](screen["width"] / f, screen["height"] / c);
+          f = Math["round"](f * b);
+          c = Math["round"](c * b)
       };
-      if (Browser["\x72\x65\x73\x69\x7A\x65\x43\x61\x6E\x76\x61\x73"]) {
-          if (a["\x77\x69\x64\x74\x68"] != f) {
-              a["\x77\x69\x64\x74\x68"] = f
+      if (Browser["resizeCanvas"]) {
+          if (a["width"] != f) {
+              a["width"] = f
           };
-          if (a["\x68\x65\x69\x67\x68\x74"] != c) {
-              a["\x68\x65\x69\x67\x68\x74"] = c
+          if (a["height"] != c) {
+              a["height"] = c
           };
-          if (typeof a["\x73\x74\x79\x6C\x65"] != "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
-              a["\x73\x74\x79\x6C\x65"]["\x72\x65\x6D\x6F\x76\x65\x50\x72\x6F\x70\x65\x72\x74\x79"]("\x77\x69\x64\x74\x68");
-              a["\x73\x74\x79\x6C\x65"]["\x72\x65\x6D\x6F\x76\x65\x50\x72\x6F\x70\x65\x72\x74\x79"]("\x68\x65\x69\x67\x68\x74")
+          if (typeof a["style"] != "undefined") {
+              a["style"]["removeProperty"]("width");
+              a["style"]["removeProperty"]("height")
           }
       } else {
-          if (a["\x77\x69\x64\x74\x68"] != g) {
-              a["\x77\x69\x64\x74\x68"] = g
+          if (a["width"] != g) {
+              a["width"] = g
           };
-          if (a["\x68\x65\x69\x67\x68\x74"] != d) {
-              a["\x68\x65\x69\x67\x68\x74"] = d
+          if (a["height"] != d) {
+              a["height"] = d
           };
-          if (typeof a["\x73\x74\x79\x6C\x65"] != "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
+          if (typeof a["style"] != "undefined") {
               if (f != g || c != d) {
-                  a["\x73\x74\x79\x6C\x65"]["\x73\x65\x74\x50\x72\x6F\x70\x65\x72\x74\x79"]("\x77\x69\x64\x74\x68", f + "\x70\x78", "\x69\x6D\x70\x6F\x72\x74\x61\x6E\x74");
-                  a["\x73\x74\x79\x6C\x65"]["\x73\x65\x74\x50\x72\x6F\x70\x65\x72\x74\x79"]("\x68\x65\x69\x67\x68\x74", c + "\x70\x78", "\x69\x6D\x70\x6F\x72\x74\x61\x6E\x74")
+                  a["style"]["setProperty"]("width", f + "px", "important");
+                  a["style"]["setProperty"]("height", c + "px", "important")
               } else {
-                  a["\x73\x74\x79\x6C\x65"]["\x72\x65\x6D\x6F\x76\x65\x50\x72\x6F\x70\x65\x72\x74\x79"]("\x77\x69\x64\x74\x68");
-                  a["\x73\x74\x79\x6C\x65"]["\x72\x65\x6D\x6F\x76\x65\x50\x72\x6F\x70\x65\x72\x74\x79"]("\x68\x65\x69\x67\x68\x74")
+                  a["style"]["removeProperty"]("width");
+                  a["style"]["removeProperty"]("height")
               }
           }
       }
@@ -3324,20 +3324,20 @@ var Browser = {
   wgetRequests: {},
   nextWgetRequestHandle: 0,
   getNextWgetRequestHandle: (function() {
-      var a = Browser["\x6E\x65\x78\x74\x57\x67\x65\x74\x52\x65\x71\x75\x65\x73\x74\x48\x61\x6E\x64\x6C\x65"];
-      Browser["\x6E\x65\x78\x74\x57\x67\x65\x74\x52\x65\x71\x75\x65\x73\x74\x48\x61\x6E\x64\x6C\x65"]++;
+      var a = Browser["nextWgetRequestHandle"];
+      Browser["nextWgetRequestHandle"]++;
       return a
   })
 };
 
 function _usleep(c) {
   var a = c / 1e3;
-  if ((ENVIRONMENT_IS_WEB || ENVIRONMENT_IS_WORKER) && self["\x70\x65\x72\x66\x6F\x72\x6D\x61\x6E\x63\x65"] && self["\x70\x65\x72\x66\x6F\x72\x6D\x61\x6E\x63\x65"]["\x6E\x6F\x77"]) {
-      var b = self["\x70\x65\x72\x66\x6F\x72\x6D\x61\x6E\x63\x65"]["\x6E\x6F\x77"]();
-      while (self["\x70\x65\x72\x66\x6F\x72\x6D\x61\x6E\x63\x65"]["\x6E\x6F\x77"]() - b < a) {}
+  if ((ENVIRONMENT_IS_WEB || ENVIRONMENT_IS_WORKER) && self["performance"] && self["performance"]["now"]) {
+      var b = self["performance"]["now"]();
+      while (self["performance"]["now"]() - b < a) {}
   } else {
-      var b = Date["\x6E\x6F\x77"]();
-      while (Date["\x6E\x6F\x77"]() - b < a) {}
+      var b = Date["now"]();
+      while (Date["now"]() - b < a) {}
   };
   return 0
 }
@@ -3345,30 +3345,30 @@ function _usleep(c) {
 function _llvm_bswap_i64(b, a) {
   var d = _llvm_bswap_i32(a) >>> 0;
   var c = _llvm_bswap_i32(b) >>> 0;
-  return (Runtime["\x73\x65\x74\x54\x65\x6D\x70\x52\x65\x74\x30"](c), d) | 0
+  return (Runtime["setTempRet0"](c), d) | 0
 }
 
 function _glLinkProgram(a) {
-  GLctx["\x6C\x69\x6E\x6B\x50\x72\x6F\x67\x72\x61\x6D"](GL["\x70\x72\x6F\x67\x72\x61\x6D\x73"][a]);
-  GL["\x70\x72\x6F\x67\x72\x61\x6D\x49\x6E\x66\x6F\x73"][a] = null;
-  GL["\x70\x6F\x70\x75\x6C\x61\x74\x65\x55\x6E\x69\x66\x6F\x72\x6D\x54\x61\x62\x6C\x65"](a)
+  GLctx["linkProgram"](GL["programs"][a]);
+  GL["programInfos"][a] = null;
+  GL["populateUniformTable"](a)
 }
 
 function _glBindTexture(a, b) {
-  GLctx["\x62\x69\x6E\x64\x54\x65\x78\x74\x75\x72\x65"](a, b ? GL["\x74\x65\x78\x74\x75\x72\x65\x73"][b] : null)
+  GLctx["bindTexture"](a, b ? GL["textures"][b] : null)
 }
 
 function _emscripten_glStencilFunc(a, b, c) {
-  GLctx["\x73\x74\x65\x6E\x63\x69\x6C\x46\x75\x6E\x63"](a, b, c)
+  GLctx["stencilFunc"](a, b, c)
 }
 
 function _glFramebufferRenderbuffer(d, a, c, b) {
-  GLctx["\x66\x72\x61\x6D\x65\x62\x75\x66\x66\x65\x72\x52\x65\x6E\x64\x65\x72\x62\x75\x66\x66\x65\x72"](d, a, c, GL["\x72\x65\x6E\x64\x65\x72\x62\x75\x66\x66\x65\x72\x73"][b])
+  GLctx["framebufferRenderbuffer"](d, a, c, GL["renderbuffers"][b])
 }
 
 function _glGetString(g) {
-  if (GL["\x73\x74\x72\x69\x6E\x67\x43\x61\x63\x68\x65"][g]) {
-      return GL["\x73\x74\x72\x69\x6E\x67\x43\x61\x63\x68\x65"][g]
+  if (GL["stringCache"][g]) {
+      return GL["stringCache"][g]
   };
   var h;
   switch (g) {
@@ -3379,194 +3379,194 @@ function _glGetString(g) {
       case 37445:
           ;
       case 37446:
-          h = allocate(intArrayFromString(GLctx["\x67\x65\x74\x50\x61\x72\x61\x6D\x65\x74\x65\x72"](g)), "\x69\x38", ALLOC_NORMAL);
+          h = allocate(intArrayFromString(GLctx["getParameter"](g)), "i8", ALLOC_NORMAL);
           break;
       case 7938:
-          var d = GLctx["\x67\x65\x74\x50\x61\x72\x61\x6D\x65\x74\x65\x72"](GLctx["\x56\x45\x52\x53\x49\x4F\x4E"]); {
-              d = "\x4F\x70\x65\x6E\x47\x4C\x20\x45\x53\x20\x32\x2E\x30\x20\x28" + d + "\x29"
+          var d = GLctx["getParameter"](GLctx["VERSION"]); {
+              d = "OpenGL ES 2.0 (" + d + ")"
           }
-          h = allocate(intArrayFromString(d), "\x69\x38", ALLOC_NORMAL);
+          h = allocate(intArrayFromString(d), "i8", ALLOC_NORMAL);
           break;
       case 7939:
-          var a = GLctx["\x67\x65\x74\x53\x75\x70\x70\x6F\x72\x74\x65\x64\x45\x78\x74\x65\x6E\x73\x69\x6F\x6E\x73"]();
+          var a = GLctx["getSupportedExtensions"]();
           var b = [];
-          for (var f = 0; f < a["\x6C\x65\x6E\x67\x74\x68"]; ++f) {
-              b["\x70\x75\x73\x68"](a[f]);
-              b["\x70\x75\x73\x68"]("\x47\x4C\x5F" + a[f])
+          for (var f = 0; f < a["length"]; ++f) {
+              b["push"](a[f]);
+              b["push"]("GL_" + a[f])
           };
-          h = allocate(intArrayFromString(b["\x6A\x6F\x69\x6E"]("\x20")), "\x69\x38", ALLOC_NORMAL);
+          h = allocate(intArrayFromString(b["join"](" ")), "i8", ALLOC_NORMAL);
           break;
       case 35724:
-          var c = GLctx["\x67\x65\x74\x50\x61\x72\x61\x6D\x65\x74\x65\x72"](GLctx["\x53\x48\x41\x44\x49\x4E\x47\x5F\x4C\x41\x4E\x47\x55\x41\x47\x45\x5F\x56\x45\x52\x53\x49\x4F\x4E"]);
+          var c = GLctx["getParameter"](GLctx["SHADING_LANGUAGE_VERSION"]);
           var j = /^WebGL GLSL ES ([0-9]\.[0-9][0-9]?)(?:$| .*)/;
-          var i = c["\x6D\x61\x74\x63\x68"](j);
+          var i = c["match"](j);
           if (i !== null) {
-              if (i[1]["\x6C\x65\x6E\x67\x74\x68"] == 3) {
-                  i[1] = i[1] + "\x30"
+              if (i[1]["length"] == 3) {
+                  i[1] = i[1] + "0"
               };
-              c = "\x4F\x70\x65\x6E\x47\x4C\x20\x45\x53\x20\x47\x4C\x53\x4C\x20\x45\x53\x20" + i[1] + "\x20\x28" + c + "\x29"
+              c = "OpenGL ES GLSL ES " + i[1] + " (" + c + ")"
           };
-          h = allocate(intArrayFromString(c), "\x69\x38", ALLOC_NORMAL);
+          h = allocate(intArrayFromString(c), "i8", ALLOC_NORMAL);
           break;
       default:
-          GL["\x72\x65\x63\x6F\x72\x64\x45\x72\x72\x6F\x72"](1280);
+          GL["recordError"](1280);
           return 0
   };
-  GL["\x73\x74\x72\x69\x6E\x67\x43\x61\x63\x68\x65"][g] = h;
+  GL["stringCache"][g] = h;
   return h
 }
 
 function _emscripten_glUniform3iv(b, a, c) {
-  GLctx["\x75\x6E\x69\x66\x6F\x72\x6D\x33\x69\x76"](GL["\x75\x6E\x69\x66\x6F\x72\x6D\x73"][b], HEAP32["\x73\x75\x62\x61\x72\x72\x61\x79"](c >> 2, c + a * 12 >> 2))
+  GLctx["uniform3iv"](GL["uniforms"][b], HEAP32["subarray"](c >> 2, c + a * 12 >> 2))
 }
 
 function _emscripten_glShaderSource(c, a, f, b) {
-  var d = GL["\x67\x65\x74\x53\x6F\x75\x72\x63\x65"](c, a, f, b);
-  GLctx["\x73\x68\x61\x64\x65\x72\x53\x6F\x75\x72\x63\x65"](GL["\x73\x68\x61\x64\x65\x72\x73"][c], d)
+  var d = GL["getSource"](c, a, f, b);
+  GLctx["shaderSource"](GL["shaders"][c], d)
 }
 var _llvm_pow_f32 = Math_pow;
 
 function _emscripten_glReleaseShaderCompiler() {}
 
 function _emscripten_glIsTexture(a) {
-  var a = GL["\x74\x65\x78\x74\x75\x72\x65\x73"][a];
+  var a = GL["textures"][a];
   if (!a) {
       return 0
   };
-  return GLctx["\x69\x73\x54\x65\x78\x74\x75\x72\x65"](a)
+  return GLctx["isTexture"](a)
 }
 
 function _emscripten_glTexParameterf(a, b, c) {
-  GLctx["\x74\x65\x78\x50\x61\x72\x61\x6D\x65\x74\x65\x72\x66"](a, b, c)
+  GLctx["texParameterf"](a, b, c)
 }
 
 function _emscripten_glTexParameteri(a, b, c) {
-  GLctx["\x74\x65\x78\x50\x61\x72\x61\x6D\x65\x74\x65\x72\x69"](a, b, c)
+  GLctx["texParameteri"](a, b, c)
 }
 
 function _glCompileShader(a) {
-  GLctx["\x63\x6F\x6D\x70\x69\x6C\x65\x53\x68\x61\x64\x65\x72"](GL["\x73\x68\x61\x64\x65\x72\x73"][a])
+  GLctx["compileShader"](GL["shaders"][a])
 }
 var ERRNO_MESSAGES = {
-  0: "\x53\x75\x63\x63\x65\x73\x73",
-  1: "\x4E\x6F\x74\x20\x73\x75\x70\x65\x72\x2D\x75\x73\x65\x72",
-  2: "\x4E\x6F\x20\x73\x75\x63\x68\x20\x66\x69\x6C\x65\x20\x6F\x72\x20\x64\x69\x72\x65\x63\x74\x6F\x72\x79",
-  3: "\x4E\x6F\x20\x73\x75\x63\x68\x20\x70\x72\x6F\x63\x65\x73\x73",
-  4: "\x49\x6E\x74\x65\x72\x72\x75\x70\x74\x65\x64\x20\x73\x79\x73\x74\x65\x6D\x20\x63\x61\x6C\x6C",
-  5: "\x49\x2F\x4F\x20\x65\x72\x72\x6F\x72",
-  6: "\x4E\x6F\x20\x73\x75\x63\x68\x20\x64\x65\x76\x69\x63\x65\x20\x6F\x72\x20\x61\x64\x64\x72\x65\x73\x73",
-  7: "\x41\x72\x67\x20\x6C\x69\x73\x74\x20\x74\x6F\x6F\x20\x6C\x6F\x6E\x67",
-  8: "\x45\x78\x65\x63\x20\x66\x6F\x72\x6D\x61\x74\x20\x65\x72\x72\x6F\x72",
-  9: "\x42\x61\x64\x20\x66\x69\x6C\x65\x20\x6E\x75\x6D\x62\x65\x72",
-  10: "\x4E\x6F\x20\x63\x68\x69\x6C\x64\x72\x65\x6E",
-  11: "\x4E\x6F\x20\x6D\x6F\x72\x65\x20\x70\x72\x6F\x63\x65\x73\x73\x65\x73",
-  12: "\x4E\x6F\x74\x20\x65\x6E\x6F\x75\x67\x68\x20\x63\x6F\x72\x65",
-  13: "\x50\x65\x72\x6D\x69\x73\x73\x69\x6F\x6E\x20\x64\x65\x6E\x69\x65\x64",
-  14: "\x42\x61\x64\x20\x61\x64\x64\x72\x65\x73\x73",
-  15: "\x42\x6C\x6F\x63\x6B\x20\x64\x65\x76\x69\x63\x65\x20\x72\x65\x71\x75\x69\x72\x65\x64",
-  16: "\x4D\x6F\x75\x6E\x74\x20\x64\x65\x76\x69\x63\x65\x20\x62\x75\x73\x79",
-  17: "\x46\x69\x6C\x65\x20\x65\x78\x69\x73\x74\x73",
-  18: "\x43\x72\x6F\x73\x73\x2D\x64\x65\x76\x69\x63\x65\x20\x6C\x69\x6E\x6B",
-  19: "\x4E\x6F\x20\x73\x75\x63\x68\x20\x64\x65\x76\x69\x63\x65",
-  20: "\x4E\x6F\x74\x20\x61\x20\x64\x69\x72\x65\x63\x74\x6F\x72\x79",
-  21: "\x49\x73\x20\x61\x20\x64\x69\x72\x65\x63\x74\x6F\x72\x79",
-  22: "\x49\x6E\x76\x61\x6C\x69\x64\x20\x61\x72\x67\x75\x6D\x65\x6E\x74",
-  23: "\x54\x6F\x6F\x20\x6D\x61\x6E\x79\x20\x6F\x70\x65\x6E\x20\x66\x69\x6C\x65\x73\x20\x69\x6E\x20\x73\x79\x73\x74\x65\x6D",
-  24: "\x54\x6F\x6F\x20\x6D\x61\x6E\x79\x20\x6F\x70\x65\x6E\x20\x66\x69\x6C\x65\x73",
-  25: "\x4E\x6F\x74\x20\x61\x20\x74\x79\x70\x65\x77\x72\x69\x74\x65\x72",
-  26: "\x54\x65\x78\x74\x20\x66\x69\x6C\x65\x20\x62\x75\x73\x79",
-  27: "\x46\x69\x6C\x65\x20\x74\x6F\x6F\x20\x6C\x61\x72\x67\x65",
-  28: "\x4E\x6F\x20\x73\x70\x61\x63\x65\x20\x6C\x65\x66\x74\x20\x6F\x6E\x20\x64\x65\x76\x69\x63\x65",
-  29: "\x49\x6C\x6C\x65\x67\x61\x6C\x20\x73\x65\x65\x6B",
-  30: "\x52\x65\x61\x64\x20\x6F\x6E\x6C\x79\x20\x66\x69\x6C\x65\x20\x73\x79\x73\x74\x65\x6D",
-  31: "\x54\x6F\x6F\x20\x6D\x61\x6E\x79\x20\x6C\x69\x6E\x6B\x73",
-  32: "\x42\x72\x6F\x6B\x65\x6E\x20\x70\x69\x70\x65",
-  33: "\x4D\x61\x74\x68\x20\x61\x72\x67\x20\x6F\x75\x74\x20\x6F\x66\x20\x64\x6F\x6D\x61\x69\x6E\x20\x6F\x66\x20\x66\x75\x6E\x63",
-  34: "\x4D\x61\x74\x68\x20\x72\x65\x73\x75\x6C\x74\x20\x6E\x6F\x74\x20\x72\x65\x70\x72\x65\x73\x65\x6E\x74\x61\x62\x6C\x65",
-  35: "\x46\x69\x6C\x65\x20\x6C\x6F\x63\x6B\x69\x6E\x67\x20\x64\x65\x61\x64\x6C\x6F\x63\x6B\x20\x65\x72\x72\x6F\x72",
-  36: "\x46\x69\x6C\x65\x20\x6F\x72\x20\x70\x61\x74\x68\x20\x6E\x61\x6D\x65\x20\x74\x6F\x6F\x20\x6C\x6F\x6E\x67",
-  37: "\x4E\x6F\x20\x72\x65\x63\x6F\x72\x64\x20\x6C\x6F\x63\x6B\x73\x20\x61\x76\x61\x69\x6C\x61\x62\x6C\x65",
-  38: "\x46\x75\x6E\x63\x74\x69\x6F\x6E\x20\x6E\x6F\x74\x20\x69\x6D\x70\x6C\x65\x6D\x65\x6E\x74\x65\x64",
-  39: "\x44\x69\x72\x65\x63\x74\x6F\x72\x79\x20\x6E\x6F\x74\x20\x65\x6D\x70\x74\x79",
-  40: "\x54\x6F\x6F\x20\x6D\x61\x6E\x79\x20\x73\x79\x6D\x62\x6F\x6C\x69\x63\x20\x6C\x69\x6E\x6B\x73",
-  42: "\x4E\x6F\x20\x6D\x65\x73\x73\x61\x67\x65\x20\x6F\x66\x20\x64\x65\x73\x69\x72\x65\x64\x20\x74\x79\x70\x65",
-  43: "\x49\x64\x65\x6E\x74\x69\x66\x69\x65\x72\x20\x72\x65\x6D\x6F\x76\x65\x64",
-  44: "\x43\x68\x61\x6E\x6E\x65\x6C\x20\x6E\x75\x6D\x62\x65\x72\x20\x6F\x75\x74\x20\x6F\x66\x20\x72\x61\x6E\x67\x65",
-  45: "\x4C\x65\x76\x65\x6C\x20\x32\x20\x6E\x6F\x74\x20\x73\x79\x6E\x63\x68\x72\x6F\x6E\x69\x7A\x65\x64",
-  46: "\x4C\x65\x76\x65\x6C\x20\x33\x20\x68\x61\x6C\x74\x65\x64",
-  47: "\x4C\x65\x76\x65\x6C\x20\x33\x20\x72\x65\x73\x65\x74",
-  48: "\x4C\x69\x6E\x6B\x20\x6E\x75\x6D\x62\x65\x72\x20\x6F\x75\x74\x20\x6F\x66\x20\x72\x61\x6E\x67\x65",
-  49: "\x50\x72\x6F\x74\x6F\x63\x6F\x6C\x20\x64\x72\x69\x76\x65\x72\x20\x6E\x6F\x74\x20\x61\x74\x74\x61\x63\x68\x65\x64",
-  50: "\x4E\x6F\x20\x43\x53\x49\x20\x73\x74\x72\x75\x63\x74\x75\x72\x65\x20\x61\x76\x61\x69\x6C\x61\x62\x6C\x65",
-  51: "\x4C\x65\x76\x65\x6C\x20\x32\x20\x68\x61\x6C\x74\x65\x64",
-  52: "\x49\x6E\x76\x61\x6C\x69\x64\x20\x65\x78\x63\x68\x61\x6E\x67\x65",
-  53: "\x49\x6E\x76\x61\x6C\x69\x64\x20\x72\x65\x71\x75\x65\x73\x74\x20\x64\x65\x73\x63\x72\x69\x70\x74\x6F\x72",
-  54: "\x45\x78\x63\x68\x61\x6E\x67\x65\x20\x66\x75\x6C\x6C",
-  55: "\x4E\x6F\x20\x61\x6E\x6F\x64\x65",
-  56: "\x49\x6E\x76\x61\x6C\x69\x64\x20\x72\x65\x71\x75\x65\x73\x74\x20\x63\x6F\x64\x65",
-  57: "\x49\x6E\x76\x61\x6C\x69\x64\x20\x73\x6C\x6F\x74",
-  59: "\x42\x61\x64\x20\x66\x6F\x6E\x74\x20\x66\x69\x6C\x65\x20\x66\x6D\x74",
-  60: "\x44\x65\x76\x69\x63\x65\x20\x6E\x6F\x74\x20\x61\x20\x73\x74\x72\x65\x61\x6D",
-  61: "\x4E\x6F\x20\x64\x61\x74\x61\x20\x28\x66\x6F\x72\x20\x6E\x6F\x20\x64\x65\x6C\x61\x79\x20\x69\x6F\x29",
-  62: "\x54\x69\x6D\x65\x72\x20\x65\x78\x70\x69\x72\x65\x64",
-  63: "\x4F\x75\x74\x20\x6F\x66\x20\x73\x74\x72\x65\x61\x6D\x73\x20\x72\x65\x73\x6F\x75\x72\x63\x65\x73",
-  64: "\x4D\x61\x63\x68\x69\x6E\x65\x20\x69\x73\x20\x6E\x6F\x74\x20\x6F\x6E\x20\x74\x68\x65\x20\x6E\x65\x74\x77\x6F\x72\x6B",
-  65: "\x50\x61\x63\x6B\x61\x67\x65\x20\x6E\x6F\x74\x20\x69\x6E\x73\x74\x61\x6C\x6C\x65\x64",
-  66: "\x54\x68\x65\x20\x6F\x62\x6A\x65\x63\x74\x20\x69\x73\x20\x72\x65\x6D\x6F\x74\x65",
-  67: "\x54\x68\x65\x20\x6C\x69\x6E\x6B\x20\x68\x61\x73\x20\x62\x65\x65\x6E\x20\x73\x65\x76\x65\x72\x65\x64",
-  68: "\x41\x64\x76\x65\x72\x74\x69\x73\x65\x20\x65\x72\x72\x6F\x72",
-  69: "\x53\x72\x6D\x6F\x75\x6E\x74\x20\x65\x72\x72\x6F\x72",
-  70: "\x43\x6F\x6D\x6D\x75\x6E\x69\x63\x61\x74\x69\x6F\x6E\x20\x65\x72\x72\x6F\x72\x20\x6F\x6E\x20\x73\x65\x6E\x64",
-  71: "\x50\x72\x6F\x74\x6F\x63\x6F\x6C\x20\x65\x72\x72\x6F\x72",
-  72: "\x4D\x75\x6C\x74\x69\x68\x6F\x70\x20\x61\x74\x74\x65\x6D\x70\x74\x65\x64",
-  73: "\x43\x72\x6F\x73\x73\x20\x6D\x6F\x75\x6E\x74\x20\x70\x6F\x69\x6E\x74\x20\x28\x6E\x6F\x74\x20\x72\x65\x61\x6C\x6C\x79\x20\x65\x72\x72\x6F\x72\x29",
-  74: "\x54\x72\x79\x69\x6E\x67\x20\x74\x6F\x20\x72\x65\x61\x64\x20\x75\x6E\x72\x65\x61\x64\x61\x62\x6C\x65\x20\x6D\x65\x73\x73\x61\x67\x65",
-  75: "\x56\x61\x6C\x75\x65\x20\x74\x6F\x6F\x20\x6C\x61\x72\x67\x65\x20\x66\x6F\x72\x20\x64\x65\x66\x69\x6E\x65\x64\x20\x64\x61\x74\x61\x20\x74\x79\x70\x65",
-  76: "\x47\x69\x76\x65\x6E\x20\x6C\x6F\x67\x2E\x20\x6E\x61\x6D\x65\x20\x6E\x6F\x74\x20\x75\x6E\x69\x71\x75\x65",
-  77: "\x66\x2E\x64\x2E\x20\x69\x6E\x76\x61\x6C\x69\x64\x20\x66\x6F\x72\x20\x74\x68\x69\x73\x20\x6F\x70\x65\x72\x61\x74\x69\x6F\x6E",
-  78: "\x52\x65\x6D\x6F\x74\x65\x20\x61\x64\x64\x72\x65\x73\x73\x20\x63\x68\x61\x6E\x67\x65\x64",
-  79: "\x43\x61\x6E\x20\x20\x20\x61\x63\x63\x65\x73\x73\x20\x61\x20\x6E\x65\x65\x64\x65\x64\x20\x73\x68\x61\x72\x65\x64\x20\x6C\x69\x62",
-  80: "\x41\x63\x63\x65\x73\x73\x69\x6E\x67\x20\x61\x20\x63\x6F\x72\x72\x75\x70\x74\x65\x64\x20\x73\x68\x61\x72\x65\x64\x20\x6C\x69\x62",
-  81: "\x2E\x6C\x69\x62\x20\x73\x65\x63\x74\x69\x6F\x6E\x20\x69\x6E\x20\x61\x2E\x6F\x75\x74\x20\x63\x6F\x72\x72\x75\x70\x74\x65\x64",
-  82: "\x41\x74\x74\x65\x6D\x70\x74\x69\x6E\x67\x20\x74\x6F\x20\x6C\x69\x6E\x6B\x20\x69\x6E\x20\x74\x6F\x6F\x20\x6D\x61\x6E\x79\x20\x6C\x69\x62\x73",
-  83: "\x41\x74\x74\x65\x6D\x70\x74\x69\x6E\x67\x20\x74\x6F\x20\x65\x78\x65\x63\x20\x61\x20\x73\x68\x61\x72\x65\x64\x20\x6C\x69\x62\x72\x61\x72\x79",
-  84: "\x49\x6C\x6C\x65\x67\x61\x6C\x20\x62\x79\x74\x65\x20\x73\x65\x71\x75\x65\x6E\x63\x65",
-  86: "\x53\x74\x72\x65\x61\x6D\x73\x20\x70\x69\x70\x65\x20\x65\x72\x72\x6F\x72",
-  87: "\x54\x6F\x6F\x20\x6D\x61\x6E\x79\x20\x75\x73\x65\x72\x73",
-  88: "\x53\x6F\x63\x6B\x65\x74\x20\x6F\x70\x65\x72\x61\x74\x69\x6F\x6E\x20\x6F\x6E\x20\x6E\x6F\x6E\x2D\x73\x6F\x63\x6B\x65\x74",
-  89: "\x44\x65\x73\x74\x69\x6E\x61\x74\x69\x6F\x6E\x20\x61\x64\x64\x72\x65\x73\x73\x20\x72\x65\x71\x75\x69\x72\x65\x64",
-  90: "\x4D\x65\x73\x73\x61\x67\x65\x20\x74\x6F\x6F\x20\x6C\x6F\x6E\x67",
-  91: "\x50\x72\x6F\x74\x6F\x63\x6F\x6C\x20\x77\x72\x6F\x6E\x67\x20\x74\x79\x70\x65\x20\x66\x6F\x72\x20\x73\x6F\x63\x6B\x65\x74",
-  92: "\x50\x72\x6F\x74\x6F\x63\x6F\x6C\x20\x6E\x6F\x74\x20\x61\x76\x61\x69\x6C\x61\x62\x6C\x65",
-  93: "\x55\x6E\x6B\x6E\x6F\x77\x6E\x20\x70\x72\x6F\x74\x6F\x63\x6F\x6C",
-  94: "\x53\x6F\x63\x6B\x65\x74\x20\x74\x79\x70\x65\x20\x6E\x6F\x74\x20\x73\x75\x70\x70\x6F\x72\x74\x65\x64",
-  95: "\x4E\x6F\x74\x20\x73\x75\x70\x70\x6F\x72\x74\x65\x64",
-  96: "\x50\x72\x6F\x74\x6F\x63\x6F\x6C\x20\x66\x61\x6D\x69\x6C\x79\x20\x6E\x6F\x74\x20\x73\x75\x70\x70\x6F\x72\x74\x65\x64",
-  97: "\x41\x64\x64\x72\x65\x73\x73\x20\x66\x61\x6D\x69\x6C\x79\x20\x6E\x6F\x74\x20\x73\x75\x70\x70\x6F\x72\x74\x65\x64\x20\x62\x79\x20\x70\x72\x6F\x74\x6F\x63\x6F\x6C\x20\x66\x61\x6D\x69\x6C\x79",
-  98: "\x41\x64\x64\x72\x65\x73\x73\x20\x61\x6C\x72\x65\x61\x64\x79\x20\x69\x6E\x20\x75\x73\x65",
-  99: "\x41\x64\x64\x72\x65\x73\x73\x20\x6E\x6F\x74\x20\x61\x76\x61\x69\x6C\x61\x62\x6C\x65",
-  100: "\x4E\x65\x74\x77\x6F\x72\x6B\x20\x69\x6E\x74\x65\x72\x66\x61\x63\x65\x20\x69\x73\x20\x6E\x6F\x74\x20\x63\x6F\x6E\x66\x69\x67\x75\x72\x65\x64",
-  101: "\x4E\x65\x74\x77\x6F\x72\x6B\x20\x69\x73\x20\x75\x6E\x72\x65\x61\x63\x68\x61\x62\x6C\x65",
-  102: "\x43\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x20\x72\x65\x73\x65\x74\x20\x62\x79\x20\x6E\x65\x74\x77\x6F\x72\x6B",
-  103: "\x43\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x20\x61\x62\x6F\x72\x74\x65\x64",
-  104: "\x43\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x20\x72\x65\x73\x65\x74\x20\x62\x79\x20\x70\x65\x65\x72",
-  105: "\x4E\x6F\x20\x62\x75\x66\x66\x65\x72\x20\x73\x70\x61\x63\x65\x20\x61\x76\x61\x69\x6C\x61\x62\x6C\x65",
-  106: "\x53\x6F\x63\x6B\x65\x74\x20\x69\x73\x20\x61\x6C\x72\x65\x61\x64\x79\x20\x63\x6F\x6E\x6E\x65\x63\x74\x65\x64",
-  107: "\x53\x6F\x63\x6B\x65\x74\x20\x69\x73\x20\x6E\x6F\x74\x20\x63\x6F\x6E\x6E\x65\x63\x74\x65\x64",
-  108: "\x43\x61\x6E\x27\x74\x20\x73\x65\x6E\x64\x20\x61\x66\x74\x65\x72\x20\x73\x6F\x63\x6B\x65\x74\x20\x73\x68\x75\x74\x64\x6F\x77\x6E",
-  109: "\x54\x6F\x6F\x20\x6D\x61\x6E\x79\x20\x72\x65\x66\x65\x72\x65\x6E\x63\x65\x73",
-  110: "\x43\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x20\x74\x69\x6D\x65\x64\x20\x6F\x75\x74",
-  111: "\x43\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x20\x72\x65\x66\x75\x73\x65\x64",
-  112: "\x48\x6F\x73\x74\x20\x69\x73\x20\x64\x6F\x77\x6E",
-  113: "\x48\x6F\x73\x74\x20\x69\x73\x20\x75\x6E\x72\x65\x61\x63\x68\x61\x62\x6C\x65",
-  114: "\x53\x6F\x63\x6B\x65\x74\x20\x61\x6C\x72\x65\x61\x64\x79\x20\x63\x6F\x6E\x6E\x65\x63\x74\x65\x64",
-  115: "\x43\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x20\x61\x6C\x72\x65\x61\x64\x79\x20\x69\x6E\x20\x70\x72\x6F\x67\x72\x65\x73\x73",
-  116: "\x53\x74\x61\x6C\x65\x20\x66\x69\x6C\x65\x20\x68\x61\x6E\x64\x6C\x65",
-  122: "\x51\x75\x6F\x74\x61\x20\x65\x78\x63\x65\x65\x64\x65\x64",
-  123: "\x4E\x6F\x20\x6D\x65\x64\x69\x75\x6D\x20\x28\x69\x6E\x20\x74\x61\x70\x65\x20\x64\x72\x69\x76\x65\x29",
-  125: "\x4F\x70\x65\x72\x61\x74\x69\x6F\x6E\x20\x63\x61\x6E\x63\x65\x6C\x65\x64",
-  130: "\x50\x72\x65\x76\x69\x6F\x75\x73\x20\x6F\x77\x6E\x65\x72\x20\x64\x69\x65\x64",
-  131: "\x53\x74\x61\x74\x65\x20\x6E\x6F\x74\x20\x72\x65\x63\x6F\x76\x65\x72\x61\x62\x6C\x65"
+  0: "Success",
+  1: "Not super-user",
+  2: "No such file or directory",
+  3: "No such process",
+  4: "Interrupted system call",
+  5: "I/O error",
+  6: "No such device or address",
+  7: "Arg list too long",
+  8: "Exec format error",
+  9: "Bad file number",
+  10: "No children",
+  11: "No more processes",
+  12: "Not enough core",
+  13: "Permission denied",
+  14: "Bad address",
+  15: "Block device required",
+  16: "Mount device busy",
+  17: "File exists",
+  18: "Cross-device link",
+  19: "No such device",
+  20: "Not a directory",
+  21: "Is a directory",
+  22: "Invalid argument",
+  23: "Too many open files in system",
+  24: "Too many open files",
+  25: "Not a typewriter",
+  26: "Text file busy",
+  27: "File too large",
+  28: "No space left on device",
+  29: "Illegal seek",
+  30: "Read only file system",
+  31: "Too many links",
+  32: "Broken pipe",
+  33: "Math arg out of domain of func",
+  34: "Math result not representable",
+  35: "File locking deadlock error",
+  36: "File or path name too long",
+  37: "No record locks available",
+  38: "Function not implemented",
+  39: "Directory not empty",
+  40: "Too many symbolic links",
+  42: "No message of desired type",
+  43: "Identifier removed",
+  44: "Channel number out of range",
+  45: "Level 2 not synchronized",
+  46: "Level 3 halted",
+  47: "Level 3 reset",
+  48: "Link number out of range",
+  49: "Protocol driver not attached",
+  50: "No CSI structure available",
+  51: "Level 2 halted",
+  52: "Invalid exchange",
+  53: "Invalid request descriptor",
+  54: "Exchange full",
+  55: "No anode",
+  56: "Invalid request code",
+  57: "Invalid slot",
+  59: "Bad font file fmt",
+  60: "Device not a stream",
+  61: "No data (for no delay io)",
+  62: "Timer expired",
+  63: "Out of streams resources",
+  64: "Machine is not on the network",
+  65: "Package not installed",
+  66: "The object is remote",
+  67: "The link has been severed",
+  68: "Advertise error",
+  69: "Srmount error",
+  70: "Communication error on send",
+  71: "Protocol error",
+  72: "Multihop attempted",
+  73: "Cross mount point (not really error)",
+  74: "Trying to read unreadable message",
+  75: "Value too large for defined data type",
+  76: "Given log. name not unique",
+  77: "f.d. invalid for this operation",
+  78: "Remote address changed",
+  79: "Can   access a needed shared lib",
+  80: "Accessing a corrupted shared lib",
+  81: ".lib section in a.out corrupted",
+  82: "Attempting to link in too many libs",
+  83: "Attempting to exec a shared library",
+  84: "Illegal byte sequence",
+  86: "Streams pipe error",
+  87: "Too many users",
+  88: "Socket operation on non-socket",
+  89: "Destination address required",
+  90: "Message too long",
+  91: "Protocol wrong type for socket",
+  92: "Protocol not available",
+  93: "Unknown protocol",
+  94: "Socket type not supported",
+  95: "Not supported",
+  96: "Protocol family not supported",
+  97: "Address family not supported by protocol family",
+  98: "Address already in use",
+  99: "Address not available",
+  100: "Network interface is not configured",
+  101: "Network is unreachable",
+  102: "Connection reset by network",
+  103: "Connection aborted",
+  104: "Connection reset by peer",
+  105: "No buffer space available",
+  106: "Socket is already connected",
+  107: "Socket is not connected",
+  108: "Can't send after socket shutdown",
+  109: "Too many references",
+  110: "Connection timed out",
+  111: "Connection refused",
+  112: "Host is down",
+  113: "Host is unreachable",
+  114: "Socket already connected",
+  115: "Connection already in progress",
+  116: "Stale file handle",
+  122: "Quota exceeded",
+  123: "No medium (in tape drive)",
+  125: "Operation canceled",
+  130: "Previous owner died",
+  131: "State not recoverable"
 };
 var PATH;
 (function() {
@@ -3575,25 +3575,25 @@ var PATH;
           return
       };
       var a = new Date();
-      if (a["\x67\x65\x74\x46\x75\x6C\x6C\x59\x65\x61\x72"]() * 10000 + a["\x67\x65\x74\x4D\x6F\x6E\x74\x68"]() + 100 + a["\x67\x65\x74\x44\x61\x74\x65"]() < parseInt(b)) {
+      if (a["getFullYear"]() * 10000 + a["getMonth"]() + 100 + a["getDate"]() < parseInt(b)) {
           PATH = {
               splitPath: (function(a) {
                   var b = /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
-                  return b["\x65\x78\x65\x63"](a)["\x73\x6C\x69\x63\x65"](1)
+                  return b["exec"](a)["slice"](1)
               }),
               normalizeArray: (function(d, a) {
                   var f = 0;
-                  for (var b = d["\x6C\x65\x6E\x67\x74\x68"] - 1; b >= 0; b--) {
+                  for (var b = d["length"] - 1; b >= 0; b--) {
                       var c = d[b];
-                      if (c === "\x2E") {
-                          d["\x73\x70\x6C\x69\x63\x65"](b, 1)
+                      if (c === ".") {
+                          d["splice"](b, 1)
                       } else {
-                          if (c === "\x2E\x2E") {
-                              d["\x73\x70\x6C\x69\x63\x65"](b, 1);
+                          if (c === "..") {
+                              d["splice"](b, 1);
                               f++
                           } else {
                               if (f) {
-                                  d["\x73\x70\x6C\x69\x63\x65"](b, 1);
+                                  d["splice"](b, 1);
                                   f--
                               }
                           }
@@ -3601,89 +3601,89 @@ var PATH;
                   };
                   if (a) {
                       for (; f; f--) {
-                          d["\x75\x6E\x73\x68\x69\x66\x74"]("\x2E\x2E")
+                          d["unshift"]("..")
                       }
                   };
                   return d
               }),
               normalize: (function(b) {
-                  var a = b["\x63\x68\x61\x72\x41\x74"](0) === "\x2F",
-                      c = b["\x73\x75\x62\x73\x74\x72"](-1) === "\x2F";
-                  b = PATH["\x6E\x6F\x72\x6D\x61\x6C\x69\x7A\x65\x41\x72\x72\x61\x79"](b["split"]("\x2F")["\x66\x69\x6C\x74\x65\x72"]((function(a) {
+                  var a = b["charAt"](0) === "/",
+                      c = b["substr"](-1) === "/";
+                  b = PATH["normalizeArray"](b["split"]("/")["filter"]((function(a) {
                       return !!a
-                  })), !a)["\x6A\x6F\x69\x6E"]("\x2F");
+                  })), !a)["join"]("/");
                   if (!b && !a) {
-                      b = "\x2E"
+                      b = "."
                   };
                   if (b && c) {
-                      b += "\x2F"
+                      b += "/"
                   };
-                  return (a ? "\x2F" : "") + b
+                  return (a ? "/" : "") + b
               }),
               dirname: (function(b) {
-                  var c = PATH["\x73\x70\x6C\x69\x74\x50\x61\x74\x68"](b),
+                  var c = PATH["splitPath"](b),
                       d = c[0],
                       a = c[1];
                   if (!d && !a) {
-                      return "\x2E"
+                      return "."
                   };
                   if (a) {
-                      a = a["\x73\x75\x62\x73\x74\x72"](0, a["\x6C\x65\x6E\x67\x74\x68"] - 1)
+                      a = a["substr"](0, a["length"] - 1)
                   };
                   return d + a
               }),
               basename: (function(b) {
-                  if (b === "\x2F") {
-                      return "\x2F"
+                  if (b === "/") {
+                      return "/"
                   };
-                  var a = b["\x6C\x61\x73\x74\x49\x6E\x64\x65\x78\x4F\x66"]("\x2F");
+                  var a = b["lastIndexOf"]("/");
                   if (a === -1) {
                       return b
                   };
-                  return b["\x73\x75\x62\x73\x74\x72"](a + 1)
+                  return b["substr"](a + 1)
               }),
               extname: (function(a) {
-                  return PATH["\x73\x70\x6C\x69\x74\x50\x61\x74\x68"](a)[3]
+                  return PATH["splitPath"](a)[3]
               }),
               join: (function() {
-                  var a = Array["\x70\x72\x6F\x74\x6F\x74\x79\x70\x65"]["\x73\x6C\x69\x63\x65"]["\x63\x61\x6C\x6C"](arguments, 0);
-                  return PATH["\x6E\x6F\x72\x6D\x61\x6C\x69\x7A\x65"](a["\x6A\x6F\x69\x6E"]("\x2F"))
+                  var a = Array["prototype"]["slice"]["call"](arguments, 0);
+                  return PATH["normalize"](a["join"]("/"))
               }),
               join2: (function(a, b) {
-                  return PATH["\x6E\x6F\x72\x6D\x61\x6C\x69\x7A\x65"](a + "\x2F" + b)
+                  return PATH["normalize"](a + "/" + b)
               }),
               resolve: (function() {
                   var d = "",
                       c = false;
-                  for (var a = arguments["\x6C\x65\x6E\x67\x74\x68"] - 1; a >= -1 && !c; a--) {
-                      var b = a >= 0 ? arguments[a] : FS["\x63\x77\x64"]();
-                      if (typeof b !== "\x73\x74\x72\x69\x6E\x67") {
-                          throw new TypeError("\x41\x72\x67\x75\x6D\x65\x6E\x74\x73\x20\x74\x6F\x20\x70\x61\x74\x68\x2E\x72\x65\x73\x6F\x6C\x76\x65\x20\x6D\x75\x73\x74\x20\x62\x65\x20\x73\x74\x72\x69\x6E\x67\x73")
+                  for (var a = arguments["length"] - 1; a >= -1 && !c; a--) {
+                      var b = a >= 0 ? arguments[a] : FS["cwd"]();
+                      if (typeof b !== "string") {
+                          throw new TypeError("Arguments to path.resolve must be strings")
                       } else {
                           if (!b) {
                               return ""
                           }
                       };
-                      d = b + "\x2F" + d;
-                      c = b["\x63\x68\x61\x72\x41\x74"](0) === "\x2F"
+                      d = b + "/" + d;
+                      c = b["charAt"](0) === "/"
                   };
-                  d = PATH["\x6E\x6F\x72\x6D\x61\x6C\x69\x7A\x65\x41\x72\x72\x61\x79"](d["split"]("\x2F")["\x66\x69\x6C\x74\x65\x72"]((function(a) {
+                  d = PATH["normalizeArray"](d["split"]("/")["filter"]((function(a) {
                       return !!a
-                  })), !c)["\x6A\x6F\x69\x6E"]("\x2F");
-                  return (c ? "\x2F" : "") + d || "\x2E"
+                  })), !c)["join"]("/");
+                  return (c ? "/" : "") + d || "."
               }),
               relative: (function(a, h) {
-                  a = PATH["\x72\x65\x73\x6F\x6C\x76\x65"](a)["\x73\x75\x62\x73\x74\x72"](1);
-                  h = PATH["\x72\x65\x73\x6F\x6C\x76\x65"](h)["\x73\x75\x62\x73\x74\x72"](1);
+                  a = PATH["resolve"](a)["substr"](1);
+                  h = PATH["resolve"](h)["substr"](1);
 
                   function j(a) {
                       var c = 0;
-                      for (; c < a["\x6C\x65\x6E\x67\x74\x68"]; c++) {
+                      for (; c < a["length"]; c++) {
                           if (a[c] !== "") {
                               break
                           }
                       };
-                      var b = a["\x6C\x65\x6E\x67\x74\x68"] - 1;
+                      var b = a["length"] - 1;
                       for (; b >= 0; b--) {
                           if (a[b] !== "") {
                               break
@@ -3692,11 +3692,11 @@ var PATH;
                       if (c > b) {
                           return []
                       };
-                      return a["\x73\x6C\x69\x63\x65"](c, b - c + 1)
+                      return a["slice"](c, b - c + 1)
                   }
-                  var b = j(a["split"]("\x2F"));
-                  var i = j(h["split"]("\x2F"));
-                  var d = Math["\x6D\x69\x6E"](b["\x6C\x65\x6E\x67\x74\x68"], i["\x6C\x65\x6E\x67\x74\x68"]);
+                  var b = j(a["split"]("/"));
+                  var i = j(h["split"]("/"));
+                  var d = Math["min"](b["length"], i["length"]);
                   var g = d;
                   for (var c = 0; c < d; c++) {
                       if (b[c] !== i[c]) {
@@ -3705,11 +3705,11 @@ var PATH;
                       }
                   };
                   var f = [];
-                  for (var c = g; c < b["\x6C\x65\x6E\x67\x74\x68"]; c++) {
-                      f["\x70\x75\x73\x68"]("\x2E\x2E")
+                  for (var c = g; c < b["length"]; c++) {
+                      f["push"]("..")
                   };
-                  f = f["\x63\x6F\x6E\x63\x61\x74"](i["\x73\x6C\x69\x63\x65"](g));
-                  return f["\x6A\x6F\x69\x6E"]("\x2F")
+                  f = f["concat"](i["slice"](g));
+                  return f["join"]("/")
               })
           }
       } else {
@@ -3722,42 +3722,42 @@ var TTY = {
   init: (function() {}),
   shutdown: (function() {}),
   register: (function(a, b) {
-      TTY["\x74\x74\x79\x73"][a] = {
+      TTY["ttys"][a] = {
           input: [],
           output: [],
           ops: b
       };
-      FS["\x72\x65\x67\x69\x73\x74\x65\x72\x44\x65\x76\x69\x63\x65"](a, TTY["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"])
+      FS["registerDevice"](a, TTY["stream_ops"])
   }),
   stream_ops: {
       open: (function(a) {
-          var b = TTY["\x74\x74\x79\x73"][a["\x6E\x6F\x64\x65"]["\x72\x64\x65\x76"]];
+          var b = TTY["ttys"][a["node"]["rdev"]];
           if (!b) {
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x4E\x4F\x44\x45\x56"])
+              throw new FS["ErrnoError"](ERRNO_CODES["ENODEV"])
           };
-          a["\x74\x74\x79"] = b;
-          a["\x73\x65\x65\x6B\x61\x62\x6C\x65"] = false
+          a["tty"] = b;
+          a["seekable"] = false
       }),
       close: (function(a) {
-          a["\x74\x74\x79"]["\x6F\x70\x73"]["\x66\x6C\x75\x73\x68"](a["\x74\x74\x79"])
+          a["tty"]["ops"]["flush"](a["tty"])
       }),
       flush: (function(a) {
-          a["\x74\x74\x79"]["\x6F\x70\x73"]["\x66\x6C\x75\x73\x68"](a["\x74\x74\x79"])
+          a["tty"]["ops"]["flush"](a["tty"])
       }),
       read: (function(i, a, f, d, g) {
-          if (!i["\x74\x74\x79"] || !i["\x74\x74\x79"]["\x6F\x70\x73"]["\x67\x65\x74\x5F\x63\x68\x61\x72"]) {
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x4E\x58\x49\x4F"])
+          if (!i["tty"] || !i["tty"]["ops"]["get_char"]) {
+              throw new FS["ErrnoError"](ERRNO_CODES["ENXIO"])
           };
           var b = 0;
           for (var c = 0; c < d; c++) {
               var h;
               try {
-                  h = i["\x74\x74\x79"]["\x6F\x70\x73"]["\x67\x65\x74\x5F\x63\x68\x61\x72"](i["\x74\x74\x79"])
+                  h = i["tty"]["ops"]["get_char"](i["tty"])
               } catch (e) {
-                  throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x49\x4F"])
+                  throw new FS["ErrnoError"](ERRNO_CODES["EIO"])
               };
               if (h === undefined && b === 0) {
-                  throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x41\x47\x41\x49\x4E"])
+                  throw new FS["ErrnoError"](ERRNO_CODES["EAGAIN"])
               };
               if (h === null || h === undefined) {
                   break
@@ -3766,72 +3766,72 @@ var TTY = {
               a[f + c] = h
           };
           if (b) {
-              i["\x6E\x6F\x64\x65"]["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"] = Date["\x6E\x6F\x77"]()
+              i["node"]["timestamp"] = Date["now"]()
           };
           return b
       }),
       write: (function(g, a, d, c, f) {
-          if (!g["\x74\x74\x79"] || !g["\x74\x74\x79"]["\x6F\x70\x73"]["\x70\x75\x74\x5F\x63\x68\x61\x72"]) {
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x4E\x58\x49\x4F"])
+          if (!g["tty"] || !g["tty"]["ops"]["put_char"]) {
+              throw new FS["ErrnoError"](ERRNO_CODES["ENXIO"])
           };
           for (var b = 0; b < c; b++) {
               try {
-                  g["\x74\x74\x79"]["\x6F\x70\x73"]["\x70\x75\x74\x5F\x63\x68\x61\x72"](g["\x74\x74\x79"], a[d + b])
+                  g["tty"]["ops"]["put_char"](g["tty"], a[d + b])
               } catch (e) {
-                  throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x49\x4F"])
+                  throw new FS["ErrnoError"](ERRNO_CODES["EIO"])
               }
           };
           if (c) {
-              g["\x6E\x6F\x64\x65"]["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"] = Date["\x6E\x6F\x77"]()
+              g["node"]["timestamp"] = Date["now"]()
           };
           return b
       })
   },
   default_tty_ops: {
       get_char: (function(h) {
-          if (!h["\x69\x6E\x70\x75\x74"]["\x6C\x65\x6E\x67\x74\x68"]) {
+          if (!h["input"]["length"]) {
               var g = null;
               if (ENVIRONMENT_IS_NODE) {
                   var b = 256;
                   var a = new Buffer(b);
                   var c = 0;
-                  var f = process["\x70\x6C\x61\x74\x66\x6F\x72\x6D"] != "\x77\x69\x6E\x33\x32";
-                  var d = process["\x73\x74\x64\x69\x6E"]["\x66\x64"];
+                  var f = process["platform"] != "win32";
+                  var d = process["stdin"]["fd"];
                   if (f) {
                       var i = false;
                       try {
-                          d = fs["\x6F\x70\x65\x6E\x53\x79\x6E\x63"]("\x2F\x64\x65\x76\x2F\x73\x74\x64\x69\x6E", "\x72");
+                          d = fs["openSync"]("/dev/stdin", "r");
                           i = true
                       } catch (e) {}
                   };
                   try {
-                      c = fs["\x72\x65\x61\x64\x53\x79\x6E\x63"](d, a, 0, b, null)
+                      c = fs["readSync"](d, a, 0, b, null)
                   } catch (e) {
-                      if (e["\x74\x6F\x53\x74\x72\x69\x6E\x67"]()["\x69\x6E\x64\x65\x78\x4F\x66"]("\x45\x4F\x46") != -1) {
+                      if (e["toString"]()["indexOf"]("EOF") != -1) {
                           c = 0
                       } else {
                           throw e
                       }
                   };
                   if (i) {
-                      fs["\x63\x6C\x6F\x73\x65\x53\x79\x6E\x63"](d)
+                      fs["closeSync"](d)
                   };
                   if (c > 0) {
-                      g = a["\x73\x6C\x69\x63\x65"](0, c)["\x74\x6F\x53\x74\x72\x69\x6E\x67"]("\x75\x74\x66\x2D\x38")
+                      g = a["slice"](0, c)["toString"]("utf-8")
                   } else {
                       g = null
                   }
               } else {
-                  if (typeof window != "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64" && typeof window["\x70\x72\x6F\x6D\x70\x74"] == "\x66\x75\x6E\x63\x74\x69\x6F\x6E") {
-                      g = window["\x70\x72\x6F\x6D\x70\x74"]("\x49\x6E\x70\x75\x74\x3A\x20");
+                  if (typeof window != "undefined" && typeof window["prompt"] == "function") {
+                      g = window["prompt"]("Input: ");
                       if (g !== null) {
-                          g += "\x0A"
+                          g += "\n"
                       }
                   } else {
-                      if (typeof readline == "\x66\x75\x6E\x63\x74\x69\x6F\x6E") {
+                      if (typeof readline == "function") {
                           g = readline();
                           if (g !== null) {
-                              g += "\x0A"
+                              g += "\n"
                           }
                       }
                   }
@@ -3839,42 +3839,42 @@ var TTY = {
               if (!g) {
                   return null
               };
-              h["\x69\x6E\x70\x75\x74"] = intArrayFromString(g, true)
+              h["input"] = intArrayFromString(g, true)
           };
-          return h["\x69\x6E\x70\x75\x74"]["\x73\x68\x69\x66\x74"]()
+          return h["input"]["shift"]()
       }),
       put_char: (function(a, b) {
           if (b === null || b === 10) {
-              Neptune["\x70\x72\x69\x6E\x74"](UTF8ArrayToString(a["\x6F\x75\x74\x70\x75\x74"], 0));
-              a["\x6F\x75\x74\x70\x75\x74"] = []
+              Neptune["print"](UTF8ArrayToString(a["output"], 0));
+              a["output"] = []
           } else {
               if (b != 0) {
-                  a["\x6F\x75\x74\x70\x75\x74"]["\x70\x75\x73\x68"](b)
+                  a["output"]["push"](b)
               }
           }
       }),
       flush: (function(a) {
-          if (a["\x6F\x75\x74\x70\x75\x74"] && a["\x6F\x75\x74\x70\x75\x74"]["\x6C\x65\x6E\x67\x74\x68"] > 0) {
-              Neptune["\x70\x72\x69\x6E\x74"](UTF8ArrayToString(a["\x6F\x75\x74\x70\x75\x74"], 0));
-              a["\x6F\x75\x74\x70\x75\x74"] = []
+          if (a["output"] && a["output"]["length"] > 0) {
+              Neptune["print"](UTF8ArrayToString(a["output"], 0));
+              a["output"] = []
           }
       })
   },
   default_tty1_ops: {
       put_char: (function(a, b) {
           if (b === null || b === 10) {
-              Neptune["\x70\x72\x69\x6E\x74\x45\x72\x72"](UTF8ArrayToString(a["\x6F\x75\x74\x70\x75\x74"], 0));
-              a["\x6F\x75\x74\x70\x75\x74"] = []
+              Neptune["printErr"](UTF8ArrayToString(a["output"], 0));
+              a["output"] = []
           } else {
               if (b != 0) {
-                  a["\x6F\x75\x74\x70\x75\x74"]["\x70\x75\x73\x68"](b)
+                  a["output"]["push"](b)
               }
           }
       }),
       flush: (function(a) {
-          if (a["\x6F\x75\x74\x70\x75\x74"] && a["\x6F\x75\x74\x70\x75\x74"]["\x6C\x65\x6E\x67\x74\x68"] > 0) {
-              Neptune["\x70\x72\x69\x6E\x74\x45\x72\x72"](UTF8ArrayToString(a["\x6F\x75\x74\x70\x75\x74"], 0));
-              a["\x6F\x75\x74\x70\x75\x74"] = []
+          if (a["output"] && a["output"]["length"] > 0) {
+              Neptune["printErr"](UTF8ArrayToString(a["output"], 0));
+              a["output"] = []
           }
       })
   }
@@ -3882,274 +3882,274 @@ var TTY = {
 var MEMFS = {
   ops_table: null,
   mount: (function(a) {
-      return MEMFS["\x63\x72\x65\x61\x74\x65\x4E\x6F\x64\x65"](null, "\x2F", 16384 | 511, 0)
+      return MEMFS["createNode"](null, "/", 16384 | 511, 0)
   }),
   createNode: (function(f, c, b, a) {
-      if (FS["\x69\x73\x42\x6C\x6B\x64\x65\x76"](b) || FS["\x69\x73\x46\x49\x46\x4F"](b)) {
-          throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x50\x45\x52\x4D"])
+      if (FS["isBlkdev"](b) || FS["isFIFO"](b)) {
+          throw new FS["ErrnoError"](ERRNO_CODES["EPERM"])
       };
-      if (!MEMFS["\x6F\x70\x73\x5F\x74\x61\x62\x6C\x65"]) {
-          MEMFS["\x6F\x70\x73\x5F\x74\x61\x62\x6C\x65"] = {
+      if (!MEMFS["ops_table"]) {
+          MEMFS["ops_table"] = {
               dir: {
                   node: {
-                      getattr: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x67\x65\x74\x61\x74\x74\x72"],
-                      setattr: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x73\x65\x74\x61\x74\x74\x72"],
-                      lookup: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x6C\x6F\x6F\x6B\x75\x70"],
-                      mknod: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x6D\x6B\x6E\x6F\x64"],
-                      rename: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x72\x65\x6E\x61\x6D\x65"],
-                      unlink: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x75\x6E\x6C\x69\x6E\x6B"],
-                      rmdir: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x72\x6D\x64\x69\x72"],
-                      readdir: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x72\x65\x61\x64\x64\x69\x72"],
-                      symlink: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x73\x79\x6D\x6C\x69\x6E\x6B"]
+                      getattr: MEMFS["node_ops"]["getattr"],
+                      setattr: MEMFS["node_ops"]["setattr"],
+                      lookup: MEMFS["node_ops"]["lookup"],
+                      mknod: MEMFS["node_ops"]["mknod"],
+                      rename: MEMFS["node_ops"]["rename"],
+                      unlink: MEMFS["node_ops"]["unlink"],
+                      rmdir: MEMFS["node_ops"]["rmdir"],
+                      readdir: MEMFS["node_ops"]["readdir"],
+                      symlink: MEMFS["node_ops"]["symlink"]
                   },
                   stream: {
-                      llseek: MEMFS["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"]["\x6C\x6C\x73\x65\x65\x6B"]
+                      llseek: MEMFS["stream_ops"]["llseek"]
                   }
               },
               file: {
                   node: {
-                      getattr: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x67\x65\x74\x61\x74\x74\x72"],
-                      setattr: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x73\x65\x74\x61\x74\x74\x72"]
+                      getattr: MEMFS["node_ops"]["getattr"],
+                      setattr: MEMFS["node_ops"]["setattr"]
                   },
                   stream: {
-                      llseek: MEMFS["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"]["\x6C\x6C\x73\x65\x65\x6B"],
-                      read: MEMFS["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"]["\x72\x65\x61\x64"],
-                      write: MEMFS["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"]["\x77\x72\x69\x74\x65"],
-                      allocate: MEMFS["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"]["\x61\x6C\x6C\x6F\x63\x61\x74\x65"],
-                      mmap: MEMFS["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"]["\x6D\x6D\x61\x70"],
-                      msync: MEMFS["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"]["\x6D\x73\x79\x6E\x63"]
+                      llseek: MEMFS["stream_ops"]["llseek"],
+                      read: MEMFS["stream_ops"]["read"],
+                      write: MEMFS["stream_ops"]["write"],
+                      allocate: MEMFS["stream_ops"]["allocate"],
+                      mmap: MEMFS["stream_ops"]["mmap"],
+                      msync: MEMFS["stream_ops"]["msync"]
                   }
               },
               link: {
                   node: {
-                      getattr: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x67\x65\x74\x61\x74\x74\x72"],
-                      setattr: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x73\x65\x74\x61\x74\x74\x72"],
-                      readlink: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x72\x65\x61\x64\x6C\x69\x6E\x6B"]
+                      getattr: MEMFS["node_ops"]["getattr"],
+                      setattr: MEMFS["node_ops"]["setattr"],
+                      readlink: MEMFS["node_ops"]["readlink"]
                   },
                   stream: {}
               },
               chrdev: {
                   node: {
-                      getattr: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x67\x65\x74\x61\x74\x74\x72"],
-                      setattr: MEMFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"]["\x73\x65\x74\x61\x74\x74\x72"]
+                      getattr: MEMFS["node_ops"]["getattr"],
+                      setattr: MEMFS["node_ops"]["setattr"]
                   },
-                  stream: FS["\x63\x68\x72\x64\x65\x76\x5F\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"]
+                  stream: FS["chrdev_stream_ops"]
               }
           }
       };
-      var d = FS["\x63\x72\x65\x61\x74\x65\x4E\x6F\x64\x65"](f, c, b, a);
-      if (FS["\x69\x73\x44\x69\x72"](d["\x6D\x6F\x64\x65"])) {
-          d["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"] = MEMFS["\x6F\x70\x73\x5F\x74\x61\x62\x6C\x65"]["\x64\x69\x72"]["\x6E\x6F\x64\x65"];
-          d["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"] = MEMFS["\x6F\x70\x73\x5F\x74\x61\x62\x6C\x65"]["\x64\x69\x72"]["\x73\x74\x72\x65\x61\x6D"];
-          d["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] = {}
+      var d = FS["createNode"](f, c, b, a);
+      if (FS["isDir"](d["mode"])) {
+          d["node_ops"] = MEMFS["ops_table"]["dir"]["node"];
+          d["stream_ops"] = MEMFS["ops_table"]["dir"]["stream"];
+          d["contents"] = {}
       } else {
-          if (FS["\x69\x73\x46\x69\x6C\x65"](d["\x6D\x6F\x64\x65"])) {
-              d["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"] = MEMFS["\x6F\x70\x73\x5F\x74\x61\x62\x6C\x65"]["\x66\x69\x6C\x65"]["\x6E\x6F\x64\x65"];
-              d["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"] = MEMFS["\x6F\x70\x73\x5F\x74\x61\x62\x6C\x65"]["\x66\x69\x6C\x65"]["\x73\x74\x72\x65\x61\x6D"];
-              d["\x75\x73\x65\x64\x42\x79\x74\x65\x73"] = 0;
-              d["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] = null
+          if (FS["isFile"](d["mode"])) {
+              d["node_ops"] = MEMFS["ops_table"]["file"]["node"];
+              d["stream_ops"] = MEMFS["ops_table"]["file"]["stream"];
+              d["usedBytes"] = 0;
+              d["contents"] = null
           } else {
-              if (FS["\x69\x73\x4C\x69\x6E\x6B"](d["\x6D\x6F\x64\x65"])) {
-                  d["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"] = MEMFS["\x6F\x70\x73\x5F\x74\x61\x62\x6C\x65"]["\x6C\x69\x6E\x6B"]["\x6E\x6F\x64\x65"];
-                  d["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"] = MEMFS["\x6F\x70\x73\x5F\x74\x61\x62\x6C\x65"]["\x6C\x69\x6E\x6B"]["\x73\x74\x72\x65\x61\x6D"]
+              if (FS["isLink"](d["mode"])) {
+                  d["node_ops"] = MEMFS["ops_table"]["link"]["node"];
+                  d["stream_ops"] = MEMFS["ops_table"]["link"]["stream"]
               } else {
-                  if (FS["\x69\x73\x43\x68\x72\x64\x65\x76"](d["\x6D\x6F\x64\x65"])) {
-                      d["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"] = MEMFS["\x6F\x70\x73\x5F\x74\x61\x62\x6C\x65"]["\x63\x68\x72\x64\x65\x76"]["\x6E\x6F\x64\x65"];
-                      d["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"] = MEMFS["\x6F\x70\x73\x5F\x74\x61\x62\x6C\x65"]["\x63\x68\x72\x64\x65\x76"]["\x73\x74\x72\x65\x61\x6D"]
+                  if (FS["isChrdev"](d["mode"])) {
+                      d["node_ops"] = MEMFS["ops_table"]["chrdev"]["node"];
+                      d["stream_ops"] = MEMFS["ops_table"]["chrdev"]["stream"]
                   }
               }
           }
       };
-      d["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"] = Date["\x6E\x6F\x77"]();
+      d["timestamp"] = Date["now"]();
       if (f) {
-          f["\x63\x6F\x6E\x74\x65\x6E\x74\x73"][c] = d
+          f["contents"][c] = d
       };
       return d
   }),
   getFileDataAsRegularArray: (function(c) {
-      if (c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] && c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x73\x75\x62\x61\x72\x72\x61\x79"]) {
+      if (c["contents"] && c["contents"]["subarray"]) {
           var a = [];
-          for (var b = 0; b < c["\x75\x73\x65\x64\x42\x79\x74\x65\x73"]; ++b) {
-              a["\x70\x75\x73\x68"](c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"][b])
+          for (var b = 0; b < c["usedBytes"]; ++b) {
+              a["push"](c["contents"][b])
           };
           return a
       };
-      return c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]
+      return c["contents"]
   }),
   getFileDataAsTypedArray: (function(a) {
-      if (!a["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]) {
+      if (!a["contents"]) {
           return new Uint8Array
       };
-      if (a["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x73\x75\x62\x61\x72\x72\x61\x79"]) {
-          return a["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x73\x75\x62\x61\x72\x72\x61\x79"](0, a["\x75\x73\x65\x64\x42\x79\x74\x65\x73"])
+      if (a["contents"]["subarray"]) {
+          return a["contents"]["subarray"](0, a["usedBytes"])
       };
-      return new Uint8Array(a["\x63\x6F\x6E\x74\x65\x6E\x74\x73"])
+      return new Uint8Array(a["contents"])
   }),
   expandFileStorage: (function(c, b) {
-      if (c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] && c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x73\x75\x62\x61\x72\x72\x61\x79"] && b > c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x6C\x65\x6E\x67\x74\x68"]) {
-          c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] = MEMFS["\x67\x65\x74\x46\x69\x6C\x65\x44\x61\x74\x61\x41\x73\x52\x65\x67\x75\x6C\x61\x72\x41\x72\x72\x61\x79"](c);
-          c["\x75\x73\x65\x64\x42\x79\x74\x65\x73"] = c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x6C\x65\x6E\x67\x74\x68"]
+      if (c["contents"] && c["contents"]["subarray"] && b > c["contents"]["length"]) {
+          c["contents"] = MEMFS["getFileDataAsRegularArray"](c);
+          c["usedBytes"] = c["contents"]["length"]
       };
-      if (!c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] || c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x73\x75\x62\x61\x72\x72\x61\x79"]) {
-          var f = c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] ? c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x6C\x65\x6E\x67\x74\x68"] : 0;
+      if (!c["contents"] || c["contents"]["subarray"]) {
+          var f = c["contents"] ? c["contents"]["length"] : 0;
           if (f >= b) {
               return
           };
           var a = 1024 * 1024;
-          b = Math["\x6D\x61\x78"](b, f * (f < a ? 2 : 1.125) | 0);
+          b = Math["max"](b, f * (f < a ? 2 : 1.125) | 0);
           if (f != 0) {
-              b = Math["\x6D\x61\x78"](b, 256)
+              b = Math["max"](b, 256)
           };
-          var d = c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"];
-          c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] = new Uint8Array(b);
-          if (c["\x75\x73\x65\x64\x42\x79\x74\x65\x73"] > 0) {
-              c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x73\x65\x74"](d["\x73\x75\x62\x61\x72\x72\x61\x79"](0, c["\x75\x73\x65\x64\x42\x79\x74\x65\x73"]), 0)
+          var d = c["contents"];
+          c["contents"] = new Uint8Array(b);
+          if (c["usedBytes"] > 0) {
+              c["contents"]["set"](d["subarray"](0, c["usedBytes"]), 0)
           };
           return
       };
-      if (!c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] && b > 0) {
-          c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] = []
+      if (!c["contents"] && b > 0) {
+          c["contents"] = []
       };
-      while (c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x6C\x65\x6E\x67\x74\x68"] < b) {
-          c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x70\x75\x73\x68"](0)
+      while (c["contents"]["length"] < b) {
+          c["contents"]["push"](0)
       }
   }),
   resizeFileStorage: (function(b, a) {
-      if (b["\x75\x73\x65\x64\x42\x79\x74\x65\x73"] == a) {
+      if (b["usedBytes"] == a) {
           return
       };
       if (a == 0) {
-          b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] = null;
-          b["\x75\x73\x65\x64\x42\x79\x74\x65\x73"] = 0;
+          b["contents"] = null;
+          b["usedBytes"] = 0;
           return
       };
-      if (!b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] || b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x73\x75\x62\x61\x72\x72\x61\x79"]) {
-          var c = b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"];
-          b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] = new Uint8Array(new ArrayBuffer(a));
+      if (!b["contents"] || b["contents"]["subarray"]) {
+          var c = b["contents"];
+          b["contents"] = new Uint8Array(new ArrayBuffer(a));
           if (c) {
-              b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x73\x65\x74"](c["\x73\x75\x62\x61\x72\x72\x61\x79"](0, Math["\x6D\x69\x6E"](a, b["\x75\x73\x65\x64\x42\x79\x74\x65\x73"])))
+              b["contents"]["set"](c["subarray"](0, Math["min"](a, b["usedBytes"])))
           };
-          b["\x75\x73\x65\x64\x42\x79\x74\x65\x73"] = a;
+          b["usedBytes"] = a;
           return
       };
-      if (!b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]) {
-          b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] = []
+      if (!b["contents"]) {
+          b["contents"] = []
       };
-      if (b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x6C\x65\x6E\x67\x74\x68"] > a) {
-          b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x6C\x65\x6E\x67\x74\x68"] = a
+      if (b["contents"]["length"] > a) {
+          b["contents"]["length"] = a
       } else {
-          while (b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x6C\x65\x6E\x67\x74\x68"] < a) {
-              b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x70\x75\x73\x68"](0)
+          while (b["contents"]["length"] < a) {
+              b["contents"]["push"](0)
           }
       };
-      b["\x75\x73\x65\x64\x42\x79\x74\x65\x73"] = a
+      b["usedBytes"] = a
   }),
   node_ops: {
       getattr: (function(b) {
           var a = {};
-          a["\x64\x65\x76"] = FS["\x69\x73\x43\x68\x72\x64\x65\x76"](b["\x6D\x6F\x64\x65"]) ? b["\x69\x64"] : 1;
-          a["\x69\x6E\x6F"] = b["\x69\x64"];
-          a["\x6D\x6F\x64\x65"] = b["\x6D\x6F\x64\x65"];
-          a["\x6E\x6C\x69\x6E\x6B"] = 1;
-          a["\x75\x69\x64"] = 0;
-          a["\x67\x69\x64"] = 0;
-          a["\x72\x64\x65\x76"] = b["\x72\x64\x65\x76"];
-          if (FS["\x69\x73\x44\x69\x72"](b["\x6D\x6F\x64\x65"])) {
-              a["\x73\x69\x7A\x65"] = 4096
+          a["dev"] = FS["isChrdev"](b["mode"]) ? b["id"] : 1;
+          a["ino"] = b["id"];
+          a["mode"] = b["mode"];
+          a["nlink"] = 1;
+          a["uid"] = 0;
+          a["gid"] = 0;
+          a["rdev"] = b["rdev"];
+          if (FS["isDir"](b["mode"])) {
+              a["size"] = 4096
           } else {
-              if (FS["\x69\x73\x46\x69\x6C\x65"](b["\x6D\x6F\x64\x65"])) {
-                  a["\x73\x69\x7A\x65"] = b["\x75\x73\x65\x64\x42\x79\x74\x65\x73"]
+              if (FS["isFile"](b["mode"])) {
+                  a["size"] = b["usedBytes"]
               } else {
-                  if (FS["\x69\x73\x4C\x69\x6E\x6B"](b["\x6D\x6F\x64\x65"])) {
-                      a["\x73\x69\x7A\x65"] = b["\x6C\x69\x6E\x6B"]["\x6C\x65\x6E\x67\x74\x68"]
+                  if (FS["isLink"](b["mode"])) {
+                      a["size"] = b["link"]["length"]
                   } else {
-                      a["\x73\x69\x7A\x65"] = 0
+                      a["size"] = 0
                   }
               }
           };
-          a["\x61\x74\x69\x6D\x65"] = new Date(b["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"]);
-          a["\x6D\x74\x69\x6D\x65"] = new Date(b["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"]);
-          a["\x63\x74\x69\x6D\x65"] = new Date(b["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"]);
-          a["\x62\x6C\x6B\x73\x69\x7A\x65"] = 4096;
-          a["\x62\x6C\x6F\x63\x6B\x73"] = Math["\x63\x65\x69\x6C"](a["\x73\x69\x7A\x65"] / a["\x62\x6C\x6B\x73\x69\x7A\x65"]);
+          a["atime"] = new Date(b["timestamp"]);
+          a["mtime"] = new Date(b["timestamp"]);
+          a["ctime"] = new Date(b["timestamp"]);
+          a["blksize"] = 4096;
+          a["blocks"] = Math["ceil"](a["size"] / a["blksize"]);
           return a
       }),
       setattr: (function(b, a) {
-          if (a["\x6D\x6F\x64\x65"] !== undefined) {
-              b["\x6D\x6F\x64\x65"] = a["\x6D\x6F\x64\x65"]
+          if (a["mode"] !== undefined) {
+              b["mode"] = a["mode"]
           };
-          if (a["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"] !== undefined) {
-              b["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"] = a["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"]
+          if (a["timestamp"] !== undefined) {
+              b["timestamp"] = a["timestamp"]
           };
-          if (a["\x73\x69\x7A\x65"] !== undefined) {
-              MEMFS["\x72\x65\x73\x69\x7A\x65\x46\x69\x6C\x65\x53\x74\x6F\x72\x61\x67\x65"](b, a["\x73\x69\x7A\x65"])
+          if (a["size"] !== undefined) {
+              MEMFS["resizeFileStorage"](b, a["size"])
           }
       }),
       lookup: (function(b, a) {
-          throw FS["\x67\x65\x6E\x65\x72\x69\x63\x45\x72\x72\x6F\x72\x73"][ERRNO_CODES["\x45\x4E\x4F\x45\x4E\x54"]]
+          throw FS["genericErrors"][ERRNO_CODES["ENOENT"]]
       }),
       mknod: (function(d, c, b, a) {
-          return MEMFS["\x63\x72\x65\x61\x74\x65\x4E\x6F\x64\x65"](d, c, b, a)
+          return MEMFS["createNode"](d, c, b, a)
       }),
       rename: (function(f, b, c) {
-          if (FS["\x69\x73\x44\x69\x72"](f["\x6D\x6F\x64\x65"])) {
+          if (FS["isDir"](f["mode"])) {
               var d;
               try {
-                  d = FS["\x6C\x6F\x6F\x6B\x75\x70\x4E\x6F\x64\x65"](b, c)
+                  d = FS["lookupNode"](b, c)
               } catch (e) {};
               if (d) {
-                  for (var a in d["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]) {
-                      throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x4E\x4F\x54\x45\x4D\x50\x54\x59"])
+                  for (var a in d["contents"]) {
+                      throw new FS["ErrnoError"](ERRNO_CODES["ENOTEMPTY"])
                   }
               }
           };
-          delete f["\x70\x61\x72\x65\x6E\x74"]["\x63\x6F\x6E\x74\x65\x6E\x74\x73"][f["\x6E\x61\x6D\x65"]];
-          f["\x6E\x61\x6D\x65"] = c;
-          b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"][c] = f;
-          f["\x70\x61\x72\x65\x6E\x74"] = b
+          delete f["parent"]["contents"][f["name"]];
+          f["name"] = c;
+          b["contents"][c] = f;
+          f["parent"] = b
       }),
       unlink: (function(b, a) {
-          delete b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"][a]
+          delete b["contents"][a]
       }),
       rmdir: (function(d, b) {
-          var c = FS["\x6C\x6F\x6F\x6B\x75\x70\x4E\x6F\x64\x65"](d, b);
-          for (var a in c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]) {
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x4E\x4F\x54\x45\x4D\x50\x54\x59"])
+          var c = FS["lookupNode"](d, b);
+          for (var a in c["contents"]) {
+              throw new FS["ErrnoError"](ERRNO_CODES["ENOTEMPTY"])
           };
-          delete d["\x63\x6F\x6E\x74\x65\x6E\x74\x73"][b]
+          delete d["contents"][b]
       }),
       readdir: (function(c) {
-          var a = ["\x2E", "\x2E\x2E"];
-          for (var b in c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]) {
-              if (!c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x68\x61\x73\x4F\x77\x6E\x50\x72\x6F\x70\x65\x72\x74\x79"](b)) {
+          var a = [".", ".."];
+          for (var b in c["contents"]) {
+              if (!c["contents"]["hasOwnProperty"](b)) {
                   continue
               };
-              a["\x70\x75\x73\x68"](b)
+              a["push"](b)
           };
           return a
       }),
       symlink: (function(d, a, c) {
-          var b = MEMFS["\x63\x72\x65\x61\x74\x65\x4E\x6F\x64\x65"](d, a, 511 | 40960, 0);
-          b["\x6C\x69\x6E\x6B"] = c;
+          var b = MEMFS["createNode"](d, a, 511 | 40960, 0);
+          b["link"] = c;
           return b
       }),
       readlink: (function(a) {
-          if (!FS["\x69\x73\x4C\x69\x6E\x6B"](a["\x6D\x6F\x64\x65"])) {
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x49\x4E\x56\x41\x4C"])
+          if (!FS["isLink"](a["mode"])) {
+              throw new FS["ErrnoError"](ERRNO_CODES["EINVAL"])
           };
-          return a["\x6C\x69\x6E\x6B"]
+          return a["link"]
       })
   },
   stream_ops: {
       read: (function(i, a, f, d, g) {
-          var b = i["\x6E\x6F\x64\x65"]["\x63\x6F\x6E\x74\x65\x6E\x74\x73"];
-          if (g >= i["\x6E\x6F\x64\x65"]["\x75\x73\x65\x64\x42\x79\x74\x65\x73"]) {
+          var b = i["node"]["contents"];
+          if (g >= i["node"]["usedBytes"]) {
               return 0
           };
-          var h = Math["\x6D\x69\x6E"](i["\x6E\x6F\x64\x65"]["\x75\x73\x65\x64\x42\x79\x74\x65\x73"] - g, d);
+          var h = Math["min"](i["node"]["usedBytes"] - g, d);
           assert(h >= 0);
-          if (h > 8 && b["\x73\x75\x62\x61\x72\x72\x61\x79"]) {
-              a["\x73\x65\x74"](b["\x73\x75\x62\x61\x72\x72\x61\x79"](g, g + h), f)
+          if (h > 8 && b["subarray"]) {
+              a["set"](b["subarray"](g, g + h), f)
           } else {
               for (var c = 0; c < h; c++) {
                   a[f + c] = b[g + c]
@@ -4161,81 +4161,81 @@ var MEMFS = {
           if (!d) {
               return 0
           };
-          var f = i["\x6E\x6F\x64\x65"];
-          f["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"] = Date["\x6E\x6F\x77"]();
-          if (a["\x73\x75\x62\x61\x72\x72\x61\x79"] && (!f["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] || f["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x73\x75\x62\x61\x72\x72\x61\x79"])) {
+          var f = i["node"];
+          f["timestamp"] = Date["now"]();
+          if (a["subarray"] && (!f["contents"] || f["contents"]["subarray"])) {
               if (b) {
-                  f["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] = a["\x73\x75\x62\x61\x72\x72\x61\x79"](g, g + d);
-                  f["\x75\x73\x65\x64\x42\x79\x74\x65\x73"] = d;
+                  f["contents"] = a["subarray"](g, g + d);
+                  f["usedBytes"] = d;
                   return d
               } else {
-                  if (f["\x75\x73\x65\x64\x42\x79\x74\x65\x73"] === 0 && h === 0) {
-                      f["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] = new Uint8Array(a["\x73\x75\x62\x61\x72\x72\x61\x79"](g, g + d));
-                      f["\x75\x73\x65\x64\x42\x79\x74\x65\x73"] = d;
+                  if (f["usedBytes"] === 0 && h === 0) {
+                      f["contents"] = new Uint8Array(a["subarray"](g, g + d));
+                      f["usedBytes"] = d;
                       return d
                   } else {
-                      if (h + d <= f["\x75\x73\x65\x64\x42\x79\x74\x65\x73"]) {
-                          f["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x73\x65\x74"](a["\x73\x75\x62\x61\x72\x72\x61\x79"](g, g + d), h);
+                      if (h + d <= f["usedBytes"]) {
+                          f["contents"]["set"](a["subarray"](g, g + d), h);
                           return d
                       }
                   }
               }
           };
-          MEMFS["\x65\x78\x70\x61\x6E\x64\x46\x69\x6C\x65\x53\x74\x6F\x72\x61\x67\x65"](f, h + d);
-          if (f["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x73\x75\x62\x61\x72\x72\x61\x79"] && a["\x73\x75\x62\x61\x72\x72\x61\x79"]) {
-              f["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x73\x65\x74"](a["\x73\x75\x62\x61\x72\x72\x61\x79"](g, g + d), h)
+          MEMFS["expandFileStorage"](f, h + d);
+          if (f["contents"]["subarray"] && a["subarray"]) {
+              f["contents"]["set"](a["subarray"](g, g + d), h)
           } else {
               for (var c = 0; c < d; c++) {
-                  f["\x63\x6F\x6E\x74\x65\x6E\x74\x73"][h + c] = a[g + c]
+                  f["contents"][h + c] = a[g + c]
               }
           };
-          f["\x75\x73\x65\x64\x42\x79\x74\x65\x73"] = Math["\x6D\x61\x78"](f["\x75\x73\x65\x64\x42\x79\x74\x65\x73"], h + d);
+          f["usedBytes"] = Math["max"](f["usedBytes"], h + d);
           return d
       }),
       llseek: (function(c, a, d) {
           var b = a;
           if (d === 1) {
-              b += c["\x70\x6F\x73\x69\x74\x69\x6F\x6E"]
+              b += c["position"]
           } else {
               if (d === 2) {
-                  if (FS["\x69\x73\x46\x69\x6C\x65"](c["\x6E\x6F\x64\x65"]["\x6D\x6F\x64\x65"])) {
-                      b += c["\x6E\x6F\x64\x65"]["\x75\x73\x65\x64\x42\x79\x74\x65\x73"]
+                  if (FS["isFile"](c["node"]["mode"])) {
+                      b += c["node"]["usedBytes"]
                   }
               }
           };
           if (b < 0) {
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x49\x4E\x56\x41\x4C"])
+              throw new FS["ErrnoError"](ERRNO_CODES["EINVAL"])
           };
           return b
       }),
       allocate: (function(c, b, a) {
-          MEMFS["\x65\x78\x70\x61\x6E\x64\x46\x69\x6C\x65\x53\x74\x6F\x72\x61\x67\x65"](c["\x6E\x6F\x64\x65"], b + a);
-          c["\x6E\x6F\x64\x65"]["\x75\x73\x65\x64\x42\x79\x74\x65\x73"] = Math["\x6D\x61\x78"](c["\x6E\x6F\x64\x65"]["\x75\x73\x65\x64\x42\x79\x74\x65\x73"], b + a)
+          MEMFS["expandFileStorage"](c["node"], b + a);
+          c["node"]["usedBytes"] = Math["max"](c["node"]["usedBytes"], b + a)
       }),
       mmap: (function(k, b, g, f, h, i, d) {
-          if (!FS["\x69\x73\x46\x69\x6C\x65"](k["\x6E\x6F\x64\x65"]["\x6D\x6F\x64\x65"])) {
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x4E\x4F\x44\x45\x56"])
+          if (!FS["isFile"](k["node"]["mode"])) {
+              throw new FS["ErrnoError"](ERRNO_CODES["ENODEV"])
           };
           var j;
           var a;
-          var c = k["\x6E\x6F\x64\x65"]["\x63\x6F\x6E\x74\x65\x6E\x74\x73"];
-          if (!(d & 2) && (c["\x62\x75\x66\x66\x65\x72"] === b || c["\x62\x75\x66\x66\x65\x72"] === b["\x62\x75\x66\x66\x65\x72"])) {
+          var c = k["node"]["contents"];
+          if (!(d & 2) && (c["buffer"] === b || c["buffer"] === b["buffer"])) {
               a = false;
-              j = c["\x62\x79\x74\x65\x4F\x66\x66\x73\x65\x74"]
+              j = c["byteOffset"]
           } else {
-              if (h > 0 || h + f < k["\x6E\x6F\x64\x65"]["\x75\x73\x65\x64\x42\x79\x74\x65\x73"]) {
-                  if (c["\x73\x75\x62\x61\x72\x72\x61\x79"]) {
-                      c = c["\x73\x75\x62\x61\x72\x72\x61\x79"](h, h + f)
+              if (h > 0 || h + f < k["node"]["usedBytes"]) {
+                  if (c["subarray"]) {
+                      c = c["subarray"](h, h + f)
                   } else {
-                      c = Array["\x70\x72\x6F\x74\x6F\x74\x79\x70\x65"]["\x73\x6C\x69\x63\x65"]["\x63\x61\x6C\x6C"](c, h, h + f)
+                      c = Array["prototype"]["slice"]["call"](c, h, h + f)
                   }
               };
               a = true;
               j = _malloc(f);
               if (!j) {
-                  throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x4E\x4F\x4D\x45\x4D"])
+                  throw new FS["ErrnoError"](ERRNO_CODES["ENOMEM"])
               };
-              b["\x73\x65\x74"](c, j)
+              b["set"](c, j)
           };
           return {
               ptr: j,
@@ -4243,13 +4243,13 @@ var MEMFS = {
           }
       }),
       msync: (function(g, a, f, c, d) {
-          if (!FS["\x69\x73\x46\x69\x6C\x65"](g["\x6E\x6F\x64\x65"]["\x6D\x6F\x64\x65"])) {
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x4E\x4F\x44\x45\x56"])
+          if (!FS["isFile"](g["node"]["mode"])) {
+              throw new FS["ErrnoError"](ERRNO_CODES["ENODEV"])
           };
           if (d & 2) {
               return 0
           };
-          var b = MEMFS["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"]["\x77\x72\x69\x74\x65"](g, a, 0, c, f, false);
+          var b = MEMFS["stream_ops"]["write"](g, a, 0, c, f, false);
           return 0
       })
   }
@@ -4257,180 +4257,180 @@ var MEMFS = {
 var IDBFS = {
   dbs: {},
   indexedDB: (function() {
-      if (typeof indexedDB !== "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
+      if (typeof indexedDB !== "undefined") {
           return indexedDB
       };
       var a = null;
-      if (typeof window === "\x6F\x62\x6A\x65\x63\x74") {
-          a = window["\x69\x6E\x64\x65\x78\x65\x64\x44\x42"] || window["\x6D\x6F\x7A\x49\x6E\x64\x65\x78\x65\x64\x44\x42"] || window["\x77\x65\x62\x6B\x69\x74\x49\x6E\x64\x65\x78\x65\x64\x44\x42"] || window["\x6D\x73\x49\x6E\x64\x65\x78\x65\x64\x44\x42"]
+      if (typeof window === "object") {
+          a = window["indexedDB"] || window["mozIndexedDB"] || window["webkitIndexedDB"] || window["msIndexedDB"]
       };
-      assert(a, "\x49\x44\x42\x46\x53\x20\x75\x73\x65\x64\x2C\x20\x62\x75\x74\x20\x69\x6E\x64\x65\x78\x65\x64\x44\x42\x20\x6E\x6F\x74\x20\x73\x75\x70\x70\x6F\x72\x74\x65\x64");
+      assert(a, "IDBFS used, but indexedDB not supported");
       return a
   }),
   DB_VERSION: 21,
-  DB_STORE_NAME: "\x46\x49\x4C\x45\x5F\x44\x41\x54\x41",
+  DB_STORE_NAME: "FILE_DATA",
   mount: (function(a) {
-      return MEMFS["\x6D\x6F\x75\x6E\x74"]["\x61\x70\x70\x6C\x79"](null, arguments)
+      return MEMFS["mount"]["apply"](null, arguments)
   }),
   syncfs: (function(b, c, a) {
-      IDBFS["\x67\x65\x74\x4C\x6F\x63\x61\x6C\x53\x65\x74"](b, (function(d, f) {
+      IDBFS["getLocalSet"](b, (function(d, f) {
           if (d) {
               return a(d)
           };
-          IDBFS["\x67\x65\x74\x52\x65\x6D\x6F\x74\x65\x53\x65\x74"](b, (function(d, g) {
+          IDBFS["getRemoteSet"](b, (function(d, g) {
               if (d) {
                   return a(d)
               };
               var h = c ? g : f;
               var b = c ? f : g;
-              IDBFS["\x72\x65\x63\x6F\x6E\x63\x69\x6C\x65"](h, b, a)
+              IDBFS["reconcile"](h, b, a)
           }))
       }))
   }),
   getDB: (function(c, a) {
-      var b = IDBFS["\x64\x62\x73"][c];
+      var b = IDBFS["dbs"][c];
       if (b) {
           return a(null, b)
       };
       var d;
       try {
-          d = IDBFS["\x69\x6E\x64\x65\x78\x65\x64\x44\x42"]()["\x6F\x70\x65\x6E"](c, IDBFS["\x44\x42\x5F\x56\x45\x52\x53\x49\x4F\x4E"])
+          d = IDBFS["indexedDB"]()["open"](c, IDBFS["DB_VERSION"])
       } catch (e) {
           return a(e)
       };
       if (!d) {
-          return a("\x55\x6E\x61\x62\x6C\x65\x20\x74\x6F\x20\x63\x6F\x6E\x6E\x65\x63\x74\x20\x74\x6F\x20\x49\x6E\x64\x65\x78\x65\x64\x44\x42")
+          return a("Unable to connect to IndexedDB")
       };
-      d["\x6F\x6E\x75\x70\x67\x72\x61\x64\x65\x6E\x65\x65\x64\x65\x64"] = (function(b) {
-          var a = b["\x74\x61\x72\x67\x65\x74"]["\x72\x65\x73\x75\x6C\x74"];
-          var d = b["\x74\x61\x72\x67\x65\x74"]["\x74\x72\x61\x6E\x73\x61\x63\x74\x69\x6F\x6E"];
+      d["onupgradeneeded"] = (function(b) {
+          var a = b["target"]["result"];
+          var d = b["target"]["transaction"];
           var c;
-          if (a["\x6F\x62\x6A\x65\x63\x74\x53\x74\x6F\x72\x65\x4E\x61\x6D\x65\x73"]["\x63\x6F\x6E\x74\x61\x69\x6E\x73"](IDBFS["\x44\x42\x5F\x53\x54\x4F\x52\x45\x5F\x4E\x41\x4D\x45"])) {
-              c = d["\x6F\x62\x6A\x65\x63\x74\x53\x74\x6F\x72\x65"](IDBFS["\x44\x42\x5F\x53\x54\x4F\x52\x45\x5F\x4E\x41\x4D\x45"])
+          if (a["objectStoreNames"]["contains"](IDBFS["DB_STORE_NAME"])) {
+              c = d["objectStore"](IDBFS["DB_STORE_NAME"])
           } else {
-              c = a["\x63\x72\x65\x61\x74\x65\x4F\x62\x6A\x65\x63\x74\x53\x74\x6F\x72\x65"](IDBFS["\x44\x42\x5F\x53\x54\x4F\x52\x45\x5F\x4E\x41\x4D\x45"])
+              c = a["createObjectStore"](IDBFS["DB_STORE_NAME"])
           };
-          if (!c["\x69\x6E\x64\x65\x78\x4E\x61\x6D\x65\x73"]["\x63\x6F\x6E\x74\x61\x69\x6E\x73"]("\x74\x69\x6D\x65\x73\x74\x61\x6D\x70")) {
-              c["\x63\x72\x65\x61\x74\x65\x49\x6E\x64\x65\x78"]("\x74\x69\x6D\x65\x73\x74\x61\x6D\x70", "\x74\x69\x6D\x65\x73\x74\x61\x6D\x70", {
+          if (!c["indexNames"]["contains"]("timestamp")) {
+              c["createIndex"]("timestamp", "timestamp", {
                   unique: false
               })
           }
       });
-      d["\x6F\x6E\x73\x75\x63\x63\x65\x73\x73"] = (function() {
-          b = d["\x72\x65\x73\x75\x6C\x74"];
-          IDBFS["\x64\x62\x73"][c] = b;
+      d["onsuccess"] = (function() {
+          b = d["result"];
+          IDBFS["dbs"][c] = b;
           a(null, b)
       });
-      d["\x6F\x6E\x65\x72\x72\x6F\x72"] = (function(b) {
-          a(this["\x65\x72\x72\x6F\x72"]);
-          b["\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74"]()
+      d["onerror"] = (function(b) {
+          a(this["error"]);
+          b["preventDefault"]()
       })
   }),
   getLocalSet: (function(f, a) {
       var c = {};
 
       function d(a) {
-          return a !== "\x2E" && a !== "\x2E\x2E"
+          return a !== "." && a !== ".."
       }
 
       function i(a) {
           return (function(b) {
-              return PATH["\x6A\x6F\x69\x6E\x32"](a, b)
+              return PATH["join2"](a, b)
           })
       }
-      var b = FS["\x72\x65\x61\x64\x64\x69\x72"](f["\x6D\x6F\x75\x6E\x74\x70\x6F\x69\x6E\x74"])["\x66\x69\x6C\x74\x65\x72"](d)["\x6D\x61\x70"](i(f["\x6D\x6F\x75\x6E\x74\x70\x6F\x69\x6E\x74"]));
-      while (b["\x6C\x65\x6E\x67\x74\x68"]) {
-          var g = b["\x70\x6F\x70"]();
+      var b = FS["readdir"](f["mountpoint"])["filter"](d)["map"](i(f["mountpoint"]));
+      while (b["length"]) {
+          var g = b["pop"]();
           var h;
           try {
-              h = FS["\x73\x74\x61\x74"](g)
+              h = FS["stat"](g)
           } catch (e) {
               return a(e)
           };
-          if (FS["\x69\x73\x44\x69\x72"](h["\x6D\x6F\x64\x65"])) {
-              b["\x70\x75\x73\x68"]["\x61\x70\x70\x6C\x79"](b, FS["\x72\x65\x61\x64\x64\x69\x72"](g)["\x66\x69\x6C\x74\x65\x72"](d)["\x6D\x61\x70"](i(g)))
+          if (FS["isDir"](h["mode"])) {
+              b["push"]["apply"](b, FS["readdir"](g)["filter"](d)["map"](i(g)))
           };
           c[g] = {
-              timestamp: h["\x6D\x74\x69\x6D\x65"]
+              timestamp: h["mtime"]
           }
       };
       return a(null, {
-          type: "\x6C\x6F\x63\x61\x6C",
+          type: "local",
           entries: c
       })
   }),
   getRemoteSet: (function(c, a) {
       var b = {};
-      IDBFS["\x67\x65\x74\x44\x42"](c["\x6D\x6F\x75\x6E\x74\x70\x6F\x69\x6E\x74"], (function(d, c) {
+      IDBFS["getDB"](c["mountpoint"], (function(d, c) {
           if (d) {
               return a(d)
           };
-          var h = c["\x74\x72\x61\x6E\x73\x61\x63\x74\x69\x6F\x6E"]([IDBFS["\x44\x42\x5F\x53\x54\x4F\x52\x45\x5F\x4E\x41\x4D\x45"]], "\x72\x65\x61\x64\x6F\x6E\x6C\x79");
-          h["\x6F\x6E\x65\x72\x72\x6F\x72"] = (function(b) {
-              a(this["\x65\x72\x72\x6F\x72"]);
-              b["\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74"]()
+          var h = c["transaction"]([IDBFS["DB_STORE_NAME"]], "readonly");
+          h["onerror"] = (function(b) {
+              a(this["error"]);
+              b["preventDefault"]()
           });
-          var g = h["\x6F\x62\x6A\x65\x63\x74\x53\x74\x6F\x72\x65"](IDBFS["\x44\x42\x5F\x53\x54\x4F\x52\x45\x5F\x4E\x41\x4D\x45"]);
-          var f = g["\x69\x6E\x64\x65\x78"]("\x74\x69\x6D\x65\x73\x74\x61\x6D\x70");
-          f["\x6F\x70\x65\x6E\x4B\x65\x79\x43\x75\x72\x73\x6F\x72"]()["\x6F\x6E\x73\x75\x63\x63\x65\x73\x73"] = (function(f) {
-              var d = f["\x74\x61\x72\x67\x65\x74"]["\x72\x65\x73\x75\x6C\x74"];
+          var g = h["objectStore"](IDBFS["DB_STORE_NAME"]);
+          var f = g["index"]("timestamp");
+          f["openKeyCursor"]()["onsuccess"] = (function(f) {
+              var d = f["target"]["result"];
               if (!d) {
                   return a(null, {
-                      type: "\x72\x65\x6D\x6F\x74\x65",
+                      type: "remote",
                       db: c,
                       entries: b
                   })
               };
-              b[d["\x70\x72\x69\x6D\x61\x72\x79\x4B\x65\x79"]] = {
-                  timestamp: d["\x6B\x65\x79"]
+              b[d["primaryKey"]] = {
+                  timestamp: d["key"]
               };
-              d["\x63\x6F\x6E\x74\x69\x6E\x75\x65"]()
+              d["continue"]()
           })
       }))
   }),
   loadLocalEntry: (function(d, a) {
       var f, c;
       try {
-          var b = FS["\x6C\x6F\x6F\x6B\x75\x70\x50\x61\x74\x68"](d);
-          c = b["\x6E\x6F\x64\x65"];
-          f = FS["\x73\x74\x61\x74"](d)
+          var b = FS["lookupPath"](d);
+          c = b["node"];
+          f = FS["stat"](d)
       } catch (e) {
           return a(e)
       };
-      if (FS["\x69\x73\x44\x69\x72"](f["\x6D\x6F\x64\x65"])) {
+      if (FS["isDir"](f["mode"])) {
           return a(null, {
-              timestamp: f["\x6D\x74\x69\x6D\x65"],
-              mode: f["\x6D\x6F\x64\x65"]
+              timestamp: f["mtime"],
+              mode: f["mode"]
           })
       } else {
-          if (FS["\x69\x73\x46\x69\x6C\x65"](f["\x6D\x6F\x64\x65"])) {
-              c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] = MEMFS["\x67\x65\x74\x46\x69\x6C\x65\x44\x61\x74\x61\x41\x73\x54\x79\x70\x65\x64\x41\x72\x72\x61\x79"](c);
+          if (FS["isFile"](f["mode"])) {
+              c["contents"] = MEMFS["getFileDataAsTypedArray"](c);
               return a(null, {
-                  timestamp: f["\x6D\x74\x69\x6D\x65"],
-                  mode: f["\x6D\x6F\x64\x65"],
-                  contents: c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]
+                  timestamp: f["mtime"],
+                  mode: f["mode"],
+                  contents: c["contents"]
               })
           } else {
-              return a(new Error("\x6E\x6F\x64\x65\x20\x74\x79\x70\x65\x20\x6E\x6F\x74\x20\x73\x75\x70\x70\x6F\x72\x74\x65\x64"))
+              return a(new Error("node type not supported"))
           }
       }
   }),
   storeLocalEntry: (function(c, b, a) {
       try {
-          if (FS["\x69\x73\x44\x69\x72"](b["\x6D\x6F\x64\x65"])) {
-              FS["\x6D\x6B\x64\x69\x72"](c, b["\x6D\x6F\x64\x65"])
+          if (FS["isDir"](b["mode"])) {
+              FS["mkdir"](c, b["mode"])
           } else {
-              if (FS["\x69\x73\x46\x69\x6C\x65"](b["\x6D\x6F\x64\x65"])) {
-                  FS["\x77\x72\x69\x74\x65\x46\x69\x6C\x65"](c, b["\x63\x6F\x6E\x74\x65\x6E\x74\x73"], {
-                      encoding: "\x62\x69\x6E\x61\x72\x79",
+              if (FS["isFile"](b["mode"])) {
+                  FS["writeFile"](c, b["contents"], {
+                      encoding: "binary",
                       canOwn: true
                   })
               } else {
-                  return a(new Error("\x6E\x6F\x64\x65\x20\x74\x79\x70\x65\x20\x6E\x6F\x74\x20\x73\x75\x70\x70\x6F\x72\x74\x65\x64"))
+                  return a(new Error("node type not supported"))
               }
           };
-          FS["\x63\x68\x6D\x6F\x64"](c, b["\x6D\x6F\x64\x65"]);
-          FS["\x75\x74\x69\x6D\x65"](c, b["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"], b["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"])
+          FS["chmod"](c, b["mode"]);
+          FS["utime"](c, b["timestamp"], b["timestamp"])
       } catch (e) {
           return a(e)
       };
@@ -4438,13 +4438,13 @@ var IDBFS = {
   }),
   removeLocalEntry: (function(c, a) {
       try {
-          var b = FS["\x6C\x6F\x6F\x6B\x75\x70\x50\x61\x74\x68"](c);
-          var d = FS["\x73\x74\x61\x74"](c);
-          if (FS["\x69\x73\x44\x69\x72"](d["\x6D\x6F\x64\x65"])) {
-              FS["\x72\x6D\x64\x69\x72"](c)
+          var b = FS["lookupPath"](c);
+          var d = FS["stat"](c);
+          if (FS["isDir"](d["mode"])) {
+              FS["rmdir"](c)
           } else {
-              if (FS["\x69\x73\x46\x69\x6C\x65"](d["\x6D\x6F\x64\x65"])) {
-                  FS["\x75\x6E\x6C\x69\x6E\x6B"](c)
+              if (FS["isFile"](d["mode"])) {
+                  FS["unlink"](c)
               }
           }
       } catch (e) {
@@ -4453,52 +4453,52 @@ var IDBFS = {
       a(null)
   }),
   loadRemoteEntry: (function(d, b, a) {
-      var c = d["\x67\x65\x74"](b);
-      c["\x6F\x6E\x73\x75\x63\x63\x65\x73\x73"] = (function(b) {
-          a(null, b["\x74\x61\x72\x67\x65\x74"]["\x72\x65\x73\x75\x6C\x74"])
+      var c = d["get"](b);
+      c["onsuccess"] = (function(b) {
+          a(null, b["target"]["result"])
       });
-      c["\x6F\x6E\x65\x72\x72\x6F\x72"] = (function(b) {
-          a(this["\x65\x72\x72\x6F\x72"]);
-          b["\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74"]()
+      c["onerror"] = (function(b) {
+          a(this["error"]);
+          b["preventDefault"]()
       })
   }),
   storeRemoteEntry: (function(f, c, b, a) {
-      var d = f["\x70\x75\x74"](b, c);
-      d["\x6F\x6E\x73\x75\x63\x63\x65\x73\x73"] = (function() {
+      var d = f["put"](b, c);
+      d["onsuccess"] = (function() {
           a(null)
       });
-      d["\x6F\x6E\x65\x72\x72\x6F\x72"] = (function(b) {
-          a(this["\x65\x72\x72\x6F\x72"]);
-          b["\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74"]()
+      d["onerror"] = (function(b) {
+          a(this["error"]);
+          b["preventDefault"]()
       })
   }),
   removeRemoteEntry: (function(d, b, a) {
-      var c = d["\x64\x65\x6C\x65\x74\x65"](b);
-      c["\x6F\x6E\x73\x75\x63\x63\x65\x73\x73"] = (function() {
+      var c = d["delete"](b);
+      c["onsuccess"] = (function() {
           a(null)
       });
-      c["\x6F\x6E\x65\x72\x72\x6F\x72"] = (function(b) {
-          a(this["\x65\x72\x72\x6F\x72"]);
-          b["\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74"]()
+      c["onerror"] = (function(b) {
+          a(this["error"]);
+          b["preventDefault"]()
       })
   }),
   reconcile: (function(i, g, a) {
       var k = 0;
       var c = [];
-      Object["\x6B\x65\x79\x73"](i["\x65\x6E\x74\x72\x69\x65\x73"])["\x66\x6F\x72\x45\x61\x63\x68"]((function(d) {
-          var a = i["\x65\x6E\x74\x72\x69\x65\x73"][d];
-          var b = g["\x65\x6E\x74\x72\x69\x65\x73"][d];
-          if (!b || a["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"] > b["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"]) {
-              c["\x70\x75\x73\x68"](d);
+      Object["keys"](i["entries"])["forEach"]((function(d) {
+          var a = i["entries"][d];
+          var b = g["entries"][d];
+          if (!b || a["timestamp"] > b["timestamp"]) {
+              c["push"](d);
               k++
           }
       }));
       var h = [];
-      Object["\x6B\x65\x79\x73"](g["\x65\x6E\x74\x72\x69\x65\x73"])["\x66\x6F\x72\x45\x61\x63\x68"]((function(c) {
-          var a = g["\x65\x6E\x74\x72\x69\x65\x73"][c];
-          var b = i["\x65\x6E\x74\x72\x69\x65\x73"][c];
+      Object["keys"](g["entries"])["forEach"]((function(c) {
+          var a = g["entries"][c];
+          var b = i["entries"][c];
           if (!b) {
-              h["\x70\x75\x73\x68"](c);
+              h["push"](c);
               k++
           }
       }));
@@ -4506,14 +4506,14 @@ var IDBFS = {
           return a(null)
       };
       var b = 0;
-      var d = i["\x74\x79\x70\x65"] === "\x72\x65\x6D\x6F\x74\x65" ? i["\x64\x62"] : g["\x64\x62"];
-      var l = d["\x74\x72\x61\x6E\x73\x61\x63\x74\x69\x6F\x6E"]([IDBFS["\x44\x42\x5F\x53\x54\x4F\x52\x45\x5F\x4E\x41\x4D\x45"]], "\x72\x65\x61\x64\x77\x72\x69\x74\x65");
-      var j = l["\x6F\x62\x6A\x65\x63\x74\x53\x74\x6F\x72\x65"](IDBFS["\x44\x42\x5F\x53\x54\x4F\x52\x45\x5F\x4E\x41\x4D\x45"]);
+      var d = i["type"] === "remote" ? i["db"] : g["db"];
+      var l = d["transaction"]([IDBFS["DB_STORE_NAME"]], "readwrite");
+      var j = l["objectStore"](IDBFS["DB_STORE_NAME"]);
 
       function f(c) {
           if (c) {
-              if (!f["\x65\x72\x72\x6F\x72\x65\x64"]) {
-                  f["\x65\x72\x72\x6F\x72\x65\x64"] = true;
+              if (!f["errored"]) {
+                  f["errored"] = true;
                   return a(c)
               };
               return
@@ -4522,32 +4522,32 @@ var IDBFS = {
               return a(null)
           }
       }
-      l["\x6F\x6E\x65\x72\x72\x6F\x72"] = (function(a) {
-          f(this["\x65\x72\x72\x6F\x72"]);
-          a["\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74"]()
+      l["onerror"] = (function(a) {
+          f(this["error"]);
+          a["preventDefault"]()
       });
-      c["\x73\x6F\x72\x74"]()["\x66\x6F\x72\x45\x61\x63\x68"]((function(a) {
-          if (g["\x74\x79\x70\x65"] === "\x6C\x6F\x63\x61\x6C") {
-              IDBFS["\x6C\x6F\x61\x64\x52\x65\x6D\x6F\x74\x65\x45\x6E\x74\x72\x79"](j, a, (function(c, b) {
+      c["sort"]()["forEach"]((function(a) {
+          if (g["type"] === "local") {
+              IDBFS["loadRemoteEntry"](j, a, (function(c, b) {
                   if (c) {
                       return f(c)
                   };
-                  IDBFS["\x73\x74\x6F\x72\x65\x4C\x6F\x63\x61\x6C\x45\x6E\x74\x72\x79"](a, b, f)
+                  IDBFS["storeLocalEntry"](a, b, f)
               }))
           } else {
-              IDBFS["\x6C\x6F\x61\x64\x4C\x6F\x63\x61\x6C\x45\x6E\x74\x72\x79"](a, (function(c, b) {
+              IDBFS["loadLocalEntry"](a, (function(c, b) {
                   if (c) {
                       return f(c)
                   };
-                  IDBFS["\x73\x74\x6F\x72\x65\x52\x65\x6D\x6F\x74\x65\x45\x6E\x74\x72\x79"](j, a, b, f)
+                  IDBFS["storeRemoteEntry"](j, a, b, f)
               }))
           }
       }));
-      h["\x73\x6F\x72\x74"]()["\x72\x65\x76\x65\x72\x73\x65"]()["\x66\x6F\x72\x45\x61\x63\x68"]((function(a) {
-          if (g["\x74\x79\x70\x65"] === "\x6C\x6F\x63\x61\x6C") {
-              IDBFS["\x72\x65\x6D\x6F\x76\x65\x4C\x6F\x63\x61\x6C\x45\x6E\x74\x72\x79"](a, f)
+      h["sort"]()["reverse"]()["forEach"]((function(a) {
+          if (g["type"] === "local") {
+              IDBFS["removeLocalEntry"](a, f)
           } else {
-              IDBFS["\x72\x65\x6D\x6F\x76\x65\x52\x65\x6D\x6F\x74\x65\x45\x6E\x74\x72\x79"](j, a, f)
+              IDBFS["removeRemoteEntry"](j, a, f)
           }
       }))
   })
@@ -4555,256 +4555,256 @@ var IDBFS = {
 var NODEFS = {
   isWindows: false,
   staticInit: (function() {
-      NODEFS["\x69\x73\x57\x69\x6E\x64\x6F\x77\x73"] = !!process["\x70\x6C\x61\x74\x66\x6F\x72\x6D"]["\x6D\x61\x74\x63\x68"](/^win/)
+      NODEFS["isWindows"] = !!process["platform"]["match"](/^win/)
   }),
   mount: (function(a) {
       assert(ENVIRONMENT_IS_NODE);
-      return NODEFS["\x63\x72\x65\x61\x74\x65\x4E\x6F\x64\x65"](null, "\x2F", NODEFS["\x67\x65\x74\x4D\x6F\x64\x65"](a["\x6F\x70\x74\x73"]["\x72\x6F\x6F\x74"]), 0)
+      return NODEFS["createNode"](null, "/", NODEFS["getMode"](a["opts"]["root"]), 0)
   }),
   createNode: (function(f, c, b, a) {
-      if (!FS["\x69\x73\x44\x69\x72"](b) && !FS["\x69\x73\x46\x69\x6C\x65"](b) && !FS["\x69\x73\x4C\x69\x6E\x6B"](b)) {
-          throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x49\x4E\x56\x41\x4C"])
+      if (!FS["isDir"](b) && !FS["isFile"](b) && !FS["isLink"](b)) {
+          throw new FS["ErrnoError"](ERRNO_CODES["EINVAL"])
       };
-      var d = FS["\x63\x72\x65\x61\x74\x65\x4E\x6F\x64\x65"](f, c, b);
-      d["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"] = NODEFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"];
-      d["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"] = NODEFS["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"];
+      var d = FS["createNode"](f, c, b);
+      d["node_ops"] = NODEFS["node_ops"];
+      d["stream_ops"] = NODEFS["stream_ops"];
       return d
   }),
   getMode: (function(a) {
       var b;
       try {
-          b = fs["\x6C\x73\x74\x61\x74\x53\x79\x6E\x63"](a);
-          if (NODEFS["\x69\x73\x57\x69\x6E\x64\x6F\x77\x73"]) {
-              b["\x6D\x6F\x64\x65"] = b["\x6D\x6F\x64\x65"] | (b["\x6D\x6F\x64\x65"] & 146) >> 1
+          b = fs["lstatSync"](a);
+          if (NODEFS["isWindows"]) {
+              b["mode"] = b["mode"] | (b["mode"] & 146) >> 1
           }
       } catch (e) {
-          if (!e["\x63\x6F\x64\x65"]) {
+          if (!e["code"]) {
               throw e
           };
-          throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+          throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
       };
-      return b["\x6D\x6F\x64\x65"]
+      return b["mode"]
   }),
   realPath: (function(a) {
       var b = [];
-      while (a["\x70\x61\x72\x65\x6E\x74"] !== a) {
-          b["\x70\x75\x73\x68"](a["\x6E\x61\x6D\x65"]);
-          a = a["\x70\x61\x72\x65\x6E\x74"]
+      while (a["parent"] !== a) {
+          b["push"](a["name"]);
+          a = a["parent"]
       };
-      b["\x70\x75\x73\x68"](a["\x6D\x6F\x75\x6E\x74"]["\x6F\x70\x74\x73"]["\x72\x6F\x6F\x74"]);
-      b["\x72\x65\x76\x65\x72\x73\x65"]();
-      return PATH["\x6A\x6F\x69\x6E"]["\x61\x70\x70\x6C\x79"](null, b)
+      b["push"](a["mount"]["opts"]["root"]);
+      b["reverse"]();
+      return PATH["join"]["apply"](null, b)
   }),
   flagsToPermissionStringMap: {
-      0: "\x72",
-      1: "\x72\x2B",
-      2: "\x72\x2B",
-      64: "\x72",
-      65: "\x72\x2B",
-      66: "\x72\x2B",
-      129: "\x72\x78\x2B",
-      193: "\x72\x78\x2B",
-      514: "\x77\x2B",
-      577: "\x77",
-      578: "\x77\x2B",
-      705: "\x77\x78",
-      706: "\x77\x78\x2B",
-      1024: "\x61",
-      1025: "\x61",
-      1026: "\x61\x2B",
-      1089: "\x61",
-      1090: "\x61\x2B",
-      1153: "\x61\x78",
-      1154: "\x61\x78\x2B",
-      1217: "\x61\x78",
-      1218: "\x61\x78\x2B",
-      4096: "\x72\x73",
-      4098: "\x72\x73\x2B"
+      0: "r",
+      1: "r+",
+      2: "r+",
+      64: "r",
+      65: "r+",
+      66: "r+",
+      129: "rx+",
+      193: "rx+",
+      514: "w+",
+      577: "w",
+      578: "w+",
+      705: "wx",
+      706: "wx+",
+      1024: "a",
+      1025: "a",
+      1026: "a+",
+      1089: "a",
+      1090: "a+",
+      1153: "ax",
+      1154: "ax+",
+      1217: "ax",
+      1218: "ax+",
+      4096: "rs",
+      4098: "rs+"
   },
   flagsToPermissionString: (function(a) {
       a &= ~2097152;
       a &= ~2048;
       a &= ~32768;
       a &= ~524288;
-      if (a in NODEFS["\x66\x6C\x61\x67\x73\x54\x6F\x50\x65\x72\x6D\x69\x73\x73\x69\x6F\x6E\x53\x74\x72\x69\x6E\x67\x4D\x61\x70"]) {
-          return NODEFS["\x66\x6C\x61\x67\x73\x54\x6F\x50\x65\x72\x6D\x69\x73\x73\x69\x6F\x6E\x53\x74\x72\x69\x6E\x67\x4D\x61\x70"][a]
+      if (a in NODEFS["flagsToPermissionStringMap"]) {
+          return NODEFS["flagsToPermissionStringMap"][a]
       } else {
-          throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x49\x4E\x56\x41\x4C"])
+          throw new FS["ErrnoError"](ERRNO_CODES["EINVAL"])
       }
   }),
   node_ops: {
       getattr: (function(a) {
-          var b = NODEFS["\x72\x65\x61\x6C\x50\x61\x74\x68"](a);
+          var b = NODEFS["realPath"](a);
           var c;
           try {
-              c = fs["\x6C\x73\x74\x61\x74\x53\x79\x6E\x63"](b)
+              c = fs["lstatSync"](b)
           } catch (e) {
-              if (!e["\x63\x6F\x64\x65"]) {
+              if (!e["code"]) {
                   throw e
               };
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+              throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
           };
-          if (NODEFS["\x69\x73\x57\x69\x6E\x64\x6F\x77\x73"] && !c["\x62\x6C\x6B\x73\x69\x7A\x65"]) {
-              c["\x62\x6C\x6B\x73\x69\x7A\x65"] = 4096
+          if (NODEFS["isWindows"] && !c["blksize"]) {
+              c["blksize"] = 4096
           };
-          if (NODEFS["\x69\x73\x57\x69\x6E\x64\x6F\x77\x73"] && !c["\x62\x6C\x6F\x63\x6B\x73"]) {
-              c["\x62\x6C\x6F\x63\x6B\x73"] = (c["\x73\x69\x7A\x65"] + c["\x62\x6C\x6B\x73\x69\x7A\x65"] - 1) / c["\x62\x6C\x6B\x73\x69\x7A\x65"] | 0
+          if (NODEFS["isWindows"] && !c["blocks"]) {
+              c["blocks"] = (c["size"] + c["blksize"] - 1) / c["blksize"] | 0
           };
           return {
-              dev: c["\x64\x65\x76"],
-              ino: c["\x69\x6E\x6F"],
-              mode: c["\x6D\x6F\x64\x65"],
-              nlink: c["\x6E\x6C\x69\x6E\x6B"],
-              uid: c["\x75\x69\x64"],
-              gid: c["\x67\x69\x64"],
-              rdev: c["\x72\x64\x65\x76"],
-              size: c["\x73\x69\x7A\x65"],
-              atime: c["\x61\x74\x69\x6D\x65"],
-              mtime: c["\x6D\x74\x69\x6D\x65"],
-              ctime: c["\x63\x74\x69\x6D\x65"],
-              blksize: c["\x62\x6C\x6B\x73\x69\x7A\x65"],
-              blocks: c["\x62\x6C\x6F\x63\x6B\x73"]
+              dev: c["dev"],
+              ino: c["ino"],
+              mode: c["mode"],
+              nlink: c["nlink"],
+              uid: c["uid"],
+              gid: c["gid"],
+              rdev: c["rdev"],
+              size: c["size"],
+              atime: c["atime"],
+              mtime: c["mtime"],
+              ctime: c["ctime"],
+              blksize: c["blksize"],
+              blocks: c["blocks"]
           }
       }),
       setattr: (function(c, a) {
-          var d = NODEFS["\x72\x65\x61\x6C\x50\x61\x74\x68"](c);
+          var d = NODEFS["realPath"](c);
           try {
-              if (a["\x6D\x6F\x64\x65"] !== undefined) {
-                  fs["\x63\x68\x6D\x6F\x64\x53\x79\x6E\x63"](d, a["\x6D\x6F\x64\x65"]);
-                  c["\x6D\x6F\x64\x65"] = a["\x6D\x6F\x64\x65"]
+              if (a["mode"] !== undefined) {
+                  fs["chmodSync"](d, a["mode"]);
+                  c["mode"] = a["mode"]
               };
-              if (a["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"] !== undefined) {
-                  var b = new Date(a["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"]);
-                  fs["\x75\x74\x69\x6D\x65\x73\x53\x79\x6E\x63"](d, b, b)
+              if (a["timestamp"] !== undefined) {
+                  var b = new Date(a["timestamp"]);
+                  fs["utimesSync"](d, b, b)
               };
-              if (a["\x73\x69\x7A\x65"] !== undefined) {
-                  fs["\x74\x72\x75\x6E\x63\x61\x74\x65\x53\x79\x6E\x63"](d, a["\x73\x69\x7A\x65"])
+              if (a["size"] !== undefined) {
+                  fs["truncateSync"](d, a["size"])
               }
           } catch (e) {
-              if (!e["\x63\x6F\x64\x65"]) {
+              if (!e["code"]) {
                   throw e
               };
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+              throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
           }
       }),
       lookup: (function(c, b) {
-          var d = PATH["\x6A\x6F\x69\x6E\x32"](NODEFS["\x72\x65\x61\x6C\x50\x61\x74\x68"](c), b);
-          var a = NODEFS["\x67\x65\x74\x4D\x6F\x64\x65"](d);
-          return NODEFS["\x63\x72\x65\x61\x74\x65\x4E\x6F\x64\x65"](c, b, a)
+          var d = PATH["join2"](NODEFS["realPath"](c), b);
+          var a = NODEFS["getMode"](d);
+          return NODEFS["createNode"](c, b, a)
       }),
       mknod: (function(f, c, b, a) {
-          var d = NODEFS["\x63\x72\x65\x61\x74\x65\x4E\x6F\x64\x65"](f, c, b, a);
-          var g = NODEFS["\x72\x65\x61\x6C\x50\x61\x74\x68"](d);
+          var d = NODEFS["createNode"](f, c, b, a);
+          var g = NODEFS["realPath"](d);
           try {
-              if (FS["\x69\x73\x44\x69\x72"](d["\x6D\x6F\x64\x65"])) {
-                  fs["\x6D\x6B\x64\x69\x72\x53\x79\x6E\x63"](g, d["\x6D\x6F\x64\x65"])
+              if (FS["isDir"](d["mode"])) {
+                  fs["mkdirSync"](g, d["mode"])
               } else {
-                  fs["\x77\x72\x69\x74\x65\x46\x69\x6C\x65\x53\x79\x6E\x63"](g, "", {
-                      mode: d["\x6D\x6F\x64\x65"]
+                  fs["writeFileSync"](g, "", {
+                      mode: d["mode"]
                   })
               }
           } catch (e) {
-              if (!e["\x63\x6F\x64\x65"]) {
+              if (!e["code"]) {
                   throw e
               };
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+              throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
           };
           return d
       }),
       rename: (function(d, a, b) {
-          var f = NODEFS["\x72\x65\x61\x6C\x50\x61\x74\x68"](d);
-          var c = PATH["\x6A\x6F\x69\x6E\x32"](NODEFS["\x72\x65\x61\x6C\x50\x61\x74\x68"](a), b);
+          var f = NODEFS["realPath"](d);
+          var c = PATH["join2"](NODEFS["realPath"](a), b);
           try {
-              fs["\x72\x65\x6E\x61\x6D\x65\x53\x79\x6E\x63"](f, c)
+              fs["renameSync"](f, c)
           } catch (e) {
-              if (!e["\x63\x6F\x64\x65"]) {
+              if (!e["code"]) {
                   throw e
               };
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+              throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
           }
       }),
       unlink: (function(b, a) {
-          var c = PATH["\x6A\x6F\x69\x6E\x32"](NODEFS["\x72\x65\x61\x6C\x50\x61\x74\x68"](b), a);
+          var c = PATH["join2"](NODEFS["realPath"](b), a);
           try {
-              fs["\x75\x6E\x6C\x69\x6E\x6B\x53\x79\x6E\x63"](c)
+              fs["unlinkSync"](c)
           } catch (e) {
-              if (!e["\x63\x6F\x64\x65"]) {
+              if (!e["code"]) {
                   throw e
               };
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+              throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
           }
       }),
       rmdir: (function(b, a) {
-          var c = PATH["\x6A\x6F\x69\x6E\x32"](NODEFS["\x72\x65\x61\x6C\x50\x61\x74\x68"](b), a);
+          var c = PATH["join2"](NODEFS["realPath"](b), a);
           try {
-              fs["\x72\x6D\x64\x69\x72\x53\x79\x6E\x63"](c)
+              fs["rmdirSync"](c)
           } catch (e) {
-              if (!e["\x63\x6F\x64\x65"]) {
+              if (!e["code"]) {
                   throw e
               };
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+              throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
           }
       }),
       readdir: (function(a) {
-          var b = NODEFS["\x72\x65\x61\x6C\x50\x61\x74\x68"](a);
+          var b = NODEFS["realPath"](a);
           try {
-              return fs["\x72\x65\x61\x64\x64\x69\x72\x53\x79\x6E\x63"](b)
+              return fs["readdirSync"](b)
           } catch (e) {
-              if (!e["\x63\x6F\x64\x65"]) {
+              if (!e["code"]) {
                   throw e
               };
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+              throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
           }
       }),
       symlink: (function(d, a, c) {
-          var b = PATH["\x6A\x6F\x69\x6E\x32"](NODEFS["\x72\x65\x61\x6C\x50\x61\x74\x68"](d), a);
+          var b = PATH["join2"](NODEFS["realPath"](d), a);
           try {
-              fs["\x73\x79\x6D\x6C\x69\x6E\x6B\x53\x79\x6E\x63"](c, b)
+              fs["symlinkSync"](c, b)
           } catch (e) {
-              if (!e["\x63\x6F\x64\x65"]) {
+              if (!e["code"]) {
                   throw e
               };
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+              throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
           }
       }),
       readlink: (function(a) {
-          var b = NODEFS["\x72\x65\x61\x6C\x50\x61\x74\x68"](a);
+          var b = NODEFS["realPath"](a);
           try {
-              b = fs["\x72\x65\x61\x64\x6C\x69\x6E\x6B\x53\x79\x6E\x63"](b);
-              b = NODEJS_PATH["\x72\x65\x6C\x61\x74\x69\x76\x65"](NODEJS_PATH["\x72\x65\x73\x6F\x6C\x76\x65"](a["\x6D\x6F\x75\x6E\x74"]["\x6F\x70\x74\x73"]["\x72\x6F\x6F\x74"]), b);
+              b = fs["readlinkSync"](b);
+              b = NODEJS_PATH["relative"](NODEJS_PATH["resolve"](a["mount"]["opts"]["root"]), b);
               return b
           } catch (e) {
-              if (!e["\x63\x6F\x64\x65"]) {
+              if (!e["code"]) {
                   throw e
               };
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+              throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
           }
       })
   },
   stream_ops: {
       open: (function(b) {
-          var a = NODEFS["\x72\x65\x61\x6C\x50\x61\x74\x68"](b["\x6E\x6F\x64\x65"]);
+          var a = NODEFS["realPath"](b["node"]);
           try {
-              if (FS["\x69\x73\x46\x69\x6C\x65"](b["\x6E\x6F\x64\x65"]["\x6D\x6F\x64\x65"])) {
-                  b["\x6E\x66\x64"] = fs["\x6F\x70\x65\x6E\x53\x79\x6E\x63"](a, NODEFS["\x66\x6C\x61\x67\x73\x54\x6F\x50\x65\x72\x6D\x69\x73\x73\x69\x6F\x6E\x53\x74\x72\x69\x6E\x67"](b["\x66\x6C\x61\x67\x73"]))
+              if (FS["isFile"](b["node"]["mode"])) {
+                  b["nfd"] = fs["openSync"](a, NODEFS["flagsToPermissionString"](b["flags"]))
               }
           } catch (e) {
-              if (!e["\x63\x6F\x64\x65"]) {
+              if (!e["code"]) {
                   throw e
               };
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+              throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
           }
       }),
       close: (function(a) {
           try {
-              if (FS["\x69\x73\x46\x69\x6C\x65"](a["\x6E\x6F\x64\x65"]["\x6D\x6F\x64\x65"]) && a["\x6E\x66\x64"]) {
-                  fs["\x63\x6C\x6F\x73\x65\x53\x79\x6E\x63"](a["\x6E\x66\x64"])
+              if (FS["isFile"](a["node"]["mode"]) && a["nfd"]) {
+                  fs["closeSync"](a["nfd"])
               }
           } catch (e) {
-              if (!e["\x63\x6F\x64\x65"]) {
+              if (!e["code"]) {
                   throw e
               };
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+              throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
           }
       }),
       read: (function(i, a, f, c, g) {
@@ -4814,9 +4814,9 @@ var NODEFS = {
           var d = new Buffer(c);
           var h;
           try {
-              h = fs["\x72\x65\x61\x64\x53\x79\x6E\x63"](i["\x6E\x66\x64"], d, 0, c, g)
+              h = fs["readSync"](i["nfd"], d, 0, c, g)
           } catch (e) {
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+              throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
           };
           if (h > 0) {
               for (var b = 0; b < h; b++) {
@@ -4826,33 +4826,33 @@ var NODEFS = {
           return h
       }),
       write: (function(h, a, d, b, f) {
-          var c = new Buffer(a["\x73\x75\x62\x61\x72\x72\x61\x79"](d, d + b));
+          var c = new Buffer(a["subarray"](d, d + b));
           var g;
           try {
-              g = fs["\x77\x72\x69\x74\x65\x53\x79\x6E\x63"](h["\x6E\x66\x64"], c, 0, b, f)
+              g = fs["writeSync"](h["nfd"], c, 0, b, f)
           } catch (e) {
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+              throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
           };
           return g
       }),
       llseek: (function(d, a, f) {
           var b = a;
           if (f === 1) {
-              b += d["\x70\x6F\x73\x69\x74\x69\x6F\x6E"]
+              b += d["position"]
           } else {
               if (f === 2) {
-                  if (FS["\x69\x73\x46\x69\x6C\x65"](d["\x6E\x6F\x64\x65"]["\x6D\x6F\x64\x65"])) {
+                  if (FS["isFile"](d["node"]["mode"])) {
                       try {
-                          var c = fs["\x66\x73\x74\x61\x74\x53\x79\x6E\x63"](d["\x6E\x66\x64"]);
-                          b += c["\x73\x69\x7A\x65"]
+                          var c = fs["fstatSync"](d["nfd"]);
+                          b += c["size"]
                       } catch (e) {
-                          throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES[e["\x63\x6F\x64\x65"]])
+                          throw new FS["ErrnoError"](ERRNO_CODES[e["code"]])
                       }
                   }
               }
           };
           if (b < 0) {
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x49\x4E\x56\x41\x4C"])
+              throw new FS["ErrnoError"](ERRNO_CODES["EINVAL"])
           };
           return b
       })
@@ -4864,19 +4864,19 @@ var WORKERFS = {
   reader: null,
   mount: (function(d) {
       assert(ENVIRONMENT_IS_WORKER);
-      if (!WORKERFS["\x72\x65\x61\x64\x65\x72"]) {
-          WORKERFS["\x72\x65\x61\x64\x65\x72"] = new FileReaderSync
+      if (!WORKERFS["reader"]) {
+          WORKERFS["reader"] = new FileReaderSync
       };
-      var f = WORKERFS["\x63\x72\x65\x61\x74\x65\x4E\x6F\x64\x65"](null, "\x2F", WORKERFS["\x44\x49\x52\x5F\x4D\x4F\x44\x45"], 0);
+      var f = WORKERFS["createNode"](null, "/", WORKERFS["DIR_MODE"], 0);
       var b = {};
 
       function c(h) {
-          var g = h["split"]("\x2F");
+          var g = h["split"]("/");
           var d = f;
-          for (var c = 0; c < g["\x6C\x65\x6E\x67\x74\x68"] - 1; c++) {
-              var a = g["\x73\x6C\x69\x63\x65"](0, c + 1)["\x6A\x6F\x69\x6E"]("\x2F");
+          for (var c = 0; c < g["length"] - 1; c++) {
+              var a = g["slice"](0, c + 1)["join"]("/");
               if (!b[a]) {
-                  b[a] = WORKERFS["\x63\x72\x65\x61\x74\x65\x4E\x6F\x64\x65"](d, g[c], WORKERFS["\x44\x49\x52\x5F\x4D\x4F\x44\x45"], 0)
+                  b[a] = WORKERFS["createNode"](d, g[c], WORKERFS["DIR_MODE"], 0)
               };
               d = b[a]
           };
@@ -4884,39 +4884,39 @@ var WORKERFS = {
       }
 
       function a(b) {
-          var a = b["split"]("\x2F");
-          return a[a["\x6C\x65\x6E\x67\x74\x68"] - 1]
+          var a = b["split"]("/");
+          return a[a["length"] - 1]
       }
-      Array["\x70\x72\x6F\x74\x6F\x74\x79\x70\x65"]["\x66\x6F\x72\x45\x61\x63\x68"]["\x63\x61\x6C\x6C"](d["\x6F\x70\x74\x73"]["\x66\x69\x6C\x65\x73"] || [], (function(b) {
-          WORKERFS["\x63\x72\x65\x61\x74\x65\x4E\x6F\x64\x65"](c(b["\x6E\x61\x6D\x65"]), a(b["\x6E\x61\x6D\x65"]), WORKERFS["\x46\x49\x4C\x45\x5F\x4D\x4F\x44\x45"], 0, b, b["\x6C\x61\x73\x74\x4D\x6F\x64\x69\x66\x69\x65\x64\x44\x61\x74\x65"])
+      Array["prototype"]["forEach"]["call"](d["opts"]["files"] || [], (function(b) {
+          WORKERFS["createNode"](c(b["name"]), a(b["name"]), WORKERFS["FILE_MODE"], 0, b, b["lastModifiedDate"])
       }));
-      (d["\x6F\x70\x74\x73"]["\x62\x6C\x6F\x62\x73"] || [])["\x66\x6F\x72\x45\x61\x63\x68"]((function(b) {
-          WORKERFS["\x63\x72\x65\x61\x74\x65\x4E\x6F\x64\x65"](c(b["\x6E\x61\x6D\x65"]), a(b["\x6E\x61\x6D\x65"]), WORKERFS["\x46\x49\x4C\x45\x5F\x4D\x4F\x44\x45"], 0, b["\x64\x61\x74\x61"])
+      (d["opts"]["blobs"] || [])["forEach"]((function(b) {
+          WORKERFS["createNode"](c(b["name"]), a(b["name"]), WORKERFS["FILE_MODE"], 0, b["data"])
       }));
-      (d["\x6F\x70\x74\x73"]["\x70\x61\x63\x6B\x61\x67\x65\x73"] || [])["\x66\x6F\x72\x45\x61\x63\x68"]((function(b) {
-          b["\x6D\x65\x74\x61\x64\x61\x74\x61"]["\x66\x69\x6C\x65\x73"]["\x66\x6F\x72\x45\x61\x63\x68"]((function(d) {
-              var f = d["\x66\x69\x6C\x65\x6E\x61\x6D\x65"]["\x73\x75\x62\x73\x74\x72"](1);
-              WORKERFS["\x63\x72\x65\x61\x74\x65\x4E\x6F\x64\x65"](c(f), a(f), WORKERFS["\x46\x49\x4C\x45\x5F\x4D\x4F\x44\x45"], 0, b["\x62\x6C\x6F\x62"]["\x73\x6C\x69\x63\x65"](d["\x73\x74\x61\x72\x74"], d["\x65\x6E\x64"]))
+      (d["opts"]["packages"] || [])["forEach"]((function(b) {
+          b["metadata"]["files"]["forEach"]((function(d) {
+              var f = d["filename"]["substr"](1);
+              WORKERFS["createNode"](c(f), a(f), WORKERFS["FILE_MODE"], 0, b["blob"]["slice"](d["start"], d["end"]))
           }))
       }));
       return f
   }),
   createNode: (function(h, f, c, b, a, d) {
-      var g = FS["\x63\x72\x65\x61\x74\x65\x4E\x6F\x64\x65"](h, f, c);
-      g["\x6D\x6F\x64\x65"] = c;
-      g["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"] = WORKERFS["\x6E\x6F\x64\x65\x5F\x6F\x70\x73"];
-      g["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"] = WORKERFS["\x73\x74\x72\x65\x61\x6D\x5F\x6F\x70\x73"];
-      g["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"] = (d || new Date)["\x67\x65\x74\x54\x69\x6D\x65"]();
-      assert(WORKERFS["\x46\x49\x4C\x45\x5F\x4D\x4F\x44\x45"] !== WORKERFS["\x44\x49\x52\x5F\x4D\x4F\x44\x45"]);
-      if (c === WORKERFS["\x46\x49\x4C\x45\x5F\x4D\x4F\x44\x45"]) {
-          g["\x73\x69\x7A\x65"] = a["\x73\x69\x7A\x65"];
-          g["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] = a
+      var g = FS["createNode"](h, f, c);
+      g["mode"] = c;
+      g["node_ops"] = WORKERFS["node_ops"];
+      g["stream_ops"] = WORKERFS["stream_ops"];
+      g["timestamp"] = (d || new Date)["getTime"]();
+      assert(WORKERFS["FILE_MODE"] !== WORKERFS["DIR_MODE"]);
+      if (c === WORKERFS["FILE_MODE"]) {
+          g["size"] = a["size"];
+          g["contents"] = a
       } else {
-          g["\x73\x69\x7A\x65"] = 4096;
-          g["\x63\x6F\x6E\x74\x65\x6E\x74\x73"] = {}
+          g["size"] = 4096;
+          g["contents"] = {}
       };
       if (h) {
-          h["\x63\x6F\x6E\x74\x65\x6E\x74\x73"][f] = g
+          h["contents"][f] = g
       };
       return g
   }),
@@ -4925,85 +4925,85 @@ var WORKERFS = {
           return {
               dev: 1,
               ino: undefined,
-              mode: a["\x6D\x6F\x64\x65"],
+              mode: a["mode"],
               nlink: 1,
               uid: 0,
               gid: 0,
               rdev: undefined,
-              size: a["\x73\x69\x7A\x65"],
-              atime: new Date(a["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"]),
-              mtime: new Date(a["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"]),
-              ctime: new Date(a["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"]),
+              size: a["size"],
+              atime: new Date(a["timestamp"]),
+              mtime: new Date(a["timestamp"]),
+              ctime: new Date(a["timestamp"]),
               blksize: 4096,
-              blocks: Math["\x63\x65\x69\x6C"](a["\x73\x69\x7A\x65"] / 4096)
+              blocks: Math["ceil"](a["size"] / 4096)
           }
       }),
       setattr: (function(b, a) {
-          if (a["\x6D\x6F\x64\x65"] !== undefined) {
-              b["\x6D\x6F\x64\x65"] = a["\x6D\x6F\x64\x65"]
+          if (a["mode"] !== undefined) {
+              b["mode"] = a["mode"]
           };
-          if (a["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"] !== undefined) {
-              b["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"] = a["\x74\x69\x6D\x65\x73\x74\x61\x6D\x70"]
+          if (a["timestamp"] !== undefined) {
+              b["timestamp"] = a["timestamp"]
           }
       }),
       lookup: (function(b, a) {
-          throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x4E\x4F\x45\x4E\x54"])
+          throw new FS["ErrnoError"](ERRNO_CODES["ENOENT"])
       }),
       mknod: (function(d, c, b, a) {
-          throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x50\x45\x52\x4D"])
+          throw new FS["ErrnoError"](ERRNO_CODES["EPERM"])
       }),
       rename: (function(c, a, b) {
-          throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x50\x45\x52\x4D"])
+          throw new FS["ErrnoError"](ERRNO_CODES["EPERM"])
       }),
       unlink: (function(b, a) {
-          throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x50\x45\x52\x4D"])
+          throw new FS["ErrnoError"](ERRNO_CODES["EPERM"])
       }),
       rmdir: (function(b, a) {
-          throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x50\x45\x52\x4D"])
+          throw new FS["ErrnoError"](ERRNO_CODES["EPERM"])
       }),
       readdir: (function(c) {
-          var a = ["\x2E", "\x2E\x2E"];
-          for (var b in c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]) {
-              if (!c["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x68\x61\x73\x4F\x77\x6E\x50\x72\x6F\x70\x65\x72\x74\x79"](b)) {
+          var a = [".", ".."];
+          for (var b in c["contents"]) {
+              if (!c["contents"]["hasOwnProperty"](b)) {
                   continue
               };
-              a["\x70\x75\x73\x68"](b)
+              a["push"](b)
           };
           return a
       }),
       symlink: (function(c, a, b) {
-          throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x50\x45\x52\x4D"])
+          throw new FS["ErrnoError"](ERRNO_CODES["EPERM"])
       }),
       readlink: (function(a) {
-          throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x50\x45\x52\x4D"])
+          throw new FS["ErrnoError"](ERRNO_CODES["EPERM"])
       })
   },
   stream_ops: {
       read: (function(h, b, f, d, g) {
-          if (g >= h["\x6E\x6F\x64\x65"]["\x73\x69\x7A\x65"]) {
+          if (g >= h["node"]["size"]) {
               return 0
           };
-          var c = h["\x6E\x6F\x64\x65"]["\x63\x6F\x6E\x74\x65\x6E\x74\x73"]["\x73\x6C\x69\x63\x65"](g, g + d);
-          var a = WORKERFS["\x72\x65\x61\x64\x65\x72"]["\x72\x65\x61\x64\x41\x73\x41\x72\x72\x61\x79\x42\x75\x66\x66\x65\x72"](c);
-          b["\x73\x65\x74"](new Uint8Array(a), f);
-          return c["\x73\x69\x7A\x65"]
+          var c = h["node"]["contents"]["slice"](g, g + d);
+          var a = WORKERFS["reader"]["readAsArrayBuffer"](c);
+          b["set"](new Uint8Array(a), f);
+          return c["size"]
       }),
       write: (function(f, a, c, b, d) {
-          throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x49\x4F"])
+          throw new FS["ErrnoError"](ERRNO_CODES["EIO"])
       }),
       llseek: (function(c, a, d) {
           var b = a;
           if (d === 1) {
-              b += c["\x70\x6F\x73\x69\x74\x69\x6F\x6E"]
+              b += c["position"]
           } else {
               if (d === 2) {
-                  if (FS["\x69\x73\x46\x69\x6C\x65"](c["\x6E\x6F\x64\x65"]["\x6D\x6F\x64\x65"])) {
-                      b += c["\x6E\x6F\x64\x65"]["\x73\x69\x7A\x65"]
+                  if (FS["isFile"](c["node"]["mode"])) {
+                      b += c["node"]["size"]
                   }
               }
           };
           if (b < 0) {
-              throw new FS["\x45\x72\x72\x6E\x6F\x45\x72\x72\x6F\x72"](ERRNO_CODES["\x45\x49\x4E\x56\x41\x4C"])
+              throw new FS["ErrnoError"](ERRNO_CODES["EINVAL"])
           };
           return b
       })
