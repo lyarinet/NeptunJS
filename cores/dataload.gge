@@ -337,12 +337,23 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
                   throw "using preloaded data can only be done on a web page or in a web worker"
               }
           };
-          if (NeptunP === "tg16CD" || NeptunP === "segaCD" || NeptunP === "lynx" || NeptunP === "psx" || NeptunP === "msx" || NeptunP === "sega_saturn" || NeptunP === "3do" || NeptunP === "nes" || NeptunP === "gba") {
+          if (
+              NeptunP === "tg16CD" ||
+              NeptunP === "segaCD" ||
+              NeptunP === "lynx" ||
+              NeptunP === "psx" ||
+              NeptunP === "msx" ||
+              NeptunP === "sega_saturn" ||
+              NeptunP === "3do" ||
+              NeptunP === "nes" ||
+              NeptunP === "gba"
+            ) {
               var _0x10545 = "Build/" + neptunPlatform + ".ggd";
+              //https://mem.neptunjs.com/njs/ggd/{neptunPlatform}.ggd
               var _0x10620 = "https://mem.neptunjs.com/njs/ggd/" + neptunPlatform + ".ggd"
           } else {
               var _0x10545 = "Build/data.data";
-              var _0x10620 = "https://mem.neptunjs.com/njs/ggd/data.ggd"
+              var _0x10620 = "https://impragma.github.io/NeptunJS/cores/ggd/data.ggd"
           };
           if (typeof Neptune.locateFilePackage === "function" && !Neptune.locateFile) {
               Neptune.locateFile = Neptune.locateFilePackage;
@@ -2620,7 +2631,8 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
   } else {
       if (load_wasm == true) {
           wasmTextFile = Neptune.wasmTextFile || "" + neptunPlatform + ".wast";
-          wasmBinaryFile = Neptune.wasmBinaryFile || "https://mem.neptunjs.com/njs/ggwas/" + neptunPlatform + N64Acurate + ".ggm";
+          //https://mem.neptunjs.com/njs/ggwas/{neptunPlatform}{N64Acurate}.ggm
+          wasmBinaryFile = Neptune.wasmBinaryFile || "https://impragma.github.io/NeptunJS/cores/ggwas/" + neptunPlatform + N64Acurate + ".ggm";
       } else {
           if (NeptunP === "sega32x") {}
       }
