@@ -124,8 +124,8 @@ if (Neptune["\x45\x4E\x56\x49\x52\x4F\x4E\x4D\x45\x4E\x54"]) {
       }
   }
 } else {
-  ENVIRONMENT_IS_WEB = typeof window === "\x6F\x62\x6A\x65\x63\x74\"";
-  ENVIRONMENT_IS_WORKER = typeof importScripts === "\x66\x75\x6E\x63\x74\x69\x6F\x6E\"";
+  ENVIRONMENT_IS_WEB = typeof window === "\x6F\x62\x6A\x65\x63\x74";
+  ENVIRONMENT_IS_WORKER = typeof importScripts === "\x66\x75\x6E\x63\x74\x69\x6F\x6E";
   ENVIRONMENT_IS_NODE = typeof process === "\x6F\x62\x6A\x65\x63\x74\"" && typeof require === "\x66\x75\x6E\x63\x74\x69\x6F\x6E\"" && !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_WORKER;
   ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIRONMENT_IS_WORKER
 };
@@ -804,7 +804,7 @@ function Pointer_stringify(g, d) {
   if (!d) {
       d = c
   };
-  var h = "\"";
+  var h = "";
   if (b < 128) {
       var f = 1024;
       var a;
@@ -821,7 +821,7 @@ function Pointer_stringify(g, d) {
 Neptune["\x50\x6F\x69\x6E\x74\x65\x72\x5F\x73\x74\x72\x69\x6E\x67\x69\x66\x79"] = Pointer_stringify;
 
 function AsciiToString(b) {
-  var c = "\"";
+  var c = "";
   while (1) {
       var a = HEAP8[b++ >> 0];
       if (!a) {
@@ -847,7 +847,7 @@ function UTF8ArrayToString(l, c) {
       return UTF8Decoder["\x64\x65\x63\x6F\x64\x65"](l["\x73\x75\x62\x61\x72\x72\x61\x79"](c, b))
   } else {
       var f, g, h, i, j, k;
-      var d = "\"";
+      var d = "";
       while (1) {
           f = l[c++];
           if (!f) {
@@ -1556,7 +1556,7 @@ function integrateWasmJS(n) {
           return z(a)
       }
   });
-  var g = "\"";
+  var g = "";
   n["\x61\x73\x6D"] = (function(c, a, g) {
       c = h(c);
       a = h(a);
@@ -1794,7 +1794,7 @@ var GL = {
       }
   },
   getSource: (function(g, a, i, f) {
-      var h = "\"";
+      var h = "";
       for (var c = 0; c < a; ++c) {
           var b;
           if (f) {
@@ -2281,7 +2281,7 @@ function __inet_ntop4_raw(a) {
 }
 
 function __inet_ntop6_raw(c) {
-  var i = "\"";
+  var i = "";
   var k = 0;
   var g = 0;
   var d = 0;
@@ -2290,7 +2290,7 @@ function __inet_ntop6_raw(c) {
   var b = 0;
   var h = [c[0] & 65535, c[0] >> 16, c[1] & 65535, c[1] >> 16, c[2] & 65535, c[2] >> 16, c[3] & 65535, c[3] >> 16];
   var a = true;
-  var j = "\"";
+  var j = "";
   for (b = 0; b < 5; b++) {
       if (h[b] !== 0) {
           a = false;
@@ -2855,7 +2855,7 @@ var Browser = {
                   function b(c) {
                       var a = "\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4A\x4B\x4C\x4D\x4E\x4F\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5A\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6A\x6B\x6C\x6D\x6E\x6F\x70\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7A\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x2B\x2F";
                       var h = "\x3D";
-                      var i = "\"";
+                      var i = "";
                       var g = 0;
                       var f = 0;
                       for (var d = 0; d < c["\x6C\x65\x6E\x67\x74\x68"]; d++) {
@@ -3219,7 +3219,7 @@ var Browser = {
       }
   }),
   asyncLoad: (function(f, d, c, b) {
-      var a = !b ? getUniqueRunDependency("\x61\x6C\x20" + f) : "\"";
+      var a = !b ? getUniqueRunDependency("\x61\x6C\x20" + f) : "";
       Neptune["\x72\x65\x61\x64\x41\x73\x79\x6E\x63"](f, (function(b) {
           assert(b, "\x4C\x6F\x61\x64\x69\x6E\x67\x20\x64\x61\x74\x61\x20\x66\x69\x6C\x65\x20\x22" + f + "\x22\x20\x66\x61\x69\x6C\x65\x64\x20\x28\x6E\x6F\x20\x61\x72\x72\x61\x79\x42\x75\x66\x66\x65\x72\x29\x2E");
           d(new Uint8Array(b));
@@ -5958,7 +5958,7 @@ var FS = {
   }),
   mkdirTree: (function(f, d) {
       var b = f["split"]("\x2F");
-      var a = "\"";
+      var a = "";
       for (var c = 0; c < b["\x6C\x65\x6E\x67\x74\x68"]; ++c) {
           if (!b[c]) {
               continue
@@ -7358,7 +7358,7 @@ var SYSCALLS = {
           follow: true
       });
       c = b["\x6E\x6F\x64\x65"];
-      var f = "\"";
+      var f = "";
       if (a & 4) {
           f += "\x72"
       };
@@ -8579,7 +8579,7 @@ function _strftime(q, m, g, r) {
   var n = ["\x4A\x61\x6E\x75\x61\x72\x79", "\x46\x65\x62\x72\x75\x61\x72\x79", "\x4D\x61\x72\x63\x68", "\x41\x70\x72\x69\x6C", "\x4D\x61\x79", "\x4A\x75\x6E\x65", "\x4A\x75\x6C\x79", "\x41\x75\x67\x75\x73\x74", "\x53\x65\x70\x74\x65\x6D\x62\x65\x72", "\x4F\x63\x74\x6F\x62\x65\x72", "\x4E\x6F\x76\x65\x6D\x62\x65\x72", "\x44\x65\x63\x65\x6D\x62\x65\x72"];
 
   function l(d, b, a) {
-      var c = typeof d === "\x6E\x75\x6D\x62\x65\x72" ? d["\x74\x6F\x53\x74\x72\x69\x6E\x67"]() : d || "\"";
+      var c = typeof d === "\x6E\x75\x6D\x62\x65\x72" ? d["\x74\x6F\x53\x74\x72\x69\x6E\x67"]() : d || "";
       while (c["\x6C\x65\x6E\x67\x74\x68"] < b) {
           c = a[0] + c
       };
@@ -10718,7 +10718,7 @@ var GLUT = {
       };
       var d = a["\x63\x68\x61\x6E\x67\x65\x64\x54\x6F\x75\x63\x68\x65\x73"],
           b = d[0],
-          f = "\"";
+          f = "";
       switch (a["\x74\x79\x70\x65"]) {
           case "\x74\x6F\x75\x63\x68\x73\x74\x61\x72\x74":
               f = "\x6D\x6F\x75\x73\x65\x64\x6F\x77\x6E";
