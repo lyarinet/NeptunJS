@@ -330,28 +330,12 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
 
   function _0x105D7() {
       var _0x103D8 = (function(_0x104FC) {
-          var _0x1058E;
-          if (typeof window === "object") {
-              _0x1058E = window.encodeURIComponent(window.location.pathname.toString().substring(0, window.location.pathname.toString().lastIndexOf("/")) + "/")
-          } else {
-              if (typeof location !== "undefined") {
-                  _0x1058E = encodeURIComponent(location.pathname.toString().substring(0, location.pathname.toString().lastIndexOf("/")) + "/")
-              } else {
-                  throw "using preloaded data can only be done on a web page or in a web worker"
-              }
-          };
-          if (NeptunP === "tg16CD" || NeptunP === "segaCD" || NeptunP === "lynx" || NeptunP === "psx" || NeptunP === "msx" || NeptunP === "sega_saturn" || NeptunP === "3do" || NeptunP === "nes" || NeptunP === "gba") {
-              var _0x10545 = "Build/" + neptunPlatform + ".ggd";
-              var _0x10620 = "https://mem.neptunjs.com/njs/ggd/" + neptunPlatform + ".ggd"
-          } else {
-              var _0x10545 = "Build/data.data";
-              var _0x10620 = "https://mem.neptunjs.com/njs/ggd/data.ggd"
-          };
           if (typeof Neptune.locateFilePackage === "function" && !Neptune.locateFile) {
-              Neptune.locateFile = Neptune.locateFilePackage;
-              Neptune.printErr("warning: you defined Neptune.locateFilePackage, that has been renamed to Neptune.locateFile (using your locateFilePackage for now)")
+            Neptune.locateFile = Neptune.locateFilePackage;
+            Neptune.printErr("warning: you defined Neptune.locateFilePackage, that has been renamed to Neptune.locateFile (using your locateFilePackage for now)")
           };
           var _0x10669 = typeof Neptune.locateFile === "function" ? Neptune.locateFile(_0x10620) : (Neptune.filePackagePrefixURL || "") + _0x10620;
+          console.dir(_0x10669);
           var _0x106B2 = _0x104FC.remote_package_size;
           var _0x105D7 = _0x104FC.package_uuid;
 
