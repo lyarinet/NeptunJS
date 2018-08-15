@@ -1566,6 +1566,7 @@ var meter, popset, Neptune, asm, infoInner, shader1, emulatorRun, _$synhc112, _$
                                 }, 2500)
                             } else {
                                 var _0x13E73 = new Uint8Array(_0x13E47);
+                                console.log(StartEmuleNote);
                                 Neptq("." + NCSS + "loader_emu").html(StartEmuleNote);
                                 Neptune.FS_createDataFile("/", _0x13E1B, _0x13E73, true, false);
                                 Neptune.arguments[1] = "/" + _0x13E1B;
