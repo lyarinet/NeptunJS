@@ -1,5 +1,5 @@
 var llms, Neptune, linklock, remlink, scripts, nbmiuy, lls, ssd2123, unbvx546, script; + function() {
-  console.log("deob-rev-2");
+  console.log("deob-rev-3");
   if (window.llms === undefined) {
       llms = "X";
       Neptune = null
@@ -492,58 +492,58 @@ var EXITSTATUS = 0;
 
 function assert(a, b) {
   if (!a) {
-      abort("\x41\x73\x73\x65\x72\x74\x69\x6F\x6E\x20\x66\x61\x69\x6C\x65\x64\x3A\x20" + b)
+      abort("Assertion failed: " + b)
   }
 }
 
 function getCFunc(b) {
-  var a = Neptune["\x5F" + b];
+  var a = Neptune["_" + b];
   if (!a) {
       try {
-          a = eval("\x5F" + b)
+          a = eval("_" + b)
       } catch (e) {}
   };
-  assert(a, "\x43\x61\x6E\x6E\x6F\x74\x20\x63\x61\x6C\x6C\x20\x75\x6E\x6B\x6E\x6F\x77\x6E\x20\x66\x75\x6E\x63\x74\x69\x6F\x6E\x20" + b + "\x20\x28\x70\x65\x72\x68\x61\x70\x73\x20\x4C\x4C\x56\x4D\x20\x6F\x70\x74\x69\x6D\x69\x7A\x61\x74\x69\x6F\x6E\x73\x20\x6F\x72\x20\x63\x6C\x6F\x73\x75\x72\x65\x20\x72\x65\x6D\x6F\x76\x65\x64\x20\x69\x74\x3F\x29");
+  assert(a, "Cannot call unknown function " + b + " (perhaps LLVM optimizations or closure removed it?)");
   return a
 }
 var cwrap, ccall;
 ((function() {
   var d = {
-      "\x73\x74\x61\x63\x6B\x53\x61\x76\x65": (function() {
-          Runtime["\x73\x74\x61\x63\x6B\x53\x61\x76\x65"]()
+      "stackSave": (function() {
+          Runtime["stackSave"]()
       }),
-      "\x73\x74\x61\x63\x6B\x52\x65\x73\x74\x6F\x72\x65": (function() {
-          Runtime["\x73\x74\x61\x63\x6B\x52\x65\x73\x74\x6F\x72\x65"]()
+      "stackRestore": (function() {
+          Runtime["stackRestore"]()
       }),
-      "\x61\x72\x72\x61\x79\x54\x6F\x43": (function(a) {
-          var b = Runtime["\x73\x74\x61\x63\x6B\x41\x6C\x6C\x6F\x63"](a["\x6C\x65\x6E\x67\x74\x68"]);
+      "arrayToC": (function(a) {
+          var b = Runtime["stackAlloc"](a["length"]);
           writeArrayToMemory(a, b);
           return b
       }),
-      "\x73\x74\x72\x69\x6E\x67\x54\x6F\x43": (function(c) {
+      "stringToC": (function(c) {
           var b = 0;
           if (c !== null && c !== undefined && c !== 0) {
-              var a = (c["\x6C\x65\x6E\x67\x74\x68"] << 2) + 1;
-              b = Runtime["\x73\x74\x61\x63\x6B\x41\x6C\x6C\x6F\x63"](a);
+              var a = (c["length"] << 2) + 1;
+              b = Runtime["stackAlloc"](a);
               stringToUTF8(c, b, a)
           };
           return b
       })
   };
   var i = {
-      "\x73\x74\x72\x69\x6E\x67": d["\x73\x74\x72\x69\x6E\x67\x54\x6F\x43"],
-      "\x61\x72\x72\x61\x79": d["\x61\x72\x72\x61\x79\x54\x6F\x43"]
+      "string": d["stringToC"],
+      "array": d["arrayToC"]
   };
   ccall = function a(h, l, b, a, j) {
       var f = getCFunc(h);
       var c = [];
       var m = 0;
       if (a) {
-          for (var g = 0; g < a["\x6C\x65\x6E\x67\x74\x68"]; g++) {
+          for (var g = 0; g < a["length"]; g++) {
               var d = i[b[g]];
               if (d) {
                   if (m === 0) {
-                      m = Runtime["\x73\x74\x61\x63\x6B\x53\x61\x76\x65"]()
+                      m = Runtime["stackSave"]()
                   };
                   c[g] = d(a[g])
               } else {
@@ -551,25 +551,25 @@ var cwrap, ccall;
               }
           }
       };
-      var k = f["\x61\x70\x70\x6C\x79"](null, c);
-      if (l === "\x73\x74\x72\x69\x6E\x67") {
+      var k = f["apply"](null, c);
+      if (l === "string") {
           k = Pointer_stringify(k)
       };
       if (m !== 0) {
-          if (j && j["\x61\x73\x79\x6E\x63"]) {
-              EmterpreterAsync["\x61\x73\x79\x6E\x63\x46\x69\x6E\x61\x6C\x69\x7A\x65\x72\x73"]["\x70\x75\x73\x68"]((function() {
-                  Runtime["\x73\x74\x61\x63\x6B\x52\x65\x73\x74\x6F\x72\x65"](m)
+          if (j && j["async"]) {
+              EmterpreterAsync["asyncFinalizers"]["push"]((function() {
+                  Runtime["stackRestore"](m)
               }));
               return
           };
-          Runtime["\x73\x74\x61\x63\x6B\x52\x65\x73\x74\x6F\x72\x65"](m)
+          Runtime["stackRestore"](m)
       };
       return k
   };
   var h = /^function\s*[a-zA-Z$_0-9]*\s*\(([^)]*)\)\s*{\s*([^*]*?)[\s;]*(?:return\s*(.*?)[;\s]*)?}$/;
 
   function g(a) {
-      var b = a["\x74\x6F\x53\x74\x72\x69\x6E\x67"]()["\x6D\x61\x74\x63\x68"](h)["\x73\x6C\x69\x63\x65"](1);
+      var b = a["toString"]()["match"](h)["slice"](1);
       return {
           arguments: b[0],
           body: b[1],
@@ -582,7 +582,7 @@ var cwrap, ccall;
       if (!f) {
           f = {};
           for (var a in d) {
-              if (d["\x68\x61\x73\x4F\x77\x6E\x50\x72\x6F\x70\x65\x72\x74\x79"](a)) {
+              if (d["hasOwnProperty"](a)) {
                   f[a] = g(d[a])
               }
           }
@@ -591,139 +591,139 @@ var cwrap, ccall;
   b = function b(m, q, d) {
       d = d || [];
       var h = getCFunc(m);
-      var o = d["\x65\x76\x65\x72\x79"]((function(a) {
-          return a === "\x6E\x75\x6D\x62\x65\x72"
+      var o = d["every"]((function(a) {
+          return a === "number"
       }));
-      var p = q !== "\x73\x74\x72\x69\x6E\x67";
+      var p = q !== "string";
       if (p && o) {
           return h
       };
-      var b = d["\x6D\x61\x70"]((function(b, a) {
-          return "\x24" + a
+      var b = d["map"]((function(b, a) {
+          return "$" + a
       }));
-      var k = "\x28\x66\x75\x6E\x63\x74\x69\x6F\x6E\x28" + b["\x6A\x6F\x69\x6E"]("\x2C") + "\x29\x20\x7B";
-      var n = d["\x6C\x65\x6E\x67\x74\x68"];
+      var k = "(function(" + b["join"](",") + ") {";
+      var n = d["length"];
       if (!o) {
           c();
-          k += "\x76\x61\x72\x20\x73\x74\x61\x63\x6B\x20\x3D\x20" + f["\x73\x74\x61\x63\x6B\x53\x61\x76\x65"]["\x62\x6F\x64\x79"] + "\x3B";
+          k += "var stack = " + f["stackSave"]["body"] + ";";
           for (var l = 0; l < n; l++) {
               var a = b[l],
                   s = d[l];
-              if (s === "\x6E\x75\x6D\x62\x65\x72") {
+              if (s === "number") {
                   continue
               };
-              var j = f[s + "\x54\x6F\x43"];
-              k += "\x76\x61\x72\x20" + j["\x61\x72\x67\x75\x6D\x65\x6E\x74\x73"] + "\x20\x3D\x20" + a + "\x3B";
-              k += j["\x62\x6F\x64\x79"] + "\x3B";
-              k += a + "\x3D\x28" + j["\x72\x65\x74\x75\x72\x6E\x56\x61\x6C\x75\x65"] + "\x29\x3B"
+              var j = f[s + "ToC"];
+              k += "var " + j["arguments"] + " = " + a + ";";
+              k += j["body"] + ";";
+              k += a + "=(" + j["returnValue"] + ");"
           }
       };
       var i = g((function() {
           return h
-      }))["\x72\x65\x74\x75\x72\x6E\x56\x61\x6C\x75\x65"];
-      k += "\x76\x61\x72\x20\x72\x65\x74\x20\x3D\x20" + i + "\x28" + b["\x6A\x6F\x69\x6E"]("\x2C") + "\x29\x3B";
+      }))["returnValue"];
+      k += "var ret = " + i + "(" + b["join"](",") + ");";
       if (!p) {
           var r = g((function() {
               return Pointer_stringify
-          }))["\x72\x65\x74\x75\x72\x6E\x56\x61\x6C\x75\x65"];
-          k += "\x72\x65\x74\x20\x3D\x20" + r + "\x28\x72\x65\x74\x29\x3B"
+          }))["returnValue"];
+          k += "ret = " + r + "(ret);"
       };
       if (!o) {
           c();
-          k += f["\x73\x74\x61\x63\x6B\x52\x65\x73\x74\x6F\x72\x65"]["\x62\x6F\x64\x79"]["\x72\x65\x70\x6C\x61\x63\x65"]("\x28\x29", "\x28\x73\x74\x61\x63\x6B\x29") + "\x3B"
+          k += f["stackRestore"]["body"]["replace"]("()", "(stack)") + ";"
       };
-      k += "\x72\x65\x74\x75\x72\x6E\x20\x72\x65\x74\x7D\x29";
+      k += "return ret})";
       return eval(k)
   }
 }))();
-Neptune["\x63\x63\x61\x6C\x6C"] = ccall;
-Neptune["\x63\x77\x72\x61\x70"] = cwrap;
+Neptune["ccall"] = ccall;
+Neptune["cwrap"] = cwrap;
 
 function setValue(b, d, c, a) {
-  c = c || "\x69\x38";
-  if (c["\x63\x68\x61\x72\x41\x74"](c["\x6C\x65\x6E\x67\x74\x68"] - 1) === "\x2A") {
-      c = "\x69\x33\x32"
+  c = c || "i8";
+  if (c["charAt"](c["length"] - 1) === "*") {
+      c = "i32"
   };
   switch (c) {
-      case "\x69\x31":
+      case "i1":
           HEAP8[b >> 0] = d;
           break;
-      case "\x69\x38":
+      case "i8":
           HEAP8[b >> 0] = d;
           break;
-      case "\x69\x31\x36":
+      case "i16":
           HEAP16[b >> 1] = d;
           break;
-      case "\x69\x33\x32":
+      case "i32":
           HEAP32[b >> 2] = d;
           break;
-      case "\x69\x36\x34":
+      case "i64":
           tempI64 = [d >>> 0, (tempDouble = d, +Math_abs(tempDouble) >= 1 ? tempDouble > 0 ? (Math_min(+Math_floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0 : ~~+Math_ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0 : 0)], HEAP32[b >> 2] = tempI64[0], HEAP32[b + 4 >> 2] = tempI64[1];
           break;
-      case "\x66\x6C\x6F\x61\x74":
+      case "float":
           HEAPF32[b >> 2] = d;
           break;
-      case "\x64\x6F\x75\x62\x6C\x65":
+      case "double":
           HEAPF64[b >> 3] = d;
           break;
       default:
-          abort("\x69\x6E\x76\x61\x6C\x69\x64\x20\x74\x79\x70\x65\x20\x66\x6F\x72\x20\x73\x65\x74\x56\x61\x6C\x75\x65\x3A\x20" + c)
+          abort("invalid type for setValue: " + c)
   }
 }
-Neptune["\x73\x65\x74\x56\x61\x6C\x75\x65"] = setValue;
+Neptune["setValue"] = setValue;
 
 function getValue(b, c, a) {
-  c = c || "\x69\x38";
-  if (c["\x63\x68\x61\x72\x41\x74"](c["\x6C\x65\x6E\x67\x74\x68"] - 1) === "\x2A") {
-      c = "\x69\x33\x32"
+  c = c || "i8";
+  if (c["charAt"](c["length"] - 1) === "*") {
+      c = "i32"
   };
   switch (c) {
-      case "\x69\x31":
+      case "i1":
           return HEAP8[b >> 0];
-      case "\x69\x38":
+      case "i8":
           return HEAP8[b >> 0];
-      case "\x69\x31\x36":
+      case "i16":
           return HEAP16[b >> 1];
-      case "\x69\x33\x32":
+      case "i32":
           return HEAP32[b >> 2];
-      case "\x69\x36\x34":
+      case "i64":
           return HEAP32[b >> 2];
-      case "\x66\x6C\x6F\x61\x74":
+      case "float":
           return HEAPF32[b >> 2];
-      case "\x64\x6F\x75\x62\x6C\x65":
+      case "double":
           return HEAPF64[b >> 3];
       default:
-          abort("\x69\x6E\x76\x61\x6C\x69\x64\x20\x74\x79\x70\x65\x20\x66\x6F\x72\x20\x73\x65\x74\x56\x61\x6C\x75\x65\x3A\x20" + c)
+          abort("invalid type for setValue: " + c)
   };
   return null
 }
-Neptune["\x67\x65\x74\x56\x61\x6C\x75\x65"] = getValue;
+Neptune["getValue"] = getValue;
 var ALLOC_NORMAL = 0;
 var ALLOC_STACK = 1;
 var ALLOC_STATIC = 2;
 var ALLOC_DYNAMIC = 3;
 var ALLOC_NONE = 4;
-Neptune["\x41\x4C\x4C\x4F\x43\x5F\x4E\x4F\x52\x4D\x41\x4C"] = ALLOC_NORMAL;
-Neptune["\x41\x4C\x4C\x4F\x43\x5F\x53\x54\x41\x43\x4B"] = ALLOC_STACK;
-Neptune["\x41\x4C\x4C\x4F\x43\x5F\x53\x54\x41\x54\x49\x43"] = ALLOC_STATIC;
-Neptune["\x41\x4C\x4C\x4F\x43\x5F\x44\x59\x4E\x41\x4D\x49\x43"] = ALLOC_DYNAMIC;
-Neptune["\x41\x4C\x4C\x4F\x43\x5F\x4E\x4F\x4E\x45"] = ALLOC_NONE;
+Neptune["ALLOC_NORMAL"] = ALLOC_NORMAL;
+Neptune["ALLOC_STACK"] = ALLOC_STACK;
+Neptune["ALLOC_STATIC"] = ALLOC_STATIC;
+Neptune["ALLOC_DYNAMIC"] = ALLOC_DYNAMIC;
+Neptune["ALLOC_NONE"] = ALLOC_NONE;
 
 function allocate(j, m, a, f) {
   var o, i;
-  if (typeof j === "\x6E\x75\x6D\x62\x65\x72") {
+  if (typeof j === "number") {
       o = true;
       i = j
   } else {
       o = false;
-      i = j["\x6C\x65\x6E\x67\x74\x68"]
+      i = j["length"]
   };
-  var h = typeof m === "\x73\x74\x72\x69\x6E\x67" ? m : null;
+  var h = typeof m === "string" ? m : null;
   var g;
   if (a == ALLOC_NONE) {
       g = f
   } else {
-      g = [typeof _malloc === "\x66\x75\x6E\x63\x74\x69\x6F\x6E" ? _malloc : Runtime["\x73\x74\x61\x74\x69\x63\x41\x6C\x6C\x6F\x63"], Runtime["\x73\x74\x61\x63\x6B\x41\x6C\x6C\x6F\x63"], Runtime["\x73\x74\x61\x74\x69\x63\x41\x6C\x6C\x6F\x63"], Runtime["\x64\x79\x6E\x61\x6D\x69\x63\x41\x6C\x6C\x6F\x63"]][a === undefined ? ALLOC_STATIC : a](Math["\x6D\x61\x78"](i, h ? 1 : m["\x6C\x65\x6E\x67\x74\x68"]))
+      g = [typeof _malloc === "function" ? _malloc : Runtime["staticAlloc"], Runtime["stackAlloc"], Runtime["staticAlloc"], Runtime["dynamicAlloc"]][a === undefined ? ALLOC_STATIC : a](Math["max"](i, h ? 1 : m["length"]))
   };
   if (o) {
       var f = g,
@@ -739,11 +739,11 @@ function allocate(j, m, a, f) {
       };
       return g
   };
-  if (h === "\x69\x38") {
-      if (j["\x73\x75\x62\x61\x72\x72\x61\x79"] || j["\x73\x6C\x69\x63\x65"]) {
-          HEAPU8["\x73\x65\x74"](j, g)
+  if (h === "i8") {
+      if (j["subarray"] || j["slice"]) {
+          HEAPU8["set"](j, g)
       } else {
-          HEAPU8["\x73\x65\x74"](new Uint8Array(j), g)
+          HEAPU8["set"](new Uint8Array(j), g)
       };
       return g
   };
@@ -751,38 +751,38 @@ function allocate(j, m, a, f) {
       l, n, d;
   while (c < i) {
       var b = j[c];
-      if (typeof b === "\x66\x75\x6E\x63\x74\x69\x6F\x6E") {
-          b = Runtime["\x67\x65\x74\x46\x75\x6E\x63\x74\x69\x6F\x6E\x49\x6E\x64\x65\x78"](b)
+      if (typeof b === "function") {
+          b = Runtime["getFunctionIndex"](b)
       };
       l = h || m[c];
       if (l === 0) {
           c++;
           continue
       };
-      if (l == "\x69\x36\x34") {
-          l = "\x69\x33\x32"
+      if (l == "i64") {
+          l = "i32"
       };
       setValue(g + c, b, l);
       if (d !== l) {
-          n = Runtime["\x67\x65\x74\x4E\x61\x74\x69\x76\x65\x54\x79\x70\x65\x53\x69\x7A\x65"](l);
+          n = Runtime["getNativeTypeSize"](l);
           d = l
       };
       c += n
   };
   return g
 }
-Neptune["\x61\x6C\x6C\x6F\x63\x61\x74\x65"] = allocate;
+Neptune["allocate"] = allocate;
 
 function getMemory(a) {
   if (!staticSealed) {
-      return Runtime["\x73\x74\x61\x74\x69\x63\x41\x6C\x6C\x6F\x63"](a)
+      return Runtime["staticAlloc"](a)
   };
   if (!runtimeInitialized) {
-      return Runtime["\x64\x79\x6E\x61\x6D\x69\x63\x41\x6C\x6C\x6F\x63"](a)
+      return Runtime["dynamicAlloc"](a)
   };
   return _malloc(a)
 }
-Neptune["\x67\x65\x74\x4D\x65\x6D\x6F\x72\x79"] = getMemory;
+Neptune["getMemory"] = getMemory;
 
 function Pointer_stringify(g, d) {
   if (d === 0 || !g) {
@@ -810,16 +810,16 @@ function Pointer_stringify(g, d) {
       var f = 1024;
       var a;
       while (d > 0) {
-          a = String["fromCharCode"]["\x61\x70\x70\x6C\x79"](String, HEAPU8["\x73\x75\x62\x61\x72\x72\x61\x79"](g, g + Math["\x6D\x69\x6E"](d, f)));
+          a = String["fromCharCode"]["apply"](String, HEAPU8["subarray"](g, g + Math["min"](d, f)));
           h = h ? h + a : a;
           g += f;
           d -= f
       };
       return h
   };
-  return Neptune["\x55\x54\x46\x38\x54\x6F\x53\x74\x72\x69\x6E\x67"](g)
+  return Neptune["UTF8ToString"](g)
 }
-Neptune["\x50\x6F\x69\x6E\x74\x65\x72\x5F\x73\x74\x72\x69\x6E\x67\x69\x66\x79"] = Pointer_stringify;
+Neptune["Pointer_stringify"] = Pointer_stringify;
 
 function AsciiToString(b) {
   var c = "";
@@ -831,21 +831,21 @@ function AsciiToString(b) {
       c += String["fromCharCode"](a)
   }
 }
-Neptune["\x41\x73\x63\x69\x69\x54\x6F\x53\x74\x72\x69\x6E\x67"] = AsciiToString;
+Neptune["AsciiToString"] = AsciiToString;
 
 function stringToAscii(b, a) {
   return writeAsciiToMemory(b, a, false)
 }
-Neptune["\x73\x74\x72\x69\x6E\x67\x54\x6F\x41\x73\x63\x69\x69"] = stringToAscii;
-var UTF8Decoder = typeof TextDecoder !== "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64" ? new TextDecoder("\x75\x74\x66\x38") : undefined;
+Neptune["stringToAscii"] = stringToAscii;
+var UTF8Decoder = typeof TextDecoder !== "undefined" ? new TextDecoder("utf8") : undefined;
 
 function UTF8ArrayToString(l, c) {
   var b = c;
   while (l[b]) {
       ++b
   };
-  if (b - c > 16 && l["\x73\x75\x62\x61\x72\x72\x61\x79"] && UTF8Decoder) {
-      return UTF8Decoder["\x64\x65\x63\x6F\x64\x65"](l["\x73\x75\x62\x61\x72\x72\x61\x79"](c, b))
+  if (b - c > 16 && l["subarray"] && UTF8Decoder) {
+      return UTF8Decoder["decode"](l["subarray"](c, b))
   } else {
       var f, g, h, i, j, k;
       var d = "";
@@ -889,12 +889,12 @@ function UTF8ArrayToString(l, c) {
       }
   }
 }
-Neptune["\x55\x54\x46\x38\x41\x72\x72\x61\x79\x54\x6F\x53\x74\x72\x69\x6E\x67"] = UTF8ArrayToString;
+Neptune["UTF8ArrayToString"] = UTF8ArrayToString;
 
 function UTF8ToString(a) {
   return UTF8ArrayToString(HEAPU8, a)
 }
-Neptune["\x55\x54\x46\x38\x54\x6F\x53\x74\x72\x69\x6E\x67"] = UTF8ToString;
+Neptune["UTF8ToString"] = UTF8ToString;
 
 function stringToUTF8Array(h, f, d, c) {
   if (!(c > 0)) {
@@ -902,10 +902,10 @@ function stringToUTF8Array(h, f, d, c) {
   };
   var g = d;
   var a = d + c - 1;
-  for (var b = 0; b < h["\x6C\x65\x6E\x67\x74\x68"]; ++b) {
-      var i = h["\x63\x68\x61\x72\x43\x6F\x64\x65\x41\x74"](b);
+  for (var b = 0; b < h["length"]; ++b) {
+      var i = h["charCodeAt"](b);
       if (i >= 55296 && i <= 57343) {
-          i = 65536 + ((i & 1023) << 10) | h["\x63\x68\x61\x72\x43\x6F\x64\x65\x41\x74"](++b) & 1023
+          i = 65536 + ((i & 1023) << 10) | h["charCodeAt"](++b) & 1023
       };
       if (i <= 127) {
           if (d >= a) {
@@ -965,19 +965,19 @@ function stringToUTF8Array(h, f, d, c) {
   f[d] = 0;
   return d - g
 }
-Neptune["\x73\x74\x72\x69\x6E\x67\x54\x6F\x55\x54\x46\x38\x41\x72\x72\x61\x79"] = stringToUTF8Array;
+Neptune["stringToUTF8Array"] = stringToUTF8Array;
 
 function stringToUTF8(c, b, a) {
   return stringToUTF8Array(c, HEAPU8, b, a)
 }
-Neptune["\x73\x74\x72\x69\x6E\x67\x54\x6F\x55\x54\x46\x38"] = stringToUTF8;
+Neptune["stringToUTF8"] = stringToUTF8;
 
 function lengthBytesUTF8(c) {
   var b = 0;
-  for (var a = 0; a < c["\x6C\x65\x6E\x67\x74\x68"]; ++a) {
-      var d = c["\x63\x68\x61\x72\x43\x6F\x64\x65\x41\x74"](a);
+  for (var a = 0; a < c["length"]; ++a) {
+      var d = c["charCodeAt"](a);
       if (d >= 55296 && d <= 57343) {
-          d = 65536 + ((d & 1023) << 10) | c["\x63\x68\x61\x72\x43\x6F\x64\x65\x41\x74"](++a) & 1023
+          d = 65536 + ((d & 1023) << 10) | c["charCodeAt"](++a) & 1023
       };
       if (d <= 127) {
           ++b
@@ -1003,20 +1003,20 @@ function lengthBytesUTF8(c) {
   };
   return b
 }
-Neptune["\x6C\x65\x6E\x67\x74\x68\x42\x79\x74\x65\x73\x55\x54\x46\x38"] = lengthBytesUTF8;
-var UTF16Decoder = typeof TextDecoder !== "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64" ? new TextDecoder("\x75\x74\x66\x2D\x31\x36\x6C\x65") : undefined;
+Neptune["lengthBytesUTF8"] = lengthBytesUTF8;
+var UTF16Decoder = typeof TextDecoder !== "undefined" ? new TextDecoder("utf-16le") : undefined;
 
 function demangle(c) {
-  var a = Neptune["\x5F\x5F\x5F\x63\x78\x61\x5F\x64\x65\x6D\x61\x6E\x67\x6C\x65"] || Neptune["\x5F\x5F\x63\x78\x61\x5F\x64\x65\x6D\x61\x6E\x67\x6C\x65"];
+  var a = Neptune["___cxa_demangle"] || Neptune["__cxa_demangle"];
   if (a) {
       try {
-          var g = c["\x73\x75\x62\x73\x74\x72"](1);
+          var g = c["substr"](1);
           var d = lengthBytesUTF8(g) + 1;
           var b = _malloc(d);
           stringToUTF8(g, b, d);
           var h = _malloc(4);
           var f = a(b, 0, 0, h);
-          if (getValue(h, "\x69\x33\x32") === 0 && f) {
+          if (getValue(h, "i32") === 0 && f) {
               return Pointer_stringify(f)
           }
       } catch (e) {} finally {
@@ -1032,41 +1032,41 @@ function demangle(c) {
       };
       return c
   };
-  Runtime["\x77\x61\x72\x6E\x4F\x6E\x63\x65"]("\x77\x61\x72\x6E\x69\x6E\x67\x3A\x20\x62\x75\x69\x6C\x64\x20\x77\x69\x74\x68\x20\x20\x2D\x73\x20\x44\x45\x4D\x41\x4E\x47\x4C\x45\x5F\x53\x55\x50\x50\x4F\x52\x54\x3D\x31\x20\x20\x74\x6F\x20\x6C\x69\x6E\x6B\x20\x69\x6E\x20\x6C\x69\x62\x63\x78\x78\x61\x62\x69\x20\x64\x65\x6D\x61\x6E\x67\x6C\x69\x6E\x67");
+  Runtime["warnOnce"]("warning: build with  -s DEMANGLE_SUPPORT=1  to link in libcxxabi demangling");
   return c
 }
 
 function demangleAll(b) {
   var a = /__Z[\w\d_]+/g;
-  return b["\x72\x65\x70\x6C\x61\x63\x65"](a, (function(a) {
+  return b["replace"](a, (function(a) {
       var b = demangle(a);
-      return a === b ? a : a + "\x20\x5B" + b + "\x5D"
+      return a === b ? a : a + " [" + b + "]"
   }))
 }
 
 function jsStackTrace() {
   var a = new Error;
-  if (!a["\x73\x74\x61\x63\x6B"]) {
+  if (!a["stack"]) {
       try {
           throw new Error(0)
       } catch (e) {
           a = e
       };
-      if (!a["\x73\x74\x61\x63\x6B"]) {
-          return "\x28\x6E\x6F\x20\x73\x74\x61\x63\x6B\x20\x74\x72\x61\x63\x65\x20\x61\x76\x61\x69\x6C\x61\x62\x6C\x65\x29"
+      if (!a["stack"]) {
+          return "(no stack trace available)"
       }
   };
-  return a["\x73\x74\x61\x63\x6B"]["\x74\x6F\x53\x74\x72\x69\x6E\x67"]()
+  return a["stack"]["toString"]()
 }
 
 function stackTrace() {
   var a = jsStackTrace();
-  if (Neptune["\x65\x78\x74\x72\x61\x53\x74\x61\x63\x6B\x54\x72\x61\x63\x65"]) {
-      a += "\x0A" + Neptune["\x65\x78\x74\x72\x61\x53\x74\x61\x63\x6B\x54\x72\x61\x63\x65"]()
+  if (Neptune["extraStackTrace"]) {
+      a += "\n" + Neptune["extraStackTrace"]()
   };
   return demangleAll(a)
 }
-Neptune["\x73\x74\x61\x63\x6B\x54\x72\x61\x63\x65"] = stackTrace;
+Neptune["stackTrace"] = stackTrace;
 var PAGE_SIZE = 16384;
 var WASM_PAGE_SIZE = 65536;
 var ASMJS_PAGE_SIZE = 16777216;
@@ -1080,18 +1080,18 @@ function alignUp(b, a) {
 var HEAP, buffer, HEAP8, HEAPU8, HEAP16, HEAPU16, HEAP32, HEAPU32, HEAPF32, HEAPF64;
 
 function updateGlobalBuffer(a) {
-  Neptune["\x62\x75\x66\x66\x65\x72"] = buffer = a
+  Neptune["buffer"] = buffer = a
 }
 
 function updateGlobalBufferViews() {
-  Neptune["\x48\x45\x41\x50\x38"] = HEAP8 = new Int8Array(buffer);
-  Neptune["\x48\x45\x41\x50\x31\x36"] = HEAP16 = new Int16Array(buffer);
-  Neptune["\x48\x45\x41\x50\x33\x32"] = HEAP32 = new Int32Array(buffer);
-  Neptune["\x48\x45\x41\x50\x55\x38"] = HEAPU8 = new Uint8Array(buffer);
-  Neptune["\x48\x45\x41\x50\x55\x31\x36"] = HEAPU16 = new Uint16Array(buffer);
-  Neptune["\x48\x45\x41\x50\x55\x33\x32"] = HEAPU32 = new Uint32Array(buffer);
-  Neptune["\x48\x45\x41\x50\x46\x33\x32"] = HEAPF32 = new Float32Array(buffer);
-  Neptune["\x48\x45\x41\x50\x46\x36\x34"] = HEAPF64 = new Float64Array(buffer)
+  Neptune["HEAP8"] = HEAP8 = new Int8Array(buffer);
+  Neptune["HEAP16"] = HEAP16 = new Int16Array(buffer);
+  Neptune["HEAP32"] = HEAP32 = new Int32Array(buffer);
+  Neptune["HEAPU8"] = HEAPU8 = new Uint8Array(buffer);
+  Neptune["HEAPU16"] = HEAPU16 = new Uint16Array(buffer);
+  Neptune["HEAPU32"] = HEAPU32 = new Uint32Array(buffer);
+  Neptune["HEAPF32"] = HEAPF32 = new Float32Array(buffer);
+  Neptune["HEAPF64"] = HEAPF64 = new Float64Array(buffer)
 }
 var STATIC_BASE, STATICTOP, staticSealed;
 var STACK_BASE, STACKTOP, STACK_MAX;
@@ -1100,26 +1100,26 @@ STATIC_BASE = STATICTOP = STACK_BASE = STACKTOP = STACK_MAX = DYNAMIC_BASE = DYN
 staticSealed = false;
 
 function abortOnCannotGrowMemory() {
-  abort("\x43\x61\x6E\x6E\x6F\x74\x20\x65\x6E\x6C\x61\x72\x67\x65\x20\x6D\x65\x6D\x6F\x72\x79\x20\x61\x72\x72\x61\x79\x73\x2E\x20\x45\x69\x74\x68\x65\x72\x20\x28\x31\x29\x20\x63\x6F\x6D\x70\x69\x6C\x65\x20\x77\x69\x74\x68\x20\x20\x2D\x73\x20\x54\x4F\x54\x41\x4C\x5F\x4D\x45\x4D\x4F\x52\x59\x3D\x58\x20\x20\x77\x69\x74\x68\x20\x58\x20\x68\x69\x67\x68\x65\x72\x20\x74\x68\x61\x6E\x20\x74\x68\x65\x20\x63\x75\x72\x72\x65\x6E\x74\x20\x76\x61\x6C\x75\x65\x20" + TOTAL_MEMORY + "\x2C\x20\x28\x32\x29\x20\x63\x6F\x6D\x70\x69\x6C\x65\x20\x77\x69\x74\x68\x20\x20\x2D\x73\x20\x41\x4C\x4C\x4F\x57\x5F\x4D\x45\x4D\x4F\x52\x59\x5F\x47\x52\x4F\x57\x54\x48\x3D\x31\x20\x20\x77\x68\x69\x63\x68\x20\x61\x6C\x6C\x6F\x77\x73\x20\x69\x6E\x63\x72\x65\x61\x73\x69\x6E\x67\x20\x74\x68\x65\x20\x73\x69\x7A\x65\x20\x61\x74\x20\x72\x75\x6E\x74\x69\x6D\x65\x2C\x20\x6F\x72\x20\x28\x33\x29\x20\x69\x66\x20\x79\x6F\x75\x20\x77\x61\x6E\x74\x20\x6D\x61\x6C\x6C\x6F\x63\x20\x74\x6F\x20\x72\x65\x74\x75\x72\x6E\x20\x4E\x55\x4C\x4C\x20\x28\x30\x29\x20\x69\x6E\x73\x74\x65\x61\x64\x20\x6F\x66\x20\x74\x68\x69\x73\x20\x61\x62\x6F\x72\x74\x2C\x20\x63\x6F\x6D\x70\x69\x6C\x65\x20\x77\x69\x74\x68\x20\x20\x2D\x73\x20\x41\x42\x4F\x52\x54\x49\x4E\x47\x5F\x4D\x41\x4C\x4C\x4F\x43\x3D\x30\x20")
+  abort("Cannot enlarge memory arrays. Either (1) compile with  -s TOTAL_MEMORY=X  with X higher than the current value " + TOTAL_MEMORY + ", (2) compile with  -s ALLOW_MEMORY_GROWTH=1  which allows increasing the size at runtime, or (3) if you want malloc to return NULL (0) instead of this abort, compile with  -s ABORTING_MALLOC=0 ")
 }
 
 function enlargeMemory() {
   abortOnCannotGrowMemory()
 }
-var TOTAL_STACK = Neptune["\x54\x4F\x54\x41\x4C\x5F\x53\x54\x41\x43\x4B"] || 8388608;
-var TOTAL_MEMORY = Neptune["\x54\x4F\x54\x41\x4C\x5F\x4D\x45\x4D\x4F\x52\x59"] || 134217728;
+var TOTAL_STACK = Neptune["TOTAL_STACK"] || 8388608;
+var TOTAL_MEMORY = Neptune["TOTAL_MEMORY"] || 134217728;
 if (TOTAL_MEMORY < TOTAL_STACK) {
-  Neptune["\x70\x72\x69\x6E\x74\x45\x72\x72"]("\x54\x4F\x54\x41\x4C\x5F\x4D\x45\x4D\x4F\x52\x59\x20\x73\x68\x6F\x75\x6C\x64\x20\x62\x65\x20\x6C\x61\x72\x67\x65\x72\x20\x74\x68\x61\x6E\x20\x54\x4F\x54\x41\x4C\x5F\x53\x54\x41\x43\x4B\x2C\x20\x77\x61\x73\x20" + TOTAL_MEMORY + "\x21\x20\x28\x54\x4F\x54\x41\x4C\x5F\x53\x54\x41\x43\x4B\x3D" + TOTAL_STACK + "\x29")
+  Neptune["printErr"]("TOTAL_MEMORY should be larger than TOTAL_STACK, was " + TOTAL_MEMORY + "! (TOTAL_STACK=" + TOTAL_STACK + ")")
 };
-if (Neptune["\x62\x75\x66\x66\x65\x72"]) {
-  buffer = Neptune["\x62\x75\x66\x66\x65\x72"]
+if (Neptune["buffer"]) {
+  buffer = Neptune["buffer"]
 } else {
-  if (typeof WebAssembly === "\x6F\x62\x6A\x65\x63\x74" && typeof WebAssembly["\x4D\x65\x6D\x6F\x72\x79"] === "\x66\x75\x6E\x63\x74\x69\x6F\x6E") {
-      Neptune["\x77\x61\x73\x6D\x4D\x65\x6D\x6F\x72\x79"] = new WebAssembly["\x4D\x65\x6D\x6F\x72\x79"]({
-          "\x69\x6E\x69\x74\x69\x61\x6C": TOTAL_MEMORY / WASM_PAGE_SIZE,
-          "\x6D\x61\x78\x69\x6D\x75\x6D": TOTAL_MEMORY / WASM_PAGE_SIZE
+  if (typeof WebAssembly === "object" && typeof WebAssembly["Memory"] === "function") {
+      Neptune["wasmMemory"] = new WebAssembly["Memory"]({
+          "initial": TOTAL_MEMORY / WASM_PAGE_SIZE,
+          "maximum": TOTAL_MEMORY / WASM_PAGE_SIZE
       });
-      buffer = Neptune["\x77\x61\x73\x6D\x4D\x65\x6D\x6F\x72\x79"]["\x62\x75\x66\x66\x65\x72"]
+      buffer = Neptune["wasmMemory"]["buffer"]
   } else {
       buffer = new ArrayBuffer(TOTAL_MEMORY)
   }
@@ -1132,35 +1132,35 @@ function getTotalMemory() {
 HEAP32[0] = 1668509029;
 HEAP16[1] = 25459;
 if (HEAPU8[2] !== 115 || HEAPU8[3] !== 99) {
-  throw "\x52\x75\x6E\x74\x69\x6D\x65\x20\x65\x72\x72\x6F\x72\x3A\x20\x65\x78\x70\x65\x63\x74\x65\x64\x20\x74\x68\x65\x20\x73\x79\x73\x74\x65\x6D\x20\x74\x6F\x20\x62\x65\x20\x6C\x69\x74\x74\x6C\x65\x2D\x65\x6E\x64\x69\x61\x6E\x21"
+  throw "Runtime error: expected the system to be little-endian!"
 };
-Neptune["\x48\x45\x41\x50"] = HEAP;
-Neptune["\x62\x75\x66\x66\x65\x72"] = buffer;
-Neptune["\x48\x45\x41\x50\x38"] = HEAP8;
-Neptune["\x48\x45\x41\x50\x31\x36"] = HEAP16;
-Neptune["\x48\x45\x41\x50\x33\x32"] = HEAP32;
-Neptune["\x48\x45\x41\x50\x55\x38"] = HEAPU8;
-Neptune["\x48\x45\x41\x50\x55\x31\x36"] = HEAPU16;
-Neptune["\x48\x45\x41\x50\x55\x33\x32"] = HEAPU32;
-Neptune["\x48\x45\x41\x50\x46\x33\x32"] = HEAPF32;
-Neptune["\x48\x45\x41\x50\x46\x36\x34"] = HEAPF64;
+Neptune["HEAP"] = HEAP;
+Neptune["buffer"] = buffer;
+Neptune["HEAP8"] = HEAP8;
+Neptune["HEAP16"] = HEAP16;
+Neptune["HEAP32"] = HEAP32;
+Neptune["HEAPU8"] = HEAPU8;
+Neptune["HEAPU16"] = HEAPU16;
+Neptune["HEAPU32"] = HEAPU32;
+Neptune["HEAPF32"] = HEAPF32;
+Neptune["HEAPF64"] = HEAPF64;
 
 function callRuntimeCallbacks(b) {
-  while (b["\x6C\x65\x6E\x67\x74\x68"] > 0) {
-      var a = b["\x73\x68\x69\x66\x74"]();
-      if (typeof a == "\x66\x75\x6E\x63\x74\x69\x6F\x6E") {
+  while (b["length"] > 0) {
+      var a = b["shift"]();
+      if (typeof a == "function") {
           a();
           continue
       };
-      var c = a["\x66\x75\x6E\x63"];
-      if (typeof c === "\x6E\x75\x6D\x62\x65\x72") {
-          if (a["\x61\x72\x67"] === undefined) {
-              Neptune["\x64\x79\x6E\x43\x61\x6C\x6C\x5F\x76"](c)
+      var c = a["func"];
+      if (typeof c === "number") {
+          if (a["arg"] === undefined) {
+              Neptune["dynCall_v"](c)
           } else {
-              Neptune["\x64\x79\x6E\x43\x61\x6C\x6C\x5F\x76\x69"](c, a["\x61\x72\x67"])
+              Neptune["dynCall_vi"](c, a["arg"])
           }
       } else {
-          c(a["\x61\x72\x67"] === undefined ? null : a["\x61\x72\x67"])
+          c(a["arg"] === undefined ? null : a["arg"])
       }
   }
 }
@@ -1173,12 +1173,12 @@ var runtimeInitialized = false;
 var runtimeExited = false;
 
 function preRun() {
-  if (Neptune["\x70\x72\x65\x52\x75\x6E"]) {
-      if (typeof Neptune["\x70\x72\x65\x52\x75\x6E"] == "\x66\x75\x6E\x63\x74\x69\x6F\x6E") {
-          Neptune["\x70\x72\x65\x52\x75\x6E"] = [Neptune["\x70\x72\x65\x52\x75\x6E"]]
+  if (Neptune["preRun"]) {
+      if (typeof Neptune["preRun"] == "function") {
+          Neptune["preRun"] = [Neptune["preRun"]]
       };
-      while (Neptune["\x70\x72\x65\x52\x75\x6E"]["\x6C\x65\x6E\x67\x74\x68"]) {
-          addOnPreRun(Neptune["\x70\x72\x65\x52\x75\x6E"]["\x73\x68\x69\x66\x74"]())
+      while (Neptune["preRun"]["length"]) {
+          addOnPreRun(Neptune["preRun"]["shift"]())
       }
   };
   callRuntimeCallbacks(__ATPRERUN__)
@@ -1202,68 +1202,68 @@ function exitRuntime() {
 }
 
 function postRun() {
-  if (Neptune["\x70\x6F\x73\x74\x52\x75\x6E"]) {
-      if (typeof Neptune["\x70\x6F\x73\x74\x52\x75\x6E"] == "\x66\x75\x6E\x63\x74\x69\x6F\x6E") {
-          Neptune["\x70\x6F\x73\x74\x52\x75\x6E"] = [Neptune["\x70\x6F\x73\x74\x52\x75\x6E"]]
+  if (Neptune["postRun"]) {
+      if (typeof Neptune["postRun"] == "function") {
+          Neptune["postRun"] = [Neptune["postRun"]]
       };
-      while (Neptune["\x70\x6F\x73\x74\x52\x75\x6E"]["\x6C\x65\x6E\x67\x74\x68"]) {
-          addOnPostRun(Neptune["\x70\x6F\x73\x74\x52\x75\x6E"]["\x73\x68\x69\x66\x74"]())
+      while (Neptune["postRun"]["length"]) {
+          addOnPostRun(Neptune["postRun"]["shift"]())
       }
   };
   callRuntimeCallbacks(__ATPOSTRUN__)
 }
 
 function addOnPreRun(a) {
-  __ATPRERUN__["\x75\x6E\x73\x68\x69\x66\x74"](a)
+  __ATPRERUN__["unshift"](a)
 }
-Neptune["\x61\x64\x64\x4F\x6E\x50\x72\x65\x52\x75\x6E"] = addOnPreRun;
+Neptune["addOnPreRun"] = addOnPreRun;
 
 function addOnInit(a) {
-  __ATINIT__["\x75\x6E\x73\x68\x69\x66\x74"](a)
+  __ATINIT__["unshift"](a)
 }
-Neptune["\x61\x64\x64\x4F\x6E\x49\x6E\x69\x74"] = addOnInit;
+Neptune["addOnInit"] = addOnInit;
 
 function addOnPreMain(a) {
-  __ATMAIN__["\x75\x6E\x73\x68\x69\x66\x74"](a)
+  __ATMAIN__["unshift"](a)
 }
-Neptune["\x61\x64\x64\x4F\x6E\x50\x72\x65\x4D\x61\x69\x6E"] = addOnPreMain;
+Neptune["addOnPreMain"] = addOnPreMain;
 
 function addOnExit(a) {
-  __ATEXIT__["\x75\x6E\x73\x68\x69\x66\x74"](a)
+  __ATEXIT__["unshift"](a)
 }
-Neptune["\x61\x64\x64\x4F\x6E\x45\x78\x69\x74"] = addOnExit;
+Neptune["addOnExit"] = addOnExit;
 
 function addOnPostRun(a) {
-  __ATPOSTRUN__["\x75\x6E\x73\x68\x69\x66\x74"](a)
+  __ATPOSTRUN__["unshift"](a)
 }
-Neptune["\x61\x64\x64\x4F\x6E\x50\x6F\x73\x74\x52\x75\x6E"] = addOnPostRun;
+Neptune["addOnPostRun"] = addOnPostRun;
 
 function intArrayFromString(f, a, c) {
   var b = c > 0 ? c : lengthBytesUTF8(f) + 1;
   var g = new Array(b);
-  var d = stringToUTF8Array(f, g, 0, g["\x6C\x65\x6E\x67\x74\x68"]);
+  var d = stringToUTF8Array(f, g, 0, g["length"]);
   if (a) {
-      g["\x6C\x65\x6E\x67\x74\x68"] = d
+      g["length"] = d
   };
   return g
 }
-Neptune["\x69\x6E\x74\x41\x72\x72\x61\x79\x46\x72\x6F\x6D\x53\x74\x72\x69\x6E\x67"] = intArrayFromString;
+Neptune["intArrayFromString"] = intArrayFromString;
 
 function intArrayToString(a) {
   var d = [];
-  for (var c = 0; c < a["\x6C\x65\x6E\x67\x74\x68"]; c++) {
+  for (var c = 0; c < a["length"]; c++) {
       var b = a[c];
       if (b > 255) {
           b &= 255
       };
-      d["\x70\x75\x73\x68"](String["fromCharCode"](b))
+      d["push"](String["fromCharCode"](b))
   };
-  return d["\x6A\x6F\x69\x6E"]("")
+  return d["join"]("")
 }
-Neptune["\x69\x6E\x74\x41\x72\x72\x61\x79\x54\x6F\x53\x74\x72\x69\x6E\x67"] = intArrayToString;
+Neptune["intArrayToString"] = intArrayToString;
 
 function writeStringToMemory(f, a, b) {
-  Runtime["\x77\x61\x72\x6E\x4F\x6E\x63\x65"]("\x77\x72\x69\x74\x65\x53\x74\x72\x69\x6E\x67\x54\x6F\x4D\x65\x6D\x6F\x72\x79\x20\x69\x73\x20\x64\x65\x70\x72\x65\x63\x61\x74\x65\x64\x20\x61\x6E\x64\x20\x73\x68\x6F\x75\x6C\x64\x20\x6E\x6F\x74\x20\x62\x65\x20\x63\x61\x6C\x6C\x65\x64\x21\x20\x55\x73\x65\x20\x73\x74\x72\x69\x6E\x67\x54\x6F\x55\x54\x46\x38\x28\x29\x20\x69\x6E\x73\x74\x65\x61\x64\x21");
+  Runtime["warnOnce"]("writeStringToMemory is deprecated and should not be called! Use stringToUTF8() instead!");
   var d, c;
   if (b) {
       c = a + lengthBytesUTF8(f);
@@ -1274,24 +1274,24 @@ function writeStringToMemory(f, a, b) {
       HEAP8[c] = d
   }
 }
-Neptune["\x77\x72\x69\x74\x65\x53\x74\x72\x69\x6E\x67\x54\x6F\x4D\x65\x6D\x6F\x72\x79"] = writeStringToMemory;
+Neptune["writeStringToMemory"] = writeStringToMemory;
 
 function writeArrayToMemory(a, b) {
-  HEAP8["\x73\x65\x74"](a, b)
+  HEAP8["set"](a, b)
 }
-Neptune["\x77\x72\x69\x74\x65\x41\x72\x72\x61\x79\x54\x6F\x4D\x65\x6D\x6F\x72\x79"] = writeArrayToMemory;
+Neptune["writeArrayToMemory"] = writeArrayToMemory;
 
 function writeAsciiToMemory(d, a, b) {
-  for (var c = 0; c < d["\x6C\x65\x6E\x67\x74\x68"]; ++c) {
-      HEAP8[a++ >> 0] = d["\x63\x68\x61\x72\x43\x6F\x64\x65\x41\x74"](c)
+  for (var c = 0; c < d["length"]; ++c) {
+      HEAP8[a++ >> 0] = d["charCodeAt"](c)
   };
   if (!b) {
       HEAP8[a >> 0] = 0
   }
 }
-Neptune["\x77\x72\x69\x74\x65\x41\x73\x63\x69\x69\x54\x6F\x4D\x65\x6D\x6F\x72\x79"] = writeAsciiToMemory;
-if (!Math["\x69\x6D\x75\x6C"] || Math["\x69\x6D\x75\x6C"](4294967295, 5) !== -5) {
-  Math["\x69\x6D\x75\x6C"] = function imul(a, d) {
+Neptune["writeAsciiToMemory"] = writeAsciiToMemory;
+if (!Math["imul"] || Math["imul"](4294967295, 5) !== -5) {
+  Math["imul"] = function imul(a, d) {
       var b = a >>> 16;
       var c = a & 65535;
       var f = d >>> 16;
@@ -1299,17 +1299,17 @@ if (!Math["\x69\x6D\x75\x6C"] || Math["\x69\x6D\x75\x6C"](4294967295, 5) !== -5)
       return c * g + (b * g + c * f << 16) | 0
   }
 };
-Math["\x69\x6D\x75\x6C"] = Math["\x69\x6D\x75\x6C"];
-if (!Math["\x66\x72\x6F\x75\x6E\x64"]) {
+Math["imul"] = Math["imul"];
+if (!Math["fround"]) {
   var froundBuffer = new Float32Array(1);
-  Math["\x66\x72\x6F\x75\x6E\x64"] = (function(a) {
+  Math["fround"] = (function(a) {
       froundBuffer[0] = a;
       return froundBuffer[0]
   })
 };
-Math["\x66\x72\x6F\x75\x6E\x64"] = Math["\x66\x72\x6F\x75\x6E\x64"];
-if (!Math["\x63\x6C\x7A\x33\x32"]) {
-  Math["\x63\x6C\x7A\x33\x32"] = (function(b) {
+Math["fround"] = Math["fround"];
+if (!Math["clz32"]) {
+  Math["clz32"] = (function(b) {
       b = b >>> 0;
       for (var a = 0; a < 32; a++) {
           if (b & 1 << 31 - a) {
@@ -1319,33 +1319,33 @@ if (!Math["\x63\x6C\x7A\x33\x32"]) {
       return 32
   })
 };
-Math["\x63\x6C\x7A\x33\x32"] = Math["\x63\x6C\x7A\x33\x32"];
-if (!Math["\x74\x72\x75\x6E\x63"]) {
-  Math["\x74\x72\x75\x6E\x63"] = (function(a) {
-      return a < 0 ? Math["\x63\x65\x69\x6C"](a) : Math["\x66\x6C\x6F\x6F\x72"](a)
+Math["clz32"] = Math["clz32"];
+if (!Math["trunc"]) {
+  Math["trunc"] = (function(a) {
+      return a < 0 ? Math["ceil"](a) : Math["floor"](a)
   })
 };
-Math["\x74\x72\x75\x6E\x63"] = Math["\x74\x72\x75\x6E\x63"];
-var Math_abs = Math["\x61\x62\x73"];
-var Math_cos = Math["\x63\x6F\x73"];
-var Math_sin = Math["\x73\x69\x6E"];
-var Math_tan = Math["\x74\x61\x6E"];
-var Math_acos = Math["\x61\x63\x6F\x73"];
-var Math_asin = Math["\x61\x73\x69\x6E"];
-var Math_atan = Math["\x61\x74\x61\x6E"];
-var Math_atan2 = Math["\x61\x74\x61\x6E\x32"];
-var Math_exp = Math["\x65\x78\x70"];
-var Math_log = Math["\x6C\x6F\x67"];
-var Math_sqrt = Math["\x73\x71\x72\x74"];
-var Math_ceil = Math["\x63\x65\x69\x6C"];
-var Math_floor = Math["\x66\x6C\x6F\x6F\x72"];
-var Math_pow = Math["\x70\x6F\x77"];
-var Math_imul = Math["\x69\x6D\x75\x6C"];
-var Math_fround = Math["\x66\x72\x6F\x75\x6E\x64"];
-var Math_round = Math["\x72\x6F\x75\x6E\x64"];
-var Math_min = Math["\x6D\x69\x6E"];
-var Math_clz32 = Math["\x63\x6C\x7A\x33\x32"];
-var Math_trunc = Math["\x74\x72\x75\x6E\x63"];
+Math["trunc"] = Math["trunc"];
+var Math_abs = Math["abs"];
+var Math_cos = Math["cos"];
+var Math_sin = Math["sin"];
+var Math_tan = Math["tan"];
+var Math_acos = Math["acos"];
+var Math_asin = Math["asin"];
+var Math_atan = Math["atan"];
+var Math_atan2 = Math["atan2"];
+var Math_exp = Math["exp"];
+var Math_log = Math["log"];
+var Math_sqrt = Math["sqrt"];
+var Math_ceil = Math["ceil"];
+var Math_floor = Math["floor"];
+var Math_pow = Math["pow"];
+var Math_imul = Math["imul"];
+var Math_fround = Math["fround"];
+var Math_round = Math["round"];
+var Math_min = Math["min"];
+var Math_clz32 = Math["clz32"];
+var Math_trunc = Math["trunc"];
 var runDependencies = 0;
 var runDependencyWatcher = null;
 var dependenciesFulfilled = null;
@@ -1356,16 +1356,16 @@ function getUniqueRunDependency(a) {
 
 function addRunDependency(a) {
   runDependencies++;
-  if (Neptune["\x6D\x6F\x6E\x69\x74\x6F\x72\x52\x75\x6E\x44\x65\x70\x65\x6E\x64\x65\x6E\x63\x69\x65\x73"]) {
-      Neptune["\x6D\x6F\x6E\x69\x74\x6F\x72\x52\x75\x6E\x44\x65\x70\x65\x6E\x64\x65\x6E\x63\x69\x65\x73"](runDependencies)
+  if (Neptune["monitorRunDependencies"]) {
+      Neptune["monitorRunDependencies"](runDependencies)
   }
 }
-Neptune["\x61\x64\x64\x52\x75\x6E\x44\x65\x70\x65\x6E\x64\x65\x6E\x63\x79"] = addRunDependency;
+Neptune["addRunDependency"] = addRunDependency;
 
 function removeRunDependency(b) {
   runDependencies--;
-  if (Neptune["\x6D\x6F\x6E\x69\x74\x6F\x72\x52\x75\x6E\x44\x65\x70\x65\x6E\x64\x65\x6E\x63\x69\x65\x73"]) {
-      Neptune["\x6D\x6F\x6E\x69\x74\x6F\x72\x52\x75\x6E\x44\x65\x70\x65\x6E\x64\x65\x6E\x63\x69\x65\x73"](runDependencies)
+  if (Neptune["monitorRunDependencies"]) {
+      Neptune["monitorRunDependencies"](runDependencies)
   };
   if (runDependencies == 0) {
       if (runDependencyWatcher !== null) {
@@ -1379,60 +1379,60 @@ function removeRunDependency(b) {
       }
   }
 }
-Neptune["\x72\x65\x6D\x6F\x76\x65\x52\x75\x6E\x44\x65\x70\x65\x6E\x64\x65\x6E\x63\x79"] = removeRunDependency;
-Neptune["\x70\x72\x65\x6C\x6F\x61\x64\x65\x64\x49\x6D\x61\x67\x65\x73"] = {};
-Neptune["\x70\x72\x65\x6C\x6F\x61\x64\x65\x64\x41\x75\x64\x69\x6F\x73"] = {};
+Neptune["removeRunDependency"] = removeRunDependency;
+Neptune["preloadedImages"] = {};
+Neptune["preloadedAudios"] = {};
 var memoryInitializer = null;
 
 function integrateWasmJS(n) {
-  var l = n["\x77\x61\x73\x6D\x4A\x53\x4D\x65\x74\x68\x6F\x64"] || "\x6E\x61\x74\x69\x76\x65\x2D\x77\x61\x73\x6D";
-  n["\x77\x61\x73\x6D\x4A\x53\x4D\x65\x74\x68\x6F\x64"] = l;
-  var o = n["\x77\x61\x73\x6D\x54\x65\x78\x74\x46\x69\x6C\x65"] || "\x67\x62\x6F\x79\x2E\x77\x61\x73\x74";
-  var p = n["\x77\x61\x73\x6D\x42\x69\x6E\x61\x72\x79\x46\x69\x6C\x65"] || "\x67\x62\x6F\x79\x61\x73\x64\x7A\x78\x63";
-  var b = n["\x61\x73\x6D\x6A\x73\x43\x6F\x64\x65\x46\x69\x6C\x65"] || "\x67\x62\x6F\x79\x2E\x74\x65\x6D\x70\x2E\x61\x73\x6D\x2E\x6A\x73";
-  if (typeof n["\x6C\x6F\x63\x61\x74\x65\x46\x69\x6C\x65"] === "\x66\x75\x6E\x63\x74\x69\x6F\x6E") {
-      wasmTextFile = n["\x6C\x6F\x63\x61\x74\x65\x46\x69\x6C\x65"](wasmTextFile);
-      wasmBinaryFile = n["\x6C\x6F\x63\x61\x74\x65\x46\x69\x6C\x65"](wasmBinaryFile);
-      b = n["\x6C\x6F\x63\x61\x74\x65\x46\x69\x6C\x65"](b)
+  var l = n["wasmJSMethod"] || "native-wasm";
+  n["wasmJSMethod"] = l;
+  var o = n["wasmTextFile"] || "gboy.wast";
+  var p = n["wasmBinaryFile"] || "gboyasdzxc";
+  var b = n["asmjsCodeFile"] || "gboy.temp.asm.js";
+  if (typeof n["locateFile"] === "function") {
+      wasmTextFile = n["locateFile"](wasmTextFile);
+      wasmBinaryFile = n["locateFile"](wasmBinaryFile);
+      b = n["locateFile"](b)
   };
   var y = 64 * 1024;
   var a = {
-      "\x66\x36\x34\x2D\x72\x65\x6D": (function(a, b) {
+      "f64-rem": (function(a, b) {
           return a % b
       }),
-      "\x66\x36\x34\x2D\x74\x6F\x2D\x69\x6E\x74": (function(a) {
+      "f64-to-int": (function(a) {
           return a | 0
       }),
-      "\x69\x33\x32\x73\x2D\x64\x69\x76": (function(a, b) {
+      "i32s-div": (function(a, b) {
           return (a | 0) / (b | 0) | 0
       }),
-      "\x69\x33\x32\x75\x2D\x64\x69\x76": (function(a, b) {
+      "i32u-div": (function(a, b) {
           return (a >>> 0) / (b >>> 0) >>> 0
       }),
-      "\x69\x33\x32\x73\x2D\x72\x65\x6D": (function(a, b) {
+      "i32s-rem": (function(a, b) {
           return (a | 0) % (b | 0) | 0
       }),
-      "\x69\x33\x32\x75\x2D\x72\x65\x6D": (function(a, b) {
+      "i32u-rem": (function(a, b) {
           return (a >>> 0) % (b >>> 0) >>> 0
       }),
-      "\x64\x65\x62\x75\x67\x67\x65\x72": (function() {
+      "debugger": (function() {
           debugger
       })
   };
   var i = {
-      "\x67\x6C\x6F\x62\x61\x6C": null,
-      "\x65\x6E\x76": null,
-      "\x61\x73\x6D\x32\x77\x61\x73\x6D": a,
-      "\x70\x61\x72\x65\x6E\x74": n
+      "global": null,
+      "env": null,
+      "asm2wasm": a,
+      "parent": n
   };
   var f = null;
 
   function j(c, a) {
       var b = i;
-      if (c["\x69\x6E\x64\x65\x78\x4F\x66"]("\x2E") < 0) {
+      if (c["indexOf"](".") < 0) {
           b = (b || {})[c]
       } else {
-          var d = c["split"]("\x2E");
+          var d = c["split"](".");
           b = (b || {})[d[0]];
           b = (b || {})[d[1]]
       };
@@ -1440,22 +1440,22 @@ function integrateWasmJS(n) {
           b = (b || {})[a]
       };
       if (b === undefined) {
-          abort("\x62\x61\x64\x20\x6C\x6F\x6F\x6B\x75\x70\x49\x6D\x70\x6F\x72\x74\x20\x74\x6F\x20\x28" + c + "\x29\x2E" + a)
+          abort("bad lookupImport to (" + c + ")." + a)
       };
       return b
   }
 
   function k(a) {
-      var c = n["\x62\x75\x66\x66\x65\x72"];
-      if (a["\x62\x79\x74\x65\x4C\x65\x6E\x67\x74\x68"] < c["\x62\x79\x74\x65\x4C\x65\x6E\x67\x74\x68"]) {
-          n["\x70\x72\x69\x6E\x74\x45\x72\x72"]("\x74\x68\x65\x20\x6E\x65\x77\x20\x62\x75\x66\x66\x65\x72\x20\x69\x6E\x20\x6D\x65\x72\x67\x65\x4D\x65\x6D\x6F\x72\x79\x20\x69\x73\x20\x73\x6D\x61\x6C\x6C\x65\x72\x20\x74\x68\x61\x6E\x20\x74\x68\x65\x20\x70\x72\x65\x76\x69\x6F\x75\x73\x20\x6F\x6E\x65\x2E\x20\x69\x6E\x20\x6E\x61\x74\x69\x76\x65\x20\x77\x61\x73\x6D\x2C\x20\x77\x65\x20\x73\x68\x6F\x75\x6C\x64\x20\x67\x72\x6F\x77\x20\x6D\x65\x6D\x6F\x72\x79\x20\x68\x65\x72\x65")
+      var c = n["buffer"];
+      if (a["byteLength"] < c["byteLength"]) {
+          n["printErr"]("the new buffer in mergeMemory is smaller than the previous one. in native wasm, we should grow memory here")
       };
       var d = new Int8Array(c);
       var b = new Int8Array(a);
       if (!memoryInitializer) {
-          d["\x73\x65\x74"](b["\x73\x75\x62\x61\x72\x72\x61\x79"](n["\x53\x54\x41\x54\x49\x43\x5F\x42\x41\x53\x45"], n["\x53\x54\x41\x54\x49\x43\x5F\x42\x41\x53\x45"] + n["\x53\x54\x41\x54\x49\x43\x5F\x42\x55\x4D\x50"]), n["\x53\x54\x41\x54\x49\x43\x5F\x42\x41\x53\x45"])
+          d["set"](b["subarray"](n["STATIC_BASE"], n["STATIC_BASE"] + n["STATIC_BUMP"]), n["STATIC_BASE"])
       };
-      b["\x73\x65\x74"](d);
+      b["set"](d);
       updateGlobalBuffer(a);
       updateGlobalBufferViews()
   }
@@ -1474,8 +1474,8 @@ function integrateWasmJS(n) {
       var d = {};
       for (var b in c) {
           var a = b;
-          if (a[0] == "\x5F") {
-              a = a["\x73\x75\x62\x73\x74\x72"](1)
+          if (a[0] == "_") {
+              a = a["substr"](1)
           };
           d[a] = c[b]
       };
@@ -1483,62 +1483,62 @@ function integrateWasmJS(n) {
   }
 
   function d(b, a, c) {
-      if (typeof WebAssembly !== "\x6F\x62\x6A\x65\x63\x74") {
-          n["\x70\x72\x69\x6E\x74\x45\x72\x72"]("\x6E\x6F\x20\x6E\x61\x74\x69\x76\x65\x20\x77\x61\x73\x6D\x20\x73\x75\x70\x70\x6F\x72\x74\x20\x64\x65\x74\x65\x63\x74\x65\x64");
+      if (typeof WebAssembly !== "object") {
+          n["printErr"]("no native wasm support detected");
           return false
       };
-      if (!(n["\x77\x61\x73\x6D\x4D\x65\x6D\x6F\x72\x79"] instanceof WebAssembly["\x4D\x65\x6D\x6F\x72\x79"])) {
-          n["\x70\x72\x69\x6E\x74\x45\x72\x72"]("\x6E\x6F\x20\x6E\x61\x74\x69\x76\x65\x20\x77\x61\x73\x6D\x20\x4D\x65\x6D\x6F\x72\x79\x20\x69\x6E\x20\x75\x73\x65");
+      if (!(n["wasmMemory"] instanceof WebAssembly["Memory"])) {
+          n["printErr"]("no native wasm Memory in use");
           return false
       };
-      a["\x6D\x65\x6D\x6F\x72\x79"] = n["\x77\x61\x73\x6D\x4D\x65\x6D\x6F\x72\x79"];
-      i["\x67\x6C\x6F\x62\x61\x6C"] = {
-          "\x4E\x61\x4E": NaN,
-          "\x49\x6E\x66\x69\x6E\x69\x74\x79": Infinity
+      a["memory"] = n["wasmMemory"];
+      i["global"] = {
+          "NaN": NaN,
+          "Infinity": Infinity
       };
-      i["\x67\x6C\x6F\x62\x61\x6C\x2E\x4D\x61\x74\x68"] = b["\x4D\x61\x74\x68"];
-      i["\x65\x6E\x76"] = a;
+      i["global.Math"] = b["Math"];
+      i["env"] = a;
 
       function d(a) {
-          f = a["\x65\x78\x70\x6F\x72\x74\x73"];
-          if (f["\x6D\x65\x6D\x6F\x72\x79"]) {
-              k(f["\x6D\x65\x6D\x6F\x72\x79"])
+          f = a["exports"];
+          if (f["memory"]) {
+              k(f["memory"])
           };
-          n["\x61\x73\x6D"] = f;
-          n["\x75\x73\x69\x6E\x67\x57\x61\x73\x6D"] = true;
-          removeRunDependency("\x77\x61\x73\x6D\x2D\x69\x6E\x73\x74\x61\x6E\x74\x69\x61\x74\x65")
+          n["asm"] = f;
+          n["usingWasm"] = true;
+          removeRunDependency("wasm-instantiate")
       }
-      addRunDependency("\x77\x61\x73\x6D\x2D\x69\x6E\x73\x74\x61\x6E\x74\x69\x61\x74\x65");
-      if (n["\x69\x6E\x73\x74\x61\x6E\x74\x69\x61\x74\x65\x57\x61\x73\x6D"]) {
+      addRunDependency("wasm-instantiate");
+      if (n["instantiateWasm"]) {
           try {
-              return n["\x69\x6E\x73\x74\x61\x6E\x74\x69\x61\x74\x65\x57\x61\x73\x6D"](i, d)
+              return n["instantiateWasm"](i, d)
           } catch (e) {
-              n["\x70\x72\x69\x6E\x74\x45\x72\x72"]("\x4E\x65\x70\x74\x75\x6E\x65\x2E\x69\x6E\x73\x74\x61\x6E\x74\x69\x61\x74\x65\x57\x61\x73\x6D\x20\x63\x61\x6C\x6C\x62\x61\x63\x6B\x20\x66\x61\x69\x6C\x65\x64\x20\x77\x69\x74\x68\x20\x65\x72\x72\x6F\x72\x3A\x20" + e);
+              n["printErr"]("Neptune.instantiateWasm callback failed with error: " + e);
               return false
           }
       };
-      getBinaryPromise()["\x74\x68\x65\x6E"]((function(a) {
-          return WebAssembly["\x69\x6E\x73\x74\x61\x6E\x74\x69\x61\x74\x65"](a, i)
-      }))["\x74\x68\x65\x6E"]((function(a) {
-          d(a["\x69\x6E\x73\x74\x61\x6E\x63\x65"])
-      }))["\x63\x61\x74\x63\x68"]((function(a) {
-          n["\x70\x72\x69\x6E\x74\x45\x72\x72"]("\x66\x61\x69\x6C\x65\x64\x20\x74\x6F\x20\x61\x73\x79\x6E\x63\x68\x72\x6F\x6E\x6F\x75\x73\x6C\x79\x20\x70\x72\x65\x70\x61\x72\x65\x20\x77\x61\x73\x6D\x3A\x20" + a);
+      getBinaryPromise()["then"]((function(a) {
+          return WebAssembly["instantiate"](a, i)
+      }))["then"]((function(a) {
+          d(a["instance"])
+      }))["catch"]((function(a) {
+          n["printErr"]("failed to asynchronously prepare wasm: " + a);
           abort(a)
       }));
       return {}
   }
-  n["\x61\x73\x6D\x50\x72\x65\x6C\x6F\x61\x64"] = n["\x61\x73\x6D"];
-  var c = n["\x72\x65\x61\x6C\x6C\x6F\x63\x42\x75\x66\x66\x65\x72"];
+  n["asmPreload"] = n["asm"];
+  var c = n["reallocBuffer"];
   var z = (function(g) {
-      var c = n["\x75\x73\x69\x6E\x67\x57\x61\x73\x6D"] ? WASM_PAGE_SIZE : ASMJS_PAGE_SIZE;
+      var c = n["usingWasm"] ? WASM_PAGE_SIZE : ASMJS_PAGE_SIZE;
       g = alignUp(g, c);
-      var a = n["\x62\x75\x66\x66\x65\x72"];
-      var b = a["\x62\x79\x74\x65\x4C\x65\x6E\x67\x74\x68"];
-      if (n["\x75\x73\x69\x6E\x67\x57\x61\x73\x6D"]) {
+      var a = n["buffer"];
+      var b = a["byteLength"];
+      if (n["usingWasm"]) {
           try {
-              var d = n["\x77\x61\x73\x6D\x4D\x65\x6D\x6F\x72\x79"]["\x67\x72\x6F\x77"]((g - b) / y);
+              var d = n["wasmMemory"]["grow"]((g - b) / y);
               if (d !== (-1 | 0)) {
-                  return n["\x62\x75\x66\x66\x65\x72"] = n["\x77\x61\x73\x6D\x4D\x65\x6D\x6F\x72\x79"]["\x62\x75\x66\x66\x65\x72"]
+                  return n["buffer"] = n["wasmMemory"]["buffer"]
               } else {
                   return null
               }
@@ -1546,68 +1546,68 @@ function integrateWasmJS(n) {
               return null
           }
       } else {
-          f["\x5F\x5F\x67\x72\x6F\x77\x57\x61\x73\x6D\x4D\x65\x6D\x6F\x72\x79"]((g - b) / y);
-          return n["\x62\x75\x66\x66\x65\x72"] !== a ? n["\x62\x75\x66\x66\x65\x72"] : null
+          f["__growWasmMemory"]((g - b) / y);
+          return n["buffer"] !== a ? n["buffer"] : null
       }
   });
-  n["\x72\x65\x61\x6C\x6C\x6F\x63\x42\x75\x66\x66\x65\x72"] = (function(a) {
-      if (g === "\x61\x73\x6D\x6A\x73") {
+  n["reallocBuffer"] = (function(a) {
+      if (g === "asmjs") {
           return c(a)
       } else {
           return z(a)
       }
   });
   var g = "";
-  n["\x61\x73\x6D"] = (function(c, a, g) {
+  n["asm"] = (function(c, a, g) {
       c = h(c);
       a = h(a);
-      if (!a["\x74\x61\x62\x6C\x65"]) {
-          var i = n["\x77\x61\x73\x6D\x54\x61\x62\x6C\x65\x53\x69\x7A\x65"];
+      if (!a["table"]) {
+          var i = n["wasmTableSize"];
           if (i === undefined) {
               i = 1024
           };
-          var f = n["\x77\x61\x73\x6D\x4D\x61\x78\x54\x61\x62\x6C\x65\x53\x69\x7A\x65"];
-          if (typeof WebAssembly === "\x6F\x62\x6A\x65\x63\x74" && typeof WebAssembly["\x54\x61\x62\x6C\x65"] === "\x66\x75\x6E\x63\x74\x69\x6F\x6E") {
+          var f = n["wasmMaxTableSize"];
+          if (typeof WebAssembly === "object" && typeof WebAssembly["Table"] === "function") {
               if (f !== undefined) {
-                  a["\x74\x61\x62\x6C\x65"] = new WebAssembly["\x54\x61\x62\x6C\x65"]({
-                      "\x69\x6E\x69\x74\x69\x61\x6C": i,
-                      "\x6D\x61\x78\x69\x6D\x75\x6D": f,
-                      "\x65\x6C\x65\x6D\x65\x6E\x74": "\x61\x6E\x79\x66\x75\x6E\x63"
+                  a["table"] = new WebAssembly["Table"]({
+                      "initial": i,
+                      "maximum": f,
+                      "element": "anyfunc"
                   })
               } else {
-                  a["\x74\x61\x62\x6C\x65"] = new WebAssembly["\x54\x61\x62\x6C\x65"]({
-                      "\x69\x6E\x69\x74\x69\x61\x6C": i,
-                      element: "\x61\x6E\x79\x66\x75\x6E\x63"
+                  a["table"] = new WebAssembly["Table"]({
+                      "initial": i,
+                      element: "anyfunc"
                   })
               }
           } else {
-              a["\x74\x61\x62\x6C\x65"] = new Array(i)
+              a["table"] = new Array(i)
           };
-          n["\x77\x61\x73\x6D\x54\x61\x62\x6C\x65"] = a["\x74\x61\x62\x6C\x65"]
+          n["wasmTable"] = a["table"]
       };
-      if (!a["\x6D\x65\x6D\x6F\x72\x79\x42\x61\x73\x65"]) {
-          a["\x6D\x65\x6D\x6F\x72\x79\x42\x61\x73\x65"] = n["\x53\x54\x41\x54\x49\x43\x5F\x42\x41\x53\x45"]
+      if (!a["memoryBase"]) {
+          a["memoryBase"] = n["STATIC_BASE"]
       };
-      if (!a["\x74\x61\x62\x6C\x65\x42\x61\x73\x65"]) {
-          a["\x74\x61\x62\x6C\x65\x42\x61\x73\x65"] = 0
+      if (!a["tableBase"]) {
+          a["tableBase"] = 0
       };
       var b;
       b = d(c, a, g);
       return b
   });
-  var m = n["\x61\x73\x6D"]
+  var m = n["asm"]
 }
 integrateWasmJS(Neptune);
 var ASM_CONSTS = [(function($0, $1) {
-  Neptune["\x70\x72\x69\x6E\x74\x45\x72\x72"]("\x62\x61\x64\x20\x6E\x61\x6D\x65\x20\x69\x6E\x20\x67\x65\x74\x50\x72\x6F\x63\x41\x64\x64\x72\x65\x73\x73\x3A\x20" + [Pointer_stringify($0), Pointer_stringify($1)])
+  Neptune["printErr"]("bad name in getProcAddress: " + [Pointer_stringify($0), Pointer_stringify($1)])
 })];
 
 function _emscripten_asm_const_iii(c, a, b) {
   return ASM_CONSTS[c](a, b)
 }
-STATIC_BASE = Runtime["\x47\x4C\x4F\x42\x41\x4C\x5F\x42\x41\x53\x45"];
+STATIC_BASE = Runtime["GLOBAL_BASE"];
 STATICTOP = STATIC_BASE + 617696;
-__ATINIT__["\x70\x75\x73\x68"]({
+__ATINIT__["push"]({
   func: (function() {
       __GLOBAL__sub_I_statesaver_cpp()
   })
@@ -1616,10 +1616,10 @@ __ATINIT__["\x70\x75\x73\x68"]({
       __GLOBAL__sub_I_libretro_cpp()
   })
 });
-memoryInitializer = Neptune["\x77\x61\x73\x6D\x4A\x53\x4D\x65\x74\x68\x6F\x64"]["\x69\x6E\x64\x65\x78\x4F\x66"]("\x61\x73\x6D\x6A\x73") >= 0 || Neptune["\x77\x61\x73\x6D\x4A\x53\x4D\x65\x74\x68\x6F\x64"]["\x69\x6E\x64\x65\x78\x4F\x66"]("\x69\x6E\x74\x65\x72\x70\x72\x65\x74\x2D\x61\x73\x6D\x32\x77\x61\x73\x6D") >= 0 ? "\x67\x62\x6F\x79\x2E\x6A\x73\x2E\x6D\x65\x6D" : null;
+memoryInitializer = Neptune["wasmJSMethod"]["indexOf"]("asmjs") >= 0 || Neptune["wasmJSMethod"]["indexOf"]("interpret-asm2wasm") >= 0 ? "gboy.js.mem" : null;
 var STATIC_BUMP = 617696;
-Neptune["\x53\x54\x41\x54\x49\x43\x5F\x42\x41\x53\x45"] = STATIC_BASE;
-Neptune["\x53\x54\x41\x54\x49\x43\x5F\x42\x55\x4D\x50"] = STATIC_BUMP;
+Neptune["STATIC_BASE"] = STATIC_BASE;
+Neptune["STATIC_BUMP"] = STATIC_BUMP;
 var tempDoublePtr = STATICTOP;
 STATICTOP += 16;
 var GL = {
@@ -1648,23 +1648,23 @@ var GL = {
   packAlignment: 4,
   unpackAlignment: 4,
   init: (function() {
-      GL["\x63\x72\x65\x61\x74\x65\x4C\x6F\x67\x32\x63\x65\x69\x6C\x4C\x6F\x6F\x6B\x75\x70"](GL["\x4D\x41\x58\x5F\x54\x45\x4D\x50\x5F\x42\x55\x46\x46\x45\x52\x5F\x53\x49\x5A\x45"]);
-      GL["\x6D\x69\x6E\x69\x54\x65\x6D\x70\x42\x75\x66\x66\x65\x72"] = new Float32Array(GL["\x4D\x49\x4E\x49\x5F\x54\x45\x4D\x50\x5F\x42\x55\x46\x46\x45\x52\x5F\x53\x49\x5A\x45"]);
-      for (var a = 0; a < GL["\x4D\x49\x4E\x49\x5F\x54\x45\x4D\x50\x5F\x42\x55\x46\x46\x45\x52\x5F\x53\x49\x5A\x45"]; a++) {
-          GL["\x6D\x69\x6E\x69\x54\x65\x6D\x70\x42\x75\x66\x66\x65\x72\x56\x69\x65\x77\x73"][a] = GL["\x6D\x69\x6E\x69\x54\x65\x6D\x70\x42\x75\x66\x66\x65\x72"]["\x73\x75\x62\x61\x72\x72\x61\x79"](0, a + 1)
+      GL["createLog2ceilLookup"](GL["MAX_TEMP_BUFFER_SIZE"]);
+      GL["miniTempBuffer"] = new Float32Array(GL["MINI_TEMP_BUFFER_SIZE"]);
+      for (var a = 0; a < GL["MINI_TEMP_BUFFER_SIZE"]; a++) {
+          GL["miniTempBufferViews"][a] = GL["miniTempBuffer"]["subarray"](0, a + 1)
       };
       for (var a = 0; a < 32; a++) {
-          GL["\x74\x65\x6D\x70\x46\x69\x78\x65\x64\x4C\x65\x6E\x67\x74\x68\x41\x72\x72\x61\x79"]["\x70\x75\x73\x68"](new Array(a))
+          GL["tempFixedLengthArray"]["push"](new Array(a))
       }
   }),
   recordError: function recordError(a) {
-      if (!GL["\x6C\x61\x73\x74\x45\x72\x72\x6F\x72"]) {
-          GL["\x6C\x61\x73\x74\x45\x72\x72\x6F\x72"] = a
+      if (!GL["lastError"]) {
+          GL["lastError"] = a
       }
   },
   getNewId: (function(c) {
-      var b = GL["\x63\x6F\x75\x6E\x74\x65\x72"]++;
-      for (var a = c["\x6C\x65\x6E\x67\x74\x68"]; a < b; a++) {
+      var b = GL["counter"]++;
+      for (var a = c["length"]; a < b; a++) {
           c[a] = null
       };
       return b
@@ -1676,45 +1676,45 @@ var GL = {
   numTempVertexBuffersPerSize: 64,
   log2ceilLookup: null,
   createLog2ceilLookup: (function(c) {
-      GL["\x6C\x6F\x67\x32\x63\x65\x69\x6C\x4C\x6F\x6F\x6B\x75\x70"] = new Uint8Array(c + 1);
+      GL["log2ceilLookup"] = new Uint8Array(c + 1);
       var b = 0;
       var d = 1;
-      GL["\x6C\x6F\x67\x32\x63\x65\x69\x6C\x4C\x6F\x6F\x6B\x75\x70"][0] = 0;
+      GL["log2ceilLookup"][0] = 0;
       for (var a = 1; a <= c; ++a) {
           if (a > d) {
               d <<= 1;
               ++b
           };
-          GL["\x6C\x6F\x67\x32\x63\x65\x69\x6C\x4C\x6F\x6F\x6B\x75\x70"][a] = b
+          GL["log2ceilLookup"][a] = b
       }
   }),
   generateTempBuffers: (function(h, a) {
-      var d = GL["\x6C\x6F\x67\x32\x63\x65\x69\x6C\x4C\x6F\x6F\x6B\x75\x70"][GL["\x4D\x41\x58\x5F\x54\x45\x4D\x50\x5F\x42\x55\x46\x46\x45\x52\x5F\x53\x49\x5A\x45"]];
-      a["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x43\x6F\x75\x6E\x74\x65\x72\x73\x31"] = [];
-      a["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x43\x6F\x75\x6E\x74\x65\x72\x73\x32"] = [];
-      a["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x43\x6F\x75\x6E\x74\x65\x72\x73\x31"]["\x6C\x65\x6E\x67\x74\x68"] = a["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x43\x6F\x75\x6E\x74\x65\x72\x73\x32"]["\x6C\x65\x6E\x67\x74\x68"] = d + 1;
-      a["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x31"] = [];
-      a["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x32"] = [];
-      a["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x31"]["\x6C\x65\x6E\x67\x74\x68"] = a["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x32"]["\x6C\x65\x6E\x67\x74\x68"] = d + 1;
-      a["\x74\x65\x6D\x70\x49\x6E\x64\x65\x78\x42\x75\x66\x66\x65\x72\x73"] = [];
-      a["\x74\x65\x6D\x70\x49\x6E\x64\x65\x78\x42\x75\x66\x66\x65\x72\x73"]["\x6C\x65\x6E\x67\x74\x68"] = d + 1;
+      var d = GL["log2ceilLookup"][GL["MAX_TEMP_BUFFER_SIZE"]];
+      a["tempVertexBufferCounters1"] = [];
+      a["tempVertexBufferCounters2"] = [];
+      a["tempVertexBufferCounters1"]["length"] = a["tempVertexBufferCounters2"]["length"] = d + 1;
+      a["tempVertexBuffers1"] = [];
+      a["tempVertexBuffers2"] = [];
+      a["tempVertexBuffers1"]["length"] = a["tempVertexBuffers2"]["length"] = d + 1;
+      a["tempIndexBuffers"] = [];
+      a["tempIndexBuffers"]["length"] = d + 1;
       for (var b = 0; b <= d; ++b) {
-          a["\x74\x65\x6D\x70\x49\x6E\x64\x65\x78\x42\x75\x66\x66\x65\x72\x73"][b] = null;
-          a["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x43\x6F\x75\x6E\x74\x65\x72\x73\x31"][b] = a["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x43\x6F\x75\x6E\x74\x65\x72\x73\x32"][b] = 0;
-          var k = GL["\x6E\x75\x6D\x54\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x50\x65\x72\x53\x69\x7A\x65"];
-          a["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x31"][b] = [];
-          a["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x32"][b] = [];
-          var i = a["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x31"][b];
-          var j = a["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x32"][b];
-          i["\x6C\x65\x6E\x67\x74\x68"] = j["\x6C\x65\x6E\x67\x74\x68"] = k;
+          a["tempIndexBuffers"][b] = null;
+          a["tempVertexBufferCounters1"][b] = a["tempVertexBufferCounters2"][b] = 0;
+          var k = GL["numTempVertexBuffersPerSize"];
+          a["tempVertexBuffers1"][b] = [];
+          a["tempVertexBuffers2"][b] = [];
+          var i = a["tempVertexBuffers1"][b];
+          var j = a["tempVertexBuffers2"][b];
+          i["length"] = j["length"] = k;
           for (var c = 0; c < k; ++c) {
               i[c] = j[c] = null
           }
       };
       if (h) {
-          a["\x74\x65\x6D\x70\x51\x75\x61\x64\x49\x6E\x64\x65\x78\x42\x75\x66\x66\x65\x72"] = GLctx["\x63\x72\x65\x61\x74\x65\x42\x75\x66\x66\x65\x72"]();
-          a["\x47\x4C\x63\x74\x78"]["\x62\x69\x6E\x64\x42\x75\x66\x66\x65\x72"](a["\x47\x4C\x63\x74\x78"]["\x45\x4C\x45\x4D\x45\x4E\x54\x5F\x41\x52\x52\x41\x59\x5F\x42\x55\x46\x46\x45\x52"], a["\x74\x65\x6D\x70\x51\x75\x61\x64\x49\x6E\x64\x65\x78\x42\x75\x66\x66\x65\x72"]);
-          var f = GL["\x4D\x41\x58\x5F\x54\x45\x4D\x50\x5F\x42\x55\x46\x46\x45\x52\x5F\x53\x49\x5A\x45"] >> 1;
+          a["tempQuadIndexBuffer"] = GLctx["createBuffer"]();
+          a["GLctx"]["bindBuffer"](a["GLctx"]["ELEMENT_ARRAY_BUFFER"], a["tempQuadIndexBuffer"]);
+          var f = GL["MAX_TEMP_BUFFER_SIZE"] >> 1;
           var g = new Uint16Array(f);
           var b = 0,
               l = 0;
@@ -1745,53 +1745,53 @@ var GL = {
               };
               l += 4
           };
-          a["\x47\x4C\x63\x74\x78"]["\x62\x75\x66\x66\x65\x72\x44\x61\x74\x61"](a["\x47\x4C\x63\x74\x78"]["\x45\x4C\x45\x4D\x45\x4E\x54\x5F\x41\x52\x52\x41\x59\x5F\x42\x55\x46\x46\x45\x52"], g, a["\x47\x4C\x63\x74\x78"]["\x53\x54\x41\x54\x49\x43\x5F\x44\x52\x41\x57"]);
-          a["\x47\x4C\x63\x74\x78"]["\x62\x69\x6E\x64\x42\x75\x66\x66\x65\x72"](a["\x47\x4C\x63\x74\x78"]["\x45\x4C\x45\x4D\x45\x4E\x54\x5F\x41\x52\x52\x41\x59\x5F\x42\x55\x46\x46\x45\x52"], null)
+          a["GLctx"]["bufferData"](a["GLctx"]["ELEMENT_ARRAY_BUFFER"], g, a["GLctx"]["STATIC_DRAW"]);
+          a["GLctx"]["bindBuffer"](a["GLctx"]["ELEMENT_ARRAY_BUFFER"], null)
       }
   }),
   getTempVertexBuffer: function getTempVertexBuffer(f) {
-      var a = GL["\x6C\x6F\x67\x32\x63\x65\x69\x6C\x4C\x6F\x6F\x6B\x75\x70"][f];
-      var d = GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x31"][a];
-      var b = GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x43\x6F\x75\x6E\x74\x65\x72\x73\x31"][a];
-      GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x43\x6F\x75\x6E\x74\x65\x72\x73\x31"][a] = GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x43\x6F\x75\x6E\x74\x65\x72\x73\x31"][a] + 1 & GL["\x6E\x75\x6D\x54\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x50\x65\x72\x53\x69\x7A\x65"] - 1;
+      var a = GL["log2ceilLookup"][f];
+      var d = GL["currentContext"]["tempVertexBuffers1"][a];
+      var b = GL["currentContext"]["tempVertexBufferCounters1"][a];
+      GL["currentContext"]["tempVertexBufferCounters1"][a] = GL["currentContext"]["tempVertexBufferCounters1"][a] + 1 & GL["numTempVertexBuffersPerSize"] - 1;
       var g = d[b];
       if (g) {
           return g
       };
-      var c = GLctx["\x67\x65\x74\x50\x61\x72\x61\x6D\x65\x74\x65\x72"](GLctx["\x41\x52\x52\x41\x59\x5F\x42\x55\x46\x46\x45\x52\x5F\x42\x49\x4E\x44\x49\x4E\x47"]);
-      d[b] = GLctx["\x63\x72\x65\x61\x74\x65\x42\x75\x66\x66\x65\x72"]();
-      GLctx["\x62\x69\x6E\x64\x42\x75\x66\x66\x65\x72"](GLctx["\x41\x52\x52\x41\x59\x5F\x42\x55\x46\x46\x45\x52"], d[b]);
-      GLctx["\x62\x75\x66\x66\x65\x72\x44\x61\x74\x61"](GLctx["\x41\x52\x52\x41\x59\x5F\x42\x55\x46\x46\x45\x52"], 1 << a, GLctx["\x44\x59\x4E\x41\x4D\x49\x43\x5F\x44\x52\x41\x57"]);
-      GLctx["\x62\x69\x6E\x64\x42\x75\x66\x66\x65\x72"](GLctx["\x41\x52\x52\x41\x59\x5F\x42\x55\x46\x46\x45\x52"], c);
+      var c = GLctx["getParameter"](GLctx["ARRAY_BUFFER_BINDING"]);
+      d[b] = GLctx["createBuffer"]();
+      GLctx["bindBuffer"](GLctx["ARRAY_BUFFER"], d[b]);
+      GLctx["bufferData"](GLctx["ARRAY_BUFFER"], 1 << a, GLctx["DYNAMIC_DRAW"]);
+      GLctx["bindBuffer"](GLctx["ARRAY_BUFFER"], c);
       return d[b]
   },
   getTempIndexBuffer: function getTempIndexBuffer(d) {
-      var b = GL["\x6C\x6F\x67\x32\x63\x65\x69\x6C\x4C\x6F\x6F\x6B\x75\x70"][d];
-      var a = GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x49\x6E\x64\x65\x78\x42\x75\x66\x66\x65\x72\x73"][b];
+      var b = GL["log2ceilLookup"][d];
+      var a = GL["currentContext"]["tempIndexBuffers"][b];
       if (a) {
           return a
       };
-      var c = GLctx["\x67\x65\x74\x50\x61\x72\x61\x6D\x65\x74\x65\x72"](GLctx["\x45\x4C\x45\x4D\x45\x4E\x54\x5F\x41\x52\x52\x41\x59\x5F\x42\x55\x46\x46\x45\x52\x5F\x42\x49\x4E\x44\x49\x4E\x47"]);
-      GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x49\x6E\x64\x65\x78\x42\x75\x66\x66\x65\x72\x73"][b] = GLctx["\x63\x72\x65\x61\x74\x65\x42\x75\x66\x66\x65\x72"]();
-      GLctx["\x62\x69\x6E\x64\x42\x75\x66\x66\x65\x72"](GLctx["\x45\x4C\x45\x4D\x45\x4E\x54\x5F\x41\x52\x52\x41\x59\x5F\x42\x55\x46\x46\x45\x52"], GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x49\x6E\x64\x65\x78\x42\x75\x66\x66\x65\x72\x73"][b]);
-      GLctx["\x62\x75\x66\x66\x65\x72\x44\x61\x74\x61"](GLctx["\x45\x4C\x45\x4D\x45\x4E\x54\x5F\x41\x52\x52\x41\x59\x5F\x42\x55\x46\x46\x45\x52"], 1 << b, GLctx["\x44\x59\x4E\x41\x4D\x49\x43\x5F\x44\x52\x41\x57"]);
-      GLctx["\x62\x69\x6E\x64\x42\x75\x66\x66\x65\x72"](GLctx["\x45\x4C\x45\x4D\x45\x4E\x54\x5F\x41\x52\x52\x41\x59\x5F\x42\x55\x46\x46\x45\x52"], c);
-      return GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x49\x6E\x64\x65\x78\x42\x75\x66\x66\x65\x72\x73"][b]
+      var c = GLctx["getParameter"](GLctx["ELEMENT_ARRAY_BUFFER_BINDING"]);
+      GL["currentContext"]["tempIndexBuffers"][b] = GLctx["createBuffer"]();
+      GLctx["bindBuffer"](GLctx["ELEMENT_ARRAY_BUFFER"], GL["currentContext"]["tempIndexBuffers"][b]);
+      GLctx["bufferData"](GLctx["ELEMENT_ARRAY_BUFFER"], 1 << b, GLctx["DYNAMIC_DRAW"]);
+      GLctx["bindBuffer"](GLctx["ELEMENT_ARRAY_BUFFER"], c);
+      return GL["currentContext"]["tempIndexBuffers"][b]
   },
   newRenderingFrameStarted: function newRenderingFrameStarted() {
       get_fps_now();
-      if (!GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]) {
+      if (!GL["currentContext"]) {
           return
       };
-      var c = GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x31"];
-      GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x31"] = GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x32"];
-      GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x73\x32"] = c;
-      c = GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x43\x6F\x75\x6E\x74\x65\x72\x73\x31"];
-      GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x43\x6F\x75\x6E\x74\x65\x72\x73\x31"] = GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x43\x6F\x75\x6E\x74\x65\x72\x73\x32"];
-      GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x43\x6F\x75\x6E\x74\x65\x72\x73\x32"] = c;
-      var b = GL["\x6C\x6F\x67\x32\x63\x65\x69\x6C\x4C\x6F\x6F\x6B\x75\x70"][GL["\x4D\x41\x58\x5F\x54\x45\x4D\x50\x5F\x42\x55\x46\x46\x45\x52\x5F\x53\x49\x5A\x45"]];
+      var c = GL["currentContext"]["tempVertexBuffers1"];
+      GL["currentContext"]["tempVertexBuffers1"] = GL["currentContext"]["tempVertexBuffers2"];
+      GL["currentContext"]["tempVertexBuffers2"] = c;
+      c = GL["currentContext"]["tempVertexBufferCounters1"];
+      GL["currentContext"]["tempVertexBufferCounters1"] = GL["currentContext"]["tempVertexBufferCounters2"];
+      GL["currentContext"]["tempVertexBufferCounters2"] = c;
+      var b = GL["log2ceilLookup"][GL["MAX_TEMP_BUFFER_SIZE"]];
       for (var a = 0; a <= b; ++a) {
-          GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x74\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72\x43\x6F\x75\x6E\x74\x65\x72\x73\x31"][a] = 0
+          GL["currentContext"]["tempVertexBufferCounters1"][a] = 0
       }
   },
   getSource: (function(g, a, i, f) {
@@ -1816,131 +1816,131 @@ var GL = {
       if (c > 0) {
           return a * c
       };
-      var f = GL["\x62\x79\x74\x65\x53\x69\x7A\x65\x42\x79\x54\x79\x70\x65"][d - GL["\x62\x79\x74\x65\x53\x69\x7A\x65\x42\x79\x54\x79\x70\x65\x52\x6F\x6F\x74"]];
+      var f = GL["byteSizeByType"][d - GL["byteSizeByTypeRoot"]];
       return b * f * a
   },
   usedTempBuffers: [],
   preDrawHandleClientVertexAttribBindings: function preDrawHandleClientVertexAttribBindings(c) {
-      GL["\x72\x65\x73\x65\x74\x42\x75\x66\x66\x65\x72\x42\x69\x6E\x64\x69\x6E\x67"] = false;
-      for (var d = 0; d < GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x6D\x61\x78\x56\x65\x72\x74\x65\x78\x41\x74\x74\x72\x69\x62\x73"]; ++d) {
-          var b = GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]["\x63\x6C\x69\x65\x6E\x74\x42\x75\x66\x66\x65\x72\x73"][d];
-          if (!b["\x63\x6C\x69\x65\x6E\x74\x73\x69\x64\x65"] || !b["\x65\x6E\x61\x62\x6C\x65\x64"]) {
+      GL["resetBufferBinding"] = false;
+      for (var d = 0; d < GL["currentContext"]["maxVertexAttribs"]; ++d) {
+          var b = GL["currentContext"]["clientBuffers"][d];
+          if (!b["clientside"] || !b["enabled"]) {
               continue
           };
-          GL["\x72\x65\x73\x65\x74\x42\x75\x66\x66\x65\x72\x42\x69\x6E\x64\x69\x6E\x67"] = true;
-          var f = GL["\x63\x61\x6C\x63\x42\x75\x66\x4C\x65\x6E\x67\x74\x68"](b["\x73\x69\x7A\x65"], b["\x74\x79\x70\x65"], b["\x73\x74\x72\x69\x64\x65"], c);
-          var a = GL["\x67\x65\x74\x54\x65\x6D\x70\x56\x65\x72\x74\x65\x78\x42\x75\x66\x66\x65\x72"](f);
-          GLctx["\x62\x69\x6E\x64\x42\x75\x66\x66\x65\x72"](GLctx["\x41\x52\x52\x41\x59\x5F\x42\x55\x46\x46\x45\x52"], a);
-          GLctx["\x62\x75\x66\x66\x65\x72\x53\x75\x62\x44\x61\x74\x61"](GLctx["\x41\x52\x52\x41\x59\x5F\x42\x55\x46\x46\x45\x52"], 0, HEAPU8["\x73\x75\x62\x61\x72\x72\x61\x79"](b["\x70\x74\x72"], b["\x70\x74\x72"] + f));
-          GLctx["\x76\x65\x72\x74\x65\x78\x41\x74\x74\x72\x69\x62\x50\x6F\x69\x6E\x74\x65\x72"](d, b["\x73\x69\x7A\x65"], b["\x74\x79\x70\x65"], b["\x6E\x6F\x72\x6D\x61\x6C\x69\x7A\x65\x64"], b["\x73\x74\x72\x69\x64\x65"], 0)
+          GL["resetBufferBinding"] = true;
+          var f = GL["calcBufLength"](b["size"], b["type"], b["stride"], c);
+          var a = GL["getTempVertexBuffer"](f);
+          GLctx["bindBuffer"](GLctx["ARRAY_BUFFER"], a);
+          GLctx["bufferSubData"](GLctx["ARRAY_BUFFER"], 0, HEAPU8["subarray"](b["ptr"], b["ptr"] + f));
+          GLctx["vertexAttribPointer"](d, b["size"], b["type"], b["normalized"], b["stride"], 0)
       }
   },
   postDrawHandleClientVertexAttribBindings: function postDrawHandleClientVertexAttribBindings() {
-      if (GL["\x72\x65\x73\x65\x74\x42\x75\x66\x66\x65\x72\x42\x69\x6E\x64\x69\x6E\x67"]) {
-          GLctx["\x62\x69\x6E\x64\x42\x75\x66\x66\x65\x72"](GLctx["\x41\x52\x52\x41\x59\x5F\x42\x55\x46\x46\x45\x52"], GL["\x62\x75\x66\x66\x65\x72\x73"][GL["\x63\x75\x72\x72\x41\x72\x72\x61\x79\x42\x75\x66\x66\x65\x72"]])
+      if (GL["resetBufferBinding"]) {
+          GLctx["bindBuffer"](GLctx["ARRAY_BUFFER"], GL["buffers"][GL["currArrayBuffer"]])
       }
   },
   createContext: (function(a, f) {
-      if (typeof f["\x6D\x61\x6A\x6F\x72\x56\x65\x72\x73\x69\x6F\x6E"] === "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64" && typeof f["\x6D\x69\x6E\x6F\x72\x56\x65\x72\x73\x69\x6F\x6E"] === "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
-          f["\x6D\x61\x6A\x6F\x72\x56\x65\x72\x73\x69\x6F\x6E"] = 1;
-          f["\x6D\x69\x6E\x6F\x72\x56\x65\x72\x73\x69\x6F\x6E"] = 0
+      if (typeof f["majorVersion"] === "undefined" && typeof f["minorVersion"] === "undefined") {
+          f["majorVersion"] = 1;
+          f["minorVersion"] = 0
       };
       var b;
-      var c = "\x3F";
+      var c = "?";
 
       function d(a) {
-          c = a["\x73\x74\x61\x74\x75\x73\x4D\x65\x73\x73\x61\x67\x65"] || c
+          c = a["statusMessage"] || c
       }
       try {
-          a["\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72"]("\x77\x65\x62\x67\x6C\x63\x6F\x6E\x74\x65\x78\x74\x63\x72\x65\x61\x74\x69\x6F\x6E\x65\x72\x72\x6F\x72", d, false);
+          a["addEventListener"]("webglcontextcreationerror", d, false);
           try {
-              if (Neptune["\x70\x72\x65\x69\x6E\x69\x74\x69\x61\x6C\x69\x7A\x65\x64\x57\x65\x62\x47\x4C\x43\x6F\x6E\x74\x65\x78\x74"]) {
-                  b = Neptune["\x70\x72\x65\x69\x6E\x69\x74\x69\x61\x6C\x69\x7A\x65\x64\x57\x65\x62\x47\x4C\x43\x6F\x6E\x74\x65\x78\x74"];
-                  f["\x6D\x61\x6A\x6F\x72\x56\x65\x72\x73\x69\x6F\x6E"] = typeof WebGL2RenderingContext !== "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64" && b instanceof WebGL2RenderingContext ? 2 : 1
+              if (Neptune["preinitializedWebGLContext"]) {
+                  b = Neptune["preinitializedWebGLContext"];
+                  f["majorVersion"] = typeof WebGL2RenderingContext !== "undefined" && b instanceof WebGL2RenderingContext ? 2 : 1
               } else {
-                  if (f["\x6D\x61\x6A\x6F\x72\x56\x65\x72\x73\x69\x6F\x6E"] == 1 && f["\x6D\x69\x6E\x6F\x72\x56\x65\x72\x73\x69\x6F\x6E"] == 0) {
-                      b = a["\x67\x65\x74\x43\x6F\x6E\x74\x65\x78\x74"]("\x77\x65\x62\x67\x6C", f) || a["\x67\x65\x74\x43\x6F\x6E\x74\x65\x78\x74"]("\x65\x78\x70\x65\x72\x69\x6D\x65\x6E\x74\x61\x6C\x2D\x77\x65\x62\x67\x6C", f)
+                  if (f["majorVersion"] == 1 && f["minorVersion"] == 0) {
+                      b = a["getContext"]("webgl", f) || a["getContext"]("experimental-webgl", f)
                   } else {
-                      if (f["\x6D\x61\x6A\x6F\x72\x56\x65\x72\x73\x69\x6F\x6E"] == 2 && f["\x6D\x69\x6E\x6F\x72\x56\x65\x72\x73\x69\x6F\x6E"] == 0) {
-                          b = a["\x67\x65\x74\x43\x6F\x6E\x74\x65\x78\x74"]("\x77\x65\x62\x67\x6C\x32", f)
+                      if (f["majorVersion"] == 2 && f["minorVersion"] == 0) {
+                          b = a["getContext"]("webgl2", f)
                       } else {
-                          throw "\x55\x6E\x73\x75\x70\x70\x6F\x72\x74\x65\x64\x20\x57\x65\x62\x47\x4C\x20\x63\x6F\x6E\x74\x65\x78\x74\x20\x76\x65\x72\x73\x69\x6F\x6E\x20" + majorVersion + "\x2E" + minorVersion + "\x21"
+                          throw "Unsupported WebGL context version " + majorVersion + "." + minorVersion + "!"
                       }
                   }
               }
           } finally {
-              a["\x72\x65\x6D\x6F\x76\x65\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72"]("\x77\x65\x62\x67\x6C\x63\x6F\x6E\x74\x65\x78\x74\x63\x72\x65\x61\x74\x69\x6F\x6E\x65\x72\x72\x6F\x72", d, false)
+              a["removeEventListener"]("webglcontextcreationerror", d, false)
           };
           if (!b) {
-              throw "\x3A\x28"
+              throw ":("
           }
       } catch (e) {
-          Neptune["\x70\x72\x69\x6E\x74"]("\x43\x6F\x75\x6C\x64\x20\x6E\x6F\x74\x20\x63\x72\x65\x61\x74\x65\x20\x63\x61\x6E\x76\x61\x73\x3A\x20" + [c, e, JSON["\x73\x74\x72\x69\x6E\x67\x69\x66\x79"](f)]);
+          Neptune["print"]("Could not create canvas: " + [c, e, JSON["stringify"](f)]);
           return 0
       };
       if (!b) {
           return 0
       };
-      return GL["\x72\x65\x67\x69\x73\x74\x65\x72\x43\x6F\x6E\x74\x65\x78\x74"](b, f)
+      return GL["registerContext"](b, f)
   }),
   registerContext: (function(b, d) {
-      var c = GL["\x67\x65\x74\x4E\x65\x77\x49\x64"](GL["\x63\x6F\x6E\x74\x65\x78\x74\x73"]);
+      var c = GL["getNewId"](GL["contexts"]);
       var a = {
           handle: c,
           attributes: d,
-          version: d["\x6D\x61\x6A\x6F\x72\x56\x65\x72\x73\x69\x6F\x6E"],
+          version: d["majorVersion"],
           GLctx: b
       };
-      if (b["\x63\x61\x6E\x76\x61\x73"]) {
-          b["\x63\x61\x6E\x76\x61\x73"]["\x47\x4C\x63\x74\x78\x4F\x62\x6A\x65\x63\x74"] = a
+      if (b["canvas"]) {
+          b["canvas"]["GLctxObject"] = a
       };
-      GL["\x63\x6F\x6E\x74\x65\x78\x74\x73"][c] = a;
-      if (typeof d["\x65\x6E\x61\x62\x6C\x65\x45\x78\x74\x65\x6E\x73\x69\x6F\x6E\x73\x42\x79\x44\x65\x66\x61\x75\x6C\x74"] === "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64" || d["\x65\x6E\x61\x62\x6C\x65\x45\x78\x74\x65\x6E\x73\x69\x6F\x6E\x73\x42\x79\x44\x65\x66\x61\x75\x6C\x74"]) {
-          GL["\x69\x6E\x69\x74\x45\x78\x74\x65\x6E\x73\x69\x6F\x6E\x73"](a)
+      GL["contexts"][c] = a;
+      if (typeof d["enableExtensionsByDefault"] === "undefined" || d["enableExtensionsByDefault"]) {
+          GL["initExtensions"](a)
       };
       return c
   }),
   makeContextCurrent: (function(b) {
-      if (typeof _wyudsasdwqs == "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64" || typeof neptunPlatform == "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64" || typeof _$Tm329123 == "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
+      if (typeof _wyudsasdwqs == "undefined" || typeof neptunPlatform == "undefined" || typeof _$Tm329123 == "undefined") {
           var a = null
       } else {
-          var a = GL["\x63\x6F\x6E\x74\x65\x78\x74\x73"][b];
+          var a = GL["contexts"][b];
           if (!a) {
               return false
           };
-          GLctx = Neptune["\x63\x74\x78"] = a["\x47\x4C\x63\x74\x78"];
-          GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"] = a;
+          GLctx = Neptune["ctx"] = a["GLctx"];
+          GL["currentContext"] = a;
           return true
       }
   }),
   getContext: (function(a) {
-      return GL["\x63\x6F\x6E\x74\x65\x78\x74\x73"][a]
+      return GL["contexts"][a]
   }),
   deleteContext: (function(a) {
-      if (GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"] === GL["\x63\x6F\x6E\x74\x65\x78\x74\x73"][a]) {
-          GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"] = null
+      if (GL["currentContext"] === GL["contexts"][a]) {
+          GL["currentContext"] = null
       };
-      if (typeof JSEvents === "\x6F\x62\x6A\x65\x63\x74") {
-          JSEvents["\x72\x65\x6D\x6F\x76\x65\x41\x6C\x6C\x48\x61\x6E\x64\x6C\x65\x72\x73\x4F\x6E\x54\x61\x72\x67\x65\x74"](GL["\x63\x6F\x6E\x74\x65\x78\x74\x73"][a]["\x47\x4C\x63\x74\x78"]["\x63\x61\x6E\x76\x61\x73"])
+      if (typeof JSEvents === "object") {
+          JSEvents["removeAllHandlersOnTarget"](GL["contexts"][a]["GLctx"]["canvas"])
       };
-      if (GL["\x63\x6F\x6E\x74\x65\x78\x74\x73"][a] && GL["\x63\x6F\x6E\x74\x65\x78\x74\x73"][a]["\x47\x4C\x63\x74\x78"]["\x63\x61\x6E\x76\x61\x73"]) {
-          GL["\x63\x6F\x6E\x74\x65\x78\x74\x73"][a]["\x47\x4C\x63\x74\x78"]["\x63\x61\x6E\x76\x61\x73"]["\x47\x4C\x63\x74\x78\x4F\x62\x6A\x65\x63\x74"] = undefined
+      if (GL["contexts"][a] && GL["contexts"][a]["GLctx"]["canvas"]) {
+          GL["contexts"][a]["GLctx"]["canvas"]["GLctxObject"] = undefined
       };
-      GL["\x63\x6F\x6E\x74\x65\x78\x74\x73"][a] = null
+      GL["contexts"][a] = null
   }),
   initExtensions: (function(b) {
       if (!b) {
-          b = GL["\x63\x75\x72\x72\x65\x6E\x74\x43\x6F\x6E\x74\x65\x78\x74"]
+          b = GL["currentContext"]
       };
-      if (b["\x69\x6E\x69\x74\x45\x78\x74\x65\x6E\x73\x69\x6F\x6E\x73\x44\x6F\x6E\x65"]) {
+      if (b["initExtensionsDone"]) {
           return
       };
-      b["\x69\x6E\x69\x74\x45\x78\x74\x65\x6E\x73\x69\x6F\x6E\x73\x44\x6F\x6E\x65"] = true;
-      var f = b["\x47\x4C\x63\x74\x78"];
-      b["\x6D\x61\x78\x56\x65\x72\x74\x65\x78\x41\x74\x74\x72\x69\x62\x73"] = f["\x67\x65\x74\x50\x61\x72\x61\x6D\x65\x74\x65\x72"](f["\x4D\x41\x58\x5F\x56\x45\x52\x54\x45\x58\x5F\x41\x54\x54\x52\x49\x42\x53"]);
-      b["\x63\x6C\x69\x65\x6E\x74\x42\x75\x66\x66\x65\x72\x73"] = [];
-      for (var g = 0; g < b["\x6D\x61\x78\x56\x65\x72\x74\x65\x78\x41\x74\x74\x72\x69\x62\x73"]; g++) {
-          b["\x63\x6C\x69\x65\x6E\x74\x42\x75\x66\x66\x65\x72\x73"][g] = {
+      b["initExtensionsDone"] = true;
+      var f = b["GLctx"];
+      b["maxVertexAttribs"] = f["getParameter"](f["MAX_VERTEX_ATTRIBS"]);
+      b["clientBuffers"] = [];
+      for (var g = 0; g < b["maxVertexAttribs"]; g++) {
+          b["clientBuffers"][g] = {
               enabled: false,
               clientside: false,
               size: 0,
@@ -1950,82 +1950,82 @@ var GL = {
               ptr: 0
           }
       };
-      GL["\x67\x65\x6E\x65\x72\x61\x74\x65\x54\x65\x6D\x70\x42\x75\x66\x66\x65\x72\x73"](false, b);
-      if (b["\x76\x65\x72\x73\x69\x6F\x6E"] < 2) {
-          var h = f["\x67\x65\x74\x45\x78\x74\x65\x6E\x73\x69\x6F\x6E"]("\x41\x4E\x47\x4C\x45\x5F\x69\x6E\x73\x74\x61\x6E\x63\x65\x64\x5F\x61\x72\x72\x61\x79\x73");
+      GL["generateTempBuffers"](false, b);
+      if (b["version"] < 2) {
+          var h = f["getExtension"]("ANGLE_instanced_arrays");
           if (h) {
-              f["\x76\x65\x72\x74\x65\x78\x41\x74\x74\x72\x69\x62\x44\x69\x76\x69\x73\x6F\x72"] = (function(b, a) {
-                  h["\x76\x65\x72\x74\x65\x78\x41\x74\x74\x72\x69\x62\x44\x69\x76\x69\x73\x6F\x72\x41\x4E\x47\x4C\x45"](b, a)
+              f["vertexAttribDivisor"] = (function(b, a) {
+                  h["vertexAttribDivisorANGLE"](b, a)
               });
-              f["\x64\x72\x61\x77\x41\x72\x72\x61\x79\x73\x49\x6E\x73\x74\x61\x6E\x63\x65\x64"] = (function(c, b, a, d) {
-                  h["\x64\x72\x61\x77\x41\x72\x72\x61\x79\x73\x49\x6E\x73\x74\x61\x6E\x63\x65\x64\x41\x4E\x47\x4C\x45"](c, b, a, d)
+              f["drawArraysInstanced"] = (function(c, b, a, d) {
+                  h["drawArraysInstancedANGLE"](c, b, a, d)
               });
-              f["\x64\x72\x61\x77\x45\x6C\x65\x6D\x65\x6E\x74\x73\x49\x6E\x73\x74\x61\x6E\x63\x65\x64"] = (function(c, a, f, b, d) {
-                  h["\x64\x72\x61\x77\x45\x6C\x65\x6D\x65\x6E\x74\x73\x49\x6E\x73\x74\x61\x6E\x63\x65\x64\x41\x4E\x47\x4C\x45"](c, a, f, b, d)
+              f["drawElementsInstanced"] = (function(c, a, f, b, d) {
+                  h["drawElementsInstancedANGLE"](c, a, f, b, d)
               })
           };
-          var i = f["\x67\x65\x74\x45\x78\x74\x65\x6E\x73\x69\x6F\x6E"]("\x4F\x45\x53\x5F\x76\x65\x72\x74\x65\x78\x5F\x61\x72\x72\x61\x79\x5F\x6F\x62\x6A\x65\x63\x74");
+          var i = f["getExtension"]("OES_vertex_array_object");
           if (i) {
-              f["\x63\x72\x65\x61\x74\x65\x56\x65\x72\x74\x65\x78\x41\x72\x72\x61\x79"] = (function() {
-                  return i["\x63\x72\x65\x61\x74\x65\x56\x65\x72\x74\x65\x78\x41\x72\x72\x61\x79\x4F\x45\x53"]()
+              f["createVertexArray"] = (function() {
+                  return i["createVertexArrayOES"]()
               });
-              f["\x64\x65\x6C\x65\x74\x65\x56\x65\x72\x74\x65\x78\x41\x72\x72\x61\x79"] = (function(a) {
-                  i["\x64\x65\x6C\x65\x74\x65\x56\x65\x72\x74\x65\x78\x41\x72\x72\x61\x79\x4F\x45\x53"](a)
+              f["deleteVertexArray"] = (function(a) {
+                  i["deleteVertexArrayOES"](a)
               });
-              f["\x62\x69\x6E\x64\x56\x65\x72\x74\x65\x78\x41\x72\x72\x61\x79"] = (function(a) {
-                  i["\x62\x69\x6E\x64\x56\x65\x72\x74\x65\x78\x41\x72\x72\x61\x79\x4F\x45\x53"](a)
+              f["bindVertexArray"] = (function(a) {
+                  i["bindVertexArrayOES"](a)
               });
-              f["\x69\x73\x56\x65\x72\x74\x65\x78\x41\x72\x72\x61\x79"] = (function(a) {
-                  return i["\x69\x73\x56\x65\x72\x74\x65\x78\x41\x72\x72\x61\x79\x4F\x45\x53"](a)
+              f["isVertexArray"] = (function(a) {
+                  return i["isVertexArrayOES"](a)
               })
           };
-          var c = f["\x67\x65\x74\x45\x78\x74\x65\x6E\x73\x69\x6F\x6E"]("\x57\x45\x42\x47\x4C\x5F\x64\x72\x61\x77\x5F\x62\x75\x66\x66\x65\x72\x73");
+          var c = f["getExtension"]("WEBGL_draw_buffers");
           if (c) {
-              f["\x64\x72\x61\x77\x42\x75\x66\x66\x65\x72\x73"] = (function(b, a) {
-                  c["\x64\x72\x61\x77\x42\x75\x66\x66\x65\x72\x73\x57\x45\x42\x47\x4C"](b, a)
+              f["drawBuffers"] = (function(b, a) {
+                  c["drawBuffersWEBGL"](b, a)
               })
           }
       };
-      f["\x64\x69\x73\x6A\x6F\x69\x6E\x74\x54\x69\x6D\x65\x72\x51\x75\x65\x72\x79\x45\x78\x74"] = f["\x67\x65\x74\x45\x78\x74\x65\x6E\x73\x69\x6F\x6E"]("\x45\x58\x54\x5F\x64\x69\x73\x6A\x6F\x69\x6E\x74\x5F\x74\x69\x6D\x65\x72\x5F\x71\x75\x65\x72\x79");
-      var a = ["\x4F\x45\x53\x5F\x74\x65\x78\x74\x75\x72\x65\x5F\x66\x6C\x6F\x61\x74", "\x4F\x45\x53\x5F\x74\x65\x78\x74\x75\x72\x65\x5F\x68\x61\x6C\x66\x5F\x66\x6C\x6F\x61\x74", "\x4F\x45\x53\x5F\x73\x74\x61\x6E\x64\x61\x72\x64\x5F\x64\x65\x72\x69\x76\x61\x74\x69\x76\x65\x73", "\x4F\x45\x53\x5F\x76\x65\x72\x74\x65\x78\x5F\x61\x72\x72\x61\x79\x5F\x6F\x62\x6A\x65\x63\x74", "\x57\x45\x42\x47\x4C\x5F\x63\x6F\x6D\x70\x72\x65\x73\x73\x65\x64\x5F\x74\x65\x78\x74\x75\x72\x65\x5F\x73\x33\x74\x63", "\x57\x45\x42\x47\x4C\x5F\x64\x65\x70\x74\x68\x5F\x74\x65\x78\x74\x75\x72\x65", "\x4F\x45\x53\x5F\x65\x6C\x65\x6D\x65\x6E\x74\x5F\x69\x6E\x64\x65\x78\x5F\x75\x69\x6E\x74", "\x45\x58\x54\x5F\x74\x65\x78\x74\x75\x72\x65\x5F\x66\x69\x6C\x74\x65\x72\x5F\x61\x6E\x69\x73\x6F\x74\x72\x6F\x70\x69\x63", "\x41\x4E\x47\x4C\x45\x5F\x69\x6E\x73\x74\x61\x6E\x63\x65\x64\x5F\x61\x72\x72\x61\x79\x73", "\x4F\x45\x53\x5F\x74\x65\x78\x74\x75\x72\x65\x5F\x66\x6C\x6F\x61\x74\x5F\x6C\x69\x6E\x65\x61\x72", "\x4F\x45\x53\x5F\x74\x65\x78\x74\x75\x72\x65\x5F\x68\x61\x6C\x66\x5F\x66\x6C\x6F\x61\x74\x5F\x6C\x69\x6E\x65\x61\x72", "\x57\x45\x42\x47\x4C\x5F\x63\x6F\x6D\x70\x72\x65\x73\x73\x65\x64\x5F\x74\x65\x78\x74\x75\x72\x65\x5F\x61\x74\x63", "\x57\x45\x42\x47\x4C\x5F\x63\x6F\x6D\x70\x72\x65\x73\x73\x65\x64\x5F\x74\x65\x78\x74\x75\x72\x65\x5F\x70\x76\x72\x74\x63", "\x45\x58\x54\x5F\x63\x6F\x6C\x6F\x72\x5F\x62\x75\x66\x66\x65\x72\x5F\x68\x61\x6C\x66\x5F\x66\x6C\x6F\x61\x74", "\x57\x45\x42\x47\x4C\x5F\x63\x6F\x6C\x6F\x72\x5F\x62\x75\x66\x66\x65\x72\x5F\x66\x6C\x6F\x61\x74", "\x45\x58\x54\x5F\x66\x72\x61\x67\x5F\x64\x65\x70\x74\x68", "\x45\x58\x54\x5F\x73\x52\x47\x42", "\x57\x45\x42\x47\x4C\x5F\x64\x72\x61\x77\x5F\x62\x75\x66\x66\x65\x72\x73", "\x57\x45\x42\x47\x4C\x5F\x73\x68\x61\x72\x65\x64\x5F\x72\x65\x73\x6F\x75\x72\x63\x65\x73", "\x45\x58\x54\x5F\x73\x68\x61\x64\x65\x72\x5F\x74\x65\x78\x74\x75\x72\x65\x5F\x6C\x6F\x64", "\x45\x58\x54\x5F\x63\x6F\x6C\x6F\x72\x5F\x62\x75\x66\x66\x65\x72\x5F\x66\x6C\x6F\x61\x74"];
-      var d = f["\x67\x65\x74\x53\x75\x70\x70\x6F\x72\x74\x65\x64\x45\x78\x74\x65\x6E\x73\x69\x6F\x6E\x73"]();
-      if (d && d["\x6C\x65\x6E\x67\x74\x68"] > 0) {
-          f["\x67\x65\x74\x53\x75\x70\x70\x6F\x72\x74\x65\x64\x45\x78\x74\x65\x6E\x73\x69\x6F\x6E\x73"]()["\x66\x6F\x72\x45\x61\x63\x68"]((function(b) {
-              if (a["\x69\x6E\x64\x65\x78\x4F\x66"](b) != -1) {
-                  f["\x67\x65\x74\x45\x78\x74\x65\x6E\x73\x69\x6F\x6E"](b)
+      f["disjointTimerQueryExt"] = f["getExtension"]("EXT_disjoint_timer_query");
+      var a = ["OES_texture_float", "OES_texture_half_float", "OES_standard_derivatives", "OES_vertex_array_object", "WEBGL_compressed_texture_s3tc", "WEBGL_depth_texture", "OES_element_index_uint", "EXT_texture_filter_anisotropic", "ANGLE_instanced_arrays", "OES_texture_float_linear", "OES_texture_half_float_linear", "WEBGL_compressed_texture_atc", "WEBGL_compressed_texture_pvrtc", "EXT_color_buffer_half_float", "WEBGL_color_buffer_float", "EXT_frag_depth", "EXT_sRGB", "WEBGL_draw_buffers", "WEBGL_shared_resources", "EXT_shader_texture_lod", "EXT_color_buffer_float"];
+      var d = f["getSupportedExtensions"]();
+      if (d && d["length"] > 0) {
+          f["getSupportedExtensions"]()["forEach"]((function(b) {
+              if (a["indexOf"](b) != -1) {
+                  f["getExtension"](b)
               }
           }))
       }
   }),
   populateUniformTable: (function(k) {
-      var j = GL["\x70\x72\x6F\x67\x72\x61\x6D\x73"][k];
-      GL["\x70\x72\x6F\x67\x72\x61\x6D\x49\x6E\x66\x6F\x73"][k] = {
+      var j = GL["programs"][k];
+      GL["programInfos"][k] = {
           uniforms: {},
           maxUniformLength: 0,
           maxAttributeLength: -1,
           maxUniformBlockNameLength: -1
       };
-      var l = GL["\x70\x72\x6F\x67\x72\x61\x6D\x49\x6E\x66\x6F\x73"][k];
-      var n = l["\x75\x6E\x69\x66\x6F\x72\x6D\x73"];
-      var i = GLctx["\x67\x65\x74\x50\x72\x6F\x67\x72\x61\x6D\x50\x61\x72\x61\x6D\x65\x74\x65\x72"](j, GLctx["\x41\x43\x54\x49\x56\x45\x5F\x55\x4E\x49\x46\x4F\x52\x4D\x53"]);
+      var l = GL["programInfos"][k];
+      var n = l["uniforms"];
+      var i = GLctx["getProgramParameter"](j, GLctx["ACTIVE_UNIFORMS"]);
       for (var a = 0; a < i; ++a) {
-          var m = GLctx["\x67\x65\x74\x41\x63\x74\x69\x76\x65\x55\x6E\x69\x66\x6F\x72\x6D"](j, a);
-          var h = m["\x6E\x61\x6D\x65"];
-          l["\x6D\x61\x78\x55\x6E\x69\x66\x6F\x72\x6D\x4C\x65\x6E\x67\x74\x68"] = Math["\x6D\x61\x78"](l["\x6D\x61\x78\x55\x6E\x69\x66\x6F\x72\x6D\x4C\x65\x6E\x67\x74\x68"], h["\x6C\x65\x6E\x67\x74\x68"] + 1);
-          if (h["\x69\x6E\x64\x65\x78\x4F\x66"]("\x5D", h["\x6C\x65\x6E\x67\x74\x68"] - 1) !== -1) {
-              var f = h["\x6C\x61\x73\x74\x49\x6E\x64\x65\x78\x4F\x66"]("\x5B");
-              h = h["\x73\x6C\x69\x63\x65"](0, f)
+          var m = GLctx["getActiveUniform"](j, a);
+          var h = m["name"];
+          l["maxUniformLength"] = Math["max"](l["maxUniformLength"], h["length"] + 1);
+          if (h["indexOf"]("]", h["length"] - 1) !== -1) {
+              var f = h["lastIndexOf"]("[");
+              h = h["slice"](0, f)
           };
-          var d = GLctx["\x67\x65\x74\x55\x6E\x69\x66\x6F\x72\x6D\x4C\x6F\x63\x61\x74\x69\x6F\x6E"](j, h);
+          var d = GLctx["getUniformLocation"](j, h);
           if (d != null) {
-              var b = GL["\x67\x65\x74\x4E\x65\x77\x49\x64"](GL["\x75\x6E\x69\x66\x6F\x72\x6D\x73"]);
-              n[h] = [m["\x73\x69\x7A\x65"], b];
-              GL["\x75\x6E\x69\x66\x6F\x72\x6D\x73"][b] = d;
-              for (var c = 1; c < m["\x73\x69\x7A\x65"]; ++c) {
-                  var g = h + "\x5B" + c + "\x5D";
-                  d = GLctx["\x67\x65\x74\x55\x6E\x69\x66\x6F\x72\x6D\x4C\x6F\x63\x61\x74\x69\x6F\x6E"](j, g);
-                  b = GL["\x67\x65\x74\x4E\x65\x77\x49\x64"](GL["\x75\x6E\x69\x66\x6F\x72\x6D\x73"]);
-                  GL["\x75\x6E\x69\x66\x6F\x72\x6D\x73"][b] = d
+              var b = GL["getNewId"](GL["uniforms"]);
+              n[h] = [m["size"], b];
+              GL["uniforms"][b] = d;
+              for (var c = 1; c < m["size"]; ++c) {
+                  var g = h + "[" + c + "]";
+                  d = GLctx["getUniformLocation"](j, g);
+                  b = GL["getNewId"](GL["uniforms"]);
+                  GL["uniforms"][b] = d
               }
           }
       }
@@ -2033,20 +2033,20 @@ var GL = {
 };
 
 function _emscripten_glIsRenderbuffer(b) {
-  var a = GL["\x72\x65\x6E\x64\x65\x72\x62\x75\x66\x66\x65\x72\x73"][b];
+  var a = GL["renderbuffers"][b];
   if (!a) {
       return 0
   };
-  return GLctx["\x69\x73\x52\x65\x6E\x64\x65\x72\x62\x75\x66\x66\x65\x72"](a)
+  return GLctx["isRenderbuffer"](a)
 }
 
 function ___setErrNo(a) {
-  if (Neptune["\x5F\x5F\x5F\x65\x72\x72\x6E\x6F\x5F\x6C\x6F\x63\x61\x74\x69\x6F\x6E"]) {
-      HEAP32[Neptune["\x5F\x5F\x5F\x65\x72\x72\x6E\x6F\x5F\x6C\x6F\x63\x61\x74\x69\x6F\x6E"]() >> 2] = a
+  if (Neptune["___errno_location"]) {
+      HEAP32[Neptune["___errno_location"]() >> 2] = a
   };
   return a
 }
-if (typeof _oppssaqqw == "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
+if (typeof _oppssaqqw == "undefined") {
   var ERRNO_CODES = 12
 } else {
   var ERRNO_CODES = {
@@ -2188,7 +2188,7 @@ if (typeof _oppssaqqw == "\x75\x6E\x64\x65\x66\x69\x6E\x65\x64") {
 };
 
 function __inet_pton4_raw(c) {
-  var a = c["split"]("\x2E");
+  var a = c["split"](".");
   for (var b = 0; b < 4; b++) {
       var d = Number(a[b]);
       if (isNaN(d)) {
