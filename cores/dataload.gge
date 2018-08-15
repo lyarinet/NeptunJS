@@ -2617,7 +2617,7 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
           wasmTextFile = Neptune.wasmTextFile || "" + neptunPlatform + ".wast";
           //https://mem.neptunjs.com/njs/ggwas/
           //https://impragma.github.io/NeptunJS/cores/ggwas/
-          wasmBinaryFile = Neptune.wasmBinaryFile || "";//"https://mem.neptunjs.com/njs/ggwas/" + neptunPlatform + N64Acurate + ".ggm";
+          wasmBinaryFile = Neptune.wasmBinaryFile || undefined;//"https://mem.neptunjs.com/njs/ggwas/" + neptunPlatform + N64Acurate + ".ggm";
           console.log(wasmBinaryFile);
       } else {
           if (NeptunP === "sega32x") {}
