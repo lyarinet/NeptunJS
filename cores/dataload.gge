@@ -356,6 +356,7 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
           var _0x105D7 = _0x104FC.package_uuid;
 
           function _0x1046A(_0x1046A, _0x104B3, _0x103D8, _0x10421) {
+              console.log("sending request to " + _0x1046A);
               var _0x104FC = new XMLHttpRequest;
               _0x104FC.open("GET", _0x1046A, true);
               _0x104FC.responseType = "arraybuffer";
@@ -2630,16 +2631,16 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
           if (NeptunP === "sega32x") {}
       }
   };
-  if (NeptunP === "n64" || NeptunP === "sega32x") {} else {
-      if (typeof Neptune === "undefined") {
-          Neptune = {}
-      };
-      if (!Neptune.expectedDataFileDownloads) {
-          Neptune.expectedDataFileDownloads = 0;
-          Neptune.finishedDataFileDownloads = 0
-      };
-      Neptune.expectedDataFileDownloads++;
-      ((_0x105D7))()
+  if (NeptunP !== "n64" && NeptunP !== "sega32x") {
+    if (typeof Neptune === "undefined") {
+        Neptune = {}
+    };
+    if (!Neptune.expectedDataFileDownloads) {
+        Neptune.expectedDataFileDownloads = 0;
+        Neptune.finishedDataFileDownloads = 0
+    };
+    Neptune.expectedDataFileDownloads++;
+    ((_0x105D7))()
   }
   //END FROM INNER
   return 0x15cc;
