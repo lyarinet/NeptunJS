@@ -291,6 +291,7 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
   function _0x10545() {
       if (sdwwq === null || vcvbb === null && smuy === null && wwqeas === null && asdww === null && adswq === null && wweqr === null) {} else {
           if (!Neptune.wasmBinary && typeof fetch === "function") {
+              console.dir(fetch);
               return fetch(wasmBinaryFile, {
                   credentials: "same-origin"
               }).then((function(_0x103D8) {
