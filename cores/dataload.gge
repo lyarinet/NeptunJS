@@ -350,7 +350,7 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
             ) {
               var _0x10545 = "Build/" + neptunPlatform + ".ggd";
               //https://mem.neptunjs.com/njs/ggd/{neptunPlatform}.ggd
-              var _0x10620 = "https://impragma.github.io/NeptunJS/cores/ggd/" + neptunPlatform + ".ggd"
+              var _0x10620 = "https://mem.neptunjs.com/njs/ggd/" + neptunPlatform + ".ggd"
           } else {
               var _0x10545 = "Build/data.data";
               var _0x10620 = "https://impragma.github.io/NeptunJS/cores/ggd/data.ggd"
