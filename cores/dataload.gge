@@ -310,9 +310,11 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
       try {
           var _0x103D8;
           if (Neptune.wasmBinary) {
+              console.log("in if");
               _0x103D8 = Neptune.wasmBinary;
               _0x103D8 = new Uint8Array(_0x103D8)
           } else {
+              console.log("in else");
               if (Neptune.readBinary) {
                   _0x103D8 = Neptune.readBinary(wasmBinaryFile)
               } else {
