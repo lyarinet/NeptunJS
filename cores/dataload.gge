@@ -2620,7 +2620,8 @@ var dir,dir2,ntype,gtype,vcvbb,smuy,wwqeas,asdww,adswq,wweqr,fomain,gfomain,as2,
   } else {
       if (load_wasm == true) {
           wasmTextFile = Neptune.wasmTextFile || "" + neptunPlatform + ".wast";
-          wasmBinaryFile = Neptune.wasmBinaryFile || "https://mem.neptunjs.com/njs/ggwas/" + neptunPlatform + N64Acurate + ".ggm";
+          //https://mem.neptunjs.com/njs/ggwas/{neptunPlatform}{N64Acurate}.ggm
+          wasmBinaryFile = Neptune.wasmBinaryFile || "https://impragma.github.io/cores/ggwas/" + neptunPlatform + N64Acurate + ".ggm";
       } else {
           if (NeptunP === "sega32x") {}
       }
