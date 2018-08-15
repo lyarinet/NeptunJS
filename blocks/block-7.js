@@ -2204,7 +2204,7 @@ if (netp === 1) {
     HeightCheker = Neptq("" + NepPlayer + "").height();
     WidthCheker = Neptq("" + NepPlayer + "").width();
     HeightFixer = Neptq("#" + NCSS + "EmuBlock").width() / 1.336;
-    NJS_Elements = Neptq("#" + NCSS + "EmuBlock , ." + NCSS + "game-info , ." + NCSS + "emul-display ,." + NCSS + "controll-info");
+    NJS_Elements = Neptq("#" + NCSS + "EmuBlock , ." + NCSS + "emul-display ,." + NCSS + "controll-info");
     Neptq(window).on("resize", _0x13FFF);
     NJSsettings = JSON.parse(localStorage.getItem("NJSsettings"));
     selecteds = JSON.parse(localStorage.getItem("NJSs"));
