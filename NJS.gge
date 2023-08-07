@@ -4,7 +4,7 @@ function createScript() {
   if(block == 9) return;
   var script = document.createElement("script");
   script.onload = createScript;
-  script.src = "https://impragma.github.io/NeptunJS/blocks/block-"+block+".js";
+  script.src = `/blocks/block-${block}.js`;
   document.head.appendChild(script);
 }
 
